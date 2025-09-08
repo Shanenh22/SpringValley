@@ -52,49 +52,42 @@ function openOpenDentalForm(formUrlKey) {
   }
 }
 
-// Specialized function for new patient forms
+// Specialized function for new patient forms - Mobile-first approach
 function openNewPatientForm(formUrl) {
-  // Check if mobile device
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  // Skip ALL confirmation dialogs and go straight to redirect
+  console.log('Opening form directly:', formUrl);
   
-  if (isMobile) {
-    // Mobile: Direct redirect without confirmation to avoid phone number dialog
+  // Show loading message immediately
+  showRedirectMessage();
+  
+  // Use a very short delay and direct assignment
+  setTimeout(() => {
+    try {
+      // Direct window location change - most reliable method
+      window.location.assign(formUrl);
+    } catch (error) {
+      console.error('Form redirect failed:', error);
+      // Fallback to href assignment
+      window.location.href = formUrl;
+    }
+  }, 800); // Shortened delay
+}
+
+// Alternative method: Try popup with better fallback - REMOVED CONFIRMATION
+function openFormPopup(formUrl) {
+  // Try to open in new window first
+  const popup = window.open(formUrl, 'PatientForm', 'width=1000,height=700,scrollbars=yes,resizable=yes');
+  
+  if (!popup || popup.closed || typeof popup.closed === 'undefined') {
+    // Popup was blocked - go straight to same-tab redirect
+    console.log('Popup blocked, redirecting in same tab');
     showRedirectMessage();
     setTimeout(() => {
       window.location.href = formUrl;
     }, 1000);
   } else {
-    // Desktop: Use confirmation dialog
-    const userConfirmed = confirm(
-      "You're about to be redirected to our secure patient forms. This will open in the same tab. Click OK to continue, or Cancel to call us instead at (972) 852-2222."
-    );
-    
-    if (userConfirmed) {
-      showRedirectMessage();
-      setTimeout(() => {
-        window.location.href = formUrl;
-      }, 1500);
-    } else {
-      // User cancelled, offer phone call
-      window.location.href = 'tel:+19728522222';
-    }
-  }
-}
-
-// Alternative method: Try popup with better fallback
-function openFormPopup(formUrl) {
-  // Create a user-initiated action to avoid popup blocking
-  const popup = window.open('', 'PatientForm', 'width=1000,height=700,scrollbars=yes,resizable=yes');
-  
-  if (!popup || popup.closed || typeof popup.closed === 'undefined') {
-    // Popup was blocked
-    showPopupBlockedMessage(formUrl);
-  } else {
     // Popup opened successfully
-    popup.location.href = formUrl;
     popup.focus();
-    
-    // Show success message
     showFormOpenedMessage();
   }
 }
@@ -219,7 +212,7 @@ function showPopupBlockedMessage(formUrl) {
       <div style="
         font-size: 2rem;
         margin-bottom: 1rem;
-      ">??</div>
+      ">🚫</div>
       <h3 style="
         color: #0E365A;
         margin-bottom: 1rem;
@@ -309,7 +302,7 @@ function showErrorMessage(errorText) {
       max-width: 400px;
       border-left: 4px solid #E46C5E;
     ">
-      <div style="font-size: 2rem; color: #E46C5E; margin-bottom: 1rem;">??</div>
+      <div style="font-size: 2rem; color: #E46C5E; margin-bottom: 1rem;">⚠️</div>
       <h3 style="color: #0E365A; margin-bottom: 1rem; font-family: 'Montserrat', sans-serif;">
         Form Unavailable
       </h3>
