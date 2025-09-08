@@ -1522,3 +1522,36 @@ body.patient-info .info-section {
     padding: 1rem;
   }
 }
+/* =============================================================================
+   FAQ NAVIGATION SCROLL OFFSET FIX
+   Add this to your cleaned-additional-css.css file
+   ============================================================================= */
+
+/* Scroll offset for FAQ sections to account for sticky header */
+#general-care,
+#treatments,
+#comfort,
+#costs,
+#post-op {
+  scroll-margin-top: 120px; /* Adjust this value based on your header height */
+}
+
+/* Additional offset for mobile devices where header might be different */
+@media (max-width: 768px) {
+  #general-care,
+  #treatments,
+  #comfort,
+  #costs,
+  #post-op {
+    scroll-margin-top: 140px; /* Slightly more space on mobile */
+  }
+  
+  /* Account for FAQ category pills being sticky on mobile */
+  .faq-categories + * #general-care,
+  .faq-categories + * #treatments,
+  .faq-categories + * #comfort,
+  .faq-categories + * #costs,
+  .faq-categories + * #post-op {
+    scroll-margin-top: 180px; /* More space when FAQ pills are also sticky */
+  }
+}
