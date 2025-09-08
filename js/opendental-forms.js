@@ -54,24 +54,17 @@ function openOpenDentalForm(formUrlKey) {
 
 // Specialized function for new patient forms - Mobile-first approach
 function openNewPatientForm(formUrl) {
-  // Skip ALL confirmation dialogs and go straight to redirect
   console.log('Opening form directly:', formUrl);
   
-  // Detect mobile and handle differently
+  // Detect mobile
   const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   
   if (isMobile) {
-    // Mobile: Immediate redirect with no loading message to avoid any dialogs
-    console.log('Mobile detected - direct redirect');
+    // Mobile: NO loading message, NO delays, direct redirect
+    console.log('Mobile detected - immediate redirect');
     
-    // Prevent any default mobile behaviors
-    event?.preventDefault();
-    event?.stopPropagation();
-    
-    // Use the most direct mobile redirect method
-    setTimeout(() => {
-      window.location.replace(formUrl);
-    }, 100); // Minimal delay
+    // Use the most direct mobile redirect - no setTimeout, no loading messages
+    window.location.href = formUrl;
     
   } else {
     // Desktop: Show loading message then redirect
@@ -85,6 +78,81 @@ function openNewPatientForm(formUrl) {
       }
     }, 800);
   }
+}
+
+// Remove the showRedirectMessage function on mobile to prevent any overlays
+function showRedirectMessage() {
+  // Check if mobile - if so, skip showing any loading messages
+  const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  
+  if (isMobile) {
+    console.log('Mobile detected - skipping loading message');
+    return; // Don't show any loading message on mobile
+  }
+  
+  // Desktop loading message code
+  const message = document.createElement('div');
+  message.id = 'redirect-loading-message';
+  message.innerHTML = `
+    <div style="
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(14, 54, 90, 0.2);
+      z-index: 10000;
+      text-align: center;
+      max-width: 400px;
+      border-left: 4px solid #0077B6;
+    ">
+      <div style="
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 3px solid #0077B6;
+        border-radius: 50%;
+        border-top-color: transparent;
+        animation: spin 1s ease-in-out infinite;
+        margin-bottom: 1rem;
+      "></div>
+      <h3 style="
+        color: #0E365A;
+        margin-bottom: 0.5rem;
+        font-family: 'Montserrat', sans-serif;
+      ">Redirecting to Patient Forms</h3>
+      <p style="
+        color: #5A6D80;
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+      ">You'll be redirected to our secure patient registration in just a moment...</p>
+    </div>
+    <div style="
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+    "></div>
+  `;
+  
+  // Add spin animation if not already present
+  if (!document.querySelector('#form-spinner-style')) {
+    const style = document.createElement('style');
+    style.id = 'form-spinner-style';
+    style.textContent = `
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+  
+  document.body.appendChild(message);
 }
 
 // Updated main function to handle mobile better
@@ -236,7 +304,7 @@ function showPopupBlockedMessage(formUrl) {
       <div style="
         font-size: 2rem;
         margin-bottom: 1rem;
-      ">??</div>
+      ">🚫</div>
       <h3 style="
         color: #0E365A;
         margin-bottom: 1rem;
@@ -326,7 +394,7 @@ function showErrorMessage(errorText) {
       max-width: 400px;
       border-left: 4px solid #E46C5E;
     ">
-      <div style="font-size: 2rem; color: #E46C5E; margin-bottom: 1rem;">??</div>
+      <div style="font-size: 2rem; color: #E46C5E; margin-bottom: 1rem;">⚠️</div>
       <h3 style="color: #0E365A; margin-bottom: 1rem; font-family: 'Montserrat', sans-serif;">
         Form Unavailable
       </h3>
