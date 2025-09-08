@@ -54,21 +54,30 @@ function openOpenDentalForm(formUrlKey) {
 
 // Specialized function for new patient forms
 function openNewPatientForm(formUrl) {
-  // Method 1: Try to open in same tab first (most reliable)
-  const userConfirmed = confirm(
-    "You're about to be redirected to our secure patient forms. This will open in the same tab. Click OK to continue, or Cancel to call us instead at (972) 852-2222."
-  );
+  // Check if mobile device
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   
-  if (userConfirmed) {
-    // Show loading message
+  if (isMobile) {
+    // Mobile: Direct redirect without confirmation to avoid phone number dialog
     showRedirectMessage();
-    // Small delay to show the message, then redirect
     setTimeout(() => {
       window.location.href = formUrl;
-    }, 1500);
+    }, 1000);
   } else {
-    // User cancelled, offer phone call
-    window.location.href = 'tel:+19728522222';
+    // Desktop: Use confirmation dialog
+    const userConfirmed = confirm(
+      "You're about to be redirected to our secure patient forms. This will open in the same tab. Click OK to continue, or Cancel to call us instead at (972) 852-2222."
+    );
+    
+    if (userConfirmed) {
+      showRedirectMessage();
+      setTimeout(() => {
+        window.location.href = formUrl;
+      }, 1500);
+    } else {
+      // User cancelled, offer phone call
+      window.location.href = 'tel:+19728522222';
+    }
   }
 }
 
