@@ -57,38 +57,62 @@ function openNewPatientForm(formUrl) {
   // Skip ALL confirmation dialogs and go straight to redirect
   console.log('Opening form directly:', formUrl);
   
-  // Show loading message immediately
-  showRedirectMessage();
+  // Detect mobile and handle differently
+  const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   
-  // Use a very short delay and direct assignment
-  setTimeout(() => {
-    try {
-      // Direct window location change - most reliable method
-      window.location.assign(formUrl);
-    } catch (error) {
-      console.error('Form redirect failed:', error);
-      // Fallback to href assignment
-      window.location.href = formUrl;
-    }
-  }, 800); // Shortened delay
-}
-
-// Alternative method: Try popup with better fallback - REMOVED CONFIRMATION
-function openFormPopup(formUrl) {
-  // Try to open in new window first
-  const popup = window.open(formUrl, 'PatientForm', 'width=1000,height=700,scrollbars=yes,resizable=yes');
-  
-  if (!popup || popup.closed || typeof popup.closed === 'undefined') {
-    // Popup was blocked - go straight to same-tab redirect
-    console.log('Popup blocked, redirecting in same tab');
+  if (isMobile) {
+    // Mobile: Immediate redirect with no loading message to avoid any dialogs
+    console.log('Mobile detected - direct redirect');
+    
+    // Prevent any default mobile behaviors
+    event?.preventDefault();
+    event?.stopPropagation();
+    
+    // Use the most direct mobile redirect method
+    setTimeout(() => {
+      window.location.replace(formUrl);
+    }, 100); // Minimal delay
+    
+  } else {
+    // Desktop: Show loading message then redirect
     showRedirectMessage();
     setTimeout(() => {
-      window.location.href = formUrl;
-    }, 1000);
+      try {
+        window.location.assign(formUrl);
+      } catch (error) {
+        console.error('Form redirect failed:', error);
+        window.location.href = formUrl;
+      }
+    }, 800);
+  }
+}
+
+// Updated main function to handle mobile better
+function openOpenDentalForm(formUrlKey) {
+  const formUrl = OPENDENTAL_FORMS[formUrlKey];
+  
+  if (!formUrl) {
+    console.error('Form URL not found for:', formUrlKey);
+    showErrorMessage('Form not available. Please call our office at (972) 852-2222.');
+    return;
+  }
+
+  // Handle phone numbers differently
+  if (formUrl.startsWith('tel:')) {
+    window.location.href = formUrl;
+    return;
+  }
+
+  // Determine form type for analytics
+  const formType = formUrlKey.replace('_FORM_URL', '').toLowerCase().replace('_', '-');
+  trackFormUsage(formType);
+
+  // For new patient forms, use our improved function
+  if (formUrlKey === 'NEW_PATIENT_FORM_URL') {
+    openNewPatientForm(formUrl);
   } else {
-    // Popup opened successfully
-    popup.focus();
-    showFormOpenedMessage();
+    // For other forms, direct to phone call
+    window.location.href = 'tel:+19728522222';
   }
 }
 
@@ -212,7 +236,7 @@ function showPopupBlockedMessage(formUrl) {
       <div style="
         font-size: 2rem;
         margin-bottom: 1rem;
-      ">🚫</div>
+      ">??</div>
       <h3 style="
         color: #0E365A;
         margin-bottom: 1rem;
@@ -302,7 +326,7 @@ function showErrorMessage(errorText) {
       max-width: 400px;
       border-left: 4px solid #E46C5E;
     ">
-      <div style="font-size: 2rem; color: #E46C5E; margin-bottom: 1rem;">⚠️</div>
+      <div style="font-size: 2rem; color: #E46C5E; margin-bottom: 1rem;">??</div>
       <h3 style="color: #0E365A; margin-bottom: 1rem; font-family: 'Montserrat', sans-serif;">
         Form Unavailable
       </h3>
