@@ -985,3 +985,540 @@ body.patient-info .info-section {
     padding: 1rem;
 	}
 }
+/* Success Stories Grid Layout */
+.success-stories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.story-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 10px rgba(14, 54, 90, 0.06);
+  transition: all 0.3s ease;
+}
+
+.story-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(14, 54, 90, 0.12);
+  border-color: var(--sky-blue);
+}
+
+.story-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.story-header .patient-info h3 {
+  margin: 0 0 .25rem 0;
+  line-height: 1.25;
+  color: var(--dallas-navy);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+}
+
+.patient-name,
+.treatment-type {
+  font-size: .95rem;
+  color: var(--cool-gray);
+  margin-bottom: 0.25rem;
+}
+
+.treatment-type {
+  color: var(--sky-blue);
+  font-weight: 600;
+}
+
+.story-rating .stars {
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--google-star);
+  margin-bottom: 0.25rem;
+}
+
+.verified {
+  font-size: 0.8rem;
+  color: var(--mint);
+  font-weight: 500;
+}
+
+.story-content blockquote {
+  margin: .75rem 0;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--slate-ink);
+}
+
+.story-details {
+  display: grid;
+  gap: .5rem;
+  margin-top: .5rem;
+  color: #24313a;
+  font-size: 0.9rem;
+}
+
+.treatment-timeline {
+  color: var(--cool-gray);
+  font-weight: 500;
+}
+
+.story-highlight {
+  color: var(--dallas-navy);
+  font-weight: 500;
+}
+
+/* Review Platform Cards */
+.review-platform-card {
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.review-platform-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(14, 54, 90, 0.15);
+  border-color: var(--sky-blue);
+}
+
+.platform-header {
+  margin-bottom: 1.5rem;
+}
+
+.platform-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.review-platform-card h3 {
+  color: var(--dallas-navy);
+  margin-bottom: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.review-platform-card p {
+  color: var(--cool-gray);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.review-btn {
+  width: 100%;
+  max-width: none;
+  justify-content: center;
+}
+
+/* Review Guidelines Box */
+.review-guidelines-box {
+  margin-top: 2rem;
+  background: var(--porcelain);
+  border-left: 4px solid var(--sky-blue);
+}
+
+.review-guidelines-box h3 {
+  color: var(--dallas-navy);
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+.review-guidelines-box .mini-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.review-guidelines-box .mini-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+}
+
+.review-guidelines-box .mini-card h4 {
+  color: var(--dallas-navy);
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.review-guidelines-box .mini-card p {
+  color: var(--cool-gray);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .success-stories {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .story-card {
+    padding: 1rem;
+  }
+
+  .story-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* =============================================================================
+   OPTION 1: ELEGANT COMPACT PATIENT SUCCESS STORIES
+   ============================================================================= */
+
+.success-stories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns instead of 3 for better readability */
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.story-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(14, 54, 90, 0.06);
+  transition: all 0.3s ease;
+  border-left: 4px solid var(--sky-blue);
+}
+
+.story-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(14, 54, 90, 0.12);
+  border-left-color: var(--dallas-navy);
+}
+
+.story-header {
+  margin-bottom: 1rem;
+}
+
+.story-header .patient-info h3 {
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+  color: var(--dallas-navy);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.patient-name {
+  font-size: 0.9rem;
+  color: var(--cool-gray);
+  margin-bottom: 0.25rem;
+}
+
+.treatment-type {
+  font-size: 0.9rem;
+  color: var(--sky-blue);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.story-rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.story-rating .stars {
+  font-size: 1.1rem;
+  color: var(--color-star);
+}
+
+.verified {
+  font-size: 0.8rem;
+  color: var(--mint);
+  font-weight: 500;
+}
+
+.story-content blockquote {
+  margin: 0 0 1rem 0;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--slate-ink);
+  font-size: 1rem;
+  border-left: 3px solid var(--porcelain);
+  padding-left: 1rem;
+}
+
+.story-details {
+  font-size: 0.85rem;
+  color: var(--cool-gray);
+  line-height: 1.4;
+}
+
+.treatment-timeline {
+  color: var(--cool-gray);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.story-highlight {
+  color: var(--dallas-navy);
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .success-stories {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .story-card {
+    padding: 1.25rem;
+  }
+  
+  .story-content blockquote {
+    padding-left: 0.75rem;
+  }
+}
+
+/* =============================================================================
+   OPTION 2: COMPLETE REMOVAL (uncomment to use instead)
+   ============================================================================= */
+
+/*
+.success-stories {
+  display: none !important;
+}
+
+.section:has(.success-stories) {
+  display: none !important;
+}
+*/
+
+/* =============================================================================
+   PLATFORM REVIEWS SPACING FIX
+   ============================================================================= */
+
+.platform-reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.platform-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: var(--porcelain);
+  border-radius: 12px;
+  border-left: 4px solid var(--sky-blue);
+}
+
+.platform-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Increased gap between icon and platform name */
+  font-weight: 600;
+  color: var(--slate-ink);
+  min-width: 120px; /* Ensure consistent width */
+}
+
+.platform-logo svg {
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.platform-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Space between rating number and stars */
+  font-weight: 600;
+  color: var(--dallas-navy);
+}
+
+.platform-rating .value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  min-width: 32px; /* Ensure number doesn't crowd */
+}
+
+.platform-rating .stars {
+  color: var(--color-star) !important;
+  font-family: Arial, Helvetica, Roboto, "Segoe UI", sans-serif;
+  line-height: 1;
+  font-size: 1.1rem;
+  margin-right: 0.5rem; /* Space between stars and "reviews" text */
+}
+
+.platform-count {
+  font-size: 0.9rem;
+  color: var(--cool-gray);
+  white-space: nowrap; /* Prevent "reviews" text from wrapping */
+  min-width: 80px; /* Ensure consistent spacing */
+  text-align: right;
+}
+
+/* Mobile adjustments for platform reviews */
+@media (max-width: 640px) {
+  .platform-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .platform-logo {
+    justify-content: center;
+    min-width: auto;
+  }
+  
+  .platform-rating {
+    justify-content: center;
+  }
+  
+  .platform-count {
+    text-align: center;
+    min-width: auto;
+  }
+}
+
+/* =============================================================================
+   TESTIMONIAL HIGHLIGHTS - COMPACT DESIGN
+   ============================================================================= */
+
+.testimonial-highlights {
+  background: linear-gradient(135deg, var(--porcelain) 0%, var(--cloud) 100%);
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  margin: 3rem 0;
+}
+
+.testimonial-highlights h2 {
+  text-align: center;
+  color: var(--dallas-navy);
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.highlight-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(14, 54, 90, 0.06);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.highlight-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(14, 54, 90, 0.12);
+  border-color: var(--sky-blue);
+}
+
+.highlight-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+  line-height: 1;
+}
+
+.highlight-card h3 {
+  color: var(--dallas-navy);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.highlight-quote {
+  color: var(--cool-gray);
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.quote-author {
+  color: var(--sky-blue);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Tablet Layout */
+@media (max-width: 1024px) {
+  .highlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  
+  .testimonial-highlights {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+/* Mobile Layout */
+@media (max-width: 640px) {
+  .highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .testimonial-highlights {
+    padding: 2rem 1rem;
+  }
+  
+  .testimonial-highlights h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .highlight-card {
+    padding: 1.25rem;
+  }
+  
+  .highlight-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .highlight-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .highlight-quote {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .testimonial-highlights h2 {
+    font-size: 1.5rem;
+  }
+  
+  .highlight-card {
+    padding: 1rem;
+  }
+}
