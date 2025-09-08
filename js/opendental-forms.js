@@ -1,22 +1,18 @@
 /*
- * Open Dental Forms Integration Script - Spring Valley Dental Associates
- * Save as: js/opendental-forms.js
- * 
- * This script handles the integration with Open Dental webforms
- * Replace the placeholder URLs with actual Open Dental form URLs
+ * Fixed Open Dental Forms Integration Script - Spring Valley Dental Associates
+ * This version handles browser popup blocking and provides fallback options
  */
 
-// Configuration - Replace these with your actual Open Dental form URLs
+// Configuration - Your actual Open Dental form URLs
 const OPENDENTAL_FORMS = {
   NEW_PATIENT_FORM_URL: 'https://patientviewer.com/WebFormsGWT/GWT/WebForms/WebForms.html?DOID=20379&RKID=5353&WSDID=164555&NFID=164561&NFID=164558&NFID=164564&NFID=164567&NFID=164570',
-  EXISTING_PATIENT_FORM_URL: 'https://patientviewer.com/WebForms.html?RegistrationKey=YOUR_REG_KEY&FID=124&CID=456',
-  EMERGENCY_FORM_URL: 'https://patientviewer.com/WebForms.html?RegistrationKey=YOUR_REG_KEY&FID=125&CID=456',
-  CONSULTATION_FORM_URL: 'https://patientviewer.com/WebForms.html?RegistrationKey=YOUR_REG_KEY&FID=126&CID=456'
+  EXISTING_PATIENT_FORM_URL: 'tel:+19728522222', // Fallback to phone call
+  EMERGENCY_FORM_URL: 'tel:+19728522222',
+  CONSULTATION_FORM_URL: 'tel:+19728522222'
 };
 
 // Analytics tracking for form usage
 function trackFormUsage(formType) {
-  // Replace with your analytics tracking code
   if (typeof gtag !== 'undefined') {
     gtag('event', 'form_start', {
       'event_category': 'Patient Forms',
@@ -24,12 +20,10 @@ function trackFormUsage(formType) {
       'form_type': formType
     });
   }
-  
-  // Console log for debugging
-  console.log('Patient form opened:', formType);
+  console.log('Patient form accessed:', formType);
 }
 
-// Main function to open Open Dental forms
+// Main function to handle form opening
 function openOpenDentalForm(formUrlKey) {
   const formUrl = OPENDENTAL_FORMS[formUrlKey];
   
@@ -39,46 +33,67 @@ function openOpenDentalForm(formUrlKey) {
     return;
   }
 
+  // Handle phone numbers differently
+  if (formUrl.startsWith('tel:')) {
+    window.location.href = formUrl;
+    return;
+  }
+
   // Determine form type for analytics
   const formType = formUrlKey.replace('_FORM_URL', '').toLowerCase().replace('_', '-');
-  
-  // Track form usage
   trackFormUsage(formType);
-  
-  // Show loading indicator
-  showLoadingMessage(formType);
-  
-  // Open form in new window/tab
-  const formWindow = window.open(
-    formUrl, 
-    'SpringValleyDentistryForm',
-    'width=900,height=700,scrollbars=yes,resizable=yes,menubar=no,toolbar=no,location=no,status=no'
-  );
-  
-  // Check if popup was blocked
-  if (!formWindow || formWindow.closed || typeof formWindow.closed === 'undefined') {
-    showPopupBlockedMessage(formUrl);
+
+  // Try different methods to open the form
+  if (formUrlKey === 'NEW_PATIENT_FORM_URL') {
+    openNewPatientForm(formUrl);
   } else {
-    // Hide loading message after a short delay
-    setTimeout(hideLoadingMessage, 2000);
-    
-    // Focus the form window
-    formWindow.focus();
-    
-    // Optional: Monitor when form window is closed
-    const checkClosed = setInterval(() => {
-      if (formWindow.closed) {
-        clearInterval(checkClosed);
-        onFormClosed(formType);
-      }
-    }, 1000);
+    // For other forms, direct to phone call
+    window.location.href = 'tel:+19728522222';
   }
 }
 
-// Show loading message
-function showLoadingMessage(formType) {
+// Specialized function for new patient forms
+function openNewPatientForm(formUrl) {
+  // Method 1: Try to open in same tab first (most reliable)
+  const userConfirmed = confirm(
+    "You're about to be redirected to our secure patient forms. This will open in the same tab. Click OK to continue, or Cancel to call us instead at (972) 852-2222."
+  );
+  
+  if (userConfirmed) {
+    // Show loading message
+    showRedirectMessage();
+    // Small delay to show the message, then redirect
+    setTimeout(() => {
+      window.location.href = formUrl;
+    }, 1500);
+  } else {
+    // User cancelled, offer phone call
+    window.location.href = 'tel:+19728522222';
+  }
+}
+
+// Alternative method: Try popup with better fallback
+function openFormPopup(formUrl) {
+  // Create a user-initiated action to avoid popup blocking
+  const popup = window.open('', 'PatientForm', 'width=1000,height=700,scrollbars=yes,resizable=yes');
+  
+  if (!popup || popup.closed || typeof popup.closed === 'undefined') {
+    // Popup was blocked
+    showPopupBlockedMessage(formUrl);
+  } else {
+    // Popup opened successfully
+    popup.location.href = formUrl;
+    popup.focus();
+    
+    // Show success message
+    showFormOpenedMessage();
+  }
+}
+
+// Show redirect loading message
+function showRedirectMessage() {
   const message = document.createElement('div');
-  message.id = 'form-loading-message';
+  message.id = 'redirect-loading-message';
   message.innerHTML = `
     <div style="
       position: fixed;
@@ -92,7 +107,7 @@ function showLoadingMessage(formType) {
       z-index: 10000;
       text-align: center;
       max-width: 400px;
-      border-left: 4px solid var(--color-primary-accent, #0077B6);
+      border-left: 4px solid #0077B6;
     ">
       <div style="
         display: inline-block;
@@ -105,15 +120,15 @@ function showLoadingMessage(formType) {
         margin-bottom: 1rem;
       "></div>
       <h3 style="
-        color: var(--color-primary, #0E365A);
+        color: #0E365A;
         margin-bottom: 0.5rem;
         font-family: 'Montserrat', sans-serif;
-      ">Opening Your Form</h3>
+      ">Redirecting to Patient Forms</h3>
       <p style="
-        color: var(--color-text-secondary, #5A6D80);
+        color: #5A6D80;
         margin: 0;
         font-family: 'Inter', sans-serif;
-      ">Please wait while we load your secure patient form...</p>
+      ">You'll be redirected to our secure patient registration in just a moment...</p>
     </div>
     <div style="
       position: fixed;
@@ -126,93 +141,54 @@ function showLoadingMessage(formType) {
     "></div>
   `;
   
-  // Add spin animation
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-  `;
-  document.head.appendChild(style);
+  // Add spin animation if not already present
+  if (!document.querySelector('#form-spinner-style')) {
+    const style = document.createElement('style');
+    style.id = 'form-spinner-style';
+    style.textContent = `
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    `;
+    document.head.appendChild(style);
+  }
   
   document.body.appendChild(message);
 }
 
-// Hide loading message
-function hideLoadingMessage() {
-  const message = document.getElementById('form-loading-message');
-  if (message) {
-    message.remove();
-  }
-}
-
-// Show error message
-function showErrorMessage(errorText) {
+// Show form opened successfully message
+function showFormOpenedMessage() {
   const message = document.createElement('div');
-  message.id = 'form-error-message';
+  message.id = 'form-opened-message';
   message.innerHTML = `
     <div style="
       position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 32px rgba(228, 108, 94, 0.2);
+      top: 20px;
+      right: 20px;
+      background: #8FD6C8;
+      color: #0E365A;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(143, 214, 200, 0.3);
       z-index: 10000;
-      text-align: center;
-      max-width: 400px;
-      border-left: 4px solid var(--color-alert, #E46C5E);
+      max-width: 300px;
+      font-family: 'Inter', sans-serif;
     ">
-      <div style="
-        font-size: 2rem;
-        color: var(--color-alert, #E46C5E);
-        margin-bottom: 1rem;
-      ">⚠️</div>
-      <h3 style="
-        color: var(--color-primary, #0E365A);
-        margin-bottom: 1rem;
-        font-family: 'Montserrat', sans-serif;
-      ">Form Unavailable</h3>
-      <p style="
-        color: var(--color-text-secondary, #5A6D80);
-        margin-bottom: 1.5rem;
-        font-family: 'Inter', sans-serif;
-      ">${errorText}</p>
-      <button onclick="closeErrorMessage()" style="
-        background: var(--color-primary-accent, #0077B6);
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 6px;
-        cursor: pointer;
-        font-weight: 500;
-      ">Close</button>
+      <strong>Form Opened Successfully!</strong><br>
+      <small>Check the new window/tab for your patient forms.</small>
     </div>
-    <div style="
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 9999;
-    " onclick="closeErrorMessage()"></div>
   `;
   
   document.body.appendChild(message);
+  
+  // Auto-remove after 5 seconds
+  setTimeout(() => {
+    const msg = document.getElementById('form-opened-message');
+    if (msg) msg.remove();
+  }, 5000);
 }
 
-// Close error message
-function closeErrorMessage() {
-  const message = document.getElementById('form-error-message');
-  if (message) {
-    message.remove();
-  }
-}
-
-// Show popup blocked message
+// Show popup blocked message with better options
 function showPopupBlockedMessage(formUrl) {
   const message = document.createElement('div');
   message.id = 'popup-blocked-message';
@@ -229,43 +205,59 @@ function showPopupBlockedMessage(formUrl) {
       z-index: 10000;
       text-align: center;
       max-width: 450px;
-      border-left: 4px solid var(--color-primary-accent, #0077B6);
+      border-left: 4px solid #0077B6;
     ">
       <div style="
         font-size: 2rem;
-        color: var(--color-primary-accent, #0077B6);
         margin-bottom: 1rem;
-      ">🚫</div>
+      ">??</div>
       <h3 style="
-        color: var(--color-primary, #0E365A);
+        color: #0E365A;
         margin-bottom: 1rem;
         font-family: 'Montserrat', sans-serif;
-      ">Popup Blocked</h3>
+      ">Choose How to Access Your Forms</h3>
       <p style="
-        color: var(--color-text-secondary, #5A6D80);
+        color: #5A6D80;
         margin-bottom: 1.5rem;
         font-family: 'Inter', sans-serif;
         line-height: 1.5;
-      ">Your browser blocked the form popup. Please allow popups for our website or click the button below to open the form in a new tab.</p>
-      <div style="display: flex; gap: 12px; justify-content: center;">
-        <button onclick="closePopupMessage()" style="
-          background: var(--color-neutral-medium, #EEF2F6);
-          color: var(--color-text-primary, #24313A);
-          border: none;
-          padding: 10px 20px;
-          border-radius: 6px;
-          cursor: pointer;
-          font-weight: 500;
-        ">Close</button>
+      ">Your browser blocked the popup. Please choose one of these options:</p>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
         <a href="${formUrl}" target="_blank" style="
-          background: var(--color-primary-accent, #0077B6);
+          background: #0077B6;
           color: white;
           text-decoration: none;
-          padding: 10px 20px;
+          padding: 12px 20px;
+          border-radius: 6px;
+          font-weight: 600;
+          display: block;
+        ">Open Forms in New Tab</a>
+        <button onclick="redirectToForms('${formUrl}')" style="
+          background: #0E365A;
+          color: white;
+          border: none;
+          padding: 12px 20px;
+          border-radius: 6px;
+          cursor: pointer;
+          font-weight: 600;
+        ">Open Forms in This Tab</button>
+        <a href="tel:+19728522222" style="
+          background: #EEF2F6;
+          color: #24313A;
+          text-decoration: none;
+          padding: 12px 20px;
           border-radius: 6px;
           font-weight: 500;
-        ">Open Form</a>
+        ">Call Us Instead: (972) 852-2222</a>
       </div>
+      <button onclick="closePopupMessage()" style="
+        background: transparent;
+        border: none;
+        color: #5A6D80;
+        margin-top: 1rem;
+        cursor: pointer;
+        text-decoration: underline;
+      ">Close</button>
     </div>
     <div style="
       position: fixed;
@@ -281,35 +273,18 @@ function showPopupBlockedMessage(formUrl) {
   document.body.appendChild(message);
 }
 
-// Close popup blocked message
-function closePopupMessage() {
-  const message = document.getElementById('popup-blocked-message');
-  if (message) {
-    message.remove();
-  }
+// Redirect to forms in same tab
+function redirectToForms(formUrl) {
+  closePopupMessage();
+  showRedirectMessage();
+  setTimeout(() => {
+    window.location.href = formUrl;
+  }, 1500);
 }
 
-// Handle when form window is closed
-function onFormClosed(formType) {
-  // Track form completion (note: this doesn't guarantee completion, just that window was closed)
-  if (typeof gtag !== 'undefined') {
-    gtag('event', 'form_closed', {
-      'event_category': 'Patient Forms',
-      'event_label': formType,
-      'form_type': formType
-    });
-  }
-  
-  console.log('Form window closed:', formType);
-  
-  // Optional: Show a thank you message or next steps
-  showThankYouMessage(formType);
-}
-
-// Show thank you message after form completion
-function showThankYouMessage(formType) {
+// Show error message
+function showErrorMessage(errorText) {
   const message = document.createElement('div');
-  message.id = 'thank-you-message';
   message.innerHTML = `
     <div style="
       position: fixed;
@@ -319,30 +294,21 @@ function showThankYouMessage(formType) {
       background: white;
       padding: 2rem;
       border-radius: 12px;
-      box-shadow: 0 8px 32px rgba(143, 214, 200, 0.2);
+      box-shadow: 0 8px 32px rgba(228, 108, 94, 0.2);
       z-index: 10000;
       text-align: center;
       max-width: 400px;
-      border-left: 4px solid var(--color-success, #8FD6C8);
+      border-left: 4px solid #E46C5E;
     ">
-      <div style="
-        font-size: 2rem;
-        color: var(--color-success, #8FD6C8);
-        margin-bottom: 1rem;
-      ">✅</div>
-      <h3 style="
-        color: var(--color-primary, #0E365A);
-        margin-bottom: 1rem;
-        font-family: 'Montserrat', sans-serif;
-      ">Thank You!</h3>
-      <p style="
-        color: var(--color-text-secondary, #5A6D80);
-        margin-bottom: 1.5rem;
-        font-family: 'Inter', sans-serif;
-        line-height: 1.5;
-      ">If you completed your form, we'll review it and contact you within 24 hours. If you need immediate assistance, please call us at (972) 852-2222.</p>
-      <button onclick="closeThankYouMessage()" style="
-        background: var(--color-primary-accent, #0077B6);
+      <div style="font-size: 2rem; color: #E46C5E; margin-bottom: 1rem;">??</div>
+      <h3 style="color: #0E365A; margin-bottom: 1rem; font-family: 'Montserrat', sans-serif;">
+        Form Unavailable
+      </h3>
+      <p style="color: #5A6D80; margin-bottom: 1.5rem; font-family: 'Inter', sans-serif;">
+        ${errorText}
+      </p>
+      <button onclick="this.parentElement.parentElement.remove()" style="
+        background: #0077B6;
         color: white;
         border: none;
         padding: 10px 20px;
@@ -351,34 +317,19 @@ function showThankYouMessage(formType) {
         font-weight: 500;
       ">Close</button>
     </div>
-    <div style="
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.3);
-      z-index: 9999;
-    " onclick="closeThankYouMessage()"></div>
   `;
-  
   document.body.appendChild(message);
-  
-  // Auto-close after 8 seconds
-  setTimeout(closeThankYouMessage, 8000);
 }
 
-// Close thank you message
-function closeThankYouMessage() {
-  const message = document.getElementById('thank-you-message');
-  if (message) {
-    message.remove();
-  }
+// Close popup message
+function closePopupMessage() {
+  const message = document.getElementById('popup-blocked-message');
+  if (message) message.remove();
 }
 
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', function() {
-  // Add click event listeners to form buttons
+  // Handle form buttons - Updated to be more reliable
   const formButtons = document.querySelectorAll('[data-form-type]');
   
   formButtons.forEach(button => {
@@ -390,22 +341,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Log page load for analytics
-  if (typeof gtag !== 'undefined') {
-    gtag('event', 'page_view', {
-      'page_title': 'Contact Forms',
-      'page_location': window.location.href
+  // Also handle direct href links as fallback
+  const directFormLinks = document.querySelectorAll('a[href*="patientviewer.com"]');
+  directFormLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      openNewPatientForm(this.href);
     });
-  }
+  });
 });
-
-// Utility function to get URL parameters (if needed for pre-filling forms)
-function getURLParameter(name) {
-  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
-}
 
 // Export functions for global access
 window.openOpenDentalForm = openOpenDentalForm;
-window.closeErrorMessage = closeErrorMessage;
 window.closePopupMessage = closePopupMessage;
-window.closeThankYouMessage = closeThankYouMessage;
+window.redirectToForms = redirectToForms;
