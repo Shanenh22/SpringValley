@@ -1536,22 +1536,32 @@ body.patient-info .info-section {
   scroll-margin-top: 120px; /* Adjust this value based on your header height */
 }
 
-/* Additional offset for mobile devices where header might be different */
+/* Mobile-specific scroll offset fixes */
 @media (max-width: 768px) {
   #general-care,
   #treatments,
   #comfort,
   #costs,
   #post-op {
-    scroll-margin-top: 140px; /* Slightly more space on mobile */
+    scroll-margin-top: 200px; /* Increased for mobile header + FAQ pills */
   }
   
-  /* Account for FAQ category pills being sticky on mobile */
-  .faq-categories + * #general-care,
-  .faq-categories + * #treatments,
-  .faq-categories + * #comfort,
-  .faq-categories + * #costs,
-  .faq-categories + * #post-op {
-    scroll-margin-top: 180px; /* More space when FAQ pills are also sticky */
+  /* Ensure FAQ containers also have proper offset */
+  .faq-container {
+    scroll-margin-top: 200px;
+  }
+  
+  /* Alternative: Use padding-top method for better mobile compatibility */
+  #general-care::before,
+  #treatments::before,
+  #comfort::before,
+  #costs::before,
+  #post-op::before {
+    content: "";
+    display: block;
+    height: 200px;
+    margin-top: -200px;
+    visibility: hidden;
+    pointer-events: none;
   }
 }
