@@ -299,32 +299,3 @@ class SmoothScroll {
   }
 }
 
-/**
- * Initialize all navigation functionality
- */
-document.addEventListener('DOMContentLoaded', () => {
-  // Initialize mobile navigation
-  new MobileNavigation();
-  
-  // Initialize smooth scrolling
-  new SmoothScroll();
-  
-  // Emergency page accordion fix
-  if (document.querySelector('.faq-accordion details')) {
-    document.querySelectorAll('.faq-accordion details summary').forEach(summary => {
-      summary.addEventListener('click', function(e) {
-        e.preventDefault();
-        const details = this.parentElement;
-        const isOpen = details.hasAttribute('open');
-        
-        if (isOpen) {
-          details.removeAttribute('open');
-        } else {
-          details.setAttribute('open', '');
-        }
-      });
-    });
-  }
-  
-  console.log('Navigation system initialized');
-});
