@@ -2957,15 +2957,7 @@ textarea:focus-visible {
     outline-offset: 2px;
   }
   
-  /* "Patients" section */
-  #site-nav .menu-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    gap: 0.25rem;
-  }
-  
+ 
   #site-nav .menu-links a {
     display: block;
     padding: 0.6rem 0.25rem;
@@ -3749,14 +3741,7 @@ body.patient-info .card-grid {
     outline-offset: 2px;
   }
   
-  /* "Patients" section */
-  #site-nav .menu-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    gap: 0.25rem;
-  }
+  
   
   #site-nav .menu-links a {
     display: block;
@@ -5225,14 +5210,7 @@ body.patient-info .card-grid {
     outline-offset: 2px;
   }
   
-  /* "Patients" section */
-  #site-nav .menu-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    gap: 0.25rem;
-  }
+  
   
   #site-nav .menu-links a {
     display: block;
@@ -10093,5 +10071,929 @@ input[type="button"],
     margin-top: 15px;           /* keep button close to text */
   }
 }
+/* =============================================================================
+   MOBILE NAVIGATION UPDATES FOR HTML STRUCTURE
+   Updated to work with HTML-based navigation structure
+   ============================================================================= */
 
+/* Mobile navigation order and display fixes */
+@media (max-width: 768px) {
+  /* Ensure mobile sections are visible */
+  #site-nav .menu-header,
+  #site-nav .menu-ctas,
+  #site-nav .menu-section,
+  #site-nav .menu-footer {
+    display: block !important;
+  }
+  
+  /* Hide desktop links on mobile */
+  #site-nav .desktop-links {
+    display: none !important;
+  }
+  
+  /* Ensure proper spacing between sections */
+  #site-nav .menu-section {
+    border-bottom: 1px solid rgba(14, 54, 90, 0.08);
+    padding: 1rem 0;
+  }
+  
+  #site-nav .menu-section:last-of-type {
+    border-bottom: none;
+  }
+  
+  /* Style the new "Pages" section like other menu sections */
+  #site-nav .menu-section .menu-links {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+  
+  #site-nav .menu-section .menu-links li {
+    margin: 0.25rem 0 !important;
+    list-style: none !important;
+  }
+  
+  #site-nav .menu-section .menu-links a {
+    display: block !important;
+    padding: 0.75rem 0.5rem !important;
+    text-decoration: none !important;
+    color: var(--color-text-primary) !important;
+    background: transparent !important;
+    border-radius: 6px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    border: none !important;
+  }
+  
+  #site-nav .menu-section .menu-links a:hover,
+  #site-nav .menu-section .menu-links a:focus {
+    background: #f3f4f6 !important;
+    color: var(--sky-blue) !important;
+  }
+  
+  /* Intent grid styling consistency */
+  #site-nav .intent-grid {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+  
+  #site-nav .intent-grid li {
+    margin: 0.25rem 0 !important;
+    list-style: none !important;
+  }
+  
+  #site-nav .intent-grid a {
+    display: block !important;
+    padding: 0.75rem 0.5rem !important;
+    text-decoration: none !important;
+    color: var(--color-text-primary) !important;
+    background: transparent !important;
+    border-radius: 6px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    border: none !important;
+  }
+  
+  #site-nav .intent-grid a:hover,
+  #site-nav .intent-grid a:focus {
+    background: #f3f4f6 !important;
+    color: var(--sky-blue) !important;
+  }
+  
+  /* Section titles */
+  #site-nav .section-title {
+    font-size: 0.75rem !important;
+    color: #6b7280 !important;
+    margin: 0 0 0.75rem 0 !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    padding: 0 0.5rem !important;
+  }
+}
 
+/* Desktop - show only desktop links */
+@media (min-width: 769px) {
+  #site-nav .menu-header,
+  #site-nav .menu-ctas,
+  #site-nav .menu-section,
+  #site-nav .menu-footer {
+    display: none !important;
+  }
+  
+  #site-nav .desktop-links {
+    display: flex !important;
+  }
+}
+
+/* Accessibility improvements */
+#site-nav .menu-links a:focus,
+#site-nav .intent-grid a:focus {
+  outline: 2px solid var(--sky-blue) !important;
+  outline-offset: 2px !important;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  #site-nav .menu-section {
+    border-bottom: 2px solid var(--color-text-primary) !important;
+  }
+  
+  #site-nav .menu-links a,
+  #site-nav .intent-grid a {
+    border: 1px solid transparent !important;
+  }
+  
+  #site-nav .menu-links a:hover,
+  #site-nav .intent-grid a:hover {
+    border-color: var(--color-text-primary) !important;
+  }
+}
+/* =============================================================================
+   CLEANED ADDITIONAL CSS - FINAL VERSION
+   Spring Valley Dental Associates
+   
+   This file contains only unique styles not covered in styles.css
+   Removed duplicates and conflicting navigation rules
+   ============================================================================= */
+
+/* =============================================================================
+   BLOG SPECIFIC ENHANCEMENTS
+   ============================================================================= */
+
+/* Blog Categories Container */
+.blog-categories-container {
+  background: var(--porcelain, #F7FAFC);
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--sky-blue, #0077B6);
+}
+
+.blog-categories-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--dallas-navy, #0E365A);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.category-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(14, 54, 90, 0.15);
+  border-color: var(--sky-blue, #0077B6);
+}
+
+.category-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+  color: var(--sky-blue, #0077B6);
+}
+
+.category-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--dallas-navy, #0E365A);
+}
+
+/* Blog Grid Layout Override */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 items per row on desktop */
+  gap: 1.5rem;
+}
+
+/* Responsive blog grid */
+@media (max-width: 1024px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =============================================================================
+   CONTACT FORM SPECIFIC STYLES
+   ============================================================================= */
+
+.contact-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(14, 54, 90, 0.1);
+  overflow: hidden;
+}
+
+.contact-header {
+  background: linear-gradient(135deg, var(--dallas-navy, #0E365A) 0%, var(--sky-blue, #0077B6) 100%);
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.contact-header h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: white;
+}
+
+.form-container {
+  padding: 3rem 2rem;
+  background: var(--porcelain, #F7FAFC);
+}
+
+/* Form Options Grid */
+.form-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.form-option-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(14, 54, 90, 0.08);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.form-option-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(14, 54, 90, 0.15);
+  border-color: var(--sky-blue, #0077B6);
+}
+
+.form-option-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: var(--dallas-navy, #0E365A);
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+@media (max-width: 768px) {
+  .contact-header {
+    padding: 2rem 1rem;
+  }
+
+  .contact-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .form-container {
+    padding: 2rem 1rem;
+  }
+
+  .form-options-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .form-option-card {
+    padding: 24px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .form-option-card {
+    padding: 20px 12px;
+  }
+}
+
+/* =============================================================================
+   PATIENT INFO SPECIFIC STYLES
+   ============================================================================= */
+
+/* Patient Info Page Structure */
+body.patient-info .section {
+  max-width: 1200px;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important;
+}
+
+/* Form Buttons - Patient Info Specific */
+.form-button.new-patient-btn,
+.form-button.existing-patient-btn {
+  background: var(--sky-blue, #0077B6);
+  color: white !important;
+  border: 2px solid var(--sky-blue, #0077B6);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.05rem;
+  border-radius: 0.55rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.form-button.new-patient-btn:hover,
+.form-button.existing-patient-btn:hover {
+  background: var(--dallas-navy, #0E365A);
+  border-color: var(--dallas-navy, #0E365A);
+  color: white !important;
+}
+
+/* Dropdown Styling - Patient Info Plus Signs */
+.info-collapse > summary {
+  position: relative;
+  padding-right: 2rem !important;
+}
+
+.info-collapse > summary::after {
+  content: '+' !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  font-size: 1.2rem !important;
+  font-weight: bold !important;
+  color: var(--sky-blue, #0077B6) !important;
+  transition: transform 0.3s ease !important;
+}
+
+.info-collapse[open] > summary::after {
+  transform: translateY(-50%) rotate(45deg) !important;
+}
+
+/* Stacked dropdown sections - Patient Info */
+body.patient-info .info-collapse {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 1px solid #e5e7eb !important;
+  border-bottom: 0 !important;
+  background: white !important;
+  border-radius: 0 !important;
+}
+
+body.patient-info .info-collapse:first-child {
+  border-radius: 12px 12px 0 0 !important;
+}
+
+body.patient-info .info-collapse:last-child {
+  border-radius: 0 0 12px 12px !important;
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+body.patient-info .info-collapse:only-child {
+  border-radius: 12px !important;
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+body.patient-info details summary {
+  margin: 0 !important;
+  padding: 1.5rem !important;
+  background: #f8fafc !important;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+body.patient-info .info-section {
+  padding: 1.5rem !important;
+  margin: 0 !important;
+  background: white !important;
+}
+
+/* Bottom CTA styling - Patient Info */
+.bottom-cta .button-primary,
+.bottom-cta .button-secondary,
+.contact-btn.primary,
+.contact-btn.secondary,
+.contact-btn.tertiary {
+  background: var(--sky-blue, #0077B6);
+  color: white !important;
+  border: 2px solid var(--sky-blue, #0077B6);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.05rem;
+  border-radius: 0.55rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin: 0.25rem;
+}
+
+.bottom-cta .button-primary:hover,
+.bottom-cta .button-secondary:hover,
+.contact-btn.primary:hover,
+.contact-btn.secondary:hover,
+.contact-btn.tertiary:hover {
+  background: var(--dallas-navy, #0E365A);
+  border-color: var(--dallas-navy, #0E365A);
+  color: white !important;
+}
+
+/* =============================================================================
+   FAQ SYSTEM FIXES - CRITICAL OVERRIDES
+   ============================================================================= */
+
+/* FAQ Sections - Remove excessive spacing */
+.faq-section {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* FAQ items stack tightly */
+#faq details,
+.faq-accordion details,
+.faq-item {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 1px solid #e5e7eb !important;
+  border-bottom: 0 !important;
+  background: white !important;
+  border-radius: 0 !important;
+}
+
+/* Round first and last FAQ items */
+#faq details:first-child,
+.faq-accordion details:first-child,
+.faq-item:first-child {
+  border-radius: 12px 12px 0 0 !important;
+}
+
+#faq details:last-child,
+.faq-accordion details:last-child,
+.faq-item:last-child {
+  border-radius: 0 0 12px 12px !important;
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+/* FAQ Summary/Question styling */
+#faq summary,
+.faq-accordion summary,
+.faq-question {
+  margin: 0 !important;
+  padding: 1.5rem !important;
+  background: #f8fafc !important;
+  border-bottom: 1px solid #e5e7eb;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--dallas-navy, #0E365A);
+  position: relative;
+  padding-right: 3rem !important;
+}
+
+/* FAQ dropdown icon - + instead of ? */
+#faq summary::after,
+.faq-accordion summary::after,
+.faq-question::after {
+  content: '+' !important;
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--sky-blue, #0077B6);
+  transition: transform 0.3s ease;
+  float: none !important;
+}
+
+/* Rotate + to x when open */
+#faq details[open] summary::after,
+.faq-accordion details[open] summary::after,
+.faq-item.open .faq-question::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* FAQ Answer/Content styling */
+#faq details > *:not(summary),
+.faq-accordion details > *:not(summary),
+.faq-answer {
+  margin: 0 !important;
+  padding: 1.5rem !important;
+  background: white !important;
+  color: var(--slate-ink, #24313A);
+  border-top: 1px solid #e5e7eb;
+}
+
+.faq-answer {
+  display: none;
+}
+
+.faq-item.open .faq-answer,
+.faq-answer.show {
+  display: block;
+}
+
+/* Remove spacing between FAQ category sections */
+.faq-container > section {
+  margin: 0 !important;
+}
+
+.faq-container > section + section {
+  margin-top: 2rem !important;
+}
+
+/* FAQ Section headers */
+.faq-container h2 {
+  color: var(--dallas-navy, #0E365A);
+  font-family: 'Montserrat', sans-serif;
+  margin: 2rem 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--sky-blue, #0077B6);
+}
+
+.faq-container h2:first-child {
+  margin-top: 0;
+}
+
+/* =============================================================================
+   EMERGENCY PAGE SPECIFIC STYLES
+   ============================================================================= */
+
+/* Emergency severity "pill" badges */
+.severity-level {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1;
+  background: rgba(0, 119, 182, 0.12);
+  color: var(--dallas-navy, #0E365A);
+  border: 1px solid rgba(14, 54, 90, 0.12);
+}
+
+/* Optional dot indicator */
+.severity-level::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.75;
+}
+
+/* Severity variants */
+.severity-level.high {
+  background: rgba(228, 108, 94, 0.16);
+  color: #8a1414;
+  border-color: rgba(228, 108, 94, 0.35);
+}
+
+.severity-level.medium {
+  background: rgba(255, 193, 7, 0.16);
+  color: #8a6d00;
+  border-color: rgba(255, 193, 7, 0.35);
+}
+
+.severity-level.low {
+  background: rgba(143, 214, 200, 0.18);
+  color: #0e5b4e;
+  border-color: rgba(143, 214, 200, 0.35);
+}
+
+/* Spacing tweak under emergency headings */
+.emergency-card h3 + .severity-level { 
+  margin-top: 0.25rem; 
+}
+
+/* Emergency hero compact spacing */
+.page-emergency .emergency-hero h1 { 
+  margin-bottom: .4rem; 
+  line-height: 1.15; 
+}
+
+.page-emergency .emergency-hero p { 
+  margin: .2rem 0 .75rem; 
+  line-height: 1.35; 
+}
+
+.page-emergency .emergency-hero .button-group { 
+  margin: .75rem 0 0; 
+}
+
+/* Keep pills tidy on small screens */
+@media (max-width: 420px) {
+  .severity-level { 
+    font-size: 0.8125rem; 
+    padding: 0.2rem 0.5rem; 
+  }
+}
+
+/* =============================================================================
+   REVIEW PAGE SPECIFIC STYLES
+   ============================================================================= */
+
+/* Review page specific adjustments - only unique styles not in main CSS */
+.review-summary-mobile-fix {
+  /* Any mobile-specific review fixes that aren't covered in styles.css */
+}
+
+/* =============================================================================
+   MOBILE RESPONSIVE ADJUSTMENTS
+   ============================================================================= */
+
+@media (max-width: 768px) {
+  /* FAQ mobile adjustments */
+  #faq summary,
+  .faq-accordion summary,
+  .faq-question {
+    padding: 1rem 2.5rem 1rem 1rem !important;
+  }
+
+  #faq summary::after,
+  .faq-accordion summary::after,
+  .faq-question::after {
+    right: 1rem;
+  }
+
+  #faq details > *:not(summary),
+  .faq-accordion details > *:not(summary),
+  .faq-answer {
+    padding: 1rem !important;
+  }
+}
+
+/* =============================================================================
+   UTILITY CLASSES
+   ============================================================================= */
+
+/* Force hide honeypot fields */
+.hp-wrap {
+  display: none !important;
+}
+
+/* Hidden utility class */
+.hidden {
+  display: none !important;
+}
+/* =============================================================================
+   MOBILE NAVIGATION UPDATES FOR HTML STRUCTURE
+   Updated to work with HTML-based navigation structure
+   ============================================================================= */
+/* Mobile navigation order and display fixes */
+@media (max-width: 768px) {
+  /* Ensure mobile sections are visible */
+  #site-nav .menu-header,
+  #site-nav .menu-ctas,
+  #site-nav .menu-section,
+  #site-nav .menu-footer {
+    display: block !important;
+  }
+  
+  /* Hide desktop links on mobile */
+  #site-nav .desktop-links {
+    display: none !important;
+  }
+  
+  /* Ensure proper spacing between sections */
+  #site-nav .menu-section {
+    border-bottom: 1px solid rgba(14, 54, 90, 0.08);
+    padding: 1rem 0;
+  }
+  
+  #site-nav .menu-section:last-of-type {
+    border-bottom: none;
+  }
+  
+  /* Style the new "Pages" section like other menu sections */
+  #site-nav .menu-section .menu-links {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+  
+  #site-nav .menu-section .menu-links li {
+    margin: 0.25rem 0 !important;
+    list-style: none !important;
+  }
+  
+  #site-nav .menu-section .menu-links a {
+    display: block !important;
+    padding: 0.75rem 0.5rem !important;
+    text-decoration: none !important;
+    color: var(--color-text-primary) !important;
+    background: transparent !important;
+    border-radius: 6px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    border: none !important;
+  }
+  
+  #site-nav .menu-section .menu-links a:hover,
+  #site-nav .menu-section .menu-links a:focus {
+    background: #f3f4f6 !important;
+    color: var(--sky-blue) !important;
+  }
+  
+  /* Intent grid styling consistency */
+  #site-nav .intent-grid {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+  
+  #site-nav .intent-grid li {
+    margin: 0.25rem 0 !important;
+    list-style: none !important;
+  }
+  
+  #site-nav .intent-grid a {
+    display: block !important;
+    padding: 0.75rem 0.5rem !important;
+    text-decoration: none !important;
+    color: var(--color-text-primary) !important;
+    background: transparent !important;
+    border-radius: 6px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    border: none !important;
+  }
+  
+  #site-nav .intent-grid a:hover,
+  #site-nav .intent-grid a:focus {
+    background: #f3f4f6 !important;
+    color: var(--sky-blue) !important;
+  }
+  
+  /* Section titles */
+  #site-nav .section-title {
+    font-size: 0.75rem !important;
+    color: #6b7280 !important;
+    margin: 0 0 0.75rem 0 !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    padding: 0 0.5rem !important;
+  }
+}
+
+/* Desktop - show only desktop links */
+@media (min-width: 769px) {
+  #site-nav .menu-header,
+  #site-nav .menu-ctas,
+  #site-nav .menu-section,
+  #site-nav .menu-footer {
+    display: none !important;
+  }
+  
+  #site-nav .desktop-links {
+    display: flex !important;
+  }
+}
+
+/* Accessibility improvements */
+#site-nav .menu-links a:focus,
+#site-nav .intent-grid a:focus {
+  outline: 2px solid var(--sky-blue) !important;
+  outline-offset: 2px !important;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  #site-nav .menu-section {
+    border-bottom: 2px solid var(--color-text-primary) !important;
+  }
+  
+  #site-nav .menu-links a,
+  #site-nav .intent-grid a {
+    border: 1px solid transparent !important;
+  }
+  
+  #site-nav .menu-links a:hover,
+  #site-nav .intent-grid a:hover {
+    border-color: var(--color-text-primary) !important;
+  }
+}
+/* Prevent FAQ height jumping */
+.faq-item {
+  overflow: hidden;
+  transition: none;
+}
+
+.faq-answer {
+  transition: none;
+}
+
+/* Ensure FAQ categories don't interfere with layout */
+.faq-categories {
+  flex-shrink: 0;
+  min-height: 56px;
+}
+/* =============================================================================
+   FAQ ACCORDION FINAL OVERRIDE - Must be last to override styles.css
+   ============================================================================= */
+
+/* Force FAQ answers to hide by default */
+.faq-answer {
+  display: none !important;
+  padding: 1.5rem !important;
+  background: white !important;
+  color: var(--slate-ink, #24313A) !important;
+  border-top: 1px solid #e5e7eb !important;
+  margin: 0 !important;
+}
+
+/* Force FAQ answers to show when open */
+.faq-item.open .faq-answer {
+  display: block !important;
+}
+
+.faq-answer.show {
+  display: block !important;
+}
+
+/* Override any conflicting FAQ item styles */
+.faq-item {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 1px solid #e5e7eb !important;
+  border-bottom: 0 !important;
+  background: white !important;
+  border-radius: 0 !important;
+}
+
+.faq-item:first-child {
+  border-radius: 12px 12px 0 0 !important;
+}
+
+.faq-item:last-child {
+  border-radius: 0 0 12px 12px !important;
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+/* Force FAQ question styling */
+.faq-question {
+  cursor: pointer !important;
+  font-weight: 600 !important;
+  color: var(--dallas-navy, #0E365A) !important;
+  padding: 1.5rem !important;
+  background: #f8fafc !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  margin: 0 !important;
+  position: relative !important;
+  padding-right: 3rem !important;
+  user-select: none !important;
+}
+
+.faq-question::after {
+  content: '+' !important;
+  position: absolute !important;
+  right: 1.5rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  font-size: 1.2rem !important;
+  font-weight: bold !important;
+  color: var(--sky-blue, #0077B6) !important;
+  transition: transform 0.3s ease !important;
+  pointer-events: none !important;
+}
+
+.faq-item.open .faq-question::after {
+  transform: translateY(-50%) rotate(45deg) !important;
+}

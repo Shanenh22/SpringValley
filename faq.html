@@ -9,7 +9,7 @@
   <!-- CSS Files -->
   <link rel="stylesheet" href="css/styles.css"/>
   <link rel="stylesheet" href="css/cleaned-additional-css.css">
-  
+	
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="canonical" href="https://springvalleydentistry.com/faq.html"/>
@@ -39,6 +39,20 @@
     gtag('js', new Date());
     gtag('config', 'G-KY64HPT0ER');
   </script>
+	<style>
+.faq-answer {
+  display: none !important;
+  padding: 1.5rem !important;
+  background: white !important;
+  color: #24313A !important;
+  border-top: 1px solid #e5e7eb !important;
+  margin: 0 !important;
+}
+
+.faq-item.open .faq-answer {
+  display: block !important;
+}
+</style>
 </head>
 <body>
 
@@ -66,7 +80,7 @@
 
       <!-- Desktop Navigation -->
       <nav id="site-nav" class="site-nav" aria-label="Primary" hidden>
-        <!-- Desktop Links (shown on desktop) -->
+        <!-- Desktop Navigation -->
         <ul class="site-links desktop-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
@@ -74,54 +88,57 @@
           <li><a href="emergency.html">Emergency</a></li>
           <li><a href="patient-info.html" data-nowrap>Patient Info</a></li>
           <li><a href="reviews.html">Reviews</a></li>
-          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="faq.html" aria-current="page">FAQ</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a class="cta" href="contact.html" data-nowrap>Book Online</a></li>
         </ul>
-        
-        <!-- Mobile Navigation Drawer (shown on mobile) -->
+
+        <!-- Mobile Navigation Structure -->
         <div class="menu-header">
-          <button class="menu-close" aria-label="Close menu" type="button">×</button>
+          <button class="menu-close" aria-label="Close menu">×</button>
           <div class="brand-row">
             <h2 class="practice-name">Spring Valley Dental</h2>
           </div>
         </div>
-        
+
+        <!-- Mobile CTAs (top priority) -->
         <div class="menu-ctas">
           <a class="menu-cta call" href="tel:+19728522222">Call</a>
           <a class="menu-cta book" href="contact.html">Book</a>
-          <a class="menu-cta directions" href="https://www.google.com/maps/place/14228+Midway+Rd+%23100,+Dallas,+TX+75244/@32.943659,-96.838108,14z/data=!4m6!3m5!1s0x864c26d39eab13f3:0x3e1243026b4b017b!8m2!3d32.9436588!4d-96.8381082!16s%2Fg%2F11qpmyb56j?hl=en-US&entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D">Directions</a>
+          <a class="menu-cta directions" href="https://www.google.com/maps/place/14228+Midway+Rd+%23100,+Dallas,+TX+75244/@32.943659,-96.838108,14z">Directions</a>
         </div>
-        
+
+        <!-- Main menu items (second priority) -->
+        <div class="menu-section">
+          <h3 class="section-title">Pages</h3>
+          <ul class="menu-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="emergency.html">Emergency</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
         <div class="menu-section">
           <h3 class="section-title">I need...</h3>
           <ul class="intent-grid">
-            <li><a href="emergency.html">Emergency Care</a></li>
-            <li><a href="services.html#cleaning">Teeth Cleaning</a></li>
-            <li><a href="services.html#cosmetic">Cosmetic Work</a></li>
-            <li><a href="services.html#restorative">Tooth Repair</a></li>
-            <li><a href="patient-info.html#forms">Patient Forms</a></li>
-            <li><a href="patient-info.html#insurance">Insurance Help</a></li>
+            <li><a href="emergency.html">Emergency care</a></li>
+            <li><a href="teeth-cleaning.html">Cleaning & exam</a></li>
+            <li><a href="dental-implants.html">Dental implants</a></li>
+            <li><a href="invisalign.html">Invisalign</a></li>
           </ul>
         </div>
-        
-        <div class="menu-section">
-          <h3 class="section-title">Patients</h3>
-          <ul class="menu-links">
-            <li><a href="about.html">About Our Practice</a></li>
-            <li><a href="services.html">Services & Treatments</a></li>
-            <li><a href="patient-info.html">Patient Information</a></li>
-            <li><a href="reviews.html">Patient Reviews</a></li>
-            <li><a href="faq.html">Frequently Asked Questions</a></li>
-            <li><a href="blog.html">Dental Health Blog</a></li>
-          </ul>
-        </div>
-        
+
+        <!-- Footer info (bottom) -->
         <div class="menu-footer">
           <div class="practice-info">
             <p><strong>Spring Valley Dental Associates</strong></p>
             <p>14228 Midway Rd, Suite 100<br>Dallas, TX 75244</p>
-            <p>Phone: <a href="tel:+19728522222">(972) 852-2222</a></p>
+            <p><a href="tel:+19728522222">(972) 852-2222</a></p>
           </div>
         </div>
       </nav>
@@ -130,7 +147,7 @@
       <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
 
       <!-- Hamburger Menu Button -->
-      <button id="hamburger" class="hamburger" type="button" aria-label="Toggle navigation menu" aria-controls="site-nav" aria-expanded="false">
+      <button id="nav-toggle" class="hamburger" type="button" aria-label="Toggle navigation menu" aria-controls="site-nav" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -158,27 +175,27 @@
 
       <!-- Quick Navigation Categories -->
       <div class="faq-categories">
-        <div class="faq-category" onclick="scrollToSection('general-care')">
+        <div class="faq-category" data-scroll-to="general-care">
           <div class="faq-category-icon">🦷</div>
           <h3>General Care</h3>
           <p>Routine visits & oral hygiene</p>
         </div>
-        <div class="faq-category" onclick="scrollToSection('treatments')">
+        <div class="faq-category" data-scroll-to="treatments">
           <div class="faq-category-icon">⚕️</div>
           <h3>Treatments</h3>
           <p>Procedures & recovery</p>
         </div>
-        <div class="faq-category" onclick="scrollToSection('comfort')">
+        <div class="faq-category" data-scroll-to="comfort">
           <div class="faq-category-icon">😌</div>
           <h3>Comfort & Sedation</h3>
           <p>Managing anxiety & pain</p>
         </div>
-        <div class="faq-category" onclick="scrollToSection('costs')">
+        <div class="faq-category" data-scroll-to="costs">
           <div class="faq-category-icon">💳</div>
           <h3>Insurance & Costs</h3>
           <p>Payment options</p>
         </div>
-        <div class="faq-category" onclick="scrollToSection('post-op')">
+        <div class="faq-category" data-scroll-to="post-op">
           <div class="faq-category-icon">🩺</div>
           <h3>Post‑Op Care</h3>
           <p>Healing & Aftercare</p>
@@ -466,7 +483,6 @@
             <p>Small amounts of blood may turn your saliva red for several hours. This is normal. Do not actively spit or rinse your mouth during the first 24-48 hours after surgery. Lean your head over a sink or cup, and let gravity pull the saliva out of your mouth. If persistent oozing occurs, firmly press a moistened tea bag over the area for 5-10 minutes.</p>
             <p><strong>Cleanliness</strong></p>
             <p>Brush and floss as usual. If you have been given a prescription for antiseptic mouthwash, start using it the morning after surgery and use it twice a day.</p>
-            
             <p><strong>No Smoking</strong></p>
             <p>Smoking will substantially reduce the healing and success of the surgery. Suction created when inhaling cigarettes can disturb the wound site and in the case of tooth extraction, the newly formed clot can dislodge. Smokers are at a greater risk of developing a painful dry socket.</p>
             <p>In case of extreme pain, swelling, or bleeding, contact us at (972) 852-2222.</p>
@@ -489,9 +505,6 @@
         <a class="button-secondary" href="contact.html">Book an Appointment</a>
       </div>
     </section>
-
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
   </main>
 
   <!-- Footer -->
@@ -520,11 +533,11 @@
       <div class="footer-column">
         <h4>Office Hours</h4>
         <ul>
-          <li>Monday: 10:00 AM – 7:00 PM</li>
-          <li>Tuesday: 8:30 AM – 4:00 PM</li>
-          <li>Wednesday: 8:00 AM – 1:00 PM</li>
-          <li>Thursday: 8:00 AM – 3:00 PM</li>
-          <li>Friday: 8:00 AM – 3:00 PM</li>
+          <li>Monday: 10:00 AM — 7:00 PM</li>
+          <li>Tuesday: 8:30 AM — 4:00 PM</li>
+          <li>Wednesday: 8:00 AM — 1:00 PM</li>
+          <li>Thursday: 8:00 AM — 3:00 PM</li>
+          <li>Friday: 8:00 AM — 3:00 PM</li>
           <li>Saturday: By appointment only</li>
           <li>Sunday: Closed</li>
           <li>Find us on <a href="https://www.google.com/maps/search/?api=1&query=14228+Midway+Rd,+Suite+100,+Dallas,+TX+75244" target="_blank" rel="noopener">Google Maps</a>.</li>
@@ -554,91 +567,99 @@
 
   <!-- JavaScript Files -->
   <script src="js/site-config.js"></script>
-  <script src="js/nav.js"></script>
+  <script src="nav.js"></script>
 
-  <!-- FAQ Page Specific Scripts -->
-  <script>
-    // Smooth scroll to section with dynamic offset (header + pills)
-    function scrollToSection(sectionId) {
-      const el = document.getElementById(sectionId);
-      if (!el) return;
-
-      const header = document.querySelector('.site-header');
-      const pills  = document.querySelector('.faq-categories');
-
-      const headerH = header ? header.getBoundingClientRect().height : 0;
-      const pillsH  = pills  ? pills.getBoundingClientRect().height  : 0;
-      const extra   = 12; // tiny cushion below the pills
-
-      const y = el.getBoundingClientRect().top + window.pageYOffset - headerH - pillsH - extra;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-
-    // Back to top functionality
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // Show/hide back to top button
-    window.addEventListener('scroll', function() {
-      const backToTop = document.getElementById('backToTop');
-      if (backToTop) {
-        if (window.pageYOffset > 300) {
-          backToTop.style.display = 'block';
-        } else {
-          backToTop.style.display = 'none';
-        }
+  
+<script>
+// FAQ Page Only - Replace the existing <script> block in faq.html with this
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('FAQ page loaded - initializing accordion');
+  
+  // FAQ category navigation
+  document.querySelectorAll('[data-scroll-to]').forEach(category => {
+    category.addEventListener('click', function(e) {
+      e.preventDefault();
+      const sectionId = this.getAttribute('data-scroll-to');
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
       }
     });
+  });
 
-    // Expose measured heights as CSS variables, so scroll-margin-top stays correct
-    (function setHeightsVars(){
-      const root   = document.documentElement;
-      const header = document.querySelector('.site-header');
-      const pills  = document.querySelector('.faq-categories');
+  // Clear any existing event listeners and reset state
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const answer = item.querySelector('.faq-answer');
+    if (answer) {
+      item.classList.remove('open');
+      answer.style.display = 'none';
+      answer.classList.remove('show');
+    }
+  });
 
-      function apply() {
-        if (header) root.style.setProperty('--site-header-height', header.getBoundingClientRect().height + 'px');
-        if (pills)  root.style.setProperty('--faq-pills-height', pills.getBoundingClientRect().height + 'px');
-      }
-      apply();
-      window.addEventListener('resize', apply);
-    })();
-
-    // FAQ accordion functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const faqItems = document.querySelectorAll('.faq-item');
+  // FAQ accordion functionality - direct DOM manipulation
+  setTimeout(() => {
+    document.querySelectorAll('.faq-question').forEach((question, index) => {
+      const item = question.closest('.faq-item');
+      const answer = item?.querySelector('.faq-answer');
       
-      faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
+      if (item && answer) {
+        console.log('Setting up FAQ item:', index);
         
-        question.addEventListener('click', function() {
-          const isOpen = item.classList.contains('open');
+        // Remove all existing event listeners by cloning
+        const newQuestion = question.cloneNode(true);
+        question.parentNode.replaceChild(newQuestion, question);
+        
+        // Set up fresh click handler
+        newQuestion.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
           
-          // Close all other FAQ items
-          faqItems.forEach(otherItem => {
-            if (otherItem !== item) {
-              otherItem.classList.remove('open');
-              const otherAnswer = otherItem.querySelector('.faq-answer');
-              if (otherAnswer) {
-                otherAnswer.style.display = 'none';
-              }
-            }
-          });
+          const currentItem = this.closest('.faq-item');
+          const currentAnswer = currentItem.querySelector('.faq-answer');
+          const isOpen = currentItem.classList.contains('open');
           
-          // Toggle current item
+          console.log('FAQ clicked, currently open:', isOpen);
+          
           if (isOpen) {
-            item.classList.remove('open');
-            answer.style.display = 'none';
+            // Close this item
+            currentItem.classList.remove('open');
+            currentAnswer.style.display = 'none';
+            currentAnswer.classList.remove('show');
+            console.log('FAQ closed');
           } else {
-            item.classList.add('open');
-            answer.style.display = 'block';
+            // Close all others first
+            document.querySelectorAll('.faq-item.open').forEach(openItem => {
+              const openAnswer = openItem.querySelector('.faq-answer');
+              openItem.classList.remove('open');
+              openAnswer.style.display = 'none';
+              openAnswer.classList.remove('show');
+            });
+            
+            // Open this item
+            currentItem.classList.add('open');
+            currentAnswer.style.display = 'block';
+            currentAnswer.classList.add('show');
+            console.log('FAQ opened');
           }
         });
-      });
+        
+        // Add keyboard support
+        newQuestion.setAttribute('tabindex', '0');
+        newQuestion.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.click();
+          }
+        });
+      }
     });
-  </script>
+    
+    console.log('FAQ accordion initialization complete');
+  }, 200);
+});
+</script>
+ 
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -651,7 +672,7 @@
         "name": "How often should I visit the dentist?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Most people should see their dentist for a checkup and cleaning twice a year. These regular visits allow us to catch potential problems early and keep your teeth and gums healthy. If your oral health is very stable and you are at low risk for dental issues, we may recommend slightly longer intervals—every 18 to 24 months. On the other hand, if you have gum disease, a history of cavities or other concerns, more frequent visits may be appropriate."
+          "text": "Most people should see their dentist for a checkup and cleaning twice a year. These regular visits allow us to catch potential problems early and keep your teeth and gums healthy. If you have gum disease, a history of cavities or other concerns, more frequent visits may be appropriate."
         }
       },
       {

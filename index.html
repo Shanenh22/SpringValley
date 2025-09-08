@@ -89,6 +89,16 @@
   }
 }
 </script>
+<script>
+// Ensure mobile navigation structure exists
+document.addEventListener('DOMContentLoaded', function() {
+  const siteNav = document.getElementById('site-nav');
+  if (siteNav && !siteNav.querySelector('.menu-header')) {
+    // Navigation will be enhanced by nav.js
+    console.log('Mobile navigation will be enhanced automatically');
+  }
+});
+</script>	
 
 <meta name="description" content="Welcome to Spring Valley Dental Associates in Dallas, TX. Comprehensive dental care for families including cleanings, implants, and cosmetic dentistry."/>
 </head>
@@ -112,65 +122,71 @@
         </picture>
       </a>
 
-      <nav aria-label="Primary" class="site-nav" hidden="" id="site-nav">
-        <!-- Desktop Navigation -->
-        <ul class="site-links desktop-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="emergency.html">Emergency</a></li>
-          <li><a data-nowrap="" href="patient-info.html">Patient Info</a></li>
-          <li><a href="reviews.html">Reviews</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a class="cta" data-nowrap="" href="contact.html">Book Online</a></li>
-        </ul>
+      <nav id="site-nav" class="site-nav" aria-label="Primary" hidden>
+  <!-- Desktop Navigation -->
+  <ul class="site-links desktop-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" aria-current="page">Index</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="emergency.html">Emergency</a></li>
+    <li><a href="patient-info.html" data-nowrap>Patient Info</a></li>
+    <li><a href="reviews.html">Reviews</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a class="cta" href="contact.html" data-nowrap>Book Online</a></li>
+  </ul>
 
-        <!-- Mobile Navigation Structure -->
-        <div class="menu-header">
-          <button class="menu-close" aria-label="Close menu">×</button>
-          <div class="brand-row">
-            <h2 class="practice-name">Spring Valley Dental</h2>
-          </div>
-        </div>
+  <!-- Mobile Navigation Structure -->
+  <div class="menu-header">
+    <button class="menu-close" aria-label="Close menu">×</button>
+    <div class="brand-row">
+      <h2 class="practice-name">Spring Valley Dental</h2>
+    </div>
+  </div>
 
-        <div class="menu-ctas">
-          <a class="menu-cta call" href="tel:+19728522222">Call</a>
-          <a class="menu-cta book" href="contact.html">Book</a>
-          <a class="menu-cta directions" href="https://www.google.com/maps/place/14228+Midway+Rd+%23100,+Dallas,+TX+75244/@32.943659,-96.838108,14z">Directions</a>
-        </div>
+  <!-- Mobile CTAs (top priority) -->
+  <div class="menu-ctas">
+    <a class="menu-cta call" href="tel:+19728522222">Call</a>
+    <a class="menu-cta book" href="contact.html">Book</a>
+    <a class="menu-cta directions" href="https://www.google.com/maps/place/14228+Midway+Rd+%23100,+Dallas,+TX+75244/@32.943659,-96.838108,14z">Directions</a>
+  </div>
 
-        <div class="menu-section">
-          <h3 class="section-title">I need...</h3>
-          <ul class="intent-grid">
-            <li><a href="emergency.html">Emergency care</a></li>
-            <li><a href="services.html#cleanings">Cleaning & exam</a></li>
-            <li><a href="services.html#cosmetic">Cosmetic dentistry</a></li>
-            <li><a href="services.html#implants">Dental implants</a></li>
-            <li><a href="services.html#invisalign">Invisalign</a></li>
-          </ul>
-        </div>
+  <!-- Main menu items (second priority) -->
+  <div class="menu-section">
+    <h3 class="section-title">Pages</h3>
+    <ul class="menu-links">
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="emergency.html">Emergency</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
 
-        <div class="menu-section">
-          <h3 class="section-title">Patients</h3>
-          <ul class="menu-links">
-            <li><a href="patient-info.html">New patients</a></li>
-            <li><a href="patient-info.html#forms">Patient forms</a></li>
-            <li><a href="patient-info.html#insurance">Insurance</a></li>
-            <li><a href="about.html">Meet our team</a></li>
-            <li><a href="reviews.html">Patient reviews</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-          </ul>
-        </div>
+  <!-- Service-specific navigation (third priority) -->
+  <div class="menu-section">
+    <h3 class="section-title">I need...</h3>
+    <ul class="intent-grid">
+      <li><a href="emergency.html">Emergency care</a></li>
+      <li><a href="teeth-cleaning.html">Cleaning & exam</a></li>
+      <li><a href="dental-implants.html">Dental implants</a></li>
+      <li><a href="invisalign.html">Invisalign</a></li>
+    </ul>
+  </div>
 
-        <div class="menu-footer">
-          <div class="practice-info">
-            <p><strong>Spring Valley Dental Associates</strong></p>
-            <p>14228 Midway Rd, Suite 100<br>Dallas, TX 75244</p>
-            <p><a href="tel:+19728522222">(972) 852-2222</a></p>
-          </div>
-        </div>
-      </nav>
+
+  <!-- Footer info (bottom) -->
+  <div class="menu-footer">
+    <div class="practice-info">
+      <p><strong>Spring Valley Dental Associates</strong></p>
+      <p>14228 Midway Rd, Suite 100<br>Dallas, TX 75244</p>
+      <p><a href="tel:+19728522222">(972) 852-2222</a></p>
+    </div>
+  </div>
+</nav>
 
       <div class="nav-overlay" id="nav-overlay"></div>
       <button aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation menu" class="hamburger" id="nav-toggle" type="button">

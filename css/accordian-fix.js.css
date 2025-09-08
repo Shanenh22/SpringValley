@@ -1,0 +1,284 @@
+/**
+ * Universal Accordion System - Works for both FAQ and Emergency pages
+ * Spring Valley Dental Associates - Fixed Version
+ */
+
+class UniversalAccordion {
+  constructor() {
+    this.accordions = [];
+    this.init();
+  }
+  
+  init() {
+    // Initialize FAQ accordions (FAQ page)
+    this.initFAQAccordions();
+    
+    // Initialize Emergency accordions (Emergency page)  
+    this.initEmergencyAccordions();
+    
+    // Initialize any other details/summary elements
+    this.initDetailsElements();
+    
+    console.log('Universal Accordion System initialized');
+  }
+  
+  initFAQAccordions() {
+    // Target FAQ items specifically
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach((item, index) => {
+      const question = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      
+      if (question && answer) {
+        // Ensure initial state is closed
+        item.classList.remove('open');
+        answer.style.display = 'none';
+        answer.classList.remove('show');
+        
+        // Set up click handler
+        const clickHandler = (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          this.toggleFAQItem(item, question, answer);
+        };
+        
+        // Remove any existing listeners
+        question.removeEventListener('click', clickHandler);
+        question.addEventListener('click', clickHandler);
+        
+        // Keyboard support
+        question.setAttribute('tabindex', '0');
+        question.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.toggleFAQItem(item, question, answer);
+          }
+        });
+        
+        // Set initial ARIA
+        question.setAttribute('aria-expanded', 'false');
+        
+        console.log(`FAQ accordion ${index} initialized`);
+      }
+    });
+  }
+  
+  initEmergencyAccordions() {
+    // Target emergency page accordions (details/summary elements)
+    const emergencyAccordions = document.querySelectorAll('.faq-accordion details, #faq details');
+    
+    emergencyAccordions.forEach((details, index) => {
+      const summary = details.querySelector('summary');
+      
+      if (summary) {
+        // Force initial closed state
+        details.removeAttribute('open');
+        
+        // Override default details behavior
+        summary.addEventListener('click', (e) => {
+          e.preventDefault();
+          this.toggleDetailsElement(details, summary);
+        });
+        
+        // Set initial ARIA
+        summary.setAttribute('aria-expanded', 'false');
+        
+        console.log(`Emergency accordion ${index} initialized`);
+      }
+    });
+  }
+  
+  initDetailsElements() {
+    // Handle any other details elements on the page
+    const otherDetails = document.querySelectorAll('details:not(.faq-accordion details):not(#faq details)');
+    
+    otherDetails.forEach((details) => {
+      const summary = details.querySelector('summary');
+      if (summary) {
+        summary.addEventListener('click', (e) => {
+          // Allow default behavior but update ARIA
+          setTimeout(() => {
+            summary.setAttribute('aria-expanded', details.hasAttribute('open'));
+          }, 10);
+        });
+      }
+    });
+  }
+  
+  toggleFAQItem(item, question, answer) {
+    const isOpen = item.classList.contains('open');
+    
+    if (isOpen) {
+      // Close the item
+      item.classList.remove('open');
+      answer.style.display = 'none';
+      answer.classList.remove('show');
+      question.setAttribute('aria-expanded', 'false');
+      
+      console.log('FAQ item closed');
+    } else {
+      // Close all other FAQ items first (optional - remove if you want multiple open)
+      document.querySelectorAll('.faq-item.open').forEach(openItem => {
+        if (openItem !== item) {
+          const openQuestion = openItem.querySelector('.faq-question');
+          const openAnswer = openItem.querySelector('.faq-answer');
+          openItem.classList.remove('open');
+          openAnswer.style.display = 'none';
+          openAnswer.classList.remove('show');
+          openQuestion.setAttribute('aria-expanded', 'false');
+        }
+      });
+      
+      // Open the clicked item
+      item.classList.add('open');
+      answer.style.display = 'block';
+      answer.classList.add('show');
+      question.setAttribute('aria-expanded', 'true');
+      
+      console.log('FAQ item opened');
+    }
+  }
+  
+  toggleDetailsElement(details, summary) {
+    const isOpen = details.hasAttribute('open');
+    
+    if (isOpen) {
+      // Close
+      details.removeAttribute('open');
+      summary.setAttribute('aria-expanded', 'false');
+      console.log('Details element closed');
+    } else {
+      // Open
+      details.setAttribute('open', '');
+      summary.setAttribute('aria-expanded', 'true');
+      console.log('Details element opened');
+    }
+  }
+}
+
+/**
+ * CSS Style Fixes - Apply these styles to override conflicts
+ */
+function applyCSSFixes() {
+  const style = document.createElement('style');
+  style.textContent = `
+    /* FAQ System Fixes - Highest Priority */
+    .faq-answer {
+      display: none !important;
+    }
+    
+    .faq-item.open .faq-answer,
+    .faq-answer.show {
+      display: block !important;
+    }
+    
+    /* FAQ Question Styling */
+    .faq-question {
+      cursor: pointer !important;
+      position: relative !important;
+      padding-right: 3rem !important;
+      user-select: none !important;
+    }
+    
+    /* FAQ Icons - Force + and rotation */
+    .faq-question::after {
+      content: '+' !important;
+      position: absolute !important;
+      right: 1.5rem !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      font-size: 1.2rem !important;
+      font-weight: bold !important;
+      color: var(--sky-blue, #0077B6) !important;
+      transition: transform 0.3s ease !important;
+      pointer-events: none !important;
+    }
+    
+    .faq-item.open .faq-question::after {
+      transform: translateY(-50%) rotate(45deg) !important;
+    }
+    
+    /* Emergency Page Details Elements */
+    .faq-accordion details summary,
+    #faq summary {
+      cursor: pointer !important;
+      position: relative !important;
+      padding-right: 3rem !important;
+      list-style: none !important;
+    }
+    
+    .faq-accordion details summary::-webkit-details-marker,
+    #faq summary::-webkit-details-marker {
+      display: none !important;
+    }
+    
+    .faq-accordion details summary::after,
+    #faq summary::after {
+      content: '+' !important;
+      position: absolute !important;
+      right: 1rem !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      font-size: 1.2rem !important;
+      font-weight: bold !important;
+      color: var(--sky-blue, #0077B6) !important;
+      transition: transform 0.3s ease !important;
+    }
+    
+    .faq-accordion details[open] summary::after,
+    #faq details[open] summary::after {
+      transform: translateY(-50%) rotate(45deg) !important;
+    }
+    
+    /* Hover states */
+    .faq-question:hover,
+    .faq-accordion details summary:hover,
+    #faq summary:hover {
+      background: #f1f5f9 !important;
+    }
+    
+    /* Focus states for accessibility */
+    .faq-question:focus,
+    .faq-accordion details summary:focus,
+    #faq summary:focus {
+      outline: 2px solid var(--sky-blue, #0077B6) !important;
+      outline-offset: 2px !important;
+    }
+    
+    /* Mobile responsive adjustments */
+    @media (max-width: 768px) {
+      .faq-question::after {
+        right: 1rem !important;
+      }
+    }
+  `;
+  
+  document.head.appendChild(style);
+  console.log('CSS fixes applied');
+}
+
+/**
+ * Initialize everything when DOM is ready
+ */
+function initializeAccordionSystem() {
+  // Apply CSS fixes first
+  applyCSSFixes();
+  
+  // Initialize accordion system
+  setTimeout(() => {
+    new UniversalAccordion();
+  }, 100);
+}
+
+// Initialize on DOM ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeAccordionSystem);
+} else {
+  initializeAccordionSystem();
+}
+
+// Also initialize if this script is loaded after DOM is ready
+if (typeof window !== 'undefined') {
+  window.UniversalAccordion = UniversalAccordion;
+}

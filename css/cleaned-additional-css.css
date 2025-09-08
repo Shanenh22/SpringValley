@@ -1,276 +1,10 @@
 /* =============================================================================
-   CLEANED ADDITIONAL CSS INTEGRATION - FIXED VERSION
+   CLEANED ADDITIONAL CSS - FINAL VERSION
    Spring Valley Dental Associates
    
-   This file consolidates the unique styles and fixes the mobile navigation
+   This file contains only unique styles not covered in styles.css
+   Removed duplicates and conflicting navigation rules
    ============================================================================= */
-
-/* =============================================================================
-   MOBILE NAVIGATION DRAWER CRITICAL FIXES
-   ============================================================================= */
-
-/* Hide mobile navigation structure on desktop */
-@media (min-width: 769px) {
-  #site-nav .menu-header,
-  #site-nav .menu-ctas,
-  #site-nav .menu-section,
-  #site-nav .menu-footer {
-    display: none !important;
-  }
-  
-  #site-nav .desktop-links,
-  #site-nav .site-links {
-    display: flex !important;
-  }
-}
-
-/* Mobile navigation drawer styles */
-@media (max-width: 768px) {
-  
-  /* Hide desktop navigation links on mobile */
-  #site-nav .desktop-links,
-  #site-nav .site-links {
-    display: none !important;
-  }
-  
-  /* Mobile navigation drawer positioning and appearance */
-  #site-nav {
-    position: fixed !important;
-    top: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    width: min(85vw, 320px) !important;
-    height: 100vh !important;
-    background: white !important;
-    transform: translateX(100%) !important;
-    transition: transform 0.3s ease !important;
-    z-index: 1001 !important;
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15) !important;
-    padding: 0 !important;
-    display: block !important;
-  }
-  
-  /* Show mobile drawer when open */
-  #site-nav.is-open {
-    transform: translateX(0) !important;
-  }
-  
-  /* Mobile drawer header */
-  #site-nav .menu-header {
-    padding: 1.5rem 1rem 1rem !important;
-    border-bottom: 1px solid #e5e7eb !important;
-    background: #f8fafc !important;
-    position: relative !important;
-    display: block !important;
-  }
-  
-  #site-nav .menu-close {
-    position: absolute !important;
-    top: 1rem !important;
-    right: 1rem !important;
-    background: none !important;
-    border: none !important;
-    font-size: 1.5rem !important;
-    width: 32px !important;
-    height: 32px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    cursor: pointer !important;
-    color: #374151 !important;
-    border-radius: 4px !important;
-    transition: background-color 0.2s ease !important;
-  }
-  
-  #site-nav .menu-close:hover {
-    background: #e5e7eb !important;
-  }
-  
-  #site-nav .brand-row {
-    display: flex !important;
-    align-items: center !important;
-    gap: 0.75rem !important;
-  }
-  
-  #site-nav .practice-name {
-    font-weight: 700 !important;
-    color: #1f2937 !important;
-    font-size: 1.1rem !important;
-    margin: 0 !important;
-  }
-  
-  /* Top CTA buttons (Call/Book/Directions) */
-  #site-nav .menu-ctas {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 0.5rem !important;
-    margin: 1rem !important;
-    padding: 0 !important;
-  }
-  
-  #site-nav .menu-cta {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    height: 44px !important;
-    border-radius: 8px !important;
-    text-decoration: none !important;
-    font-weight: 600 !important;
-    font-size: 0.9rem !important;
-    transition: all 0.2s ease !important;
-    text-align: center !important;
-  }
-  
-  #site-nav .menu-cta.call {
-    background: #0077B6 !important;
-    color: white !important;
-  }
-  
-  #site-nav .menu-cta.book {
-    background: #0E365A !important;
-    color: white !important;
-  }
-  
-  #site-nav .menu-cta.directions {
-    background: #EEF2F6 !important;
-    color: #24313A !important;
-  }
-  
-  #site-nav .menu-cta:hover,
-  #site-nav .menu-cta:focus {
-    transform: translateY(-1px) !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
-  }
-  
-  /* Menu sections */
-  #site-nav .menu-section {
-    padding: 1rem !important;
-    border-bottom: 1px solid #e5e7eb !important;
-    display: block !important;
-  }
-  
-  #site-nav .section-title {
-    font-size: 0.75rem !important;
-    color: #6b7280 !important;
-    margin: 0 0 0.75rem 0 !important;
-    font-weight: 600 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.5px !important;
-  }
-  
-  /* Intent grid ("I need...") */
-  #site-nav .intent-grid {
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    display: block !important;
-  }
-  
-  #site-nav .intent-grid li {
-    list-style: none !important;
-    margin: 0.25rem 0 !important;
-  }
-  
-  #site-nav .intent-grid a {
-    display: block !important;
-    padding: 0.75rem 0.5rem !important;
-    text-decoration: none !important;
-    color: #374151 !important;
-    background: transparent !important;
-    border-radius: 6px !important;
-    font-weight: 500 !important;
-    transition: all 0.2s ease !important;
-    font-size: 0.95rem !important;
-  }
-  
-  #site-nav .intent-grid a:hover,
-  #site-nav .intent-grid a:focus {
-    background: #f3f4f6 !important;
-    color: #0077B6 !important;
-  }
-  
-  /* Menu links ("Patients") */
-  #site-nav .menu-links {
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    display: block !important;
-  }
-  
-  #site-nav .menu-links li {
-    margin: 0.25rem 0 !important;
-  }
-  
-  #site-nav .menu-links a {
-    display: block !important;
-    padding: 0.75rem 0.5rem !important;
-    text-decoration: none !important;
-    color: #374151 !important;
-    font-weight: 500 !important;
-    border-radius: 6px !important;
-    transition: all 0.2s ease !important;
-    font-size: 0.95rem !important;
-  }
-  
-  #site-nav .menu-links a:hover,
-  #site-nav .menu-links a:focus {
-    background: #f3f4f6 !important;
-    color: #0077B6 !important;
-  }
-  
-  /* Menu footer */
-  #site-nav .menu-footer {
-    padding: 1rem !important;
-    margin-top: auto !important;
-    background: #f8fafc !important;
-    border-top: 1px solid #e5e7eb !important;
-    display: block !important;
-  }
-  
-  #site-nav .practice-info {
-    text-align: center !important;
-    font-size: 0.85rem !important;
-    color: #6b7280 !important;
-  }
-  
-  #site-nav .practice-info p {
-    margin: 0.5rem 0 !important;
-    line-height: 1.4 !important;
-  }
-  
-  /* Navigation overlay */
-  .nav-overlay {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    background: rgba(0, 0, 0, 0.5) !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    z-index: 999 !important;
-    transition: opacity 0.3s ease !important;
-  }
-  
-  .nav-overlay.is-active {
-    opacity: 1 !important;
-    pointer-events: auto !important;
-  }
-  
-  /* Prevent body scroll when menu is open */
-  html.nav-locked,
-  body.nav-locked {
-    overflow: hidden !important;
-    height: 100vh !important;
-  }
-  
-  /* Add bottom padding to prevent overlap with sticky CTA */
-  #site-nav {
-    padding-bottom: calc(64px + 1rem) !important;
-  }
-}
 
 /* =============================================================================
    BLOG SPECIFIC ENHANCEMENTS
@@ -327,6 +61,30 @@
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   color: var(--dallas-navy, #0E365A);
+}
+
+/* Blog Grid Layout Override */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 items per row on desktop */
+  gap: 1.5rem;
+}
+
+/* Responsive blog grid */
+@media (max-width: 1024px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* =============================================================================
@@ -394,6 +152,43 @@
   font-size: 1.3rem;
 }
 
+@media (max-width: 768px) {
+  .contact-header {
+    padding: 2rem 1rem;
+  }
+
+  .contact-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .form-container {
+    padding: 2rem 1rem;
+  }
+
+  .form-options-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .form-option-card {
+    padding: 24px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .form-option-card {
+    padding: 20px 12px;
+  }
+}
+
 /* =============================================================================
    PATIENT INFO SPECIFIC STYLES
    ============================================================================= */
@@ -405,7 +200,7 @@ body.patient-info .section {
   padding: 0 1.5rem !important;
 }
 
-/* Form Buttons */
+/* Form Buttons - Patient Info Specific */
 .form-button.new-patient-btn,
 .form-button.existing-patient-btn {
   background: var(--sky-blue, #0077B6);
@@ -451,7 +246,7 @@ body.patient-info .section {
   transform: translateY(-50%) rotate(45deg) !important;
 }
 
-/* Stacked dropdown sections */
+/* Stacked dropdown sections - Patient Info */
 body.patient-info .info-collapse {
   margin: 0 !important;
   padding: 0 !important;
@@ -488,7 +283,7 @@ body.patient-info .info-section {
   background: white !important;
 }
 
-/* Bottom CTA styling */
+/* Bottom CTA styling - Patient Info */
 .bottom-cta .button-primary,
 .bottom-cta .button-secondary,
 .contact-btn.primary,
@@ -520,64 +315,53 @@ body.patient-info .info-section {
 }
 
 /* =============================================================================
-   FAQ SYSTEM FIXES - CRITICAL OVERRIDES
+   FAQ ACCORDION - SINGLE CLEAN VERSION (REMOVED ALL DUPLICATES)
    ============================================================================= */
 
-/* FAQ Sections - Remove excessive spacing */
-.faq-section {
-  margin: 0 !important;
-  padding: 0 !important;
-  background: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
+/* FAQ Answer default state - hidden */
+.faq-answer {
+  display: none;
+  padding: 1.5rem;
+  background: white;
+  color: var(--slate-ink, #24313A);
+  border-top: 1px solid #e5e7eb;
+  margin: 0;
 }
 
-/* FAQ items stack tightly */
-#faq details,
-.faq-accordion details,
-.faq-item {
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 1px solid #e5e7eb !important;
-  border-bottom: 0 !important;
-  background: white !important;
-  border-radius: 0 !important;
+/* FAQ Answer when open - visible */
+.faq-item.open .faq-answer,
+.faq-answer.show {
+  display: block !important;
 }
 
-/* Round first and last FAQ items */
-#faq details:first-child,
-.faq-accordion details:first-child,
-.faq-item:first-child {
-  border-radius: 12px 12px 0 0 !important;
-}
-
-#faq details:last-child,
-.faq-accordion details:last-child,
-.faq-item:last-child {
-  border-radius: 0 0 12px 12px !important;
-  border-bottom: 1px solid #e5e7eb !important;
-}
-
-/* FAQ Summary/Question styling */
-#faq summary,
-.faq-accordion summary,
+/* FAQ Question styling */
 .faq-question {
-  margin: 0 !important;
-  padding: 1.5rem !important;
-  background: #f8fafc !important;
-  border-bottom: 1px solid #e5e7eb;
   cursor: pointer;
   font-weight: 600;
   color: var(--dallas-navy, #0E365A);
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-bottom: 1px solid #e5e7eb;
+  margin: 0;
   position: relative;
-  padding-right: 3rem !important;
+  padding-right: 3rem;
+  user-select: none;
 }
 
-/* FAQ dropdown icon - + instead of ▾ */
-#faq summary::after,
-.faq-accordion summary::after,
+/* FAQ Question hover state */
+.faq-question:hover {
+  background: #f1f5f9;
+}
+
+/* FAQ Question focus state for accessibility */
+.faq-question:focus {
+  outline: 2px solid var(--sky-blue, #0077B6);
+  outline-offset: 2px;
+}
+
+/* FAQ Plus/Minus icon */
 .faq-question::after {
-  content: '+' !important;
+  content: '+';
   position: absolute;
   right: 1.5rem;
   top: 50%;
@@ -586,107 +370,215 @@ body.patient-info .info-section {
   font-weight: bold;
   color: var(--sky-blue, #0077B6);
   transition: transform 0.3s ease;
-  float: none !important;
+  pointer-events: none;
 }
 
-/* Rotate + to x when open */
-#faq details[open] summary::after,
-.faq-accordion details[open] summary::after,
+/* Rotate icon when FAQ is open */
 .faq-item.open .faq-question::after {
   transform: translateY(-50%) rotate(45deg);
 }
 
-/* FAQ Answer/Content styling */
-#faq details > *:not(summary),
-.faq-accordion details > *:not(summary),
-.faq-answer {
-  margin: 0 !important;
-  padding: 1.5rem !important;
-  background: white !important;
-  color: var(--slate-ink, #24313A);
-  border-top: 1px solid #e5e7eb;
+/* FAQ Item container */
+.faq-item {
+  margin: 0;
+  padding: 0;
+  border: 1px solid #e5e7eb;
+  border-bottom: 0;
+  background: white;
+  border-radius: 0;
+  overflow: hidden;
 }
 
-.faq-answer {
-  display: none;
+/* First and last FAQ items rounded corners */
+.faq-item:first-child {
+  border-radius: 12px 12px 0 0;
 }
 
-.faq-item.open .faq-answer,
-.faq-answer.show {
-  display: block;
+.faq-item:last-child {
+  border-radius: 0 0 12px 12px;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-/* =============================================================================
-   MOBILE RESPONSIVE ADJUSTMENTS
-   ============================================================================= */
+.faq-item:only-child {
+  border-radius: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
 
+/* FAQ Container */
+.faq-container {
+  margin: 2rem 0;
+}
+
+.faq-container h2 {
+  color: var(--dallas-navy, #0E365A);
+  font-family: 'Montserrat', sans-serif;
+  margin: 2rem 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--sky-blue, #0077B6);
+}
+
+.faq-container h2:first-child {
+  margin-top: 0;
+}
+
+/* Remove spacing between FAQ category sections */
+.faq-container > section {
+  margin: 0;
+}
+
+.faq-container > section + section {
+  margin-top: 2rem;
+}
+
+/* Mobile responsive adjustments */
 @media (max-width: 768px) {
-  .categories-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-  }
-
-  .category-card {
-    padding: 1rem;
-  }
-
-  .contact-header {
-    padding: 2rem 1rem;
-  }
-
-  .contact-header h2 {
-    font-size: 1.75rem;
-  }
-
-  .form-container {
-    padding: 2rem 1rem;
-  }
-
-  .form-options-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .form-option-card {
-    padding: 24px 16px;
-  }
-
-  #faq summary,
-  .faq-accordion summary,
   .faq-question {
-    padding: 1rem 2.5rem 1rem 1rem !important;
+    padding: 1rem 2.5rem 1rem 1rem;
   }
-
-  #faq summary::after,
-  .faq-accordion summary::after,
+  
   .faq-question::after {
     right: 1rem;
   }
-
-  #faq details > *:not(summary),
-  .faq-accordion details > *:not(summary),
+  
   .faq-answer {
-    padding: 1rem !important;
+    padding: 1rem;
   }
 }
 
-@media (max-width: 480px) {
-  .categories-grid {
-    grid-template-columns: 1fr;
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .faq-item {
+    border: 2px solid var(--slate-ink, #24313A);
   }
-
-  .contact-header h2 {
-    font-size: 1.5rem;
-  }
-
-  .form-container {
-    padding: 1.5rem 1rem;
-  }
-
-  .form-option-card {
-    padding: 20px 12px;
+  
+  .faq-question:focus {
+    outline-width: 3px;
   }
 }
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .faq-question::after {
+    transition: none;
+  }
+}
+
+/* =============================================================================
+   EMERGENCY PAGE SPECIFIC STYLES
+   ============================================================================= */
+
+/* Emergency severity "pill" badges */
+.severity-level {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1;
+  background: rgba(0, 119, 182, 0.12);
+  color: var(--dallas-navy, #0E365A);
+  border: 1px solid rgba(14, 54, 90, 0.12);
+}
+
+/* Optional dot indicator */
+.severity-level::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.75;
+}
+
+/* Severity variants */
+.severity-level.high {
+  background: rgba(228, 108, 94, 0.16);
+  color: #8a1414;
+  border-color: rgba(228, 108, 94, 0.35);
+}
+
+.severity-level.medium {
+  background: rgba(255, 193, 7, 0.16);
+  color: #8a6d00;
+  border-color: rgba(255, 193, 7, 0.35);
+}
+
+.severity-level.low {
+  background: rgba(143, 214, 200, 0.18);
+  color: #0e5b4e;
+  border-color: rgba(143, 214, 200, 0.35);
+}
+
+/* Spacing tweak under emergency headings */
+.emergency-card h3 + .severity-level { 
+  margin-top: 0.25rem; 
+}
+
+/* Emergency hero compact spacing */
+.page-emergency .emergency-hero h1 { 
+  margin-bottom: .4rem; 
+  line-height: 1.15; 
+}
+
+.page-emergency .emergency-hero p { 
+  margin: .2rem 0 .75rem; 
+  line-height: 1.35; 
+}
+
+.page-emergency .emergency-hero .button-group { 
+  margin: .75rem 0 0; 
+}
+
+/* Keep pills tidy on small screens */
+@media (max-width: 420px) {
+  .severity-level { 
+    font-size: 0.8125rem; 
+    padding: 0.2rem 0.5rem; 
+  }
+}
+
+/* =============================================================================
+   REVIEW PAGE SPECIFIC STYLES
+   ============================================================================= */
+
+/* Review page specific adjustments - only unique styles not in main CSS */
+.review-summary-mobile-fix {
+  /* Any mobile-specific review fixes that aren't covered in styles.css */
+}
+
+/* =============================================================================
+   MOBILE NAVIGATION - UPDATED FOR HTML STRUCTURE
+   ============================================================================= */
+
+@media (max-width: 768px) {
+  /* Ensure navigation elements are properly styled */
+  #site-nav .menu-section h3.section-title {
+    color: var(--cool-gray, #5A6D80) !important;
+    font-size: 0.75rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    margin-bottom: 0.5rem !important;
+    padding: 0 0.5rem !important;
+  }
+  
+  /* Consistent spacing for all menu sections */
+  #site-nav .menu-section {
+    margin-bottom: 0 !important;
+    padding: 1rem 0 !important;
+  }
+  
+  /* Remove any bottom margins from the last section */
+  #site-nav .menu-section:last-of-type {
+    margin-bottom: 0 !important;
+    padding-bottom: 0.5rem !important;
+  }
+}
+
+/* =============================================================================
+   UTILITY CLASSES
+   ============================================================================= */
 
 /* Force hide honeypot fields */
 .hp-wrap {
@@ -698,87 +590,620 @@ body.patient-info .info-section {
   display: none !important;
 }
 
-/* Add this to your cleaned-additional-css.css */
+/* =============================================================================
+   ABOUT PAGE MOBILE FIXES
+   ============================================================================= */
 
-.blog-grid {
+/* Fix Our Story section on mobile */
+@media (max-width: 768px) {
+  .page-about .story-content {
+    display: block !important;
+    grid-template-columns: none !important;
+    gap: 1.5rem !important;
+  }
+  
+  .page-about .story-text {
+    order: 2;
+    margin-bottom: 1.5rem;
+  }
+  
+  .page-about .story-image {
+    order: 1;
+    width: 100% !important;
+    height: 250px !important;
+    margin-bottom: 1.5rem;
+  }
+  
+  .page-about .story-text p {
+    text-align: left !important;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* Fix Dentist Cards on mobile */
+@media (max-width: 768px) {
+  .page-about .dentist-profiles {
+    gap: 2rem !important;
+  }
+  
+  .page-about .dentist-card {
+    display: block !important;
+    grid-template-columns: none !important;
+    padding: 1.5rem !important;
+    text-align: center;
+  }
+  
+  .page-about .dentist-image {
+    width: 200px !important;
+    height: 200px !important;
+    margin: 0 auto 1.5rem auto !important;
+    border-radius: 50% !important;
+  }
+  
+  .page-about .dentist-info {
+    width: 100% !important;
+  }
+  
+  .page-about .dentist-info h3 {
+    text-align: center !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .page-about .dentist-title {
+    text-align: center !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .page-about .credentials,
+  .page-about .specialties,
+  .page-about .personal-approach,
+  .page-about .memberships {
+    text-align: left !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .page-about .credentials h4,
+  .page-about .specialties h4,
+  .page-about .personal-approach h4,
+  .page-about .memberships h4 {
+    text-align: left !important;
+  }
+  
+  .page-about .credentials ul,
+  .page-about .specialties ul,
+  .page-about .memberships ul {
+    text-align: left !important;
+    padding-left: 1rem !important;
+  }
+  
+  .page-about .personal-approach p {
+    text-align: left !important;
+  }
+}
+
+/* Fix benefits grid on mobile */
+@media (max-width: 768px) {
+  .page-about .benefits-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  .page-about .benefit-card {
+    padding: 1.5rem !important;
+    text-align: center !important;
+  }
+}
+
+/* Fix features grid on mobile */
+@media (max-width: 768px) {
+  .page-about .features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  .page-about .feature-section {
+    padding: 1.5rem !important;
+  }
+}
+
+/* Fix practice stats on mobile */
+@media (max-width: 768px) {
+  .page-about .practice-stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+    padding: 1.5rem !important;
+  }
+  
+  .page-about .stat-item {
+    text-align: center !important;
+    padding: 1rem !important;
+  }
+  
+  .page-about .stat-number {
+    font-size: 2rem !important;
+  }
+}
+
+/* Ensure all text content stays within viewport */
+@media (max-width: 768px) {
+  .page-about .content-section {
+    padding: 1.5rem 1rem !important;
+    overflow-x: hidden !important;
+  }
+  
+  .page-about .content-section h2 {
+    text-align: center !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .page-about .content-section p {
+    text-align: left !important;
+    line-height: 1.6 !important;
+  }
+}
+
+/* Fix any remaining overflow issues */
+@media (max-width: 768px) {
+  .page-about {
+    overflow-x: hidden !important;
+  }
+  
+  .page-about * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .page-about .section {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .page-about .story-image {
+    height: 200px !important;
+  }
+  
+  .page-about .dentist-image {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  
+  .page-about .dentist-card {
+    padding: 1rem !important;
+  }
+  
+  .page-about .content-section {
+    padding: 1rem 0.5rem !important;
+  }
+  
+  .page-about .practice-stats {
+    padding: 1rem !important;
+  }
+  
+  .page-about .benefit-card,
+  .page-about .feature-section {
+    padding: 1rem !important;
+  }
+}
+
+/* =============================================================================
+   REVIEW PAGE — Patient Success Stories (mobile fixes)
+   ============================================================================= */
+
+.success-stories {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 items per row */
-  gap: 1.5rem; /* space between cards */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
 }
 
-.blog-card {
+.story-card {
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 10px rgba(14, 54, 90, 0.06);
+  max-width: 100%;
+  overflow-wrap: anywhere; /* prevent long strings from pushing width */
 }
 
-/* Responsive adjustment: 2 columns on tablets, 1 on mobile */
+.story-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap; /* allow wrap on narrow screens */
+}
+
+.story-header .patient-info h3 {
+  margin: 0 0 .25rem 0;
+  line-height: 1.25;
+}
+
+.story-rating .stars {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.story-content blockquote {
+  margin: .75rem 0;
+  font-style: italic;
+  line-height: 1.55;
+}
+
+.story-details {
+  display: grid;
+  gap: .5rem;
+  margin-top: .5rem;
+  color: #24313a;
+}
+
+/* Tablet */
 @media (max-width: 1024px) {
-  .blog-grid {
+  .success-stories {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 600px) {
-  .blog-grid {
-    grid-template-columns: 1fr;
+/* Mobile */
+@media (max-width: 640px) {
+  .success-stories {
+    grid-template-columns: 1fr; /* one card per row */
+    gap: 1rem;
+  }
+
+  .story-card {
+    padding: 1rem;
+  }
+
+  .story-header {
+    flex-direction: column;       /* stack title/rating vertically */
+    align-items: flex-start;
+  }
+
+  .patient-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .patient-name,
+  .treatment-type {
+    font-size: .95rem;
+  }
+
+  .story-content blockquote {
+    font-size: 1rem;
   }
 }
-/* Emergency severity "pill" badges — add to cleaned-additional-css.css */
-/* -------------------------------------------------------------- */
-/* Base pill */
-.severity-level {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.875rem;
-  font-weight: 700;
-  line-height: 1;
-  background: rgba(0, 119, 182, 0.12);            /* subtle blue by default */
-  color: var(--dallas-navy, #0E365A);
-  border: 1px solid rgba(14, 54, 90, 0.12);
+
+/* =============================================================================
+   MOBILE NAVIGATION FIX - Remove Extra X
+   ============================================================================= */
+
+/* Hide the hamburger menu when mobile drawer is open to prevent double X issue */
+@media (max-width: 768px) {
+  .site-nav.is-open ~ .hamburger {
+    display: none !important;
+  }
+  
+  /* Alternative fix: ensure only one close button is visible */
+  .site-nav.is-open .hamburger {
+    display: none !important;
+  }
+  
+  /* Make sure the menu-close button is the only visible close option */
+  .site-nav .menu-close {
+    display: block !important;
+    border: 0;
+    background: none;
+    font-size: 1.25rem;
+    line-height: 1;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    min-height: 44px;
+    min-width: 44px;
+    cursor: pointer;
+    color: var(--color-text-primary);
+    z-index: 9999;
+  }
 }
 
-/* Optional dot */
-.severity-level::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: currentColor;
-  opacity: 0.75;
+/* =============================================================================
+   TOP CTA STYLING TO MATCH BOTTOM STICKY CTAs
+   ============================================================================= */
+
+/* Style top CTAs in mobile navigation to match bottom sticky bar */
+@media (max-width: 768px) {
+  /* Top CTA buttons in mobile nav - match sticky bar exactly */
+  #site-nav .menu-ctas {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.5rem !important;
+    margin: 0.75rem 0 !important;
+    padding: 0 !important;
+  }
+  
+  #site-nav .menu-cta {
+    display: grid !important;
+    place-items: center !important;
+    height: 48px !important;
+    border-radius: 12px !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    border: 2px solid transparent !important;
+    transition: all 0.2s ease !important;
+    min-height: 44px !important;
+    text-align: center !important;
+  }
+  
+  /* Match the exact colors from sticky CTA bar */
+  #site-nav .menu-cta.call {
+    background: var(--sky-blue) !important;
+    color: white !important;
+  }
+  
+  #site-nav .menu-cta.book {
+    background: var(--dallas-navy) !important;
+    color: white !important;
+  }
+  
+  #site-nav .menu-cta.directions {
+    background: var(--color-neutral-medium) !important;
+    color: var(--color-text-primary) !important;
+  }
+  
+  /* Hover effects matching sticky bar */
+  #site-nav .menu-cta:hover,
+  #site-nav .menu-cta:focus {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 2px 8px rgba(14, 54, 90, 0.15) !important;
+  }
+  
+  #site-nav .menu-cta:focus-visible {
+    outline: 3px solid var(--sky-blue) !important;
+    outline-offset: 2px !important;
+  }
 }
 
-/* Variants */
-.severity-level.high {
-  background: rgba(228, 108, 94, 0.16);           /* uses palette's coral */
-  color: #8a1414;                                  /* strong readable red */
-  border-color: rgba(228, 108, 94, 0.35);
+/* =============================================================================
+   DESKTOP TOP CTA STYLING (IF NEEDED)
+   ============================================================================= */
+
+/* If you want similar 3-button CTA styling on desktop pages */
+@media (min-width: 769px) {
+  /* Style for any top CTA sections on desktop */
+  .top-cta-bar,
+  .header-cta-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+	}
+}
+/* =============================================================================
+   ACCORDION SYSTEM FIXES - FINAL OVERRIDE
+   Add this to the END of cleaned-additional-css.css
+   ============================================================================= */
+
+/* FAQ Accordion System - Force proper behavior */
+.faq-answer {
+  display: none !important;
+  padding: 1.5rem !important;
+  background: white !important;
+  color: var(--slate-ink, #24313A) !important;
+  border-top: 1px solid #e5e7eb !important;
+  margin: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  height: auto !important;
+  overflow: visible !important;
 }
 
-.severity-level.medium {
-  background: rgba(255, 193, 7, 0.16);
-  color: #8a6d00;
-  border-color: rgba(255, 193, 7, 0.35);
+.faq-item.open .faq-answer {
+  display: block !important;
 }
 
-.severity-level.low {
-  background: rgba(143, 214, 200, 0.18);          /* minty low priority */
-  color: #0e5b4e;
-  border-color: rgba(143, 214, 200, 0.35);
+.faq-answer.show {
+  display: block !important;
 }
 
-/* Spacing tweak under each emergency heading */
-.emergency-card h3 + .severity-level { margin-top: 0.25rem; }
-
-/* Keep pills tidy on very small screens */
-@media (max-width: 420px) {
-  .severity-level { font-size: 0.8125rem; padding: 0.2rem 0.5rem; }
+/* FAQ Question styling */
+.faq-question {
+  cursor: pointer !important;
+  font-weight: 600 !important;
+  color: var(--dallas-navy, #0E365A) !important;
+  padding: 1.5rem !important;
+  background: #f8fafc !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  margin: 0 !important;
+  position: relative !important;
+  padding-right: 3rem !important;
+  user-select: none !important;
+  display: block !important;
+  width: 100% !important;
+  text-align: left !important;
+  border: none !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
 }
-/* Emergency hero: compact spacing */
-.page-emergency .emergency-hero h1 { margin-bottom: .4rem; line-height: 1.15; }
-.page-emergency .emergency-hero p { margin: .2rem 0 .75rem; line-height: 1.35; }
-.page-emergency .emergency-hero .button-group { margin: .75rem 0 0; }
+
+.faq-question:hover {
+  background: #f1f5f9 !important;
+}
+
+.faq-question:focus {
+  outline: 2px solid var(--sky-blue, #0077B6) !important;
+  outline-offset: 2px !important;
+}
+
+/* FAQ Plus/Minus icon - FORCE override */
+.faq-question::after {
+  content: '+' !important;
+  position: absolute !important;
+  right: 1.5rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  font-size: 1.2rem !important;
+  font-weight: bold !important;
+  color: var(--sky-blue, #0077B6) !important;
+  transition: transform 0.3s ease !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.faq-item.open .faq-question::after {
+  transform: translateY(-50%) rotate(45deg) !important;
+}
+
+/* FAQ Item container */
+.faq-item {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 1px solid #e5e7eb !important;
+  border-bottom: 0 !important;
+  background: white !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+}
+
+.faq-item:first-child {
+  border-radius: 12px 12px 0 0 !important;
+}
+
+.faq-item:last-child {
+  border-radius: 0 0 12px 12px !important;
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+.faq-item:only-child {
+  border-radius: 12px !important;
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+/* Emergency Page Details Elements */
+.faq-accordion details,
+#faq details {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 1px solid #e5e7eb !important;
+  border-bottom: 0 !important;
+  background: white !important;
+  border-radius: 0 !important;
+}
+
+.faq-accordion details:first-child,
+#faq details:first-child {
+  border-radius: 12px 12px 0 0 !important;
+}
+
+.faq-accordion details:last-child,
+#faq details:last-child {
+  border-radius: 0 0 12px 12px !important;
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+.faq-accordion details summary,
+#faq summary {
+  cursor: pointer !important;
+  font-weight: 600 !important;
+  color: var(--dallas-navy, #0E365A) !important;
+  list-style: none !important;
+  padding: 1.5rem !important;
+  background: #f8fafc !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  margin: 0 !important;
+  position: relative !important;
+  padding-right: 3rem !important;
+  user-select: none !important;
+}
+
+.faq-accordion details summary::-webkit-details-marker,
+#faq summary::-webkit-details-marker {
+  display: none !important;
+}
+
+.faq-accordion details summary::after,
+#faq summary::after {
+  content: '+' !important;
+  position: absolute !important;
+  right: 1.5rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  font-size: 1.2rem !important;
+  font-weight: bold !important;
+  color: var(--sky-blue, #0077B6) !important;
+  transition: transform 0.3s ease !important;
+  pointer-events: none !important;
+  float: none !important;
+}
+
+.faq-accordion details[open] summary::after,
+#faq details[open] summary::after {
+  transform: translateY(-50%) rotate(45deg) !important;
+}
+
+.faq-accordion details summary:hover,
+#faq summary:hover {
+  background: #f1f5f9 !important;
+}
+
+.faq-accordion details summary:focus,
+#faq summary:focus {
+  outline: 2px solid var(--sky-blue, #0077B6) !important;
+  outline-offset: 2px !important;
+}
+
+/* Emergency page details content */
+.faq-accordion details > *:not(summary),
+#faq details > *:not(summary) {
+  margin: 0 !important;
+  padding: 1.5rem !important;
+  background: white !important;
+  color: var(--slate-ink, #24313A) !important;
+  border-top: 1px solid #e5e7eb !important;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .faq-question {
+    padding: 1rem 2.5rem 1rem 1rem !important;
+  }
+  
+  .faq-question::after {
+    right: 1rem !important;
+  }
+  
+  .faq-answer {
+    padding: 1rem !important;
+  }
+  
+  .faq-accordion details summary,
+  #faq summary {
+    padding: 1rem 2.5rem 1rem 1rem !important;
+  }
+  
+  .faq-accordion details summary::after,
+  #faq summary::after {
+    right: 1rem !important;
+  }
+  
+  .faq-accordion details > *:not(summary),
+  #faq details > *:not(summary) {
+    padding: 1rem !important;
+  }
+}
+
+/* Prevent any animations that might interfere */
+@media (prefers-reduced-motion: reduce) {
+  .faq-question::after,
+  .faq-accordion details summary::after,
+  #faq summary::after {
+    transition: none !important;
+  }
+}	  
+	  

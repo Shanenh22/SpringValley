@@ -9,6 +9,28 @@
 <!-- CSS Files -->
 <link href="css/styles.css" rel="stylesheet"/>
 <link rel="stylesheet" href="css/cleaned-additional-css.css">
+	
+	<style>
+  /* Ensure hamburger button always works */
+  .hamburger {
+    position: relative !important;
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+  }
+
+  .hamburger[aria-expanded="false"] {
+    pointer-events: auto !important;
+  }
+
+  /* Prevent FAQ/Review elements from blocking navigation */
+  .faq-category,
+  .faq-question,
+  .review-card,
+  .platform-option {
+    position: relative;
+    z-index: 1;
+  }
+  </style>
 
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -39,6 +61,8 @@
   gtag('js', new Date());
   gtag('config', 'G-KY64HPT0ER');
 </script>
+	
+	
 </head>
 <body>
 
@@ -65,72 +89,74 @@
     </a>
     
     <!-- Desktop Navigation -->
-    <nav aria-label="Primary" class="site-nav" id="site-nav" hidden>
-      <!-- Desktop Links (shown on desktop) -->
-      <ul class="site-links desktop-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="emergency.html">Emergency</a></li>
-        <li><a data-nowrap href="patient-info.html">Patient Info</a></li>
-        <li><a href="reviews.html">Reviews</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a class="cta" data-nowrap href="contact.html">Book Online</a></li>
-      </ul>
-      
-      <!-- Mobile Navigation Drawer (shown on mobile) -->
-      <div class="menu-header">
-        <button class="menu-close" aria-label="Close menu" type="button">×</button>
-        <div class="brand-row">
-          <h2 class="practice-name">Spring Valley Dental</h2>
-        </div>
-      </div>
-      
-      <div class="menu-ctas">
-        <a class="menu-cta call" href="tel:+19728522222">Call</a>
-        <a class="menu-cta book" href="contact.html">Book</a>
-        <a class="menu-cta directions" href="https://www.google.com/maps/place/14228+Midway+Rd+%23100,+Dallas,+TX+75244/@32.943659,-96.838108,14z/data=!4m6!3m5!1s0x864c26d39eab13f3:0x3e1243026b4b017b!8m2!3d32.9436588!4d-96.8381082!16s%2Fg%2F11qpmyb56j?hl=en-US&entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D">Directions</a>
-      </div>
-      
-      <div class="menu-section">
-        <h3 class="section-title">I need...</h3>
-        <ul class="intent-grid">
-          <li><a href="emergency.html">Emergency Care</a></li>
-          <li><a href="services.html#cleaning">Teeth Cleaning</a></li>
-          <li><a href="services.html#cosmetic">Cosmetic Work</a></li>
-          <li><a href="services.html#restorative">Tooth Repair</a></li>
-          <li><a href="patient-info.html#forms">Patient Forms</a></li>
-          <li><a href="patient-info.html#insurance">Insurance Help</a></li>
-        </ul>
-      </div>
-      
-      <div class="menu-section">
-        <h3 class="section-title">Patients</h3>
-        <ul class="menu-links">
-          <li><a href="about.html">About Our Practice</a></li>
-          <li><a href="services.html">Services & Treatments</a></li>
-          <li><a href="patient-info.html">Patient Information</a></li>
-          <li><a href="reviews.html">Patient Reviews</a></li>
-          <li><a href="faq.html">Frequently Asked Questions</a></li>
-          <li><a href="blog.html">Dental Health Blog</a></li>
-        </ul>
-      </div>
-      
-      <div class="menu-footer">
-        <div class="practice-info">
-          <p><strong>Spring Valley Dental Associates</strong></p>
-          <p>14228 Midway Rd, Suite 100<br>Dallas, TX 75244</p>
-          <p>Phone: <a href="tel:+19728522222">(972) 852-2222</a></p>
-        </div>
-      </div>
-    </nav>
-    
+    <nav id="site-nav" class="site-nav" aria-label="Primary" hidden>
+  <!-- Desktop Navigation -->
+  <ul class="site-links desktop-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="emergency.html">Emergency</a></li>
+    <li><a href="patient-info.html" data-nowrap>Patient Info</a></li>
+    <li><a href="reviews.html" aria-current="page">Reviews</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a class="cta" href="contact.html" data-nowrap>Book Online</a></li>
+  </ul>
+
+  <!-- Mobile Navigation Structure -->
+  <div class="menu-header">
+    <button class="menu-close" aria-label="Close menu">×</button>
+    <div class="brand-row">
+      <h2 class="practice-name">Spring Valley Dental</h2>
+    </div>
+  </div>
+
+  <!-- Mobile CTAs (top priority) -->
+  <div class="menu-ctas">
+    <a class="menu-cta call" href="tel:+19728522222">Call</a>
+    <a class="menu-cta book" href="contact.html">Book</a>
+    <a class="menu-cta directions" href="https://www.google.com/maps/place/14228+Midway+Rd+%23100,+Dallas,+TX+75244/@32.943659,-96.838108,14z">Directions</a>
+  </div>
+
+  <!-- Main menu items (second priority) -->
+  <div class="menu-section">
+    <h3 class="section-title">Pages</h3>
+    <ul class="menu-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="emergency.html">Emergency</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <div class="menu-section">
+    <h3 class="section-title">I need...</h3>
+    <ul class="intent-grid">
+      <li><a href="emergency.html">Emergency care</a></li>
+      <li><a href="teeth-cleaning.html">Cleaning & exam</a></li>
+      <li><a href="dental-implants.html">Dental implants</a></li>
+      <li><a href="invisalign.html">Invisalign</a></li>
+    </ul>
+  </div>
+
+  <!-- Footer info (bottom) -->
+  <div class="menu-footer">
+    <div class="practice-info">
+      <p><strong>Spring Valley Dental Associates</strong></p>
+      <p>14228 Midway Rd, Suite 100<br>Dallas, TX 75244</p>
+      <p><a href="tel:+19728522222">(972) 852-2222</a></p>
+    </div>
+  </div>
+</nav>
     <!-- Navigation Overlay -->
     <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
     
     <!-- Hamburger Menu Button -->
-    <button aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation menu" class="hamburger" id="hamburger" type="button">
+    <button aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation menu" class="hamburger" id="nav-toggle" type="button">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -585,10 +611,54 @@
 
 <!-- JavaScript Files -->
 <script src="js/site-config.js"></script>
-<script src="js/nav.js"></script>
+<script src="nav.js"></script>
 
 <!-- Review Page Specific Scripts -->
 <script>
+	// Minimal navigation fix for Reviews page
+document.addEventListener('DOMContentLoaded', function() {
+  // Prevent review interactions from interfering with navigation
+  const reviewCards = document.querySelectorAll('.review-card');
+  const platformBtns = document.querySelectorAll('.review-btn, .platform-option');
+  
+  reviewCards.forEach(card => {
+    card.addEventListener('click', function(e) {
+      if (e.target.closest('a, button')) {
+        e.stopImmediatePropagation();
+      }
+    });
+  });
+  
+  platformBtns.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopImmediatePropagation();
+    });
+  });
+});
+	
+	// Ensure navigation doesn't conflict with review functionality
+document.addEventListener('DOMContentLoaded', function() {
+  // Prevent review element clicks from interfering with navigation
+  const reviewCards = document.querySelectorAll('.review-card');
+  const platformOptions = document.querySelectorAll('.platform-option');
+  
+  reviewCards.forEach(card => {
+    card.addEventListener('click', function(e) {
+      // Only stop propagation for interactive elements within cards
+      if (e.target.closest('a, button')) {
+        e.stopPropagation();
+      }
+    });
+  });
+  
+  platformOptions.forEach(option => {
+    option.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+  });
+});
+
+	
 // Review filtering functionality - Fixed and functional
 document.addEventListener('DOMContentLoaded', function() {
   const navItems = document.querySelectorAll('.review-nav-item');
