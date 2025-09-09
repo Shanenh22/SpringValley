@@ -1565,3 +1565,11 @@ body.patient-info .info-section {
     pointer-events: none;
   }
 }
+
+@media (max-width: 768px) {
+  .faq-categories {
+    position: static !important; /* Remove sticky behavior */
+    top: auto !important;
+    z-index: auto !important;
+  }
+}
