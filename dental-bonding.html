@@ -57,64 +57,72 @@
         </a>
 
         <!-- Mobile Navigation Structure -->
-        <nav aria-label="Primary" class="site-nav" hidden="" id="site-nav">
-            <!-- Mobile menu header -->
-            <div class="menu-header">
-                <button class="menu-close" aria-label="Close menu">&times;</button>
-                <div class="brand-row">
-                    <div class="practice-name">Spring Valley Dental</div>
-                </div>
-            </div>
+        <!-- Desktop Navigation -->
+    <nav id="site-nav" class="site-nav" aria-label="Primary" hidden>
+  <!-- Desktop Navigation -->
+  <ul class="site-links desktop-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="emergency.html">Emergency</a></li>
+    <li><a href="patient-info.html" data-nowrap>Patient Info</a></li>
+    <li><a href="reviews.html">Reviews</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a class="cta" href="contact.html" data-nowrap>Book Online</a></li>
+  </ul>
 
-            <!-- Mobile CTAs -->
-            <div class="menu-ctas">
-                <a class="menu-cta call" href="tel:+19728522222">Call</a>
-                <a class="menu-cta book" href="contact.html">Book</a>
-                <a class="menu-cta directions" href="https://www.google.com/maps/place/14228+Midway+Rd+%23100,+Dallas,+TX+75244/">Directions</a>
-            </div>
+  <!-- Mobile Navigation Structure -->
+  <div class="menu-header">
+    <button class="menu-close" aria-label="Close menu">×</button>
+    <div class="brand-row">
+      <h2 class="practice-name">Spring Valley Dental</h2>
+    </div>
+  </div>
 
-            <!-- Desktop links (hidden on mobile) -->
-            <ul class="site-links desktop-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="emergency.html">Emergency</a></li>
-                <li><a data-nowrap="" href="patient-info.html">Patient Info</a></li>
-                <li><a href="reviews.html">Reviews</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a class="cta" data-nowrap="" href="contact.html">Book Online</a></li>
-            </ul>
+  <!-- Mobile CTAs (top priority) -->
+  <div class="menu-ctas">
+    <a class="menu-cta call" href="tel:+19728522222">Call</a>
+    <a class="menu-cta book" href="contact.html">Book</a>
+    <a class="menu-cta directions" href="https://www.google.com/maps/place/14228+Midway+Rd+%23100,+Dallas,+TX+75244/@32.943659,-96.838108,14z">Directions</a>
+  </div>
 
-            <!-- Mobile menu sections -->
-            <div class="menu-section">
-                <div class="section-title">I need...</div>
-                <ul class="intent-grid">
-                    <li><a href="emergency.html">Emergency care</a></li>
-                    <li><a href="services.html#cleanings">Cleaning & checkup</a></li>
-                    <li><a href="services.html#cosmetic">Smile makeover</a></li>
-                    <li><a href="services.html#restorative">Tooth repair</a></li>
-                </ul>
-            </div>
+  <!-- Main menu items (second priority) -->
+  <div class="menu-section">
+    <h3 class="section-title">Pages</h3>
+    <ul class="menu-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="emergency.html">Emergency</a></li>
+	 <li><a href="patient-info.html" data-nowrap>Patient Info</a></li>	
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
 
-            <div class="menu-section">
-                <div class="section-title">Patients</div>
-                <ul class="menu-links">
-                    <li><a href="patient-info.html">Patient Info</a></li>
-                    <li><a href="reviews.html">Reviews</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                </ul>
-            </div>
+  <!-- Service-specific navigation (third priority) -->
+  <div class="menu-section">
+    <h3 class="section-title">I need...</h3>
+    <ul class="intent-grid">
+      <li><a href="emergency.html">Emergency care</a></li>
+      <li><a href="teeth-cleaning.html">Cleaning & exam</a></li>
+      <li><a href="dental-implants.html">Dental implants</a></li>
+      <li><a href="invisalign.html"  aria-current="page">Invisalign</a></li>
+    </ul>
+  </div>
 
-            <div class="menu-footer">
-                <div class="practice-info">
-                    <p><strong>Spring Valley Dental Associates</strong></p>
-                    <p>14228 Midway Rd, Suite 100<br>Dallas, TX 75244</p>
-                    <p><a href="tel:+19728522222">(972) 852-2222</a></p>
-                </div>
-            </div>
-        </nav>
+  <!-- Footer info (bottom) -->
+  <div class="menu-footer">
+    <div class="practice-info">
+      <p><strong>Spring Valley Dental Associates</strong></p>
+      <p>14228 Midway Rd, Suite 100<br>Dallas, TX 75244</p>
+      <p><a href="tel:+19728522222">(972) 852-2222</a></p>
+    </div>
+  </div>
+</nav>
 
         <button aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation menu" class="hamburger" id="nav-toggle" type="button">
             <span></span><span></span><span></span>
