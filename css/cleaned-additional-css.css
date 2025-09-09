@@ -1307,7 +1307,7 @@ body.patient-info .info-section {
 */
 
 /* =============================================================================
-   PLATFORM REVIEWS SPACING FIX - CONSOLIDATED
+   PLATFORM REVIEWS SPACING FIX - BALANCED RESPONSIVE
    ============================================================================= */
 
 .platform-reviews {
@@ -1324,7 +1324,6 @@ body.patient-info .info-section {
   background: var(--porcelain);
   border-radius: 12px;
   border-left: 4px solid var(--sky-blue);
-  min-height: 80px; /* Ensure consistent height */
 }
 
 .platform-logo {
@@ -1333,7 +1332,7 @@ body.patient-info .info-section {
   gap: 0.75rem;
   font-weight: 600;
   color: var(--slate-ink);
-  min-width: 140px; /* Increased for better spacing */
+  min-width: 120px;
   flex-shrink: 0;
 }
 
@@ -1341,9 +1340,6 @@ body.patient-info .info-section {
   flex-shrink: 0;
   width: 24px !important;
   height: 24px !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .platform-rating {
@@ -1352,40 +1348,79 @@ body.patient-info .info-section {
   gap: 0.75rem;
   font-weight: 600;
   color: var(--dallas-navy);
-  flex-shrink: 0;
 }
 
 .platform-rating .value {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  min-width: 40px;
-  text-align: center;
+  min-width: 32px;
 }
 
 .platform-rating .stars {
   color: var(--color-star) !important;
   font-family: Arial, Helvetica, Roboto, "Segoe UI", sans-serif;
   line-height: 1;
-  font-size: 1.2rem;
-  margin: 0 0.5rem;
+  font-size: 1.1rem;
+  margin-right: 0.5rem;
 }
 
 .platform-count {
   font-size: 0.9rem;
   color: var(--cool-gray);
   white-space: nowrap;
-  min-width: 90px;
+  min-width: 80px;
   text-align: right;
-  flex-shrink: 0;
 }
 
-/* Mobile adjustments for platform reviews */
-@media (max-width: 640px) {
+/* Only stack on truly small screens (actual mobile devices) */
+@media (max-width: 600px) {
   .platform-item {
     flex-direction: column;
     text-align: center;
-    gap: 1.5rem; /* Increased gap */
-    padding: 2rem 1.5rem; /* More vertical padding */
+    gap: 1rem;
+    padding: 2rem 1.5rem;
+  }
+  
+  .platform-logo {
+    justify-content: center;
+    min-width: auto;
+  }
+  
+  .platform-rating {
+    justify-content: center;
+  }
+  
+  .platform-rating .value {
+    font-size: 1.4rem;
+  }
+  
+  .platform-rating .stars {
+    font-size: 1.2rem;
+  }
+  
+  .platform-count {
+    text-align: center;
+    min-width: auto;
+  }
+}
+
+/* Very small mobile screens */
+@media (max-width: 480px) {
+  .platform-item {
+    padding: 1.5rem 1rem;
+  }
+  
+  .platform-rating .value {
+    font-size: 1.3rem;
+  }
+}
+/* Tablet adjustments - switch to stacked layout earlier */
+@media (max-width: 768px) {
+  .platform-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.75rem 1.5rem;
     min-height: auto;
   }
   
@@ -1395,19 +1430,42 @@ body.patient-info .info-section {
     width: 100%;
   }
   
+  .platform-rating {
+    justify-content: center;
+    width: 100%;
+    gap: 0.875rem;
+  }
+  
+  .platform-rating .value {
+    font-size: 1.5rem;
+    min-width: auto;
+  }
+  
+  .platform-count {
+    text-align: center;
+    min-width: auto;
+    width: 100%;
+    margin-top: 0.25rem;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .platform-item {
+    padding: 1.5rem 1rem;
+    gap: 1.25rem;
+  }
+  
   .platform-logo span {
     font-size: 1.1rem;
   }
   
   .platform-rating {
-    justify-content: center;
-    width: 100%;
-    gap: 1rem; /* More space between elements */
+    gap: 1rem;
   }
   
   .platform-rating .value {
-    font-size: 1.6rem; /* Larger on mobile */
-    min-width: auto;
+    font-size: 1.6rem;
   }
   
   .platform-rating .stars {
@@ -1415,10 +1473,22 @@ body.patient-info .info-section {
   }
   
   .platform-count {
-    text-align: center;
-    min-width: auto;
-    width: 100%;
     margin-top: 0.5rem;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 380px) {
+  .platform-item {
+    padding: 1.25rem 0.75rem;
+  }
+  
+  .platform-rating .value {
+    font-size: 1.4rem;
+  }
+  
+  .platform-rating .stars {
+    font-size: 1.1rem;
   }
 }
 
