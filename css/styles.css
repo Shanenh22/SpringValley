@@ -225,9 +225,9 @@ img {
 
 .navbar .logo img {
   display: block;
-  height: auto;
+  height: 69;
   width: auto;
-  max-height: 52px;
+  max-height: 70px;
   max-width: 240px;
   margin: 0;
 }
@@ -364,11 +364,6 @@ img {
     align-items: center;
   }
   
-  .navbar .logo img {
-    max-height: 52px;
-    max-width: 240px;
-  }
-  
   .navbar {
     padding-block: 0.6rem;
   }
@@ -444,11 +439,6 @@ img {
   .site-links a.cta:focus {
     background: var(--color-primary);
     color: white;
-  }
-  
-  .navbar .logo img {
-    max-height: 48px;
-    max-width: 200px;
   }
   
   .navbar {
@@ -10997,3 +10987,13 @@ body.patient-info .info-section {
 .faq-item.open .faq-question::after {
   transform: translateY(-50%) rotate(45deg) !important;
 }
+/* FINAL logo rule — must be last */
+.navbar .logo img {
+  display: block;
+  height: 69px;         /* explicit height ensures SVG renders */
+  width: auto;
+  max-width: 240px;
+  margin: 0;
+}
+/* Navbar size control — final override */
+:root { --site-header-height: 70px; }

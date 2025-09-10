@@ -317,3 +317,4 @@ console.log('Navigation classes initialized successfully');
 console.error('Error initializing navigation:', error);
 }
 });
+
