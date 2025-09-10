@@ -1689,3 +1689,14 @@ body.patient-info .info-section {
   }
 }
 
+/* Hide the top CTA block inside the mobile menu */
+#site-nav .menu-ctas { 
+  display: none !important;
+}
+/* Hide the NAV BAR blockfrom the top  */
+.top-bar {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
