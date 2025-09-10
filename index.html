@@ -18,9 +18,25 @@
     "@type": "Dentist",
     "@id": "https://springvalleydentistry.com/#dentist",
     "name": "Spring Valley Dental Associates",
-    "image": "images/hero-background.png",
+    "image": [
+  	"https://springvalleydentistry.com/images/spring-valley-logo-desktop.svg",
+  	"https://springvalleydentistry.com/images/building_front.jpg"
+	],
     "url": "https://springvalleydentistry.com/",
     "telephone": "+1-972-852-2222",
+	"email": "info@springvalleydentistry.com",
+	"description": "Compassionate, affordable dental care for every smile in Dallas. Family, cosmetic, and emergency dental services.",
+	"serviceType": ["General Dentistry", "Cosmetic Dentistry", "Emergency Dentistry", "Dental Implants", "Invisalign"],
+	"founder": [
+  {
+    "@type": "Person",
+    "name": "Dr. Shokooh Aletaha"
+  },
+  {
+    "@type": "Person", 
+    "name": "Dr. Nicole Houshmand"
+  }
+  ],
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
@@ -36,26 +52,44 @@
       "longitude": "-96.8395"
     },
     "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "17:00"
-      }
-    ],
+  {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": "Monday",
+    "opens": "10:00",
+    "closes": "19:00"
+  },
+  {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": "Tuesday",
+    "opens": "08:30",
+    "closes": "16:00"
+  },
+  {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": "Wednesday",
+    "opens": "08:00",
+    "closes": "13:00"
+  },
+  {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": "Thursday",
+    "opens": "08:00",
+    "closes": "15:00"
+  },
+  {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": "Friday",
+    "opens": "08:00",
+    "closes": "15:00"
+  }
+],
     "areaServed": ["Dallas", "North Dallas", "Addison", "Farmers Branch"],
     "sameAs": [
       "https://g.page/spring-valley-dentistry",
       "https://www.facebook.com/share/16xP4Vjixk/?mibextid=wwXIfr",
       "https://www.instagram.com/springvalleydental_dallas?igsh=NTM0aXVkMzA3czd2"
     ],
-    "hasMap": "https://www.google.com/maps?q=Spring+Valley+Dentistry+Dallas"
+    "hasMap": "https://www.google.com/maps/place/14228+Midway+Rd+%23100,+Dallas,+TX+75244"
   }
 </script>
 <script>document.documentElement.classList.remove("no-js");</script>
@@ -68,24 +102,6 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-KY64HPT0ER');
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Spring Valley Dental Associates",
-  "url": "http://www.springvalleydentistry.com/",
-  "telephone": "(972) 852-2222",
-  "email": "info@springvalleydentistry.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Spring Valley Dental Associates",
-    "addressLocality": "Dallas",
-    "addressRegion": "TX",
-    "addressCountry": "US"
-  }
-}
 </script>
 <script>
 // Ensure mobile navigation structure exists
