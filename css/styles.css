@@ -11002,3 +11002,13 @@ body.patient-info .info-section {
 .menu-ctas {
   display: none !important;
 }
+/* Force uniform logo sizing across all pages */
+:root { --logo-height: 69px; }         /* default */
+@media (max-width: 768px) { 
+  :root { --logo-height: 56px; }       /* mobile */
+}
+.navbar .logo img {
+  height: var(--logo-height) !important;
+  width: auto !important;
+  max-width: 240px !important;
+}
