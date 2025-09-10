@@ -1,10 +1,67 @@
-User-agent: *
-Disallow: /admin/
+# Robots.txt for Spring Valley Dental Associates
+# Updated: 2025-09-09
 
+# Allow all legitimate search engines and AI crawlers
+User-agent: *
+Allow: /
+
+# Block sensitive directories that shouldn't be indexed
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /_backup/
+Disallow: /scripts/
+Disallow: /includes/
+
+# Block specific files that shouldn't be indexed
+Disallow: /email-template.html
+Disallow: /header.html
+Disallow: /test.html
+Disallow: /*.log
+Disallow: /*.tmp
+
+# Explicitly allow important AI crawlers for SEO and AI search
 User-agent: GPTBot
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: http://www.springvalleydentistry.com/sitemap.xml
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude
+Allow: /
+
+# Block problematic or aggressive crawlers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Set crawl delay for resource-intensive bots
+User-agent: Bingbot
+Crawl-delay: 1
+
+User-agent: Slurp
+Crawl-delay: 1
+
+# Update sitemap URL to HTTPS
+Sitemap: https://www.springvalleydentistry.com/sitemap.xml
+
+# Additional sitemaps if you have them
+# Sitemap: https://www.springvalleydentistry.com/blog-sitemap.xml
+# Sitemap: https://www.springvalleydentistry.com/services-sitemap.xml
