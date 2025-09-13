@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html class="no-js" lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -22,52 +22,32 @@
 <meta content="Oral Surgery Dallas in Dallas, Addison, Farmers Branch and North Dallas. Book your appointment today!" name="twitter:description"/>
 <meta content="https://springvalleydentistry.com/images/hero-background.png" name="twitter:image"/>
 <meta content="https://springvalleydentistry.com/oral-surgery.html" name="twitter:url"/>
-<script>document.documentElement.classList.remove("no-js");</script>
+
 <link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" onload="this.rel='stylesheet'" rel="preload"/>
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/></noscript>
 <!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KY64HPT0ER"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-KY64HPT0ER');
-</script>
+
+<link rel="stylesheet" href="css/cleaned-additional-css.css"/>
+<meta name="twitter:image" content="https://springvalleydentistry.com/images/building_front_with_logo.jpg"/>
+<meta property="og:url" content="https://springvalleydentistry.com/oral-surgery.html"/>
+<meta name="twitter:url" content="https://springvalleydentistry.com/oral-surgery.html"/>
+<link rel="manifest" href="/site.webmanifest"/>
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
+<meta name="theme-color" content="#f8f9fa"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://springvalleydentistry.com/"},{"@type":"ListItem","position":2,"name":"Oral Surgery in Dallas \u2014 Expert, Compassionate Care","item":"https://springvalleydentistry.com/oral-surgery.html"}]}</script>
 </head>
 <body>
 <!-- Skip link -->
 <a class="skip-to-content" href="#main">Skip to content</a>
-<header class="site-header" role="banner">
-    
-<div class="navbar">
-<a aria-label="Spring Valley Dental Associates home" class="logo" href="index.html">
-<picture class="logo" aria-label="Spring Valley logo">
-  <source media="(max-width:768px)" srcset="images/spring-valley-logo-mobile.svg" type="image/svg+xml"/>
-  <source media="(min-width:769px)" srcset="images/spring-valley-logo-desktop.svg" type="image/svg+xml"/>
-  <img src="images/spring-valley-logo-desktop.svg" alt="Spring Valley Dental" loading="eager" fetchpriority="high"/>
-</picture>
-</a>
-<nav aria-label="Primary" class="site-nav" id="site-nav" hidden>
-<ul class="site-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="emergency.html">Emergency</a></li>
-<li><a data-nowrap href="patient-info.html">Patient Info</a></li>
-<li><a href="reviews.html">Reviews</a></li>
-<li><a href="faq.html">FAQ</a></li>
-<li><a href="blog.html">Blog</a></li>
-<li><a class="cta" data-nowrap href="contact.html">Book Online</a></li>
-</ul>
-</nav>
-<div class="nav-overlay"></div>
-<button aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation menu" class="hamburger" id="nav-toggle" type="button">
-<span></span><span></span><span></span>
-</button>
-</div>
-<div class="nav-overlay" id="nav-overlay"></div>
-</header>
-<main>
+<div id="site-header"></div>
+
+
+<!-- Skip link -->
+<a class="skip-to-content" href="#main">Skip to content</a>
+<div id="site-header"></div>
+
+
+<main id="main">
 <!-- Page Header -->
 <section class="hero" style="background-image: url('images/hero-background.png');">
 <h1>Oral Surgery in Dallas — Expert, Compassionate Care</h1>
@@ -103,12 +83,46 @@
 </nav>
 <div id="nav-status" class="sr-only" aria-live="polite" aria-atomic="true"></div>
 
+<!-- External link safety enhancer -->
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('a.directions, a[href*="google.com/maps"]').forEach(a => {
+    if (!a.hasAttribute('target')) a.setAttribute('target', '_blank');
+    if (!a.hasAttribute('rel')) a.setAttribute('rel', 'noopener');
+  });
+});
+</script>
+
+
+<!-- Focus-aware anchor (sticky-header offset + keyboard focus) -->
+<script>
+document.addEventListener('click', function(e){
+  const a = e.target.closest('a[href^="#"]');
+  if (!a) return;
+  if (a.origin !== location.origin || a.pathname !== location.pathname) return;
+  const id = a.getAttribute('href').slice(1);
+  const el = document.getElementById(id);
+  if (!id || !el) return;
+  e.preventDefault();
+  const header = document.querySelector('.site-header');
+  const offset = (header ? header.getBoundingClientRect().height : 0) + 16;
+  const y = el.getBoundingClientRect().top + window.pageYOffset - offset;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' });
+  const prev = el.getAttribute('tabindex');
+  el.setAttribute('tabindex','-1'); el.focus({ preventScroll: true });
+  el.addEventListener('blur', () => { if (prev === null) el.removeAttribute('tabindex'); else el.setAttribute('tabindex', prev); }, { once: true });
+  history.pushState(null, '', '#' + id);
+});
+</script>
+
 <script defer src="js/scripts.js"></script>
-<script defer src="nav.js"></script>
 <script defer src="site-config.js"></script>
+<script defer src="js/header.js"></script>
+<script defer src="nav.js"></script>
 <script defer src="analytics.js"></script>
-<script src="js/cta-config.js"></script>
-<script src="js/menu-enhancements.js"></script>
-<script src="js/footer.js"></script>
+<script defer src="js/cta-config.js"></script>
+<script defer src="js/menu-enhancements.js"></script>
+<script defer src="js/footer.js"></script>
 </body>
 </html>
