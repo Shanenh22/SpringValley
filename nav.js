@@ -337,13 +337,63 @@ class SmoothScroll {
 }
 
 // Initialize navigation when DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   console.log('DOM loaded, initializing navigation...');
+
   try {
+    // Your existing init
     new MobileNavigation();
     new SmoothScroll();
     console.log('Navigation classes initialized successfully');
   } catch (error) {
     console.error('Error initializing navigation:', error);
   }
+
+  // ---- Current-page highlighting (accessibility + styling hook) ----
+  // Adds aria-current="page" to the matching link in .site-links and .menu-links
+  (function setupCurrentPageMarker() {
+    const NAV_CONTAINER_ID = 'site-nav';
+    const SELECTOR = '.site-links a, .menu-links a';
+
+    function normalizeFile(pathname) {
+      // e.g., "/" -> "index.html", "/patient-info" -> "patient-info.html"
+      let file = pathname.split('/').pop() || 'index.html';
+      if (!/\.[a-z0-9]+$/i.test(file)) file += '.html';
+      return file.toLowerCase();
+    }
+
+    function markCurrent() {
+      const currentFile = normalizeFile(location.pathname);
+      const links = document.querySelectorAll(SELECTOR);
+      if (!links.length) return false; // nav not injected yet
+
+      // Clear any previous state
+      links.forEach(a => a.removeAttribute('aria-current'));
+
+      // Apply when filenames match (ignores query/hash)
+      links.forEach(a => {
+        const href = a.getAttribute('href') || '';
+        const file = href.split('#')[0].split('?')[0].split('/').pop().toLowerCase();
+        if (file && file === currentFile) {
+          a.setAttribute('aria-current', 'page');
+        }
+      });
+
+      return true;
+    }
+
+    // Run once now
+    let applied = markCurrent();
+
+    // Run again after full load (in case late injections happen)
+    window.addEventListener('load', () => { if (!applied) applied = markCurrent(); });
+
+    // Observe future mutations to the nav (e.g., if mobile menu/sections are injected later)
+    const nav = document.getElementById(NAV_CONTAINER_ID);
+    if (nav && 'MutationObserver' in window) {
+      const mo = new MutationObserver(() => { markCurrent(); });
+      mo.observe(nav, { childList: true, subtree: true });
+    }
+  })();
 });
+

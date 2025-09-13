@@ -1701,3 +1701,9 @@ body.patient-info .info-section {
   padding: 0 !important;
 }
 .site-nav .hide-dup { display: none !important; }
+
+.site-links a[aria-current="page"],
+.menu-links a[aria-current="page"] {
+  text-decoration: underline;
+  font-weight: 600;
+}
