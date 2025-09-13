@@ -1700,3 +1700,4 @@ body.patient-info .info-section {
   margin: 0 !important;
   padding: 0 !important;
 }
+.site-nav .hide-dup { display: none !important; }

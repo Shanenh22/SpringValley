@@ -4,7 +4,8 @@
   'use strict';
   const $  = (s,r=document)=>r.querySelector(s);
   const $$ = (s,r=document)=>Array.from(r.querySelectorAll(s));
-  const on = (el,ev,fn)=>el&&el.addEventListener(ev,fn,{passive:true});
+  const on = (el, ev, fn, opts = { passive: true }) =>
+  el && el.addEventListener(ev, fn, opts);
 
   function gaEvent(name, params){
     if (typeof gtag === 'function') {
@@ -28,7 +29,8 @@
     const closeBtn = document.createElement('button');
     closeBtn.className = 'menu-close';
     closeBtn.type = 'button';
-    closeBtn.setAttribute('aria-label','Close menu');
+    closeBtn.setAttribute('aria-controls', 'site-nav');
+    closeBtn.setAttribute('aria-label', 'Close menu');
     closeBtn.innerText = '✕';
 
     // Reuse logo if present in header
@@ -40,7 +42,7 @@
     if (logoSrc) {
       const img = document.createElement('img');
       img.className = 'brand';
-      img.alt = 'Practice logo';
+      img.alt = document.title || 'Spring Valley Dental Associates';
       img.src = logoSrc;
       brandRow.appendChild(img);
     }
@@ -98,12 +100,11 @@
     nav.insertBefore(header, nav.firstChild);
 
     // Close interaction (delegates to existing nav.js click handler)
-    on(closeBtn,'click', function(ev){
-      ev.preventDefault();
-      // Trigger the same toggle used by your menu button to close
-      const toggle = document.getElementById('nav-toggle') || document.querySelector('.hamburger');
-      if (toggle) toggle.click();
-    });
+    on(closeBtn, 'click', function (ev) {
+  ev.preventDefault();
+  const toggle = document.getElementById('nav-toggle') || document.querySelector('.hamburger');
+  if (toggle) toggle.click();
+}, { passive: false });
   }
 
   function buildSections(nav){
@@ -127,7 +128,7 @@
     ];
     items.forEach(it=>{
       const li=document.createElement('li'); const a=document.createElement('a');
-      a.href=it.href; a.textContent=it.text; a.setAttribute('role','link');
+      a.href=it.href; a.textContent=it.text;
       on(a,'click',()=>gaEvent('menu_intent_click',{label: it.text}));
       li.appendChild(a); ul.appendChild(li);
     });
@@ -159,10 +160,15 @@
     const trust = document.createElement('div');
     trust.className = 'trust';
     const pill1 = document.createElement('span'); pill1.className='pill insurance'; pill1.textContent='Most PPO plans accepted';
-    const pill2 = document.createElement('span'); pill2.className='pill rating'; pill2.setAttribute('aria-label','Google rating'); pill2.textContent='★★★★★ 4.9';
+    const pill2 = document.createElement('span');
+    pill2.className = 'pill rating';
+    pill2.setAttribute('role', 'img');
+    pill2.setAttribute('aria-label', 'Google rating 4.9 out of 5'); // or pull real value
+    pill2.textContent = '★★★★★ 4.9';
     trust.appendChild(pill1); trust.appendChild(pill2);
     
     // Insert after existing nav links
+    footer.appendChild(trust);
     nav.appendChild(intent);
     nav.appendChild(patients);
     nav.appendChild(footer);
@@ -188,7 +194,7 @@
       if (!a) return;
       if (a.classList.contains('menu-cta')) return; // CTAs already tracked
       if (a.closest('.intent-grid')) return;        // intents already tracked
-      gaEvent('menu_link_click', {label: a.textContent.trim().slice(0,80)});
+      gaEvent('menu_link_click', {label: a.textContent.trim().slice(0,80), href: a.href });
     });
   }
 

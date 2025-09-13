@@ -86,7 +86,6 @@
     "areaServed": ["Dallas", "North Dallas", "Addison", "Farmers Branch"],
     "sameAs": [
       "https://g.page/spring-valley-dentistry",
-      "https://www.facebook.com/share/16xP4Vjixk/?mibextid=wwXIfr",
       "https://www.instagram.com/springvalleydental_dallas?igsh=NTM0aXVkMzA3czd2"
     ],
     "hasMap": "https://www.google.com/maps/place/14228+Midway+Rd+%23100,+Dallas,+TX+75244"
@@ -114,7 +113,19 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>	
 
-<meta name="description" content="Welcome to Spring Valley Dental Associates in Dallas, TX. Comprehensive dental care for families including cleanings, implants, and cosmetic dentistry."/>
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Spring Valley Dental Associates | Family Dentist Dallas">
+<meta property="og:description" content="Gentle, modern dentistry in North Dallas. Family, cosmetic, and emergency care with online booking and same-day availability.">
+<meta property="og:url" content="https://springvalleydentistry.com/">
+<meta property="og:image" content="https://springvalleydentistry.com/images/building_front_with_logo.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Spring Valley Dental Associates exterior in Dallas">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://springvalleydentistry.com/images/building_front_with_logo.jpg">
+<meta name="theme-color" content="#0ea5e9">
 </head>
 <body>
 <!-- Skip link -->
@@ -500,7 +511,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!-- Sticky CTA Bar -->
 <nav class="sticky-cta-bar" role="navigation" aria-label="Patient quick actions">
-  <a class="cta-link call" href="tel:19728522222" aria-label="Call our office">Call</a>
+  <a class="cta-link call" href="tel:+19728522222" aria-label="Call our office">Call</a>
   <a class="cta-link book" href="contact.html" aria-label="Book an appointment online">Book</a>
   <a class="cta-link directions" href="https://www.google.com/maps/place/14228+Midway+Rd+%23100,+Dallas,+TX+75244/@32.943659,-96.838108,14z/data=!4m6!3m5!1s0x864c26d39eab13f3:0x3e1243026b4b017b!8m2!3d32.9436588!4d-96.8381082!16s%2Fg%2F11qpmyb56j?hl=en-US&entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D" aria-label="Directions and hours">Directions</a>
 </nav>
@@ -510,11 +521,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!-- Scripts -->
 <script defer src="js/scripts.js"></script>
-<script defer src="nav.js"></script>
 <script defer src="site-config.js"></script>
+<script defer src="js/header.js"></script>
+<script defer src="nav.js"></script>
 <script defer src="analytics.js"></script>
-<script src="js/cta-config.js"></script>
-<script src="js/menu-enhancements.js"></script>
-<script src="js/footer.js"></script>	
-</body>
+<script defer src="js/cta-config.js"></script>
+<script defer src="js/menu-enhancements.js"></script>
+<script defer src="js/footer.js"></script>	</body>
 </html>
