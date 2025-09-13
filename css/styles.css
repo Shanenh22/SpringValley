@@ -9927,7 +9927,7 @@ input[type="button"],
   }
 }
 /* ============================================================
-   FINAL HERO FIX PATCH — place at END of styles.css
+   FINAL HERO FIX PATCH ï¿½ place at END of styles.css
    ============================================================ */
 
 /* 1) Desktop layout for any .hero (index, faq, etc.) */
@@ -9974,9 +9974,9 @@ input[type="button"],
   .button-secondary { width: auto; max-width: none; }
 }
 <head>
-  …
+  ï¿½
   <style>
-    /* Offset anchors so they don’t hide under the fixed header */
+    /* Offset anchors so they donï¿½t hide under the fixed header */
     .info-collapse { scroll-margin-top: 96px; } /* adjust 96px if your header height differs */
   </style>
 </head>
@@ -10987,7 +10987,7 @@ body.patient-info .info-section {
 .faq-item.open .faq-question::after {
   transform: translateY(-50%) rotate(45deg) !important;
 }
-/* FINAL logo rule — must be last */
+/* FINAL logo rule ï¿½ must be last */
 .navbar .logo img {
   display: block;
   height: 69px;         /* explicit height ensures SVG renders */
@@ -10995,7 +10995,7 @@ body.patient-info .info-section {
   max-width: 240px;
   margin: 0;
 }
-/* Navbar size control — final override */
+/* Navbar size control ï¿½ final override */
 :root { --site-header-height: 70px; }
 
 /* Hide the entire top CTA block inside the hamburger menu */
