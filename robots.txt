@@ -1,67 +1,47 @@
-# Robots.txt for Spring Valley Dental Associates
-# Updated: 2025-09-09
+# robots.txt — Spring Valley Dental Associates (production)
 
-# Allow all legitimate search engines and AI crawlers
+# Allow full crawling & indexing by default
 User-agent: *
 Allow: /
 
-# Block sensitive directories that shouldn't be indexed
+# Keep crawlers out of private/system areas (no real pages live here)
 Disallow: /admin/
 Disallow: /private/
 Disallow: /temp/
 Disallow: /_backup/
-Disallow: /scripts/
 Disallow: /includes/
+# NOTE: You serve live JS from /js/, not /scripts/.
+# If you ever move live assets into /scripts/, remove the next line.
+Disallow: /scripts/
 
-# Block specific files that shouldn't be indexed
+# Block stray files that shouldn’t be indexed
 Disallow: /email-template.html
 Disallow: /header.html
 Disallow: /test.html
-Disallow: /*.log
-Disallow: /*.tmp
+Disallow: /*.log$
+Disallow: /*.tmp$
 
-# Explicitly allow important AI crawlers for SEO and AI search
+# (Optional) draft/dev folders — uncomment only if they exist
+# Disallow: /drafts/
+# Disallow: /dev/
+
+# Explicit OK for common AI/LLM crawlers (not required, but self-documenting)
 User-agent: GPTBot
 Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
 User-agent: ChatGPT-User
 Allow: /
-
+User-agent: PerplexityBot
+Allow: /
+User-agent: Claude-Web
+Allow: /
 User-agent: CCBot
 Allow: /
 
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: Claude
-Allow: /
-
-# Block problematic or aggressive crawlers
-User-agent: AhrefsBot
-Disallow: /
-
-User-agent: MJ12bot
-Disallow: /
-
-User-agent: DotBot
-Disallow: /
-
-# Set crawl delay for resource-intensive bots
+# Light crawl pacing for a few heavy bots (optional)
 User-agent: Bingbot
 Crawl-delay: 1
-
 User-agent: Slurp
 Crawl-delay: 1
 
-# Update sitemap URL to HTTPS
-Sitemap: https://www.springvalleydentistry.com/sitemap.xml
-
-# Additional sitemaps if you have them
-# Sitemap: https://www.springvalleydentistry.com/blog-sitemap.xml
-# Sitemap: https://www.springvalleydentistry.com/services-sitemap.xml
+# Single sitemap (non-www to match your canonical domain)
+Sitemap: https://springvalleydentistry.com/sitemap.xml
