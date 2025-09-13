@@ -1,20 +1,25 @@
 {
+  "id": "/",
   "name": "Spring Valley Dentistry",
   "short_name": "SVDentistry",
-  "start_url": "/index.html",
+  "description": "Gentle, modern dentistry in North Dallas with family, cosmetic, and emergency care.",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#F7FAFC",
-  "theme_color": "#0E365A",
+  "theme_color": "#0ea5e9",
   "icons": [
     {
-      "src": "images/icon-192.png",
+      "src": "/images/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "images/icon-512.png",
+      "src": "/images/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
