@@ -1737,3 +1737,21 @@ body.patient-info .info-section {
     opacity: 1 !important;
   }
 }
+/* Keep header always visible on mobile */
+@media (max-width: 768px) {
+  .site-header {
+    transform: translateY(0) !important;
+  }
+  
+  .site-header.is-hidden {
+    transform: translateY(0) !important;
+  }
+  
+  .site-header .navbar {
+    transform: translateY(0) !important;
+  }
+  
+  .site-header.is-hidden .navbar {
+    transform: translateY(0) !important;
+  }
+}
