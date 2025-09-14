@@ -1760,3 +1760,16 @@ body.patient-info .info-section {
     transition: none;
   }
 }
+/* Only apply padding on mobile when header is fixed */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px;
+  }
+}
+
+/* Ensure no padding on desktop */
+@media (min-width: 769px) {
+  body {
+    padding-top: 0;
+  }
+}
