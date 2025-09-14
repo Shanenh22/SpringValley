@@ -168,7 +168,8 @@ img {
    NAVIGATION OVERLAY SYSTEM (CONSOLIDATED)
    ============================================================================= */
 
-.nav-overlay {
+.nav-overlay,
+#nav-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.42);
@@ -179,7 +180,8 @@ img {
   -webkit-tap-highlight-color: transparent;
 }
 
-.nav-overlay.is-active {
+.nav-overlay.is-active,
+#nav-overlay.is-active {
   opacity: 1;
   pointer-events: auto;
 }
