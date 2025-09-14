@@ -402,15 +402,15 @@ document.addEventListener('DOMContentLoaded', function () {
   if (window.__HEADER_AUTOSHOW_INIT__) return;
   window.__HEADER_AUTOSHOW_INIT__ = true;
 
-  var THRESHOLD = 10;   // px before reacting (prevents jitter)
-  var DOWN_HIDE_AT = 64;// don't hide until you've scrolled at least this far
+  var THRESHOLD = 10;    // px of movement before reacting (prevents jitter)
+  var DOWN_HIDE_AT = 64; // do not hide until scrolled at least this far
   var lastY = 0;
   var ticking = false;
 
   function qs(sel){ return document.querySelector(sel); }
   function getY(){
     var y = window.pageYOffset || document.documentElement.scrollTop || 0;
-    return y < 0 ? 0 : y; // iOS bounce safety
+    return y < 0 ? 0 : y; // iOS bounce
   }
   function isMenuOpen() {
     var t = qs('#nav-toggle');
@@ -421,17 +421,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   function forceShowHeader() {
     var h = qs('.site-header');
-    if (h) {
-      h.classList.remove('is-hidden');
-      // also nuke any inline transform leftovers
-      h.style.transform = '';
-    }
+    if (h) { h.classList.remove('is-hidden'); h.style.transform = ''; }
   }
 
   function onScroll() {
     if (ticking) return;
     ticking = true;
-
     requestAnimationFrame(function () {
       var header = qs('.site-header');
       if (!header) { ticking = false; return; }
@@ -449,10 +444,10 @@ document.addEventListener('DOMContentLoaded', function () {
       var delta = y - lastY;
       if (Math.abs(delta) >= THRESHOLD) {
         if (delta > 0 && y > DOWN_HIDE_AT) {
-          // scrolling down past threshold -> hide
+          // scrolling down -> hide
           header.classList.add('is-hidden');
         } else {
-          // scrolling up -> show immediately
+          // scrolling up -> show
           header.classList.remove('is-hidden');
         }
         lastY = y;
@@ -465,12 +460,11 @@ document.addEventListener('DOMContentLoaded', function () {
   function whenHeaderReady(cb, tries){
     tries = tries || 0;
     if (qs('.site-header')) { cb(); return; }
-    if (tries > 50) return; // ~1s safeguard
+    if (tries > 50) return; // ~1s total
     setTimeout(function(){ whenHeaderReady(cb, tries+1); }, 20);
   }
 
   function init() {
-    // Ensure visible before wiring scroll
     lastY = getY();
     forceShowHeader();
 
@@ -478,10 +472,10 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('load', forceShowHeader);
     window.addEventListener('hashchange', forceShowHeader);
 
-    var toggle = qs('#nav-toggle');
+    var toggle = document.getElementById('nav-toggle');
     if (toggle) toggle.addEventListener('click', forceShowHeader);
 
-    var nav = qs('#site-nav');
+    var nav = document.getElementById('site-nav');
     if (nav && window.MutationObserver) {
       new MutationObserver(forceShowHeader)
         .observe(nav, { attributes: true, attributeFilter: ['hidden'] });
