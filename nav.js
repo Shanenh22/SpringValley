@@ -396,14 +396,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })();
 });
-// === Auto-show header on scroll up (no extra file needed) ====================
+// === Auto-show header on scroll up (robust init + force visible) =============
 (function () {
   'use strict';
   if (window.__HEADER_AUTOSHOW_INIT__) return;
   window.__HEADER_AUTOSHOW_INIT__ = true;
 
-  var THRESHOLD = 8; // px before reacting to avoid jitter
-  var lastY = window.pageYOffset || document.documentElement.scrollTop || 0;
+  var THRESHOLD = 10;   // px before reacting (prevents jitter)
+  var DOWN_HIDE_AT = 64;// don't hide until you've scrolled at least this far
+  var lastY = 0;
   var ticking = false;
 
   function qs(sel){ return document.querySelector(sel); }
@@ -418,22 +419,27 @@ document.addEventListener('DOMContentLoaded', function () {
     var visible  = n && !n.hasAttribute('hidden');
     return !!(expanded || visible);
   }
-  function showHeader() {
+  function forceShowHeader() {
     var h = qs('.site-header');
-    if (h) h.classList.remove('is-hidden');
+    if (h) {
+      h.classList.remove('is-hidden');
+      // also nuke any inline transform leftovers
+      h.style.transform = '';
+    }
   }
 
   function onScroll() {
     if (ticking) return;
     ticking = true;
+
     requestAnimationFrame(function () {
       var header = qs('.site-header');
       if (!header) { ticking = false; return; }
 
       var y = getY();
 
-      // Never hide while the slide-out menu is open
-      if (isMenuOpen()) {
+      // Always show at/near top, or while menu is open
+      if (y <= 0 || isMenuOpen()) {
         header.classList.remove('is-hidden');
         lastY = y;
         ticking = false;
@@ -442,11 +448,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
       var delta = y - lastY;
       if (Math.abs(delta) >= THRESHOLD) {
-        if (delta > 0) {
-          // scrolling down -> hide
+        if (delta > 0 && y > DOWN_HIDE_AT) {
+          // scrolling down past threshold -> hide
           header.classList.add('is-hidden');
         } else {
-          // scrolling up -> show
+          // scrolling up -> show immediately
           header.classList.remove('is-hidden');
         }
         lastY = y;
@@ -455,17 +461,38 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Wire up
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('load', showHeader);
-  window.addEventListener('hashchange', showHeader);
+  // Wait until the injected header exists, then init
+  function whenHeaderReady(cb, tries){
+    tries = tries || 0;
+    if (qs('.site-header')) { cb(); return; }
+    if (tries > 50) return; // ~1s safeguard
+    setTimeout(function(){ whenHeaderReady(cb, tries+1); }, 20);
+  }
 
-  var toggle = document.getElementById('nav-toggle');
-  if (toggle) toggle.addEventListener('click', showHeader);
+  function init() {
+    // Ensure visible before wiring scroll
+    lastY = getY();
+    forceShowHeader();
 
-  var nav = document.getElementById('site-nav');
-  if (nav && window.MutationObserver) {
-    new MutationObserver(showHeader).observe(nav, { attributes: true, attributeFilter: ['hidden'] });
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('load', forceShowHeader);
+    window.addEventListener('hashchange', forceShowHeader);
+
+    var toggle = qs('#nav-toggle');
+    if (toggle) toggle.addEventListener('click', forceShowHeader);
+
+    var nav = qs('#site-nav');
+    if (nav && window.MutationObserver) {
+      new MutationObserver(forceShowHeader)
+        .observe(nav, { attributes: true, attributeFilter: ['hidden'] });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function(){
+      whenHeaderReady(init);
+    });
+  } else {
+    whenHeaderReady(init);
   }
 })();
-
