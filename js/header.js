@@ -68,9 +68,9 @@
       <div class="menu-section">
         <h3 class="section-title">I need...</h3>
         <ul class="intent-grid">
-          <li><a href="emergency.html">Emergency care</a></li>
-          <li><a href="teeth-cleaning.html">Cleaning &amp; exam</a></li>
-          <li><a href="dental-implants.html">Dental implants</a></li>
+          <li><a href="emergency.html">Emergency Care</a></li>
+          <li><a href="teeth-cleaning.html">Cleaning &amp; Exam</a></li>
+          <li><a href="dental-implants.html">Dental Implants</a></li>
           <li><a href="invisalign.html">Invisalign</a></li>
         </ul>
       </div>
