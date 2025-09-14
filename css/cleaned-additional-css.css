@@ -1773,3 +1773,381 @@ body.patient-info .info-section {
     padding-top: 0;
   }
 }
+/* =============================================================================
+   REVIEWS PAGE COMPLETE FIX - Add to end of cleaned-additional-css.css
+   ============================================================================= */
+
+/* Force override any existing review grid styles */
+.reviews-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
+  gap: 2rem !important;
+  margin-bottom: 3rem !important;
+}
+
+/* Review card base styling - force consistency */
+.review-card {
+  background: white !important;
+  border-radius: 16px !important;
+  padding: 2rem !important;
+  box-shadow: 0 4px 16px rgba(14, 54, 90, 0.08) !important;
+  transition: all 0.3s ease !important;
+  border: 2px solid transparent !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+.review-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 32px rgba(14, 54, 90, 0.15) !important;
+  border-color: var(--sky-blue, #0077B6) !important;
+}
+
+/* Review header layout - force proper alignment */
+.review-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  margin-bottom: 1.5rem !important;
+  flex-wrap: wrap !important;
+  gap: 1rem !important;
+}
+
+.reviewer-info {
+  flex: 1 !important;
+  min-width: 120px !important;
+}
+
+.reviewer-name {
+  font-weight: 600 !important;
+  color: var(--dallas-navy, #0E365A) !important;
+  margin-bottom: 0.25rem !important;
+  font-size: 1rem !important;
+}
+
+.review-date {
+  color: var(--cool-gray, #5A6D80) !important;
+  font-size: 0.9rem !important;
+  margin: 0 !important;
+}
+
+/* Review rating section - force proper layout */
+.review-rating {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  gap: 0.5rem !important;
+  flex-shrink: 0 !important;
+}
+
+.review-rating .stars {
+  color: #FBBC05 !important;
+  font-size: 1.1rem !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+}
+
+.platform-badge {
+  padding: 0.25rem 0.5rem !important;
+  border-radius: 12px !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  margin: 0 !important;
+}
+
+.platform-badge.google {
+  background: #4285F4 !important;
+  color: white !important;
+}
+
+.platform-badge.facebook {
+  background: #1877F2 !important;
+  color: white !important;
+}
+
+/* Review content - ensure proper spacing */
+.review-card blockquote {
+  color: var(--slate-ink, #24313A) !important;
+  line-height: 1.6 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-style: italic !important;
+  flex-grow: 1 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+/* Review tags - force proper layout */
+.review-tags {
+  display: flex !important;
+  gap: 0.5rem !important;
+  flex-wrap: wrap !important;
+  margin-top: auto !important;
+  margin-bottom: 0 !important;
+}
+
+.tag {
+  background: var(--porcelain, #F7FAFC) !important;
+  color: var(--dallas-navy, #0E365A) !important;
+  padding: 0.25rem 0.75rem !important;
+  border-radius: 12px !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  margin: 0 !important;
+}
+
+/* Rating breakdown fixes - Override your inline styles */
+.rating-row {
+  display: grid !important;
+  grid-template-columns: 70px 1fr 50px !important;
+  gap: 12px !important;
+  align-items: center !important;
+  margin-bottom: 8px !important;
+  min-height: 28px !important;
+}
+
+.stars-label {
+  text-align: left !important;
+  white-space: nowrap !important;
+  font-size: 0.9rem !important;
+  color: var(--cool-gray, #5A6D80) !important;
+}
+
+.rating-bar {
+  width: 100% !important;
+  height: 10px !important;
+  background: #E9EFF5 !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+}
+
+.rating-fill {
+  height: 100% !important;
+  background: linear-gradient(90deg, #FBBC05 0%, #34A853 100%) !important;
+  border-radius: 4px !important;
+  transition: width 0.3s ease !important;
+}
+
+.rating-count {
+  text-align: right !important;
+  min-width: 40px !important;
+  font-size: 0.9rem !important;
+  color: var(--cool-gray, #5A6D80) !important;
+}
+
+/* Success Stories Grid - ensure proper layout */
+.success-stories {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important;
+  gap: 2rem !important;
+  margin-bottom: 3rem !important;
+}
+
+.story-card {
+  background: white !important;
+  border-radius: 16px !important;
+  padding: 2rem !important;
+  box-shadow: 0 8px 32px rgba(14, 54, 90, 0.1) !important;
+  border-left: 5px solid var(--mint, #8FD6C8) !important;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+.story-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 48px rgba(14, 54, 90, 0.15) !important;
+}
+
+/* Platform reviews section */
+.platform-reviews {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.5rem !important;
+  margin-top: 2rem !important;
+}
+
+.platform-item {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 1.5rem !important;
+  background: var(--porcelain, #F7FAFC) !important;
+  border-radius: 12px !important;
+  border-left: 4px solid var(--sky-blue, #0077B6) !important;
+  flex-wrap: wrap !important;
+  gap: 1rem !important;
+}
+
+.platform-logo {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  font-weight: 600 !important;
+  color: var(--slate-ink, #24313A) !important;
+  min-width: 120px !important;
+  flex-shrink: 0 !important;
+}
+
+.platform-rating {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  font-weight: 600 !important;
+  color: var(--dallas-navy, #0E365A) !important;
+}
+
+.platform-rating .value {
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  margin-right: 0.5rem !important;
+}
+
+.platform-rating .stars {
+  color: #FBBC05 !important;
+  font-family: Arial, sans-serif !important;
+  line-height: 1 !important;
+  font-size: 1.1rem !important;
+}
+
+.platform-count {
+  font-size: 0.9rem !important;
+  color: var(--cool-gray, #5A6D80) !important;
+  white-space: nowrap !important;
+  min-width: 80px !important;
+  text-align: right !important;
+}
+
+/* Mobile responsive overrides */
+@media (max-width: 768px) {
+  .reviews-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  .success-stories {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  .review-card {
+    padding: 1.5rem !important;
+  }
+  
+  .story-card {
+    padding: 1.5rem !important;
+  }
+  
+  .review-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+  }
+  
+  .review-rating {
+    align-items: flex-start !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+  }
+  
+  .platform-item {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 1rem !important;
+    padding: 2rem 1.5rem !important;
+  }
+  
+  .platform-logo {
+    justify-content: center !important;
+    min-width: auto !important;
+  }
+  
+  .platform-rating {
+    justify-content: center !important;
+  }
+  
+  .platform-count {
+    text-align: center !important;
+    min-width: auto !important;
+  }
+  
+  .rating-row {
+    grid-template-columns: 75px 1fr 45px !important;
+    gap: 10px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .review-card {
+    padding: 1rem !important;
+  }
+  
+  .story-card {
+    padding: 1rem !important;
+  }
+  
+  .platform-item {
+    padding: 1.5rem 1rem !important;
+  }
+  
+  .rating-row {
+    grid-template-columns: 70px 1fr 40px !important;
+    gap: 8px !important;
+  }
+}
+
+/* Testimonial highlights grid */
+.testimonial-highlights {
+  background: linear-gradient(135deg, var(--porcelain, #F7FAFC) 0%, var(--cloud, #EEF2F6) 100%) !important;
+  padding: 3rem 2rem !important;
+  border-radius: 16px !important;
+  margin: 3rem 0 !important;
+}
+
+.highlights-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 1.5rem !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+.highlight-card {
+  background: white !important;
+  border-radius: 12px !important;
+  padding: 1.5rem !important;
+  text-align: center !important;
+  box-shadow: 0 2px 8px rgba(14, 54, 90, 0.06) !important;
+  transition: all 0.3s ease !important;
+  border: 2px solid transparent !important;
+}
+
+.highlight-card:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 20px rgba(14, 54, 90, 0.12) !important;
+  border-color: var(--sky-blue, #0077B6) !important;
+}
+
+@media (max-width: 768px) {
+  .highlights-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+  
+  .testimonial-highlights {
+    padding: 2rem 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .highlights-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .highlight-card {
+    padding: 1rem !important;
+  }
+}

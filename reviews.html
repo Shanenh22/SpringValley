@@ -21,49 +21,6 @@
   .hamburger[aria-expanded="false"] {
     pointer-events: auto !important;
   }
-
-  /* Prevent FAQ/Review elements from blocking navigation */
-  .faq-category,
-  .faq-question,
-  .review-card,
-  /* RATING ALIGNMENT FIXES - Keep original layout but fix alignment */
-  .rating-row {
-    display: grid !important;
-    grid-template-columns: 65px 1fr 45px !important;
-    gap: 12px !important;
-    align-items: center !important;
-    margin-bottom: 8px !important;
-    min-height: 24px !important;
-  }
-
-  .stars-label {
-    text-align: left !important;
-    white-space: nowrap !important;
-  }
-
-  .rating-bar {
-    width: 100% !important;
-  }
-
-  .rating-count {
-    text-align: right !important;
-    min-width: 35px !important;
-  }
-
-  /* Mobile responsive fixes for rating section */
-  @media (max-width: 768px) {
-    .rating-row {
-      grid-template-columns: 70px 1fr 40px !important;
-      gap: 10px !important;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .rating-row {
-      grid-template-columns: 65px 1fr 35px !important;
-      gap: 8px !important;
-    }
-  }
 </style>
 
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
