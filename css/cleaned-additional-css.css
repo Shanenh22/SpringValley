@@ -1720,3 +1720,6 @@ body.patient-info .info-section {
 @media (prefers-reduced-motion: reduce) {
   .site-header { transition: none; }
 }
+.site-header { transition: transform .20s ease; transform: translateY(0); }
+.site-header.is-hidden { transform: translateY(-100%); }
+@media (prefers-reduced-motion: reduce){ .site-header { transition:none; } }

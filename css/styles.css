@@ -31,9 +31,9 @@
   /* Navigation & Layout */
   --site-header-height: 64px;
   --nav-z-index: 1000;
-  --nav-drawer-z-index: 1001;
-  --overlay-z-index: 999;
-  --sticky-cta-z-index: 1002;
+  --nav-drawer-z-index: 1002;
+  --overlay-z-index: 1001;
+  --sticky-cta-z-index: 1003;
   --breakpoint-mobile: 768px;
   
   /* CTA Bar */
