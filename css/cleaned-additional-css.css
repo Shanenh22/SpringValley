@@ -2151,3 +2151,35 @@ body.patient-info .info-section {
     padding: 1rem !important;
   }
 }
+
+/* Simple mobile fix for existing HTML structure */
+@media (max-width: 768px) {
+  .highlight-box .feature-list li {
+    display: block !important;
+    margin-bottom: 1rem !important;
+    padding-left: 1.5rem !important;
+    position: relative !important;
+  }
+  
+  .highlight-box .feature-list li::before {
+    content: "✓" !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0.1rem !important;
+    background: var(--mint, #8FD6C8) !important;
+    color: var(--dallas-navy, #0E365A) !important;
+    border-radius: 50% !important;
+    width: 20px !important;
+    height: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: bold !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .highlight-box .feature-list li strong {
+    display: block !important;
+    margin-bottom: 0.25rem !important;
+  }
+}
