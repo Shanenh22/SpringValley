@@ -1715,16 +1715,6 @@ body.patient-info .info-section {
   /* ❌ no transform or transition here */
 }
 
-.site-header .navbar {
-  transform: translateY(0);
-  transition: transform .20s ease;
-  will-change: transform;
-}
-
-.site-header.is-hidden .navbar {
-  transform: translateY(-100%);
-}
-
 @media (prefers-reduced-motion: reduce) {
   .site-header .navbar { transition: none; }
 }
@@ -1737,11 +1727,36 @@ body.patient-info .info-section {
     opacity: 1 !important;
   }
 }
-
-/* Force header to show on any upward scroll on mobile */
+/* Mobile header scroll behavior - clean implementation */
 @media (max-width: 768px) {
+  .site-header {
+    transition: transform 0.25s ease-in-out;
+  }
+  
   .site-header.is-hidden {
     transform: translateY(-100%);
-    transition: transform 0.15s ease-out;
+  }
+  
+  /* Ensure navbar doesn't interfere */
+  .site-header .navbar {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+/* Clean mobile header - no hide/show behavior */
+@media (max-width: 768px) {
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transform: none;
+    transition: none;
+  }
+  
+  .site-header .navbar {
+    transform: none;
+    transition: none;
   }
 }

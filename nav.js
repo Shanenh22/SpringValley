@@ -211,30 +211,44 @@
     }
 
     _enableHeaderAutoShow() {
-      if (!this.header) this.header = $('.site-header');
-      if (!this.header) return;
+  if (!this.header) this.header = $('.site-header');
+  if (!this.header) return;
 
-      let lastY = window.pageYOffset || document.documentElement.scrollTop || 0;
-      const THRESHOLD    = 1;   // more eager reveal
-      const DOWN_HIDE_AT = 60;  // don't hide until you've scrolled a bit
-      let ticking = false;
+  let lastScrollY = 0;
+  let isScrollingDown = true;
 
-      const onScroll = () => {
-        const y = window.pageYOffset || document.documentElement.scrollTop || 0;
-        if (this.isOpen || y <= 0) { this._forceShowHeader(); lastY = y; ticking = false; return; }
-        const delta = y - lastY;
-        if (Math.abs(delta) >= THRESHOLD) {
-          if (delta > 0 && y > DOWN_HIDE_AT) this.header.classList.add('is-hidden');
-          else this.header.classList.remove('is-hidden');
-          lastY = y;
-        }
-        ticking = false;
-      };
-
-      window.addEventListener('scroll', () => {
-        if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
-      }, { passive: true });
+  const updateHeader = () => {
+    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+    
+    // Always show at top or when menu is open
+    if (currentScrollY <= 50 || this.isOpen) {
+      this.header.classList.remove('is-hidden');
+      lastScrollY = currentScrollY;
+      return;
     }
+
+    isScrollingDown = currentScrollY > lastScrollY;
+    
+    if (isScrollingDown && currentScrollY > 100) {
+      this.header.classList.add('is-hidden');
+    } else if (!isScrollingDown) {
+      this.header.classList.remove('is-hidden');
+    }
+    
+    lastScrollY = currentScrollY;
+  };
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        updateHeader();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+}
   }
 
   // Boot once DOM is parsed
