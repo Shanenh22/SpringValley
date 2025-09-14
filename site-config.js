@@ -9,3 +9,11 @@ window.SITE_CONFIG = {
     DOMAIN: "springvalleydentistry.com"
   }
 };
+window.SITE_CONFIG = {
+  ANALYTICS: {
+    ENABLE_PLAUSIBLE: true,
+    DOMAIN: 'springvalleydentistry.com',
+    ENABLE_GA: false,            // set true if you want GA
+    GA_MEASUREMENT_ID: ''        // e.g. 'G-XXXXXXX'
+  }
+};
