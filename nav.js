@@ -215,8 +215,8 @@
       if (!this.header) return;
 
       let lastY = window.pageYOffset || document.documentElement.scrollTop || 0;
-      const THRESHOLD    = 2;   // more eager reveal
-      const DOWN_HIDE_AT = 40;  // don't hide until you've scrolled a bit
+      const THRESHOLD    = 1;   // more eager reveal
+      const DOWN_HIDE_AT = 60;  // don't hide until you've scrolled a bit
       let ticking = false;
 
       const onScroll = () => {
