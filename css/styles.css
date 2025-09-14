@@ -31,9 +31,9 @@
   /* Navigation & Layout */
   --site-header-height: 64px;
   --nav-z-index: 1000;
-  --nav-drawer-z-index: 1001;
-  --overlay-z-index: 999;
-  --sticky-cta-z-index: 1002;
+  --nav-drawer-z-index: 1002;
+  --overlay-z-index: 1001;
+  --sticky-cta-z-index: 1003;
   --breakpoint-mobile: 768px;
   
   /* CTA Bar */
@@ -168,7 +168,8 @@ img {
    NAVIGATION OVERLAY SYSTEM (CONSOLIDATED)
    ============================================================================= */
 
-.nav-overlay {
+.nav-overlay,
+#nav-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.42);
@@ -179,7 +180,8 @@ img {
   -webkit-tap-highlight-color: transparent;
 }
 
-.nav-overlay.is-active {
+.nav-overlay.is-active,
+#nav-overlay.is-active {
   opacity: 1;
   pointer-events: auto;
 }

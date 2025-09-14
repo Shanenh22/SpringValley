@@ -1,399 +1,245 @@
-class MobileNavigation {
-  constructor() {
-    this.hamburger  = document.getElementById('nav-toggle') || document.getElementById('hamburger');
-    this.siteNav    = document.getElementById('site-nav');
-    this.navOverlay = document.getElementById('nav-overlay');
-    this.body       = document.body;
-    this.html       = document.documentElement;
+// nav.js — consolidated, robust, and CSS-driven header reveal
+(() => {
+  const $  = (sel, root=document) => root.querySelector(sel);
+  const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
 
-    // Track navigation state
-    this.isOpen        = false;
-    this.breakpoint    = 768;
-    this.scrollPosition = 0;
+  class MobileNavigation {
+    constructor() {
+      this.header       = null;
+      this.siteNav      = null;
+      this.hamburger    = null;
+      this.overlay      = null; // supports #nav-overlay or .nav-overlay
+      this.closeBtn     = null;
+      this.isOpen       = false;
+      this.scrollY      = 0;
+      this.breakpoint   = 768;
 
-    // Initialize navigation
-    this.init();
-  }
+      this._boundKeydown  = this._handleKeydown.bind(this);
+      this._boundResize   = this._onResize.bind(this);
+      this._boundDocClick = this._onDocumentClick.bind(this);
 
-  init() {
-    // Check if required elements exist
-    if (!this.hamburger || !this.siteNav) {
-      console.warn('Navigation elements not found:', {
-        hamburger: !!this.hamburger,
-        siteNav: !!this.siteNav
-      });
-      return;
+      this._waitForDOM();
     }
 
-    // Set up event listeners
-    this.bindEvents();
+    /* ---------- bootstrap ---------- */
+    _waitForDOM(tries=0) {
+      this.header    = this.header    || $('.site-header');
+      this.siteNav   = this.siteNav   || $('#site-nav');
+      this.hamburger = this.hamburger || $('#nav-toggle');
+      this.overlay   = this.overlay   || $('#nav-overlay') || $('.nav-overlay');
+      this.closeBtn  = this.closeBtn  || (this.siteNav ? this.siteNav.querySelector('.menu-close') : null);
 
-    // Handle initial state (sets closed for mobile/desktop)
-    this.handleResize();
-
-    // Ensure initial ARIA BEFORE revealing markup (prevents AT flicker)
-    if (this.hamburger) this.hamburger.setAttribute('aria-expanded', 'false');
-    this.updateARIA();
-
-    // Reveal nav markup (CSS controls visibility)
-    this.siteNav.removeAttribute('hidden');
-
-    console.log('Mobile Navigation initialized successfully');
-  }
-
-  bindEvents() {
-    // Hamburger menu toggle
-    if (this.hamburger) {
-      this.hamburger.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        this.toggleMenu();
-      });
-    }
-
-    // Close button in mobile drawer (if present on load)
-    const menuClose = this.siteNav.querySelector('.menu-close');
-    if (menuClose) {
-      menuClose.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        this.closeMenu();
-      });
-    }
-
-    // Overlay click to close
-    if (this.navOverlay) {
-      this.navOverlay.addEventListener('click', (e) => {
-        e.preventDefault();
-        this.closeMenu();
-      });
-    }
-
-    // Close menu when clicking links (mobile)
-    if (this.siteNav) {
-      this.siteNav.addEventListener('click', (e) => {
-        const link = e.target.closest && e.target.closest('a');
-        if (link && this.isMobile() && this.isOpen) {
-          // Close menu after short delay to allow navigation
-          setTimeout(() => this.closeMenu(), 150);
-        }
-      });
-    }
-
-    // Escape key to close menu
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && this.isOpen) {
-        this.closeMenu();
-      }
-    });
-
-    // Handle window resize
-    window.addEventListener('resize', () => {
-      this.handleResize();
-    });
-
-    // Handle focus trapping in mobile menu
-    if (this.siteNav) {
-      this.siteNav.addEventListener('keydown', (e) => {
-        if (this.isOpen && this.isMobile()) {
-          this.handleFocusTrap(e);
-        }
-      });
-    }
-
-    // Prevent scroll on mobile when menu is open
-    if (this.navOverlay) {
-      this.navOverlay.addEventListener('touchmove', (e) => {
-        if (this.isOpen) {
-          e.preventDefault();
-        }
-      }, { passive: false });
-    }
-  }
-
-  toggleMenu() {
-    console.log('Toggle menu called, current state:', this.isOpen);
-    if (this.isOpen) {
-      this.closeMenu();
-    } else {
-      this.openMenu();
-    }
-  }
-
-  openMenu() {
-    if (!this.isMobile()) {
-      console.log('Not mobile, skipping menu open');
-      return;
-    }
-    console.log('Opening mobile menu');
-    this.isOpen = true;
-
-    // Add classes
-    if (this.siteNav)    this.siteNav.classList.add('is-open');
-    if (this.navOverlay) this.navOverlay.classList.add('is-active');
-    if (this.html)       this.html.classList.add('nav-locked');
-    if (this.body)       this.body.classList.add('nav-locked');
-
-    // Ensure nav is available to AT (visibility handled by CSS)
-    if (this.siteNav) this.siteNav.removeAttribute('hidden');
-
-    // Update ARIA states
-    this.updateARIA();
-
-    // Mark background inert while nav is open
-    this.toggleInert(true);
-
-    // Focus management - prefer close button, then first focusable, then hamburger
-    setTimeout(() => {
-      const closeBtn = this.siteNav?.querySelector('.menu-close');
-      const firstFocusable = this.siteNav?.querySelector(
-        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
-      );
-      (closeBtn || firstFocusable || this.hamburger)?.focus();
-    }, 250);
-
-    // Prevent body scroll
-    this.lockScroll();
-
-    // Announce state change
-    this.announce('Navigation menu opened');
-  }
-
-  closeMenu() {
-    console.log('Closing mobile menu');
-    this.isOpen = false;
-
-    // Remove classes
-    if (this.siteNav)    this.siteNav.classList.remove('is-open');
-    if (this.navOverlay) this.navOverlay.classList.remove('is-active');
-    if (this.html)       this.html.classList.remove('nav-locked');
-    if (this.body)       this.body.classList.remove('nav-locked');
-
-    // Force reset hamburger state
-    setTimeout(() => {
-      if (this.hamburger) {
-        this.hamburger.setAttribute('aria-expanded', 'false');
-        this.hamburger.classList.remove('active');
-      }
-    }, 10);
-
-    // Update ARIA states
-    this.updateARIA();
-
-    // Return focus to hamburger button
-    setTimeout(() => {
-      if (this.hamburger) this.hamburger.focus();
-    }, 50);
-
-    // Restore body scroll
-    this.unlockScroll();
-
-    // Restore background
-    this.toggleInert(false);
-
-    // Announce state change
-    this.announce('Navigation menu closed');
-  }
-
-  updateARIA() {
-    if (this.hamburger) {
-      this.hamburger.setAttribute('aria-expanded', this.isOpen.toString());
-    }
-    if (this.navOverlay) {
-      this.navOverlay.setAttribute('aria-hidden', (!this.isOpen).toString());
-    }
-    if (this.siteNav) {
-      // Keep nav in the a11y tree on desktop; hide only when closed on mobile
-      this.siteNav.setAttribute('aria-hidden', (!this.isOpen && this.isMobile()).toString());
-    }
-  }
-
-  handleResize() {
-    // Close menu on resize to larger screen
-    if (!this.isMobile() && this.isOpen) {
-      this.closeMenu();
-    }
-    // Update navigation visibility (let CSS handle display; ensure not hidden)
-    this.updateNavVisibility();
-  }
-
-  updateNavVisibility() {
-    // Let CSS handle responsive layout; ensure nav isn't 'hidden' for desktop
-    if (this.siteNav) {
-      this.siteNav.removeAttribute('hidden');
-    }
-  }
-
-  isMobile() {
-    return window.innerWidth <= this.breakpoint;
-  }
-
-  lockScroll() {
-    // Store current scroll position
-    this.scrollPosition = window.pageYOffset;
-    // Apply scroll lock
-    if (this.body) {
-      this.body.style.position = 'fixed';
-      this.body.style.top = `-${this.scrollPosition}px`;
-      this.body.style.width = '100%';
-    }
-  }
-
-  unlockScroll() {
-    // Restore scroll position
-    if (this.body) {
-      this.body.style.position = '';
-      this.body.style.top = '';
-      this.body.style.width = '';
-    }
-    // Restore scroll position
-    if (this.scrollPosition) {
-      window.scrollTo(0, this.scrollPosition);
-      this.scrollPosition = 0;
-    }
-  }
-
-  handleFocusTrap(e) {
-    // Defensive guard
-    if (e.key !== 'Tab' || !this.isOpen || !this.isMobile()) return;
-
-    const focusableElements = this.siteNav.querySelectorAll(
-      'a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])'
-    );
-
-    if (!focusableElements || focusableElements.length === 0) return;
-
-    const firstFocusable = focusableElements[0];
-    const lastFocusable  = focusableElements[focusableElements.length - 1];
-
-    if (e.shiftKey) {
-      // Shift + Tab (backwards)
-      if (document.activeElement === firstFocusable) {
-        lastFocusable.focus();
-        e.preventDefault();
-      }
-    } else {
-      // Tab (forwards)
-      if (document.activeElement === lastFocusable) {
-        firstFocusable.focus();
-        e.preventDefault();
-      }
-    }
-  }
-
-  announce(msg) {
-    const live = document.getElementById('nav-status');
-    if (live) live.textContent = msg;
-  }
-
-  toggleInert(enable) {
-    const toInert = document.querySelectorAll('main, footer, .top-bar');
-    toInert.forEach(el => {
-      if (enable) {
-        el.setAttribute('inert', '');
-        el.setAttribute('aria-hidden', 'true');
+      if (this.header && this.siteNav && this.hamburger && this.overlay) {
+        this._init();
+      } else if (tries < 100) {
+        setTimeout(() => this._waitForDOM(tries+1), 20); // ~2s total
       } else {
-        el.removeAttribute('inert');
-        el.removeAttribute('aria-hidden');
+        console.warn('[nav] Required elements not found.');
       }
-    });
-  }
-}
-
-/**
- * Smooth Scroll for Anchor Links
- * (unchanged; optional reduced-motion can be added later)
- */
-class SmoothScroll {
-  constructor() {
-    this.init();
-  }
-
-  init() {
-    // Handle anchor links
-    document.addEventListener('click', (e) => {
-      const link = e.target.closest && e.target.closest('a[href^="#"]');
-      if (!link) return;
-      const targetId = link.getAttribute('href').substring(1);
-      const target = document.getElementById(targetId);
-      if (target) {
-        e.preventDefault();
-        this.scrollToElement(target);
-      }
-    });
-  }
-
-  scrollToElement(element) {
-    const headerHeight   = document.querySelector('.site-header')?.offsetHeight || 0;
-    const offset         = headerHeight + 20;
-    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-    const offsetPosition  = elementPosition - offset;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth'
-    });
-  }
-}
-
-// Initialize navigation when DOM is ready
-document.addEventListener('DOMContentLoaded', function () {
-  console.log('DOM loaded, initializing navigation...');
-
-  try {
-    // Your existing init
-    new MobileNavigation();
-    new SmoothScroll();
-    console.log('Navigation classes initialized successfully');
-  } catch (error) {
-    console.error('Error initializing navigation:', error);
-  }
-
-  // ---- Current-page highlighting (accessibility + styling hook) ----
-  // Adds aria-current="page" to the matching link in .site-links and .menu-links
-  (function setupCurrentPageMarker() {
-    const NAV_CONTAINER_ID = 'site-nav';
-    const SELECTOR = '.site-links a, .menu-links a';
-
-    function normalizeFile(pathname) {
-      // e.g., "/" -> "index.html", "/patient-info" -> "patient-info.html"
-      let file = pathname.split('/').pop() || 'index.html';
-      if (!/\.[a-z0-9]+$/i.test(file)) file += '.html';
-      return file.toLowerCase();
     }
 
-    function markCurrent() {
-      const currentFile = normalizeFile(location.pathname);
-      const links = document.querySelectorAll(SELECTOR);
-      if (!links.length) return false; // nav not injected yet
+    _init() {
+      // Make menu available to AT; CSS manages visual state
+      this.siteNav.removeAttribute('hidden');
 
-      // Clear any previous state
-      links.forEach(a => a.removeAttribute('aria-current'));
+      // ARIA wiring
+      this.hamburger.setAttribute('aria-controls', 'site-nav');
+      this.hamburger.setAttribute('aria-expanded', 'false');
+      if (this.closeBtn) {
+        this.closeBtn.setAttribute('aria-controls', 'site-nav');
+        this.closeBtn.setAttribute('aria-label', 'Close menu');
+      }
 
-      // Apply when filenames match (ignores query/hash)
-      links.forEach(a => {
-        const href = a.getAttribute('href') || '';
-        const file = href.split('#')[0].split('?')[0].split('/').pop().toLowerCase();
-        if (file && file === currentFile) {
-          a.setAttribute('aria-current', 'page');
-        }
+      // Events
+      this.hamburger.addEventListener('click', (e) => { e.preventDefault(); this.toggleMenu(); });
+      if (this.closeBtn) this.closeBtn.addEventListener('click', (e) => { e.preventDefault(); this.closeMenu(); });
+      this.overlay.addEventListener('click', () => this.closeMenu());
+      document.addEventListener('keydown', this._boundKeydown);
+      window.addEventListener('resize', this._boundResize);
+
+      // Close when any link in the drawer is clicked
+      this.siteNav.addEventListener('click', (e) => {
+        const link = e.target.closest('a[href]');
+        if (link) this.closeMenu();
       });
 
-      return true;
+      // Safety net: close on any click outside drawer/toggle
+      document.addEventListener('click', this._boundDocClick, true);
+
+      // Observe hidden attr just in case other code toggles it
+      if (window.MutationObserver) {
+        new MutationObserver(() => this._forceShowHeader())
+          .observe(this.siteNav, { attributes: true, attributeFilter: ['hidden'] });
+      }
+
+      this._markCurrentPage();
+      this._forceShowHeader();
+      this._enableHeaderAutoShow();
+
+      // Also ensure header is shown on load/hashchange
+      window.addEventListener('load', () => this._forceShowHeader());
+      window.addEventListener('hashchange', () => this._forceShowHeader());
+
+      console.log('[nav] initialized');
     }
 
-    // Run once now
-    let applied = markCurrent();
-
-    // Run again after full load (in case late injections happen)
-    window.addEventListener('load', () => { if (!applied) applied = markCurrent(); });
-
-    // Observe future mutations to the nav (e.g., if mobile menu/sections are injected later)
-    const nav = document.getElementById(NAV_CONTAINER_ID);
-    if (nav && 'MutationObserver' in window) {
-      const mo = new MutationObserver(() => { markCurrent(); });
-      mo.observe(nav, { childList: true, subtree: true });
+    /* ---------- helpers ---------- */
+    _hamburgerIsVisible() {
+      const s = window.getComputedStyle(this.hamburger);
+      return s.display !== 'none' && s.visibility !== 'hidden' && this.hamburger.offsetParent !== null;
     }
-  })();
-});
+    _shouldUseDrawer() { return this._hamburgerIsVisible() || window.innerWidth <= this.breakpoint; }
 
+    /* ---------- open/close ---------- */
+    openMenu() {
+      if (!this._shouldUseDrawer() || this.isOpen) return;
+      this.isOpen = true;
+      this.siteNav.classList.add('is-open');
+      this.overlay.classList.add('is-active');
+      this.hamburger.setAttribute('aria-expanded', 'true');
+      this._lockScroll();
+      this._moveFocusIntoMenu();
+      this._forceShowHeader(); // keep header visible while menu is open
+    }
+
+    closeMenu() {
+      if (!this.isOpen) return;
+      this.isOpen = false;
+      this.siteNav.classList.remove('is-open');
+      this.overlay.classList.remove('is-active');
+      this.hamburger.setAttribute('aria-expanded', 'false');
+      this._unlockScroll();
+
+      // Return focus to hamburger if the focus was inside the drawer
+      if (this.siteNav.contains(document.activeElement)) {
+        this.hamburger.focus({ preventScroll: true });
+      }
+
+      // Ensure header is visible immediately after closing
+      this._forceShowHeader();
+    }
+
+    toggleMenu() { this.isOpen ? this.closeMenu() : this.openMenu(); }
+
+    /* ---------- scroll locking ---------- */
+    _lockScroll() {
+      this.scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${this.scrollY}px`;
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.width = '100%';
+    }
+    _unlockScroll() {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
+      window.scrollTo(0, this.scrollY || 0);
+      this.scrollY = 0;
+    }
+
+    /* ---------- a11y / focus ---------- */
+    _moveFocusIntoMenu() {
+      const focusables = this.siteNav.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])');
+      const first = focusables[0];
+      if (first) first.focus({ preventScroll: true });
+    }
+
+    _handleKeydown(e) {
+      if (e.key === 'Escape' && this.isOpen) {
+        e.preventDefault();
+        this.closeMenu();
+        return;
+      }
+      if (e.key !== 'Tab' || !this.isOpen) return;
+      const focusables = Array.from(this.siteNav.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'));
+      if (!focusables.length) return;
+      const first = focusables[0], last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+
+    /* ---------- resize & outside-click ---------- */
+    _onResize() {
+      const nowMobile = this._shouldUseDrawer();
+      if (!nowMobile) {
+        // Fully reset any mobile state when entering desktop
+        this.isOpen = false;
+        this.siteNav.classList.remove('is-open');
+        this.overlay.classList.remove('is-active');
+        this.hamburger.setAttribute('aria-expanded','false');
+
+        // Make sure nav is available to AT (CSS controls visual)
+        this.siteNav.removeAttribute('hidden');
+
+        // Re-mark current page & force a micro reflow to clear stale paints
+        this._markCurrentPage();
+        void this.siteNav.offsetHeight;
+
+        // Ensure header shows immediately after resize
+        this._forceShowHeader();
+      } else {
+        // Keep ARIA in sync on mobile widths
+        this.hamburger.setAttribute('aria-expanded', this.isOpen ? 'true' : 'false');
+      }
+    }
+
+    _onDocumentClick(e) {
+      if (!this.isOpen) return;
+      const inDrawer = e.target.closest('#site-nav');
+      const onToggle = e.target.closest('#nav-toggle');
+      if (!inDrawer && !onToggle) this.closeMenu();
+    }
+
+    /* ---------- current page marker ---------- */
+    _markCurrentPage() {
+      try {
+        const here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+        $$('.site-nav a[href], .desktop-links a[href], .menu-links a[href]').forEach(a => a.removeAttribute('aria-current'));
+        const match = $(`.site-nav a[href="${here}"], .desktop-links a[href="${here}"], .menu-links a[href="${here}"]`);
+        if (match) match.setAttribute('aria-current', 'page');
+      } catch(_) {}
+    }
+
+    /* ---------- header hide/show on scroll (CSS-driven) ---------- */
+    _forceShowHeader() {
+      if (!this.header) this.header = $('.site-header');
+      if (this.header) this.header.classList.remove('is-hidden');
+      // NOTE: Do not set inline transforms here — CSS handles .navbar slide
+    }
+
+    _enableHeaderAutoShow() {
+      if (!this.header) this.header = $('.site-header');
+      if (!this.header) return;
+
+      let lastY = window.pageYOffset || document.documentElement.scrollTop || 0;
+      const THRESHOLD    = 6;   // more eager reveal
+      const DOWN_HIDE_AT = 24;  // don't hide until you've scrolled a bit
+      let ticking = false;
+
+      const onScroll = () => {
+        const y = window.pageYOffset || document.documentElement.scrollTop || 0;
+        if (this.isOpen || y <= 0) { this._forceShowHeader(); lastY = y; ticking = false; return; }
+        const delta = y - lastY;
+        if (Math.abs(delta) >= THRESHOLD) {
+          if (delta > 0 && y > DOWN_HIDE_AT) this.header.classList.add('is-hidden');
+          else this.header.classList.remove('is-hidden');
+          lastY = y;
+        }
+        ticking = false;
+      };
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+      }, { passive: true });
+    }
+  }
+
+  // Boot once DOM is parsed
+  document.addEventListener('DOMContentLoaded', () => {
+    new MobileNavigation();
+    if (typeof SmoothScroll === 'function') { try { new SmoothScroll(); } catch(_){} }
+  });
+})();

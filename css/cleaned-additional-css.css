@@ -1707,3 +1707,33 @@ body.patient-info .info-section {
   text-decoration: underline;
   font-weight: 600;
 }
+/* Header reveal: move transform to the inner bar (not the header) */
+.site-header {
+  position: sticky;      /* keep sticky */
+  top: 0;
+  z-index: var(--nav-z-index, 1000); /* keep your var if set */
+  /* ❌ no transform or transition here */
+}
+
+.site-header .navbar {
+  transform: translateY(0);
+  transition: transform .20s ease;
+  will-change: transform;
+}
+
+.site-header.is-hidden .navbar {
+  transform: translateY(-100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header .navbar { transition: none; }
+}
+
+/* Desktop CTA visibility guard (prevents rare post-resize paint glitches) */
+@media (min-width: 769px) {
+  .site-header .site-links a.cta {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
