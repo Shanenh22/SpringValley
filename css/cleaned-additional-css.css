@@ -2183,3 +2183,236 @@ body.patient-info .info-section {
     margin-bottom: 0.25rem !important;
   }
 }
+/* =============================================================================
+   PATIENT SUCCESS STORIES RESPONSIVE FIX - Add to cleaned-additional-css.css
+   ============================================================================= */
+
+/* Force better responsive behavior for success stories */
+.success-stories {
+  display: grid !important;
+  grid-template-columns: 1fr !important; /* Single column by default */
+  gap: 2rem !important;
+  margin-bottom: 3rem !important;
+}
+
+/* Desktop: 2 columns for wider screens */
+@media (min-width: 900px) {
+  .success-stories {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2.5rem !important;
+  }
+}
+
+/* Large desktop: 3 columns only on very wide screens */
+@media (min-width: 1400px) {
+  .success-stories {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2rem !important;
+  }
+}
+
+/* Story card improvements */
+.story-card {
+  background: white !important;
+  border-radius: 16px !important;
+  padding: 2rem !important;
+  box-shadow: 0 8px 32px rgba(14, 54, 90, 0.1) !important;
+  border-left: 5px solid var(--mint, #8FD6C8) !important;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  min-height: 400px !important; /* Ensures consistent minimum height */
+}
+
+.story-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 48px rgba(14, 54, 90, 0.15) !important;
+}
+
+/* Story header layout fixes */
+.story-header {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem !important;
+  margin-bottom: 1.5rem !important;
+  align-items: flex-start !important;
+}
+
+.patient-info h3 {
+  color: var(--dallas-navy, #0E365A) !important;
+  margin-bottom: 0.5rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 1.2rem !important;
+  line-height: 1.3 !important;
+  word-wrap: break-word !important;
+  hyphens: auto !important;
+}
+
+.patient-name {
+  color: var(--cool-gray, #5A6D80) !important;
+  margin-bottom: 0.25rem !important;
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.4 !important;
+}
+
+.treatment-type {
+  color: var(--sky-blue, #0077B6) !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.4 !important;
+}
+
+/* Story rating section */
+.story-rating {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  flex-wrap: wrap !important;
+}
+
+.story-rating .stars {
+  color: var(--color-star, #FBBC05) !important;
+  font-size: 1.1rem !important;
+  line-height: 1 !important;
+  font-family: Arial, sans-serif !important;
+}
+
+.verified {
+  color: var(--mint, #8FD6C8) !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  background: rgba(143, 214, 200, 0.1) !important;
+  padding: 0.25rem 0.5rem !important;
+  border-radius: 12px !important;
+}
+
+/* Story content improvements */
+.story-content {
+  flex-grow: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.story-content blockquote {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  color: var(--slate-ink, #24313A) !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-style: italic !important;
+  padding-left: 1rem !important;
+  border-left: 3px solid var(--sky-blue, #0077B6) !important;
+  flex-grow: 1 !important;
+  word-wrap: break-word !important;
+  hyphens: auto !important;
+}
+
+/* Story details section */
+.story-details {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem !important;
+  margin-top: auto !important;
+  padding-top: 1rem !important;
+  border-top: 1px solid var(--cloud, #EEF2F6) !important;
+}
+
+.treatment-timeline {
+  color: var(--cool-gray, #5A6D80) !important;
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.4 !important;
+}
+
+.story-highlight {
+  color: var(--dallas-navy, #0E365A) !important;
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.4 !important;
+  word-wrap: break-word !important;
+  hyphens: auto !important;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .success-stories {
+    gap: 1.5rem !important;
+  }
+  
+  .story-card {
+    padding: 1.5rem !important;
+    min-height: 350px !important;
+  }
+  
+  .story-header {
+    gap: 0.75rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .patient-info h3 {
+    font-size: 1.1rem !important;
+    line-height: 1.25 !important;
+  }
+  
+  .story-content blockquote {
+    font-size: 0.95rem !important;
+    padding-left: 0.75rem !important;
+  }
+  
+  .story-rating {
+    gap: 0.75rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .story-card {
+    padding: 1rem !important;
+    min-height: 300px !important;
+  }
+  
+  .patient-info h3 {
+    font-size: 1rem !important;
+  }
+  
+  .story-content blockquote {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  .patient-name,
+  .treatment-type {
+    font-size: 0.85rem !important;
+  }
+  
+  .treatment-timeline,
+  .story-highlight {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Very wide screens - prevent cards from getting too wide */
+@media (min-width: 1600px) {
+  .success-stories {
+    max-width: 1400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* Text wrapping and readability improvements */
+.story-card * {
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  hyphens: auto !important;
+}
+
+/* Prevent orphaned words in headings */
+.patient-info h3 {
+  text-wrap: balance !important;
+}
+
+/* Better text handling for quotes */
+.story-content blockquote {
+  text-wrap: pretty !important;
+}
