@@ -396,4 +396,76 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })();
 });
+// === Auto-show header on scroll up (no extra file needed) ====================
+(function () {
+  'use strict';
+  if (window.__HEADER_AUTOSHOW_INIT__) return;
+  window.__HEADER_AUTOSHOW_INIT__ = true;
+
+  var THRESHOLD = 8; // px before reacting to avoid jitter
+  var lastY = window.pageYOffset || document.documentElement.scrollTop || 0;
+  var ticking = false;
+
+  function qs(sel){ return document.querySelector(sel); }
+  function getY(){
+    var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+    return y < 0 ? 0 : y; // iOS bounce safety
+  }
+  function isMenuOpen() {
+    var t = qs('#nav-toggle');
+    var n = qs('#site-nav');
+    var expanded = t && t.getAttribute('aria-expanded') === 'true';
+    var visible  = n && !n.hasAttribute('hidden');
+    return !!(expanded || visible);
+  }
+  function showHeader() {
+    var h = qs('.site-header');
+    if (h) h.classList.remove('is-hidden');
+  }
+
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () {
+      var header = qs('.site-header');
+      if (!header) { ticking = false; return; }
+
+      var y = getY();
+
+      // Never hide while the slide-out menu is open
+      if (isMenuOpen()) {
+        header.classList.remove('is-hidden');
+        lastY = y;
+        ticking = false;
+        return;
+      }
+
+      var delta = y - lastY;
+      if (Math.abs(delta) >= THRESHOLD) {
+        if (delta > 0) {
+          // scrolling down -> hide
+          header.classList.add('is-hidden');
+        } else {
+          // scrolling up -> show
+          header.classList.remove('is-hidden');
+        }
+        lastY = y;
+      }
+      ticking = false;
+    });
+  }
+
+  // Wire up
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('load', showHeader);
+  window.addEventListener('hashchange', showHeader);
+
+  var toggle = document.getElementById('nav-toggle');
+  if (toggle) toggle.addEventListener('click', showHeader);
+
+  var nav = document.getElementById('site-nav');
+  if (nav && window.MutationObserver) {
+    new MutationObserver(showHeader).observe(nav, { attributes: true, attributeFilter: ['hidden'] });
+  }
+})();
 

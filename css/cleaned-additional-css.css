@@ -1707,3 +1707,16 @@ body.patient-info .info-section {
   text-decoration: underline;
   font-weight: 600;
 }
+/* Auto-hide/reveal header on scroll */
+.site-header {
+  position: sticky; /* keep as sticky if you already use sticky */
+  top: 0;
+  z-index: 1000;
+  transition: transform 0.2s ease;
+  will-change: transform;
+}
+.site-header.is-hidden { transform: translateY(-100%); }
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header { transition: none; }
+}
