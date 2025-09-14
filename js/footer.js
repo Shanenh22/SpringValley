@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
             14228 Midway Rd, Suite 100<br>
             Dallas, TX 75244<br>
             Phone: <a href="tel:+19728522222">(972) 852-2222</a><br>
+			Fax: (972) 852-1111</a><br>
             Email: <a href="mailto:info@springvalleydentistry.com">info@springvalleydentistry.com</a>
           </div>
 
