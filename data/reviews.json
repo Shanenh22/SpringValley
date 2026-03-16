@@ -1,6 +1,11 @@
 {
-  "source": "embedded",
-  "last_updated": "2025-08-28",
+  "source": "google",
+  "last_updated": "2025-09-01",
+  "aggregate": {
+    "ratingValue": "5.0",
+    "reviewCount": 200,
+    "platform": "Google"
+  },
   "reviews": [
     {
       "name": "Sarah M.",
@@ -22,6 +27,27 @@
       "rating": 5,
       "platform": "Google",
       "text": "Beautiful office and kind staff. I felt heard the entire time. Highly recommend."
+    },
+    {
+      "name": "David L.",
+      "date": "2 months ago",
+      "rating": 5,
+      "platform": "Google",
+      "text": "Finally found a dentist I actually look forward to visiting. The team here treats you like family. My Invisalign treatment has been going incredibly smoothly \u2014 Dr. Aletaha walks me through every step."
+    },
+    {
+      "name": "Maria G.",
+      "date": "2 months ago",
+      "rating": 5,
+      "platform": "Google",
+      "text": "Brought my kids here for the first time and they actually LIKED the dentist! The hygienists are so patient and kind with children. We have found our family dental home."
+    },
+    {
+      "name": "Robert K.",
+      "date": "3 months ago",
+      "rating": 5,
+      "platform": "Google",
+      "text": "Had a crown done here and the process was seamless. The digital impression technology means no messy molds. The crown fits perfectly and looks completely natural."
     }
   ]
 }

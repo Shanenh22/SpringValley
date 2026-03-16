@@ -2416,3 +2416,200 @@ body.patient-info .info-section {
 .story-content blockquote {
   text-wrap: pretty !important;
 }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   AUDIT FIXES — Added by optimization pass
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* Fix: --cool-gray contrast (#5A6D80 → #4A5D6E to meet WCAG AA 4.5:1) */
+:root {
+  --cool-gray: #4A5D6E;
+}
+
+/* Mobile drawer CTA buttons */
+@media (max-width: 768px) {
+  #site-nav .menu-ctas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin: 0.75rem 0 0;
+  }
+
+  #site-nav .menu-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    padding: 0.6rem 0.25rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.78rem;
+    min-height: 60px;
+    border: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  #site-nav .menu-cta svg {
+    flex-shrink: 0;
+  }
+
+  #site-nav .menu-cta.call {
+    background: var(--sky-blue, #0ea5e9);
+    color: #fff;
+  }
+
+  #site-nav .menu-cta.book {
+    background: var(--dallas-navy, #0e365a);
+    color: #fff;
+  }
+
+  #site-nav .menu-cta.directions {
+    background: #e8edf2;
+    color: var(--color-text-primary, #1a2530);
+  }
+
+  #site-nav .menu-cta:hover,
+  #site-nav .menu-cta:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  #site-nav .menu-cta:focus-visible {
+    outline: 3px solid var(--sky-blue, #0ea5e9);
+    outline-offset: 2px;
+  }
+
+  /* Improve mobile drawer header spacing */
+  #site-nav .menu-header {
+    padding: 1rem 0 0.75rem;
+  }
+
+  /* Ensure close button is large enough for touch */
+  #site-nav .menu-close {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    transition: background 0.15s ease;
+  }
+
+  #site-nav .menu-close:hover,
+  #site-nav .menu-close:focus {
+    background: rgba(0,0,0,0.08);
+  }
+
+  /* Better touch targets for all nav links */
+  #site-nav .menu-links a,
+  #site-nav .intent-grid a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.25rem;
+  }
+}
+
+/* Reviews dynamic container */
+#recent-reviews {
+  min-height: 200px;
+}
+
+#recent-reviews .reviews-loading {
+  text-align: center;
+  color: var(--color-text-secondary, #5a6d80);
+  padding: 2rem;
+}
+
+#recent-reviews .reviews-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  #recent-reviews .reviews-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+#recent-reviews .review-card {
+  background: var(--color-surface, #fff);
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+#recent-reviews .review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  gap: 0.5rem;
+}
+
+#recent-reviews .reviewer-name {
+  font-weight: 700;
+  color: var(--color-text-primary, #1a2530);
+}
+
+#recent-reviews .review-date {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary, #4A5D6E);
+}
+
+#recent-reviews .stars {
+  color: #f59e0b;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+#recent-reviews blockquote {
+  margin: 0;
+  color: var(--color-text-primary, #1a2530);
+  font-style: italic;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Form success state */
+.form-success {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #f0fdf4;
+  border-radius: 12px;
+  border: 1px solid #86efac;
+}
+
+.form-success h2 {
+  color: #16a34a;
+  margin-bottom: 0.5rem;
+}
+
+/* Hero section LCP optimization */
+.hero {
+  background-size: cover;
+  background-position: center;
+  content-visibility: auto;
+}
+
+/* Skip link visibility improvement */
+.skip-to-content:focus {
+  position: fixed;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background: var(--color-primary, #0e365a);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 700;
+  text-decoration: none;
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+  white-space: nowrap;
+}
