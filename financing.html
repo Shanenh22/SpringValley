@@ -167,6 +167,25 @@
   object-fit: contain;
 }
 
+/* CareCredit — photo fills entire logo area */
+.provider-card-logo.carecredit-logo {
+  padding: 0;
+  background: #fff;
+  min-height: 160px;
+  overflow: hidden;
+}
+
+.provider-card-logo.carecredit-logo .carecredit-img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 0;
+}
+
 /* HFD button image */
 .provider-card-logo img.hfd-logo {
   max-width: 220px;
@@ -580,11 +599,11 @@
 
         <!-- ── CARECREDIT ── -->
         <div class="provider-card">
-          <div class="provider-card-logo">
+          <div class="provider-card-logo carecredit-logo">
             <img src="images/CareCredit1.jpg"
-                 alt="CareCredit"
-                 width="180" height="60"
-                 loading="lazy"/>
+                 alt="CareCredit healthcare financing"
+                 loading="lazy"
+                 class="carecredit-img"/>
           </div>
           <div class="provider-card-body">
             <h3>CareCredit</h3>
