@@ -2614,11 +2614,27 @@ body.patient-info .info-section {
   white-space: nowrap;
 }
 
-/* ─────────────────────────────────────────────────────────────────────────
-   SVG ICON SYSTEM — dental-specific, uniform 24px line icons
-   ───────────────────────────────────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════════════════
+   SVG ICON SYSTEM — comprehensive override, all containers, all pages
+   Every icon image is forced to exactly 24×24px via !important.
+   Container classes are given consistent sizing and flex-centering.
+   ═══════════════════════════════════════════════════════════════════════════ */
 
-/* All icon containers: uniform size, centered */
+/* ── Global: every icon <img> is exactly 24×24px, never stretched ────────── */
+[class*="icon"] img,
+[class*="Icon"] img {
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
+  max-width: 24px !important;
+  max-height: 24px !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+  object-fit: contain !important;
+}
+
+/* ── Named containers: uniform 44×44 centred badge ──────────────────────── */
 .benefit-icon,
 .highlight-icon,
 .why-icon,
@@ -2629,17 +2645,17 @@ body.patient-info .info-section {
 .faq-category-icon,
 .process-icon,
 .icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0;
-  line-height: 0;
-  width: 44px;
-  height: 44px;
-  flex-shrink: 0;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 44px !important;
+  height: 44px !important;
+  flex-shrink: 0 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
 }
 
-/* All icon images: locked to exactly 24px */
+/* Explicit img rule for each container (belt-and-braces) */
 .benefit-icon img,
 .highlight-icon img,
 .why-icon img,
@@ -2650,45 +2666,123 @@ body.patient-info .info-section {
 .faq-category-icon img,
 .process-icon img,
 .icon img {
-  width: 24px;
-  height: 24px;
-  display: block;
-  flex-shrink: 0;
+  width: 24px !important;
+  height: 24px !important;
+  max-width: 24px !important;
+  max-height: 24px !important;
 }
 
-/* Inline feature icons inside headings */
+/* ── Inline feature icons inside headings ────────────────────────────────── */
 .feature-icon {
-  display: inline-flex;
-  align-items: center;
-  vertical-align: middle;
-  margin-right: 0.35em;
-  font-size: 0;
-  line-height: 0;
+  display: inline-flex !important;
+  align-items: center !important;
+  vertical-align: middle !important;
+  margin-right: 0.4em !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
 }
 
 .feature-icon img {
-  width: 20px;
-  height: 20px;
-  display: block;
+  width: 20px !important;
+  height: 20px !important;
+  max-width: 20px !important;
+  max-height: 20px !important;
 }
 
-/* Time estimate badges */
+/* ── Icons directly inside headings (h3, h4 with img sibling) ───────────── */
+.diff-card h4 img,
+.comfort-card h3 img,
+.section-heading img,
+h3 > img[src*="icons/"],
+h4 > img[src*="icons/"] {
+  width: 20px !important;
+  height: 20px !important;
+  max-width: 20px !important;
+  max-height: 20px !important;
+  vertical-align: middle !important;
+  margin-right: 0.4em !important;
+  flex-shrink: 0 !important;
+}
+
+/* ── Blog card featured-image: icon placeholder ─────────────────────────── */
+/* The blog card .featured-image normally holds a photo (width:100%, height:100%).
+   When it holds an icon instead, we constrain the icon wrapper and the img. */
+.blog-card .featured-image > div img[src*="icons/"],
+.blog-card .featured-image img[src*="icons/"] {
+  width: 36px !important;
+  height: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+  object-fit: contain !important;
+}
+
+/* ── Time estimate badges ────────────────────────────────────────────────── */
 .time-estimate,
 .time-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
 }
 
 .time-estimate img,
 .time-badge img {
-  width: 14px;
-  height: 14px;
-  flex-shrink: 0;
+  width: 14px !important;
+  height: 14px !important;
+  max-width: 14px !important;
+  max-height: 14px !important;
 }
 
-/* Blog card placeholder icon (larger, decorative) */
-.blog-icon-wrap img {
-  width: 28px;
-  height: 28px;
+/* ── Centred benefit cards on homepage ──────────────────────────────────── */
+.benefit-card {
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.benefit-card .benefit-icon {
+  margin: 0 auto 1rem !important;
+}
+
+/* ── FAQ category tiles: slightly larger icon ───────────────────────────── */
+.faq-category-icon img {
+  width: 28px !important;
+  height: 28px !important;
+  max-width: 28px !important;
+  max-height: 28px !important;
+}
+
+/* ── Highlight cards on reviews page ────────────────────────────────────── */
+.highlight-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.highlight-icon {
+  margin: 0 auto 0.75rem !important;
+}
+
+/* ── Financing why-item cards ───────────────────────────────────────────── */
+.why-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.why-icon {
+  margin: 0 auto 0.75rem !important;
+}
+
+/* ── Patient-info process steps ─────────────────────────────────────────── */
+.process-step .process-icon {
+  flex-shrink: 0 !important;
+}
+
+/* ── About / membership benefit cards ───────────────────────────────────── */
+.benefit-card .benefit-icon {
+  background: rgba(0,119,182,0.07);
+  border-radius: 50%;
 }
