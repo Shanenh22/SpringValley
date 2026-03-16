@@ -308,20 +308,21 @@
   transition: transform 0.25s ease;
 }
 
-.faq-item.is-open .faq-chevron {
+.faq-item.open .faq-chevron {
   transform: rotate(180deg);
 }
 
 .faq-answer {
-  display: none;
-  padding: 0 1.25rem 1.1rem;
+  display: none !important;
+  padding: 1.25rem !important;
   font-size: 0.92rem;
   color: var(--color-text-secondary, #4a5d6e);
   line-height: 1.65;
+  border-top: 1px solid var(--color-border, #e2e8f0);
 }
 
-.faq-item.is-open .faq-answer {
-  display: block;
+.faq-item.open .faq-answer {
+  display: block !important;
 }
 
 /* Steps / how it works */
@@ -829,53 +830,72 @@
 <!-- Screen reader live region -->
 <div id="nav-status" class="sr-only" aria-live="polite" aria-atomic="true"></div>
 
-<!-- FAQ accordion + Cherry scroll script -->
+<!-- FAQ accordion (event-delegation, same pattern as faq.html) -->
 <script>
-(function () {
-  'use strict';
+(() => {
+  // Guard: only bind once even if script runs multiple times
+  if (document.documentElement.dataset.financingFaqBound === '1') return;
+  document.documentElement.dataset.financingFaqBound = '1';
 
-  function init() {
-    // FAQ accordion
-    document.querySelectorAll('.faq-question').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var item   = btn.closest('.faq-item');
-        var isOpen = item.classList.contains('is-open');
+  function stickyOffset() {
+    var header = document.querySelector('.site-header');
+    return (header ? header.offsetHeight : 0) + 16;
+  }
 
-        // Close all open items
-        document.querySelectorAll('.faq-item.is-open').forEach(function (el) {
-          el.classList.remove('is-open');
-          el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-        });
-
-        // Open the clicked item (unless it was already open — toggle off)
-        if (!isOpen) {
-          item.classList.add('is-open');
-          btn.setAttribute('aria-expanded', 'true');
-        }
-      });
+  function closeOthers(exceptItem) {
+    document.querySelectorAll('.faq-item.open').forEach(function (el) {
+      if (el !== exceptItem) {
+        el.classList.remove('open');
+        var q = el.querySelector('.faq-question');
+        if (q) q.setAttribute('aria-expanded', 'false');
+      }
     });
+  }
 
-    // Smooth-scroll to Cherry widget when "Apply with Cherry" card button is clicked
-    var cherryBtn = document.getElementById('cherry-apply-btn');
-    if (cherryBtn) {
-      cherryBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        var target = document.getElementById('cherry-widget');
-        if (!target) return;
-        var header = document.querySelector('.site-header');
-        var offset = (header ? header.getBoundingClientRect().height : 0) + 16;
-        var y = target.getBoundingClientRect().top + window.pageYOffset - offset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      });
+  function openItem(item) {
+    closeOthers(item);
+    item.classList.add('open');
+    var q = item.querySelector('.faq-question');
+    if (q) q.setAttribute('aria-expanded', 'true');
+  }
+
+  function toggleItem(item) {
+    if (item.classList.contains('open')) {
+      item.classList.remove('open');
+      var q = item.querySelector('.faq-question');
+      if (q) q.setAttribute('aria-expanded', 'false');
+    } else {
+      openItem(item);
     }
   }
 
-  // Run immediately if DOM is ready, otherwise wait for it
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+  // Event delegation — works regardless of when DOM is ready
+  document.addEventListener('click', function (e) {
+    var q = e.target.closest && e.target.closest('.faq-question');
+    if (!q) return;
+    var item = q.closest('.faq-item');
+    if (item) toggleItem(item);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    var q = e.target.closest && e.target.closest('.faq-question');
+    if (!q) return;
+    e.preventDefault();
+    var item = q.closest('.faq-item');
+    if (item) toggleItem(item);
+  });
+
+  // Smooth-scroll to Cherry widget when card "Apply with Cherry" button clicked
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest && e.target.closest('#cherry-apply-btn');
+    if (!btn) return;
+    e.preventDefault();
+    var target = document.getElementById('cherry-widget');
+    if (!target) return;
+    var y = target.getBoundingClientRect().top + window.pageYOffset - stickyOffset();
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  });
 })();
 </script>
 
