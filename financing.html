@@ -829,41 +829,52 @@
 <!-- Screen reader live region -->
 <div id="nav-status" class="sr-only" aria-live="polite" aria-atomic="true"></div>
 
-<!-- FAQ accordion script -->
+<!-- FAQ accordion + Cherry scroll script -->
 <script>
 (function () {
   'use strict';
-  document.querySelectorAll('.faq-question').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var item    = btn.closest('.faq-item');
-      var isOpen  = item.classList.contains('is-open');
 
-      // Close all
-      document.querySelectorAll('.faq-item.is-open').forEach(function (el) {
-        el.classList.remove('is-open');
-        el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+  function init() {
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item   = btn.closest('.faq-item');
+        var isOpen = item.classList.contains('is-open');
+
+        // Close all open items
+        document.querySelectorAll('.faq-item.is-open').forEach(function (el) {
+          el.classList.remove('is-open');
+          el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        // Open the clicked item (unless it was already open — toggle off)
+        if (!isOpen) {
+          item.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
       });
-
-      // Open clicked (unless it was already open)
-      if (!isOpen) {
-        item.classList.add('is-open');
-        btn.setAttribute('aria-expanded', 'true');
-      }
     });
-  });
 
-  // Scroll Cherry widget into view when "Apply with Cherry" is clicked
-  var cherryBtn = document.getElementById('cherry-apply-btn');
-  if (cherryBtn) {
-    cherryBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      var target = document.getElementById('cherry-widget');
-      if (!target) return;
-      var header = document.querySelector('.site-header');
-      var offset = (header ? header.getBoundingClientRect().height : 0) + 16;
-      var y = target.getBoundingClientRect().top + window.pageYOffset - offset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    });
+    // Smooth-scroll to Cherry widget when "Apply with Cherry" card button is clicked
+    var cherryBtn = document.getElementById('cherry-apply-btn');
+    if (cherryBtn) {
+      cherryBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var target = document.getElementById('cherry-widget');
+        if (!target) return;
+        var header = document.querySelector('.site-header');
+        var offset = (header ? header.getBoundingClientRect().height : 0) + 16;
+        var y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      });
+    }
+  }
+
+  // Run immediately if DOM is ready, otherwise wait for it
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 })();
 </script>
