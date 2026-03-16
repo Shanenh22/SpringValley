@@ -2613,3 +2613,95 @@ body.patient-info .info-section {
   outline-offset: 2px;
   white-space: nowrap;
 }
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SVG ICON SYSTEM — replaces emoji icons site-wide
+   ───────────────────────────────────────────────────────────────────────── */
+
+.svg-icon {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.svg-icon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Sized variants */
+.svg-icon-sm  { width: 28px; height: 28px; }
+.svg-icon-md  { width: 38px; height: 38px; }
+.svg-icon-lg  { width: 56px; height: 56px; }
+
+/* Circular background badge — matches old emoji pill treatment */
+.icon-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(0,119,182,0.08);
+  flex-shrink: 0;
+}
+
+.icon-badge img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Benefit icon — large centered icon in feature cards */
+.benefit-icon,
+.highlight-icon,
+.why-icon,
+.nav-icon,
+.type-icon,
+.form-icon,
+.faq-category-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0; /* hide any leftover emoji text */
+}
+
+.benefit-icon img,
+.highlight-icon img,
+.why-icon img,
+.nav-icon img,
+.type-icon img,
+.form-icon img,
+.security-icon img,
+.icon img,
+.faq-category-icon img {
+  width: 36px;
+  height: 36px;
+  display: block;
+}
+
+/* Feature icon inline — used inside h3 headings */
+.feature-icon {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin-right: 0.4em;
+  font-size: 0;
+}
+
+.feature-icon img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* Time estimate badge */
+.time-estimate img,
+.time-badge img {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
