@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <li><a href="about.html">About Us</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="patient-info.html" data-nowrap>Patient Info</a></li>
+            <li><a href="financing.html">Financing</a></li>
             <li><a href="privacy.html">Privacy &amp; Terms</a></li>
             <li><a href="ask-a-question.html">Ask a Question</a></li>
             <li><a href="contact.html">Book Online</a></li>

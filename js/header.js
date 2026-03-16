@@ -34,6 +34,7 @@
         <li><a href="services.html">Services</a></li>
         <li><a href="emergency.html">Emergency</a></li>
         <li><a href="patient-info.html" data-nowrap>Patient Info</a></li>
+        <li><a href="financing.html">Financing</a></li>
         <li><a href="reviews.html">Reviews</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="blog.html">Blog</a></li>
@@ -71,6 +72,7 @@
           <li><a href="services.html">Services</a></li>
           <li><a href="emergency.html">Emergency</a></li>
           <li><a href="patient-info.html" data-nowrap>Patient Info</a></li>
+          <li><a href="financing.html">Financing</a></li>
           <li><a href="reviews.html">Reviews</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="blog.html">Blog</a></li>
