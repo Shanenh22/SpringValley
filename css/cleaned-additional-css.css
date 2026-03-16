@@ -2613,3 +2613,82 @@ body.patient-info .info-section {
   outline-offset: 2px;
   white-space: nowrap;
 }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SVG ICON SYSTEM — dental-specific, uniform 24px line icons
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* All icon containers: uniform size, centered */
+.benefit-icon,
+.highlight-icon,
+.why-icon,
+.nav-icon,
+.type-icon,
+.form-icon,
+.security-icon,
+.faq-category-icon,
+.process-icon,
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+  line-height: 0;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+/* All icon images: locked to exactly 24px */
+.benefit-icon img,
+.highlight-icon img,
+.why-icon img,
+.nav-icon img,
+.type-icon img,
+.form-icon img,
+.security-icon img,
+.faq-category-icon img,
+.process-icon img,
+.icon img {
+  width: 24px;
+  height: 24px;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Inline feature icons inside headings */
+.feature-icon {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin-right: 0.35em;
+  font-size: 0;
+  line-height: 0;
+}
+
+.feature-icon img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* Time estimate badges */
+.time-estimate,
+.time-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.time-estimate img,
+.time-badge img {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* Blog card placeholder icon (larger, decorative) */
+.blog-icon-wrap img {
+  width: 28px;
+  height: 28px;
+}
