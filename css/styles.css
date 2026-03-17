@@ -66,7 +66,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  padding-top: var(--site-header-height); /* offset for fixed header */
+  padding-top: var(--site-header-height);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
@@ -583,7 +583,7 @@ a.btn,
   position: relative;
   user-select: none;
   overflow: hidden;
-  margin-top: calc(-1 * var(--site-header-height)); /* pull flush under fixed header */
+  margin-top: calc(-1 * var(--site-header-height));
 }
 
 .hero::before {
@@ -10024,7 +10024,6 @@ input[type="button"],
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  margin-top: calc(-1 * var(--site-header-height)); /* flush under fixed header */
 
   /* background + spacing */
   background-size: cover;
@@ -10032,6 +10031,7 @@ input[type="button"],
   background-repeat: no-repeat;
   padding: 80px 20px;
   text-align: center; /* keep your centered text */
+  margin-top: calc(-1 * var(--site-header-height));
 }
 
 /* Let headings and paragraphs actually span the available width */
@@ -10065,7 +10065,7 @@ input[type="button"],
   background-size: cover;
   background-position: center;
   text-align: center;
-  margin-top: calc(-1 * var(--site-header-height)); /* flush under fixed header */
+  margin-top: calc(-1 * var(--site-header-height));
 }
 
 .hero h1,
@@ -11032,7 +11032,7 @@ body.patient-info .info-section {
   margin: 0;
 }
 /* Navbar size control � final override */
-:root { --site-header-height: 100px; } /* top-bar (~30px) + navbar (~70px) */
+:root { --site-header-height: 100px; } /* top-bar + navbar */
 
 /* Hide the entire top CTA block inside the hamburger menu */
 .menu-ctas {

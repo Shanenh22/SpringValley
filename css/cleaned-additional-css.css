@@ -1648,7 +1648,7 @@ body.patient-info .info-section {
 #comfort,
 #costs,
 #post-op {
-  scroll-margin-top: calc(var(--site-header-height) + 16px);
+  scroll-margin-top: 120px; /* Adjust this value based on your header height */
 }
 
 /* Mobile-specific scroll offset fixes */
@@ -1707,29 +1707,13 @@ body.patient-info .info-section {
   text-decoration: underline;
   font-weight: 600;
 }
-/* Header reveal: move transform to the inner bar (not the header) */
+/* ── Header: fixed position, hide-on-scroll-down / show-on-scroll-up ── */
 .site-header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: var(--nav-z-index, 1000);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .site-header .navbar { transition: none; }
-}
-
-/* Desktop CTA visibility guard (prevents rare post-resize paint glitches) */
-@media (min-width: 769px) {
-  .site-header .site-links a.cta {
-    display: inline-flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-}
-/* Header hide-on-scroll-down / show-on-scroll-up — all screen sizes */
-.site-header {
   transition: transform 0.28s ease-in-out;
 }
 
@@ -1737,47 +1721,37 @@ body.patient-info .info-section {
   transform: translateY(-100%);
 }
 
-/* Navbar must never have its own transform — only the header slides */
+/* Navbar never has its own transform */
 .site-header .navbar {
   transform: none !important;
   transition: none !important;
 }
 
-/* Body padding transitions smoothly when header hides/shows */
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .site-header { transition: none; }
+}
+
+/* Desktop CTA visibility guard */
+@media (min-width: 769px) {
+  .site-header .site-links a.cta {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Body padding offsets the fixed header; transitions with header */
 body {
   transition: padding-top 0.28s ease-in-out;
 }
 
 body.header-hidden {
-  padding-top: 0;
+  padding-top: 0 !important;
 }
 
-/* Clean mobile header - no hide/show behavior */
+/* Mobile: keep 100px padding, fixed header already set above */
 @media (max-width: 768px) {
-  .site-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    transform: none;
-    transition: none;
-  }
-  
-  .site-header .navbar {
-    transform: none;
-    transition: none;
-  }
-}
-/* Only apply padding on mobile when header is fixed */
-@media (max-width: 768px) {
-  body {
-    padding-top: 70px;
-  }
-}
-
-/* Desktop: body padding accounts for fixed header (top-bar + navbar) */
-@media (min-width: 769px) {
   body {
     padding-top: var(--site-header-height);
   }

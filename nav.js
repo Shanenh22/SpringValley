@@ -228,23 +228,18 @@
 
   const updateHeader = () => {
     const currentScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
-
-    // Always show at top of page or when menu is open
+    // Always show at top or when mobile menu is open
     if (currentScrollY <= 50 || this.isOpen) {
       showHeader();
       lastScrollY = currentScrollY;
       return;
     }
-
     const scrollingDown = currentScrollY > lastScrollY;
-
-    // Hide when scrolling down past 100px; show immediately on any scroll up
     if (scrollingDown && currentScrollY > 100) {
       hideHeader();
     } else if (!scrollingDown) {
       showHeader();
     }
-
     lastScrollY = currentScrollY;
   };
 
