@@ -48,7 +48,7 @@
 
     // ordered fallbacks: custom endpoint (data-endpoint), site JSON, and empty
     const endpoint = container.getAttribute("data-endpoint");
-    const fallbacks = [endpoint, "/data/reviews.json", "data/reviews.json"].filter(Boolean);
+    const fallbacks = [endpoint, "https://www.springvalleydentistry.com/data/reviews.json", "/data/reviews.json", "data/reviews.json"].filter(Boolean);
     const data = await fetchReviews(fallbacks);
     if(data){
       renderReviews(container, data);

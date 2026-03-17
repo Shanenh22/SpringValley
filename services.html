@@ -95,12 +95,6 @@
     <a class="service-nav-item" href="#emergency-care"         aria-controls="emergency-care"><h4>Emergency</h4></a>
   </nav>
 
-  <!-- Optional search “no results” message -->
-  <div class="no-results" id="noResults" hidden>
-    <h3>No services found</h3>
-    <p>Try different keywords or browse our service categories above.</p>
-  </div>
-
   <!-- Preventive & General Dentistry -->
   <div class="service-category" id="preventive-care">
     <div class="category-header">
@@ -445,34 +439,7 @@
 <script defer src="js/menu-enhancements.js"></script>
 <script defer src="js/footer.js"></script>
 
-<!-- Optional service search (no-op if #serviceSearch absent) -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const searchInput = document.getElementById('serviceSearch');
-  const serviceCards = document.querySelectorAll('.service-card');
-  const serviceCategories = document.querySelectorAll('.service-category');
-  const noResults = document.getElementById('noResults');
-  if (!searchInput) return;
 
-  searchInput.addEventListener('input', function() {
-    const searchTerm = this.value.toLowerCase().trim();
-    let hasVisible = false;
-    serviceCards.forEach(card => {
-      const title = (card.querySelector('h3')?.textContent || '').toLowerCase();
-      const description = (card.querySelector('p')?.textContent || '').toLowerCase();
-      const features = Array.from(card.querySelectorAll('.service-features li')).map(li => li.textContent.toLowerCase()).join(' ');
-      const isMatch = title.includes(searchTerm) || description.includes(searchTerm) || features.includes(searchTerm);
-      card.style.display = (!searchTerm || isMatch) ? 'flex' : 'none';
-      if (!searchTerm || isMatch) hasVisible = true;
-    });
-    serviceCategories.forEach(cat => {
-      const visibleCards = cat.querySelectorAll('.service-card:not([style*="display: none"])');
-      cat.style.display = (visibleCards.length > 0) ? 'block' : 'none';
-    });
-    if (noResults) noResults.hidden = hasVisible || !searchTerm;
-  });
-});
-</script>
 
 <!-- Single anchor handler: sticky-header offset + focus + deep links -->
 <script>
