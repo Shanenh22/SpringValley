@@ -1648,7 +1648,7 @@ body.patient-info .info-section {
 #comfort,
 #costs,
 #post-op {
-  scroll-margin-top: 120px; /* Adjust this value based on your header height */
+  scroll-margin-top: calc(var(--site-header-height) + 16px);
 }
 
 /* Mobile-specific scroll offset fixes */
@@ -1709,10 +1709,11 @@ body.patient-info .info-section {
 }
 /* Header reveal: move transform to the inner bar (not the header) */
 .site-header {
-  position: sticky;      /* keep sticky */
+  position: fixed;
   top: 0;
-  z-index: var(--nav-z-index, 1000); /* keep your var if set */
-  /* ❌ no transform or transition here */
+  left: 0;
+  right: 0;
+  z-index: var(--nav-z-index, 1000);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1744,15 +1745,6 @@ body.patient-info .info-section {
   }
 }
 
-/* Desktop: header always stays visible — never hide on scroll */
-@media (min-width: 769px) {
-  .site-header,
-  .site-header.is-hidden {
-    transform: none !important;
-    position: sticky;
-    top: 0;
-  }
-}
 /* Clean mobile header - no hide/show behavior */
 @media (max-width: 768px) {
   .site-header {
@@ -1777,10 +1769,10 @@ body.patient-info .info-section {
   }
 }
 
-/* Ensure no padding on desktop */
+/* Desktop: body padding accounts for fixed header (top-bar + navbar) */
 @media (min-width: 769px) {
   body {
-    padding-top: 0;
+    padding-top: var(--site-header-height);
   }
 }
 /* =============================================================================
