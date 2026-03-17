@@ -2655,6 +2655,29 @@ body.header-hidden {
   max-height: 24px !important;
 }
 
+/* ── contact-info-card icons: override generic .icon sizing ── */
+.contact-info-card .icon {
+  width: 100% !important;
+  height: auto !important;
+  font-size: 3rem !important;
+  line-height: 1 !important;
+  flex-shrink: 1 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  margin-bottom: 1rem;
+}
+
+.contact-info-card .icon img {
+  width: 48px !important;
+  height: 48px !important;
+  max-width: 48px !important;
+  max-height: 48px !important;
+  display: block;
+  margin: 0 auto;
+}
+
 /* ── Inline feature icons inside headings ────────────────────────────────── */
 .feature-icon {
   display: inline-flex !important;
