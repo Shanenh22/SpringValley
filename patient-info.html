@@ -606,11 +606,23 @@
     openAndScrollTo(id, true);
   });
 
-  // When users toggle a summary directly, keep only one <details> open
+  // When users toggle a summary directly: close others AND scroll to the opened one
   document.addEventListener("toggle", (e) => {
-    if (e.target instanceof HTMLDetailsElement && e.target.matches(DETAILS_SEL) && e.target.open) {
-      closeOthers(e.target);
-    }
+    if (!(e.target instanceof HTMLDetailsElement)) return;
+    if (!e.target.matches(DETAILS_SEL)) return;
+    if (!e.target.open) return;
+
+    const opened = e.target;
+    closeOthers(opened);
+
+    // After the closed item collapses (layout shifts), scroll the opened item into view
+    // Two rAF passes: first lets the DOM collapse, second reads the settled position
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const y = opened.getBoundingClientRect().top + window.pageYOffset - stickyOffset();
+        prefersReduce ? window.scrollTo(0, y) : window.scrollTo({ top: y, behavior: "smooth" });
+      });
+    });
   }, true);
 
   // Deep links (#insurance, etc.)
