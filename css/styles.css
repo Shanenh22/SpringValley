@@ -583,6 +583,7 @@ a.btn,
   position: relative;
   user-select: none;
   overflow: hidden;
+  margin-top: calc(-1 * var(--site-header-height)); /* pull flush under fixed header */
 }
 
 .hero::before {
@@ -10023,6 +10024,7 @@ input[type="button"],
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
+  margin-top: calc(-1 * var(--site-header-height)); /* flush under fixed header */
 
   /* background + spacing */
   background-size: cover;
@@ -10063,6 +10065,7 @@ input[type="button"],
   background-size: cover;
   background-position: center;
   text-align: center;
+  margin-top: calc(-1 * var(--site-header-height)); /* flush under fixed header */
 }
 
 .hero h1,

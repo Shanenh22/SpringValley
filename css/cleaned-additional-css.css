@@ -1728,21 +1728,28 @@ body.patient-info .info-section {
     opacity: 1 !important;
   }
 }
-/* Mobile header scroll behavior - clean implementation */
-@media (max-width: 768px) {
-  .site-header {
-    transition: transform 0.25s ease-in-out;
-  }
-  
-  .site-header.is-hidden {
-    transform: translateY(-100%);
-  }
-  
-  /* Ensure navbar doesn't interfere */
-  .site-header .navbar {
-    transform: none !important;
-    transition: none !important;
-  }
+/* Header hide-on-scroll-down / show-on-scroll-up — all screen sizes */
+.site-header {
+  transition: transform 0.28s ease-in-out;
+}
+
+.site-header.is-hidden {
+  transform: translateY(-100%);
+}
+
+/* Navbar must never have its own transform — only the header slides */
+.site-header .navbar {
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Body padding transitions smoothly when header hides/shows */
+body {
+  transition: padding-top 0.28s ease-in-out;
+}
+
+body.header-hidden {
+  padding-top: 0;
 }
 
 /* Clean mobile header - no hide/show behavior */

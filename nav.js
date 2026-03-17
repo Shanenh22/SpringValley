@@ -207,40 +207,42 @@
     _forceShowHeader() {
       if (!this.header) this.header = $('.site-header');
       if (this.header) this.header.classList.remove('is-hidden');
-      // NOTE: Do not set inline transforms here — CSS handles .navbar slide
+      document.body.classList.remove('header-hidden');
     }
 
     _enableHeaderAutoShow() {
   if (!this.header) this.header = $('.site-header');
   if (!this.header) return;
 
-  // On desktop (>768px) the header is always visible — no hide on scroll.
-  // Hide-on-scroll only applies to mobile where screen space is limited.
-  const isMobile = () => window.innerWidth <= 768;
-
   let lastScrollY = 0;
 
-  const updateHeader = () => {
-    if (!isMobile()) {
-      // Always ensure header is visible on desktop
-      this.header.classList.remove('is-hidden');
-      return;
-    }
+  const showHeader = () => {
+    this.header.classList.remove('is-hidden');
+    document.body.classList.remove('header-hidden');
+  };
 
+  const hideHeader = () => {
+    this.header.classList.add('is-hidden');
+    document.body.classList.add('header-hidden');
+  };
+
+  const updateHeader = () => {
     const currentScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
 
     // Always show at top of page or when menu is open
     if (currentScrollY <= 50 || this.isOpen) {
-      this.header.classList.remove('is-hidden');
+      showHeader();
       lastScrollY = currentScrollY;
       return;
     }
 
     const scrollingDown = currentScrollY > lastScrollY;
+
+    // Hide when scrolling down past 100px; show immediately on any scroll up
     if (scrollingDown && currentScrollY > 100) {
-      this.header.classList.add('is-hidden');
+      hideHeader();
     } else if (!scrollingDown) {
-      this.header.classList.remove('is-hidden');
+      showHeader();
     }
 
     lastScrollY = currentScrollY;
@@ -252,11 +254,6 @@
       requestAnimationFrame(() => { updateHeader(); ticking = false; });
       ticking = true;
     }
-  }, { passive: true });
-
-  // Also re-check on resize in case user switches between mobile/desktop
-  window.addEventListener('resize', () => {
-    if (!isMobile()) this.header.classList.remove('is-hidden');
   }, { passive: true });
 }
   }
