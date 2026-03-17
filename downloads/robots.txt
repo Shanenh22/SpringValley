@@ -1,0 +1,47 @@
+# robots.txt — Spring Valley Dental Associates (production)
+
+# Allow full crawling & indexing by default
+User-agent: *
+Allow: /
+
+# Keep crawlers out of private/system areas (no real pages live here)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /_backup/
+Disallow: /includes/
+# NOTE: You serve live JS from /js/, not /scripts/.
+# If you ever move live assets into /scripts/, remove the next line.
+Disallow: /scripts/
+
+# Block stray files that shouldn’t be indexed
+Disallow: /email-template.html
+Disallow: /header.html
+Disallow: /test.html
+Disallow: /*.log$
+Disallow: /*.tmp$
+
+# (Optional) draft/dev folders — uncomment only if they exist
+# Disallow: /drafts/
+# Disallow: /dev/
+
+# Explicit OK for common AI/LLM crawlers (not required, but self-documenting)
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: CCBot
+Allow: /
+
+# Light crawl pacing for a few heavy bots (optional)
+User-agent: Bingbot
+Crawl-delay: 1
+User-agent: Slurp
+Crawl-delay: 1
+
+# Single sitemap (non-www to match your canonical domain)
+Sitemap: https://springvalleydentistry.com/sitemap.xml
