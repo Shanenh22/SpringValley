@@ -2786,3 +2786,44 @@ h4 > img[src*="icons/"] {
   background: rgba(0,119,182,0.07);
   border-radius: 50%;
 }
+
+
+/* ── Location / Parking cards — icon centred above heading ─────────────── */
+.contact-info-card .location-icon {
+  width: 64px !important;
+  height: 64px !important;
+  margin: 0 auto 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(0, 119, 182, 0.08) !important;
+  border-radius: 50% !important;
+}
+
+.contact-info-card .location-icon img {
+  width: 40px !important;
+  height: 40px !important;
+  max-width: 40px !important;
+  max-height: 40px !important;
+}
+
+/* ── Blog card featured-image: dental-themed icon placeholder ───────────── */
+/* Ensure the inner wrapper div fills the featured-image and centres content */
+.blog-card .featured-image > div {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Blog icon size — 52px, forced above any generic rule */
+.blog-card .featured-image > div > img[src*="icons/"] {
+  width: 52px !important;
+  height: 52px !important;
+  max-width: 52px !important;
+  max-height: 52px !important;
+  object-fit: contain !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
