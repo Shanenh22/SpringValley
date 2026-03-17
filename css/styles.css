@@ -6923,6 +6923,15 @@ textarea:hover {
   font-size: 3rem;
   color: var(--sky-blue);
   margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-info-card .icon img {
+  width: 48px;
+  height: 48px;
+  display: block;
 }
 
 .contact-info-card h3 {
@@ -8925,6 +8934,15 @@ textarea:hover {
   font-size: 3rem;
   color: var(--sky-blue);
   margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-info-card .icon img {
+  width: 48px;
+  height: 48px;
+  display: block;
 }
 
 .contact-info-card h3 {
