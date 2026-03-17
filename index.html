@@ -172,40 +172,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <main id="main">
   <!-- Enhanced Hero Section -->
   <section class="hero" style="background-image:url('images/hero-background.png')">
-    <div class="emergency-badge">
-      <a href="emergency.html">🚨 Dental Emergency? Same-day appointments — Call (972) 852-2222</a>
-    </div>
-    <h1>Gentle Care. Same-Day Appointments.<br>Dallas's Highest-Rated Dental Team.</h1>
-    <p>Serving North Dallas families since 1994 — compassionate, affordable dental care with transparent pricing and no surprises. Now accepting new patients.</p>
+    <h1>Your Trusted Dallas Dentist for Family, Cosmetic & Emergency Care</h1>
+    <p>Compassionate, affordable dental care for every smile in Dallas. Our experienced team is ready to help you feel your best.</p>
     <div class="button-group">
       <a class="button-primary" href="contact.html">Book Your Appointment</a>
       <a class="button-secondary" href="tel:+19728522222">Call Now</a>
-    </div>
-  </section>
-
-
-  <!-- Credibility Stats Strip -->
-  <section class="stats-strip" aria-label="Practice highlights">
-    <div class="stats-inner">
-      <div class="stat-item">
-        <span class="stat-number">5.0</span>
-        <span class="stat-label">★★★★★ Google Rating</span>
-      </div>
-      <div class="stat-divider" aria-hidden="true"></div>
-      <div class="stat-item">
-        <span class="stat-number">200+</span>
-        <span class="stat-label">Verified Patient Reviews</span>
-      </div>
-      <div class="stat-divider" aria-hidden="true"></div>
-      <div class="stat-item">
-        <span class="stat-number">30+</span>
-        <span class="stat-label">Years Serving Dallas</span>
-      </div>
-      <div class="stat-divider" aria-hidden="true"></div>
-      <div class="stat-item">
-        <span class="stat-number">Same Day</span>
-        <span class="stat-label">Appointments Available</span>
-      </div>
     </div>
   </section>
 
@@ -244,43 +215,28 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </section>
 
-  <!-- Meet Our Dentists -->
-  <section aria-labelledby="team-heading" class="content-section team-section">
-    <h2 id="team-heading">Meet Our Dentists</h2>
-    <p class="section-intro-text">30+ years serving Dallas families — with the expertise, technology, and genuine warmth that keeps patients coming back.</p>
-    <div class="doctor-cards">
-
-      <div class="doctor-card">
-        <div class="doctor-photo-wrap">
-          <img src="images/dr_aletaha.jpeg" alt="Dr. Shokooh Aletaha, DDS — Founding Dentist at Spring Valley Dental Associates" loading="lazy" width="280" height="280"/>
-        </div>
-        <div class="doctor-info">
-          <h3>Dr. Shokooh Aletaha, DDS</h3>
-          <p class="doctor-title">Founding Dentist &amp; Practice Owner</p>
-          <p>Dr. Aletaha founded Spring Valley Dental Associates in 1994 with a simple promise: exceptional care with clear explanations, so every patient feels confident at every step. With 30+ years of experience and 50+ continuing education hours annually, she brings both wisdom and current technique to every appointment.</p>
-          <div class="doctor-credentials">
-            <span>ADA Member</span><span>Baylor College of Dentistry</span><span>30+ Years in Dallas</span>
-          </div>
-        </div>
+  <!-- Enhanced Team Section -->
+  <section aria-labelledby="team-heading" class="content-section">
+    <h2 id="team-heading">Meet our Dentists</h2>
+    <div class="features-grid">
+      <div class="feature-section">
+        <h3>
+          <span ><img src="images/dr_aletaha.jpeg" alt="Dr. Shokooh Aletaha" loading="lazy" style="width:80%;height:80%;object-fit:cover;border-radius:12px;"/></span>
+          Dr. Shokooh Aletaha
+        </h3>
+        <p>Dr. Aletaha believes in clear explanations and conservative, long-lasting dentistry—so you feel confident at every step.</p>
       </div>
-
-      <div class="doctor-card">
-        <div class="doctor-photo-wrap">
-          <img src="images/dr_houshmand.jpeg" alt="Dr. Nicole Houshmand, DDS — Partner at Spring Valley Dental Associates" loading="lazy" width="280" height="280"/>
-        </div>
-        <div class="doctor-info">
-          <h3>Dr. Nicole Houshmand, DDS</h3>
-          <p class="doctor-title">Partner &amp; Practice Owner</p>
-          <p>As a second-generation dentist, Dr. Houshmand brings inherited wisdom and fresh perspective to every appointment. Specializing in sedation and anxiety management, she has helped hundreds of previously fearful patients finally get the dental care they deserve — comfortably.</p>
-          <div class="doctor-credentials">
-            <span>Sedation Certified</span><span>Texas A&amp;M College of Dentistry</span><span>ADA Member</span>
-          </div>
-        </div>
+      <div class="feature-section">
+        <h3>
+          <span><span ><img src="images/dr_houshmand.jpeg" alt="Dr. Nicole Houshmand" loading="lazy" style="width:80%;height:80%;object-fit:cover;border-radius:12px;"/></span>
+          </span>
+          Dr. Nicole Houshmand
+        </h3>
+        <p>Dr. Houshmand focuses on comfort and precision, pairing modern tools with a warm, friendly approach to care.</p>
       </div>
-
     </div>
-    <div class="button-group" style="justify-content:center;margin-top:2rem;">
-      <a class="button-secondary" href="about.html">Full Team Bios &amp; Credentials</a>
+    <div class="button-group">
+      <a class="button-secondary" href="about.html">Learn more about our team</a>
     </div>
   </section>
 
@@ -334,48 +290,8 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 
     <div id="recent-reviews" data-endpoint="data/reviews.json" aria-label="Patient reviews" aria-live="polite">
-      <!-- Static fallback reviews — hidden by JS once dynamic ones load -->
-      <div class="reviews-grid reviews-static-fallback">
-        <div class="review-card">
-          <div class="review-header">
-            <div class="reviewer-info">
-              <div class="reviewer-name">Sarah M.</div>
-              <div class="review-date">January 2025</div>
-            </div>
-            <div class="review-rating">
-              <div class="stars">★★★★★</div>
-              <div class="platform-badge google">Google</div>
-            </div>
-          </div>
-          <blockquote>Dr. Aletaha and her team are amazing! They made me feel comfortable and explained everything thoroughly. My teeth have never looked better. The office is modern and clean, and the staff is incredibly friendly.</blockquote>
-        </div>
-        <div class="review-card">
-          <div class="review-header">
-            <div class="reviewer-info">
-              <div class="reviewer-name">James T.</div>
-              <div class="review-date">January 2025</div>
-            </div>
-            <div class="review-rating">
-              <div class="stars">★★★★★</div>
-              <div class="platform-badge google">Google</div>
-            </div>
-          </div>
-          <blockquote>I had a dental emergency and they got me in right away. Dr. Houshmand was gentle and professional. The pain relief was immediate, and they worked with my insurance to make it affordable. Highly recommend!</blockquote>
-        </div>
-        <div class="review-card">
-          <div class="review-header">
-            <div class="reviewer-info">
-              <div class="reviewer-name">David L.</div>
-              <div class="review-date">December 2024</div>
-            </div>
-            <div class="review-rating">
-              <div class="stars">★★★★★</div>
-              <div class="platform-badge google">Google</div>
-            </div>
-          </div>
-          <blockquote>Finally found a dentist I actually look forward to visiting. The team here treats you like family. My Invisalign treatment has been going incredibly smoothly — Dr. Aletaha walks me through every step.</blockquote>
-        </div>
-      </div>
+      <!-- Reviews loaded dynamically by reviews.js -->
+      <p class="reviews-loading">Loading reviews…</p>
     </div>
 
     <div class="button-group">
@@ -384,8 +300,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </section>
 
-
-    <!-- Enhanced Location Section -->
+  <!-- Enhanced Location Section -->
   <section aria-labelledby="location-heading" class="content-section">
     <h2 id="location-heading">Visit our North Dallas office</h2>
     
@@ -422,7 +337,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <div class="card-content">
           <div class="post-meta">
-            <span class="post-date">Jan 2025</span>
+            <span class="post-date">Recent</span>
             <span class="post-category">Oral Health</span>
           </div>
           <h3>5 Essential Tips for Maintaining Healthy Gums</h3>
@@ -437,7 +352,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <div class="card-content">
           <div class="post-meta">
-            <span class="post-date">Jan 2025</span>
+            <span class="post-date">Recent</span>
             <span class="post-category">Dental Implants</span>
           </div>
           <h3>The Complete Guide to Dental Implants</h3>
@@ -452,7 +367,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <div class="card-content">
           <div class="post-meta">
-            <span class="post-date">Jan 2025</span>
+            <span class="post-date">Recent</span>
             <span class="post-category">Orthodontics</span>
           </div>
           <h3>Invisalign vs. Traditional Braces</h3>
@@ -467,33 +382,30 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </section>
 	
- <!-- Insurance & Financing CTA -->
+ <!-- Enhanced CTA Section for Insurance -->
   <section aria-labelledby="finance-heading" class="cta-section">
     <div class="cta-content">
-      <h2 id="finance-heading">We Take Your Insurance</h2>
-      <p>We accept most major PPO dental plans and verify your benefits before treatment — so you know exactly what to expect, with no surprise bills.</p>
-
-      <div class="insurance-logos" aria-label="Accepted insurance providers">
-        <span class="ins-badge">Aetna</span>
-        <span class="ins-badge">Blue Cross Blue Shield</span>
-        <span class="ins-badge">Cigna</span>
-        <span class="ins-badge">Delta Dental</span>
-        <span class="ins-badge">MetLife</span>
-        <span class="ins-badge">Guardian</span>
-        <span class="ins-badge">Humana</span>
-        <span class="ins-badge">United Healthcare</span>
-      </div>
-      <p class="ins-note">Don't see your carrier? <a href="tel:+19728522222">Call us</a> — we work with many more plans and are happy to verify your coverage.</p>
-
+      <h2 id="finance-heading">Insurance & flexible financing</h2>
+      <p>We work with most PPO plans and explain your options up front. Our team helps you understand benefits and payment choices before treatment.</p>
+      
       <div class="cta-features">
-        <span class="feature-item"><span class="check-mark">✓</span> No surprise bills — estimates upfront</span>
-        <span class="feature-item"><span class="check-mark">✓</span> Cherry, CareCredit &amp; HFD financing</span>
-        <span class="feature-item"><span class="check-mark">✓</span> Membership plan from $395/year</span>
+        <span class="feature-item">
+          <span class="check-mark">✓</span>
+          Most PPO plans accepted
+        </span>
+        <span class="feature-item">
+          <span class="check-mark">✓</span>
+          Flexible payment options
+        </span>
+        <span class="feature-item">
+          <span class="check-mark">✓</span>
+          Transparent pricing
+        </span>
       </div>
-
+      
       <div class="cta-buttons">
         <a class="button-primary" href="financing.html">Financing Options</a>
-        <a class="button-secondary" href="patient-info.html#insurance">Insurance Details</a>
+        <a class="button-secondary" href="patient-info.html#insurance">Insurance Info</a>
       </div>
     </div>
   </section>	

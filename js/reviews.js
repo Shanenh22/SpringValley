@@ -51,9 +51,6 @@
     const fallbacks = [endpoint, "/data/reviews.json", "data/reviews.json"].filter(Boolean);
     const data = await fetchReviews(fallbacks);
     if(data){
-      // Hide static fallback, then render dynamic reviews
-      var fallback = container.querySelector('.reviews-static-fallback');
-      if(fallback) fallback.classList.add('is-hidden');
       renderReviews(container, data);
     }else{
       container.innerHTML = "<p>Reviews are temporarily unavailable.</p>";
