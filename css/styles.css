@@ -711,7 +711,7 @@ main {
 .card h3 {
   color: var(--color-primary);
   margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .card p {
@@ -1429,7 +1429,7 @@ textarea:focus-visible {
 .faq-intro h2 {
   color: var(--color-primary);
   margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 /* FAQ Categories Navigation (Pill Style) */
@@ -1475,7 +1475,7 @@ textarea:focus-visible {
   font-size: 0.95rem;
   margin: 0;
   color: var(--color-primary);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .faq-category p {
@@ -1551,7 +1551,7 @@ textarea:focus-visible {
   border-bottom: 2px solid var(--color-primary-accent);
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 /* FAQ Accordion Items */
@@ -1734,7 +1734,7 @@ textarea:focus-visible {
   font-size: clamp(1rem, 0.35vw + 0.95rem, 1.15rem);
   margin: 0 0 0.5rem;
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .footer ul,
@@ -1875,7 +1875,7 @@ textarea:focus-visible {
   margin-bottom: 1rem;
   position: relative;
   z-index: 2;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .membership-hero .subtitle {
@@ -1960,7 +1960,7 @@ textarea:focus-visible {
   color: var(--color-primary);
   margin: 1rem 0;
   line-height: 1;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .price-period {
@@ -2079,7 +2079,7 @@ textarea:focus-visible {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .feature-icon {
@@ -2170,7 +2170,7 @@ textarea:focus-visible {
 .benefit-card h3 {
   color: var(--color-primary);
   margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .benefit-card p {
@@ -2244,7 +2244,7 @@ textarea:focus-visible {
   font-size: 3rem;
   font-weight: 700;
   color: #ffffff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   line-height: 1;
 }
 
@@ -2311,7 +2311,7 @@ textarea:focus-visible {
   color: var(--color-primary);
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .dentist-title {
@@ -2335,7 +2335,7 @@ textarea:focus-visible {
   color: var(--color-primary);
   font-size: 1.1rem;
   margin-bottom: 0.75rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .credentials ul,
@@ -2398,7 +2398,7 @@ textarea:focus-visible {
   font-size: 4rem;
   font-weight: 700;
   color: var(--color-primary-accent);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   line-height: 1;
 }
 
@@ -2520,7 +2520,7 @@ textarea:focus-visible {
 .patient-info h3 {
   color: var(--color-primary);
   margin-bottom: 0.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .patient-name {
@@ -2667,7 +2667,7 @@ textarea:focus-visible {
 .services-intro h2 {
   color: var(--color-primary);
   margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .service-category {
@@ -2688,7 +2688,7 @@ textarea:focus-visible {
 .category-header h2 {
   color: var(--color-primary);
   margin-bottom: 0.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .category-header p {
@@ -2720,7 +2720,7 @@ textarea:focus-visible {
 }
 
 .emergency-highlight {
-  background: linear-gradient(135deg, var(--color-alert) 0%, #d63031 100%);
+  background: linear-gradient(135deg, var(--color-alert) 0%, #a06030 100%);
   color: white;
   padding: 1.5rem;
   border-radius: 12px;
@@ -3250,7 +3250,7 @@ body.patient-info .card-grid {
    ============================================================================= */
 
 .page-emergency .emergency-hero {
-  background: linear-gradient(135deg, var(--coral) 0%, #d63031 100%);
+  background: linear-gradient(135deg, var(--coral) 0%, #a06030 100%);
   color: white;
   position: relative;
   overflow: hidden;
@@ -3271,7 +3271,7 @@ body.patient-info .card-grid {
 
 .page-emergency .emergency-hero h1 {
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-weight: 700;
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -3318,7 +3318,7 @@ body.patient-info .card-grid {
 
 .page-emergency .emergency-alert .alert-text strong {
   color: var(--dallas-navy);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .page-emergency .emergency-alert .alert-button,
@@ -3364,7 +3364,7 @@ body.patient-info .card-grid {
 
 .page-emergency .emergencies-section .emergency-card h3 {
   color: var(--dallas-navy);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-weight: 600;
   margin: 0 0 0.35rem;
   /* Prevent overlap with priority pills */
@@ -3440,7 +3440,7 @@ body.patient-info .card-grid {
   min-width: 36px;
   min-height: 36px;
   line-height: 36px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 /* Mobile emergency adjustments */
@@ -4035,7 +4035,7 @@ body.patient-info .card-grid {
    ============================================================================= */
 
 .page-emergency .emergency-hero {
-  background: linear-gradient(135deg, var(--coral) 0%, #d63031 100%);
+  background: linear-gradient(135deg, var(--coral) 0%, #a06030 100%);
   color: white;
   position: relative;
   overflow: hidden;
@@ -4056,7 +4056,7 @@ body.patient-info .card-grid {
 
 .page-emergency .emergency-hero h1 {
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-weight: 700;
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -4103,7 +4103,7 @@ body.patient-info .card-grid {
 
 .page-emergency .emergency-alert .alert-text strong {
   color: var(--dallas-navy);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .page-emergency .emergency-alert .alert-button,
@@ -4149,7 +4149,7 @@ body.patient-info .card-grid {
 
 .page-emergency .emergencies-section .emergency-card h3 {
   color: var(--dallas-navy);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-weight: 600;
   margin: 0 0 0.35rem;
   /* Prevent overlap with priority pills */
@@ -4225,7 +4225,7 @@ body.patient-info .card-grid {
   min-width: 36px;
   min-height: 36px;
   line-height: 36px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 /* Mobile emergency adjustments */
@@ -4330,7 +4330,7 @@ body.patient-info .card-grid {
 .services-intro h2 {
   color: var(--dallas-navy);
   margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .services-intro p {
@@ -4359,7 +4359,7 @@ body.patient-info .card-grid {
 .category-header h2 {
   color: var(--dallas-navy);
   margin-bottom: 0.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .category-header p {
@@ -4403,7 +4403,7 @@ body.patient-info .card-grid {
   color: var(--dallas-navy);
   margin-bottom: 0.75rem;
   font-size: 1.2rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .service-card p {
@@ -4457,7 +4457,7 @@ body.patient-info .card-grid {
 
 /* Emergency highlight section */
 .emergency-highlight {
-  background: linear-gradient(135deg, var(--coral) 0%, #d63031 100%);
+  background: linear-gradient(135deg, var(--coral) 0%, #a06030 100%);
   color: white;
   padding: 1.5rem;
   border-radius: 12px;
@@ -4469,7 +4469,7 @@ body.patient-info .card-grid {
 .emergency-highlight h3 {
   color: white;
   margin-bottom: 0.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .emergency-highlight a {
@@ -4544,7 +4544,7 @@ body.patient-info .card-grid {
   color: var(--dallas-navy);
   margin: 0;
   font-size: 0.9rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 /* No results message */
@@ -4618,7 +4618,7 @@ body.patient-info .card-grid {
   font-size: 4rem;
   font-weight: 700;
   color: var(--sky-blue);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   line-height: 1;
 }
 
@@ -4749,7 +4749,7 @@ body.patient-info .card-grid {
 .patient-info h3 {
   color: var(--dallas-navy);
   margin-bottom: 0.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .patient-name {
@@ -5504,7 +5504,7 @@ body.patient-info .card-grid {
    ============================================================================= */
 
 .page-emergency .emergency-hero {
-  background: linear-gradient(135deg, var(--coral) 0%, #d63031 100%);
+  background: linear-gradient(135deg, var(--coral) 0%, #a06030 100%);
   color: white;
   position: relative;
   overflow: hidden;
@@ -5525,7 +5525,7 @@ body.patient-info .card-grid {
 
 .page-emergency .emergency-hero h1 {
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-weight: 700;
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -5572,7 +5572,7 @@ body.patient-info .card-grid {
 
 .page-emergency .emergency-alert .alert-text strong {
   color: var(--dallas-navy);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .page-emergency .emergency-alert .alert-button,
@@ -5618,7 +5618,7 @@ body.patient-info .card-grid {
 
 .page-emergency .emergencies-section .emergency-card h3 {
   color: var(--dallas-navy);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-weight: 600;
   margin: 0 0 0.35rem;
   /* Prevent overlap with priority pills */
@@ -5694,7 +5694,7 @@ body.patient-info .card-grid {
   min-width: 36px;
   min-height: 36px;
   line-height: 36px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 /* Mobile emergency adjustments */
@@ -5799,7 +5799,7 @@ body.patient-info .card-grid {
 .services-intro h2 {
   color: var(--dallas-navy);
   margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .services-intro p {
@@ -5828,7 +5828,7 @@ body.patient-info .card-grid {
 .category-header h2 {
   color: var(--dallas-navy);
   margin-bottom: 0.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .category-header p {
@@ -5872,7 +5872,7 @@ body.patient-info .card-grid {
   color: var(--dallas-navy);
   margin-bottom: 0.75rem;
   font-size: 1.2rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .service-card p {
@@ -5926,7 +5926,7 @@ body.patient-info .card-grid {
 
 /* Emergency highlight section */
 .emergency-highlight {
-  background: linear-gradient(135deg, var(--coral) 0%, #d63031 100%);
+  background: linear-gradient(135deg, var(--coral) 0%, #a06030 100%);
   color: white;
   padding: 1.5rem;
   border-radius: 12px;
@@ -5938,7 +5938,7 @@ body.patient-info .card-grid {
 .emergency-highlight h3 {
   color: white;
   margin-bottom: 0.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .emergency-highlight a {
@@ -6013,7 +6013,7 @@ body.patient-info .card-grid {
   color: var(--dallas-navy);
   margin: 0;
   font-size: 0.9rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 /* No results message */
@@ -6087,7 +6087,7 @@ body.patient-info .card-grid {
   font-size: 4rem;
   font-weight: 700;
   color: var(--sky-blue);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   line-height: 1;
 }
 
@@ -6218,7 +6218,7 @@ body.patient-info .card-grid {
 .patient-info h3 {
   color: var(--dallas-navy);
   margin-bottom: 0.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .patient-name {
@@ -6487,7 +6487,7 @@ body.patient-info .card-grid {
 
 .blog-hero h1 {
   color: white !important;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(2rem, 5vw, 2.5rem);
   margin: 0 0 1rem;
   line-height: 1.2;
@@ -6566,7 +6566,7 @@ body.patient-info .card-grid {
 .blog-card h3 {
   color: var(--dallas-navy) !important;
   margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 1.3rem;
   line-height: 1.3;
 }
@@ -6609,7 +6609,7 @@ body.patient-info .card-grid {
 .blog-sidebar h4 {
   color: var(--dallas-navy);
   margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .blog-sidebar .widget {
@@ -6738,7 +6738,7 @@ body.patient-info .card-grid {
   margin: 0 0 0.25rem;
   text-align: center;
   color: var(--dallas-navy);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .contact-form .intro {
@@ -6890,7 +6890,7 @@ textarea:hover {
 
 .contact-hero h1 {
   color: white !important;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   margin-bottom: 1rem;
 }
 
@@ -6944,7 +6944,7 @@ textarea:hover {
 .contact-info-card h3 {
   color: var(--dallas-navy);
   margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .contact-info-card p {
@@ -7518,7 +7518,7 @@ body.patient-info .card-grid {
    ============================================================================= */
 
 .page-emergency .emergency-hero {
-  background: linear-gradient(135deg, var(--coral) 0%, #d63031 100%);
+  background: linear-gradient(135deg, var(--coral) 0%, #a06030 100%);
   color: white;
   position: relative;
   overflow: hidden;
@@ -7539,7 +7539,7 @@ body.patient-info .card-grid {
 
 .page-emergency .emergency-hero h1 {
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-weight: 700;
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -7586,7 +7586,7 @@ body.patient-info .card-grid {
 
 .page-emergency .emergency-alert .alert-text strong {
   color: var(--dallas-navy);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .page-emergency .emergency-alert .alert-button,
@@ -7632,7 +7632,7 @@ body.patient-info .card-grid {
 
 .page-emergency .emergencies-section .emergency-card h3 {
   color: var(--dallas-navy);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-weight: 600;
   margin: 0 0 0.35rem;
   /* Prevent overlap with priority pills */
@@ -7708,7 +7708,7 @@ body.patient-info .card-grid {
   min-width: 36px;
   min-height: 36px;
   line-height: 36px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 /* Mobile emergency adjustments */
@@ -7813,7 +7813,7 @@ body.patient-info .card-grid {
 .services-intro h2 {
   color: var(--dallas-navy);
   margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .services-intro p {
@@ -7842,7 +7842,7 @@ body.patient-info .card-grid {
 .category-header h2 {
   color: var(--dallas-navy);
   margin-bottom: 0.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .category-header p {
@@ -7886,7 +7886,7 @@ body.patient-info .card-grid {
   color: var(--dallas-navy);
   margin-bottom: 0.75rem;
   font-size: 1.2rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .service-card p {
@@ -7940,7 +7940,7 @@ body.patient-info .card-grid {
 
 /* Emergency highlight section */
 .emergency-highlight {
-  background: linear-gradient(135deg, var(--coral) 0%, #d63031 100%);
+  background: linear-gradient(135deg, var(--coral) 0%, #a06030 100%);
   color: white;
   padding: 1.5rem;
   border-radius: 12px;
@@ -7952,7 +7952,7 @@ body.patient-info .card-grid {
 .emergency-highlight h3 {
   color: white;
   margin-bottom: 0.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .emergency-highlight a {
@@ -8027,7 +8027,7 @@ body.patient-info .card-grid {
   color: var(--dallas-navy);
   margin: 0;
   font-size: 0.9rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 /* No results message */
@@ -8101,7 +8101,7 @@ body.patient-info .card-grid {
   font-size: 4rem;
   font-weight: 700;
   color: var(--sky-blue);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   line-height: 1;
 }
 
@@ -8232,7 +8232,7 @@ body.patient-info .card-grid {
 .patient-info h3 {
   color: var(--dallas-navy);
   margin-bottom: 0.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .patient-name {
@@ -8501,7 +8501,7 @@ body.patient-info .card-grid {
 
 .blog-hero h1 {
   color: white !important;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(2rem, 5vw, 2.5rem);
   margin: 0 0 1rem;
   line-height: 1.2;
@@ -8580,7 +8580,7 @@ body.patient-info .card-grid {
 .blog-card h3 {
   color: var(--dallas-navy) !important;
   margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 1.3rem;
   line-height: 1.3;
 }
@@ -8623,7 +8623,7 @@ body.patient-info .card-grid {
 .blog-sidebar h4 {
   color: var(--dallas-navy);
   margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .blog-sidebar .widget {
@@ -8752,7 +8752,7 @@ body.patient-info .card-grid {
   margin: 0 0 0.25rem;
   text-align: center;
   color: var(--dallas-navy);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .contact-form .intro {
@@ -8904,7 +8904,7 @@ textarea:hover {
 
 .contact-hero h1 {
   color: white !important;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   margin-bottom: 1rem;
 }
 
@@ -8958,7 +8958,7 @@ textarea:hover {
 .contact-info-card h3 {
   color: var(--dallas-navy);
   margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .contact-info-card p {
@@ -9035,7 +9035,7 @@ textarea:hover {
 .faq-intro h2 {
   color: var(--dallas-navy);
   margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .faq-intro p {
@@ -9082,7 +9082,7 @@ textarea:hover {
   font-size: 0.95rem;
   margin: 0;
   color: var(--dallas-navy);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .faq-category p {
@@ -9158,7 +9158,7 @@ textarea:hover {
   border-bottom: 2px solid var(--sky-blue);
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 /* FAQ Accordion Items (Details/Summary) */
@@ -9373,7 +9373,7 @@ textarea:hover {
   font-size: clamp(1rem, 0.35vw + 0.95rem, 1.15rem);
   margin: 0 0 0.5rem;
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .footer ul,
@@ -9768,7 +9768,7 @@ input[type="button"],
 .blog-card h3 {
   color: var(--dallas-navy) !important;
   margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 1.3rem;
   line-height: 1.3;
 }
@@ -9917,7 +9917,7 @@ input[type="button"],
 /* FAQ Section headers */
 .faq-container h2 {
   color: var(--dallas-navy);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   margin: 2rem 0 1rem 0;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--sky-blue);
@@ -10269,7 +10269,7 @@ input[type="button"],
   text-align: center;
   margin-bottom: 1.5rem;
   color: var(--dallas-navy, #0E365A);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .categories-grid {
@@ -10303,7 +10303,7 @@ input[type="button"],
 }
 
 .category-card h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   color: var(--dallas-navy, #0E365A);
@@ -10354,7 +10354,7 @@ input[type="button"],
 }
 
 .contact-header h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-weight: 600;
   font-size: 2rem;
   margin-bottom: 16px;
@@ -10391,7 +10391,7 @@ input[type="button"],
 }
 
 .form-option-card h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-weight: 600;
   color: var(--dallas-navy, #0E365A);
   margin-bottom: 12px;
@@ -10669,7 +10669,7 @@ body.patient-info .info-section {
 /* FAQ Section headers */
 .faq-container h2 {
   color: var(--dallas-navy, #0E365A);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   margin: 2rem 0 1rem 0;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--sky-blue, #0077B6);
