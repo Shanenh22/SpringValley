@@ -15,6 +15,7 @@
   --mint: #8FD6C8;
   --warm-sand: #E9DCCB;
   --coral: #C8864A;
+  --btn-bg: #C8864A;   /* CTA button fill — amber */
 
   /* Semantic color mapping */
   --color-primary: #0E365A;
@@ -11121,4 +11122,69 @@ body.patient-info .info-section {
     gap: 1rem;
     margin: 1.5rem 0;
   }
+}
+
+/* =============================================================================
+   DESIGN INTENT OVERRIDES — loaded last, wins by cascade position
+   These rules are the single source of truth for button color and heading font.
+   Do not add rules after this block.
+   ============================================================================= */
+
+/* --- CTA Button color: amber instead of sky-blue --- */
+/* Applied broadly enough to beat all earlier specificity */
+.button-primary,
+.button-secondary,
+.btn,
+.btn-primary,
+.btn-secondary,
+.cta,
+a.button,
+button.button,
+a.btn,
+.hero .button-primary,
+.hero .button-secondary,
+.hero a.button,
+.hero a.btn,
+.quick-contact .button-group a.button-primary,
+.quick-contact .button-group a.button-secondary,
+.quick-contact .button-group a.button-primary[style],
+.quick-contact .button-group a.button-secondary[style],
+.service-card a,
+.card-grid .service-card > a:not([class]) {
+  background: var(--btn-bg, #C8864A) !important;
+  border-color: var(--btn-bg, #C8864A) !important;
+  color: #fff !important;
+}
+
+.button-primary:hover,
+.button-primary:focus,
+.button-secondary:hover,
+.button-secondary:focus,
+.btn:hover,
+.btn:focus,
+.btn-primary:hover,
+.btn-primary:focus,
+.hero .button-primary:hover,
+.hero .button-secondary:hover,
+.hero a.button:hover,
+.hero a.btn:hover,
+.service-card a:hover,
+.service-card a:focus,
+.card-grid .service-card > a:not([class]):hover {
+  background: var(--dallas-navy, #0E365A) !important;
+  border-color: var(--dallas-navy, #0E365A) !important;
+  color: #fff !important;
+}
+
+/* --- Heading font: Georgia serif --- */
+/* Beats all earlier Montserrat/Inter declarations by cascade position */
+h1,
+h2,
+.hero h1,
+.hero h2,
+.hero h3,
+.content-section h2,
+.cta-section h2,
+.cta-section h3 {
+  font-family: Georgia, 'Times New Roman', serif !important;
 }
