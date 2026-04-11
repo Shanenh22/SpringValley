@@ -11068,3 +11068,17 @@ body.patient-info .info-section {
   object-fit: cover;
   display: block;
 }
+.dentist-image {
+  width: 100%;
+  aspect-ratio: 3 / 4;   /* adjust to match your photos' natural framing */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.dentist-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;  /* let the parent handle rounding */
+}
