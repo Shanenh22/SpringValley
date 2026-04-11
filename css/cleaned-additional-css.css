@@ -477,7 +477,7 @@ body.patient-info .info-section {
   font-size: 0.875rem;
   font-weight: 700;
   line-height: 1;
-  background: rgba(0, 119, 182, 0.12);
+  background: rgba(200, 134, 74, 0.12);
   color: var(--dallas-navy, #0E365A);
   border: 1px solid rgba(14, 54, 90, 0.12);
 }

@@ -10258,7 +10258,7 @@ input[type="button"],
 
 /* Blog Categories Container */
 .blog-categories-container {
-  background: var(--porcelain, #F7FAFC);
+  background: var(--porcelain, #F8F6F1);
   padding: 2rem;
   border-radius: 1rem;
   margin-bottom: 2rem;
@@ -10363,7 +10363,7 @@ input[type="button"],
 
 .form-container {
   padding: 3rem 2rem;
-  background: var(--porcelain, #F7FAFC);
+  background: var(--porcelain, #F8F6F1);
 }
 
 /* Form Options Grid */

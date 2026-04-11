@@ -4,13 +4,13 @@
 :root{
   --dallas-navy:#0E365A;
   --sky-blue:#0077B6;
-  --porcelain:#F7FAFC;
+  --porcelain:#F8F6F1;
   --cloud:#EEF2F6;
   --slate-ink:#24313A;
   --cool-gray:#5A6D80;
   --mint:#8FD6C8;
   --warm-sand:#E9DCCB;
-  --coral:#E46C5E;
+  --coral:#C8864A;
 }
 
 /* =============================================================================
@@ -21,13 +21,13 @@
   /* Color Palette */
   --color-primary: #0E365A;
   --color-primary-accent: #0077B6;
-  --color-neutral-light: #F7FAFC;
+  --color-neutral-light: #F8F6F1;
   --color-neutral-medium: #EEF2F6;
   --color-text-primary: #24313A;
   --color-text-secondary: #5A6D80;
   --color-success: #8FD6C8;
   --color-warning: #E9DCCB;
-  --color-alert: #E46C5E;
+  --color-alert: #C8864A;
   --color-star: #FBBC05;
   
   /* Footer hover color */
@@ -156,7 +156,7 @@ header {
 }
 
 .hero h1 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 2.5rem;
   margin: 0 0 1rem;
   line-height: 1.2;
@@ -513,7 +513,7 @@ html.no-js .site-links { display: flex; }
 }
 .skip-to-content:focus { transform: translateY(.5rem); }
 
-.site-header { position: sticky; top: 0; z-index: 1000; background: var(--color-neutral-light, #F7FAFC); }
+.site-header { position: sticky; top: 0; z-index: 1000; background: var(--color-neutral-light, #F8F6F1); }
 .navbar { 
   display: flex; 
   align-items: center; 
@@ -790,7 +790,7 @@ html.no-js .site-links { display: flex; }
     }
 
     .benefits-showcase {
-      background: linear-gradient(135deg, var(--color-neutral-light, #F7FAFC) 0%, var(--color-neutral-medium, #EEF2F6) 100%);
+      background: linear-gradient(135deg, var(--color-neutral-light, #F8F6F1) 0%, var(--color-neutral-medium, #EEF2F6) 100%);
       border-radius: 20px;
       padding: 3rem 2rem;
       margin: 3rem 0;
@@ -868,7 +868,7 @@ html.no-js .site-links { display: flex; }
     }
 
     .comparison-table tr:nth-child(even) td {
-      background: var(--color-neutral-light, #F7FAFC);
+      background: var(--color-neutral-light, #F8F6F1);
     }
 
     .check-mark {
@@ -878,7 +878,7 @@ html.no-js .site-links { display: flex; }
     }
 
     .x-mark {
-      color: var(--color-alert, #E46C5E);
+      color: var(--color-alert, #C8864A);
       font-weight: bold;
       font-size: 1.2rem;
     }
@@ -930,7 +930,7 @@ html.no-js .site-links { display: flex; }
     }
 
     .disclaimer {
-      background: var(--color-neutral-light, #F7FAFC);
+      background: var(--color-neutral-light, #F8F6F1);
       border-left: 4px solid var(--color-warning, #E9DCCB);
       padding: 2rem;
       border-radius: 12px;
@@ -1008,7 +1008,7 @@ html.no-js .site-links { display: flex; }
       font-size: 3rem;
       font-weight: 700;
       color: var(--color-primary-accent);
-      font-family: 'Montserrat', sans-serif;
+      font-family: Georgia, 'Times New Roman', serif;
       line-height: 1;
     }
 
@@ -1075,7 +1075,7 @@ html.no-js .site-links { display: flex; }
       color: var(--color-primary);
       font-size: 1.8rem;
       margin-bottom: 0.5rem;
-      font-family: 'Montserrat', sans-serif;
+      font-family: Georgia, 'Times New Roman', serif;
     }
 
     .dentist-title {
@@ -1093,7 +1093,7 @@ html.no-js .site-links { display: flex; }
       color: var(--color-primary);
       font-size: 1.1rem;
       margin-bottom: 0.75rem;
-      font-family: 'Montserrat', sans-serif;
+      font-family: Georgia, 'Times New Roman', serif;
     }
 
     .credentials ul, .specialties ul, .memberships ul {
@@ -1161,7 +1161,7 @@ html.no-js .site-links { display: flex; }
     .commitment-card h3 {
       color: var(--color-primary);
       margin-bottom: 1rem;
-      font-family: 'Montserrat', sans-serif;
+      font-family: Georgia, 'Times New Roman', serif;
     }
 
     .commitment-card p {
@@ -1180,7 +1180,7 @@ html.no-js .site-links { display: flex; }
     .community-activities h3 {
       color: var(--color-primary);
       margin: 2rem 0 1rem 0;
-      font-family: 'Montserrat', sans-serif;
+      font-family: Georgia, 'Times New Roman', serif;
     }
 
     .community-activities ul {
@@ -1234,7 +1234,7 @@ html.no-js .site-links { display: flex; }
     .philosophy-item h3 {
       color: var(--color-primary);
       margin-bottom: 1rem;
-      font-family: 'Montserrat', sans-serif;
+      font-family: Georgia, 'Times New Roman', serif;
     }
 
     .philosophy-item p {
@@ -1260,7 +1260,7 @@ html.no-js .site-links { display: flex; }
     .recognition-item h3 {
       color: var(--color-primary);
       margin-bottom: 1rem;
-      font-family: 'Montserrat', sans-serif;
+      font-family: Georgia, 'Times New Roman', serif;
     }
 
     .review-summary {
@@ -1440,7 +1440,7 @@ html.no-js .site-links { display: flex; }
 /* Moved from dental-bonding.html */
 /* Service page specific styles matching FAQ design */
     .service-intro {
-      background: linear-gradient(135deg, var(--color-neutral-light, #F7FAFC) 0%, var(--color-neutral-medium, #EEF2F6) 100%);
+      background: linear-gradient(135deg, var(--color-neutral-light, #F8F6F1) 0%, var(--color-neutral-medium, #EEF2F6) 100%);
       padding: 2rem;
       border-radius: 16px;
       text-align: center;
@@ -1469,7 +1469,7 @@ html.no-js .site-links { display: flex; }
     }
     
     .highlight-box {
-      background: var(--color-neutral-light, #F7FAFC);
+      background: var(--color-neutral-light, #F8F6F1);
       border-left: 4px solid var(--color-success, #8FD6C8);
       padding: 1.5rem;
       border-radius: 12px;
@@ -1484,7 +1484,7 @@ html.no-js .site-links { display: flex; }
     }
     
     .cost-card {
-      background: var(--color-neutral-light, #F7FAFC);
+      background: var(--color-neutral-light, #F8F6F1);
       border: 1px solid var(--color-neutral-medium, #EEF2F6);
       border-radius: 12px;
       padding: 1.5rem;
@@ -1543,7 +1543,7 @@ html.no-js .site-links { display: flex; }
     }
     
     .benefit-card {
-      background: var(--color-neutral-light, #F7FAFC);
+      background: var(--color-neutral-light, #F8F6F1);
       border-radius: 12px;
       padding: 1.5rem;
       border-left: 4px solid var(--color-success, #8FD6C8);
@@ -1605,7 +1605,7 @@ html.no-js .site-links { display: flex; }
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #F7FAFC;
+            background-color: #F8F6F1;
             color: #24313A;
             line-height: 1.6;
         }
@@ -1643,7 +1643,7 @@ html.no-js .site-links { display: flex; }
         }
         
         .priority-emergency {
-            background-color: #E46C5E;
+            background-color: #C8864A;
             color: white;
         }
         
@@ -1664,7 +1664,7 @@ html.no-js .site-links { display: flex; }
         .section {
             margin-bottom: 25px;
             padding: 15px;
-            background-color: #F7FAFC;
+            background-color: #F8F6F1;
             border-radius: 8px;
             border-left: 4px solid #0077B6;
         }
@@ -1773,7 +1773,7 @@ html.no-js .site-links { display: flex; }
 /* Complete updated CSS section for emergency.html */
 
 .emergency-hero {
-  background: linear-gradient(135deg, var(--color-alert, #E46C5E) 0%, #d63031 100%);
+  background: linear-gradient(135deg, var(--color-alert, #C8864A) 0%, #a06030 100%);
   color: white;
   position: relative;
 }
@@ -1793,7 +1793,7 @@ html.no-js .site-links { display: flex; }
 
 .emergency-hero h1 {
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-weight: 700;
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -1816,7 +1816,7 @@ html.no-js .site-links { display: flex; }
 
 .emergency-call {
   background: white;
-  color: var(--color-alert, #E46C5E);
+  color: var(--color-alert, #C8864A);
   font-weight: 700;
   font-size: 1.1rem;
   padding: 1rem 2rem;
@@ -1837,13 +1837,13 @@ html.no-js .site-links { display: flex; }
 .emergency-call:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-  background: var(--color-neutral-light, #F7FAFC);
+  background: var(--color-neutral-light, #F8F6F1);
 }
 
 /* Emergency Alert Bar - FIXED: Design Brief Colors */
 .emergency-alert {
-  background: var(--color-neutral-light, #F7FAFC);
-  border: 2px solid var(--color-alert, #E46C5E);
+  background: var(--color-neutral-light, #F8F6F1);
+  border: 2px solid var(--color-alert, #C8864A);
   border-radius: 12px;
   padding: 1.5rem;
   margin: 2rem auto;
@@ -1861,7 +1861,7 @@ html.no-js .site-links { display: flex; }
 .alert-icon {
   font-size: 2rem;
   flex-shrink: 0;
-  color: var(--color-alert, #E46C5E);
+  color: var(--color-alert, #C8864A);
 }
 
 .alert-text {
@@ -1872,12 +1872,12 @@ html.no-js .site-links { display: flex; }
 
 .alert-text strong {
   color: var(--color-primary, #0E365A);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 /* FIXED: Call Emergency Line Button Hover */
 .alert-button {
-  background: var(--color-alert, #E46C5E);
+  background: var(--color-alert, #C8864A);
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
@@ -1885,7 +1885,7 @@ html.no-js .site-links { display: flex; }
   font-weight: 600;
   white-space: nowrap;
   transition: all 0.3s ease;
-  border: 2px solid var(--color-alert, #E46C5E);
+  border: 2px solid var(--color-alert, #C8864A);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -1893,15 +1893,15 @@ html.no-js .site-links { display: flex; }
 
 .alert-button:hover {
   background: white;
-  color: var(--color-alert, #E46C5E);
-  border-color: var(--color-alert, #E46C5E);
+  color: var(--color-alert, #C8864A);
+  border-color: var(--color-alert, #C8864A);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(228, 108, 94, 0.3);
 }
 
 /* Same-Day Section */
 .same-day-section {
-  background: var(--color-neutral-light, #F7FAFC);
+  background: var(--color-neutral-light, #F8F6F1);
   padding: 3rem 1.5rem;
   border-radius: 16px;
   margin: 3rem auto;
@@ -1937,7 +1937,7 @@ html.no-js .site-links { display: flex; }
 .same-day-card h3 {
   color: var(--color-primary, #0E365A);
   margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-weight: 600;
 }
 
@@ -1963,7 +1963,7 @@ html.no-js .site-links { display: flex; }
 
 .emergency-card h3 {
   color: var(--color-primary, #0E365A);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-weight: 600;
   margin-bottom: 1rem;
   padding-right: 140px; /* Increased from 120px to prevent overlap */
@@ -1986,7 +1986,7 @@ html.no-js .site-links { display: flex; }
 }
 
 .severity-level.high {
-  background: var(--color-alert, #E46C5E);
+  background: var(--color-alert, #C8864A);
   color: white;
   box-shadow: 0 2px 8px rgba(228, 108, 94, 0.3);
 }
@@ -2032,13 +2032,13 @@ html.no-js .site-links { display: flex; }
   content: "â¢";
   position: absolute;
   left: 0;
-  color: var(--color-alert, #E46C5E);
+  color: var(--color-alert, #C8864A);
   font-weight: bold;
   font-size: 1.2rem;
 }
 
 .immediate-care {
-  background: var(--color-neutral-light, #F7FAFC);
+  background: var(--color-neutral-light, #F8F6F1);
   padding: 1rem;
   border-radius: 8px;
   margin-top: 1rem;
@@ -2047,7 +2047,7 @@ html.no-js .site-links { display: flex; }
 
 .immediate-care strong {
   color: var(--color-primary, #0E365A);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 /* Timeline Styles */
@@ -2091,7 +2091,7 @@ html.no-js .site-links { display: flex; }
   font-size: 1.2rem;
   flex-shrink: 0;
   margin-right: 2rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .step-content {
@@ -2104,7 +2104,7 @@ html.no-js .site-links { display: flex; }
 
 .step-content h3 {
   color: var(--color-primary, #0E365A);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
@@ -2146,7 +2146,7 @@ html.no-js .site-links { display: flex; }
   color: var(--color-primary, #0E365A);
   margin-bottom: 1rem;
   font-size: 1.3rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-weight: 600;
 }
 
@@ -2178,7 +2178,7 @@ html.no-js .site-links { display: flex; }
 .contact-save {
   text-align: center;
   padding: 1.5rem;
-  background: var(--color-neutral-light, #F7FAFC);
+  background: var(--color-neutral-light, #F8F6F1);
   border-radius: 12px;
   margin-top: 1rem;
 }
@@ -2188,7 +2188,7 @@ html.no-js .site-links { display: flex; }
   font-weight: 700;
   color: var(--color-primary, #0E365A);
   margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .save-contact {
@@ -2223,7 +2223,7 @@ html.no-js .site-links { display: flex; }
 
 .go-to-er {
   background: rgba(228, 108, 94, 0.1);
-  border-left: 3px solid var(--color-alert, #E46C5E);
+  border-left: 3px solid var(--color-alert, #C8864A);
 }
 
 .call-dentist {
@@ -2235,7 +2235,7 @@ html.no-js .site-links { display: flex; }
   margin-bottom: 0.75rem;
   font-size: 1rem;
   color: var(--color-primary, #0E365A);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-weight: 600;
 }
 
@@ -2263,7 +2263,7 @@ html.no-js .site-links { display: flex; }
   content: "â ";
   position: absolute;
   left: 0;
-  color: var(--color-alert, #E46C5E);
+  color: var(--color-alert, #C8864A);
   font-weight: bold;
 }
 
@@ -2301,7 +2301,7 @@ html.no-js .site-links { display: flex; }
   color: var(--color-primary, #0E365A);
   margin-bottom: 1rem;
   font-size: 1.3rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-weight: 600;
 }
 
@@ -2337,7 +2337,7 @@ html.no-js .site-links { display: flex; }
 .emergency-cta-content h2 {
   color: white;
   margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-weight: 700;
 }
 
@@ -2582,7 +2582,7 @@ html.no-js .site-links { display: flex; }
     /* Enhanced FAQ Items with Accordion */
     .faq-item {
       margin-bottom: 1rem;
-      background: var(--color-neutral-light, #F7FAFC);
+      background: var(--color-neutral-light, #F8F6F1);
       border-radius: 12px;
       border-left: 4px solid var(--color-success, #8FD6C8);
       overflow: hidden;
@@ -2768,7 +2768,7 @@ overflow:visible; /* prevent clipping of long content */
     }
     
     .emergency-highlight {
-      background: var(--color-alert, #E46C5E);
+      background: var(--color-alert, #C8864A);
       color: white;
       padding: 1rem;
       border-radius: 8px;
@@ -2873,7 +2873,7 @@ overflow:visible; /* prevent clipping of long content */
 
     /* Highlight boxes for lists */
     .highlight-box {
-      background: var(--color-neutral-light, #F7FAFC);
+      background: var(--color-neutral-light, #F8F6F1);
       border-left: 4px solid var(--color-success, #8FD6C8);
       padding: 1.5rem;
       border-radius: 12px;
@@ -2889,7 +2889,7 @@ overflow:visible; /* prevent clipping of long content */
     }
 
     .cost-card {
-      background: var(--color-neutral-light, #F7FAFC);
+      background: var(--color-neutral-light, #F8F6F1);
       border: 1px solid var(--color-neutral-medium, #EEF2F6);
       border-radius: 12px;
       padding: 1.5rem;
@@ -2950,7 +2950,7 @@ overflow:visible; /* prevent clipping of long content */
     }
 
     .benefit-card {
-      background: var(--color-neutral-light, #F7FAFC);
+      background: var(--color-neutral-light, #F8F6F1);
       border-radius: 12px;
       padding: 1.5rem;
       border-left: 4px solid var(--color-success, #8FD6C8);
@@ -3004,7 +3004,7 @@ overflow:visible; /* prevent clipping of long content */
 /* Moved from retainers-maintenance.html */
 /* Service page specific styles matching FAQ design */
     .service-intro {
-      background: linear-gradient(135deg, var(--color-neutral-light, #F7FAFC) 0%, var(--color-neutral-medium, #EEF2F6) 100%);
+      background: linear-gradient(135deg, var(--color-neutral-light, #F8F6F1) 0%, var(--color-neutral-medium, #EEF2F6) 100%);
       padding: 2rem;
       border-radius: 16px;
       text-align: center;
@@ -3019,21 +3019,21 @@ overflow:visible; /* prevent clipping of long content */
     }
     .content-section h2 { color: var(--color-primary, #0E365A); border-bottom: 2px solid var(--color-primary-accent, #0077B6); padding-bottom: .5rem; margin-bottom: 1.5rem; }
 
-    .highlight-box { background: var(--color-neutral-light, #F7FAFC); border-left: 4px solid var(--color-success, #8FD6C8); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; }
+    .highlight-box { background: var(--color-neutral-light, #F8F6F1); border-left: 4px solid var(--color-success, #8FD6C8); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; }
 
     .retainer-types { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0; }
-    .retainer-card { background: var(--color-neutral-light, #F7FAFC); border: 1px solid var(--color-neutral-medium, #EEF2F6); border-radius: 12px; padding: 2rem; border-left: 4px solid var(--color-primary-accent, #0077B6); }
+    .retainer-card { background: var(--color-neutral-light, #F8F6F1); border: 1px solid var(--color-neutral-medium, #EEF2F6); border-radius: 12px; padding: 2rem; border-left: 4px solid var(--color-primary-accent, #0077B6); }
     .retainer-card h3 { color: var(--color-primary, #0E365A); margin-bottom: 1rem; }
     .retainer-card .price { font-size: 1.1rem; font-weight: 700; color: var(--color-primary-accent, #0077B6); margin-bottom: .75rem; }
     .retainer-card .lifespan { background: var(--color-warning, #E9DCCB); color: var(--color-text-primary, #24313A); padding: .5rem 1rem; border-radius: 20px; display: inline-block; font-size: .9rem; font-weight: 600; margin-bottom: 1rem; }
 
     .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
     .pros { background: var(--color-success, #8FD6C8); color: #fff; padding: 1rem; border-radius: 8px; }
-    .cons { background: var(--color-alert, #E46C5E); color: #fff; padding: 1rem; border-radius: 8px; }
+    .cons { background: var(--color-alert, #C8864A); color: #fff; padding: 1rem; border-radius: 8px; }
     .pros h4, .cons h4 { margin: 0 0 .5rem 0; font-size: 1rem; }
     .pros ul, .cons ul { margin: 0; padding-left: 1.2rem; font-size: .9rem; }
 
-    .maintenance-schedule { background: var(--color-neutral-light, #F7FAFC); border: 1px solid var(--color-neutral-medium, #EEF2F6); border-radius: 12px; padding: 2rem; margin: 2rem 0; }
+    .maintenance-schedule { background: var(--color-neutral-light, #F8F6F1); border: 1px solid var(--color-neutral-medium, #EEF2F6); border-radius: 12px; padding: 2rem; margin: 2rem 0; }
     .maintenance-schedule h3 { color: var(--color-primary, #0E365A); margin-bottom: 1rem; }
     .timeline { position: relative; padding-left: 2rem; }
     .timeline::before { content: ''; position: absolute; left: .5rem; top: 0; bottom: 0; width: 2px; background: var(--color-primary-accent, #0077B6); }
@@ -3041,8 +3041,8 @@ overflow:visible; /* prevent clipping of long content */
     .timeline-item::before { content: ''; position: absolute; left: -.5rem; top: .5rem; width: 1rem; height: 1rem; background: var(--color-primary-accent, #0077B6); border-radius: 50%; }
     .timeline-item h4 { color: var(--color-primary, #0E365A); margin-bottom: .5rem; }
 
-    .warning-box { background: var(--color-warning, #E9DCCB); border-left: 4px solid var(--color-alert, #E46C5E); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; }
-    .warning-box h3 { color: var(--color-alert, #E46C5E); margin-bottom: 1rem; }
+    .warning-box { background: var(--color-warning, #E9DCCB); border-left: 4px solid var(--color-alert, #C8864A); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; }
+    .warning-box h3 { color: var(--color-alert, #C8864A); margin-bottom: 1rem; }
 
     .cta-section { background: linear-gradient(135deg, var(--color-primary, #0E365A) 0%, var(--color-primary-accent, #0077B6) 100%); color: #fff; padding: 3rem 2rem; border-radius: 16px; text-align: center; margin: 3rem 0; }
     .cta-section h2 { color: #fff; margin-bottom: 1rem; }
@@ -3083,7 +3083,7 @@ overflow:visible; /* prevent clipping of long content */
       font-size: 4rem;
       font-weight: 700;
       color: var(--color-primary-accent);
-      font-family: 'Montserrat', sans-serif;
+      font-family: Georgia, 'Times New Roman', serif;
       line-height: 1;
     }
 
@@ -3236,7 +3236,7 @@ overflow:visible; /* prevent clipping of long content */
     .review-nav-item h4 {
       color: var(--color-primary);
       margin-bottom: 0.5rem;
-      font-family: 'Montserrat', sans-serif;
+      font-family: Georgia, 'Times New Roman', serif;
       font-size: 1.1rem;
     }
 
@@ -3278,7 +3278,7 @@ overflow:visible; /* prevent clipping of long content */
     .patient-info h3 {
       color: var(--color-primary);
       margin-bottom: 0.5rem;
-      font-family: 'Montserrat', sans-serif;
+      font-family: Georgia, 'Times New Roman', serif;
     }
 
     .patient-name {
@@ -3503,7 +3503,7 @@ overflow:visible; /* prevent clipping of long content */
     .highlight-card h3 {
       color: var(--color-primary);
       margin-bottom: 1rem;
-      font-family: 'Montserrat', sans-serif;
+      font-family: Georgia, 'Times New Roman', serif;
     }
 
     .highlight-quote {
@@ -3609,7 +3609,7 @@ overflow:visible; /* prevent clipping of long content */
     .review-guidelines h3 {
       color: white;
       margin-bottom: 1.5rem;
-      font-family: 'Montserrat', sans-serif;
+      font-family: Georgia, 'Times New Roman', serif;
     }
 
     .guidelines-grid {
@@ -3621,7 +3621,7 @@ overflow:visible; /* prevent clipping of long content */
     .guideline-item h4 {
       color: white;
       margin-bottom: 0.5rem;
-      font-family: 'Montserrat', sans-serif;
+      font-family: Georgia, 'Times New Roman', serif;
     }
 
     .guideline-item p {
@@ -3951,7 +3951,7 @@ overflow:visible; /* prevent clipping of long content */
     .highlight-card h3 {
       color: var(--color-primary);
       margin-bottom: 1rem;
-      font-family: 'Montserrat', sans-serif;
+      font-family: Georgia, 'Times New Roman', serif;
     }
 
     .highlight-quote {
@@ -4051,7 +4051,7 @@ overflow:visible; /* prevent clipping of long content */
     .review-guidelines h3 {
       color: white;
       margin-bottom: 1.5rem;
-      font-family: 'Montserrat', sans-serif;
+      font-family: Georgia, 'Times New Roman', serif;
     }
 
     .guidelines-grid {
@@ -4063,7 +4063,7 @@ overflow:visible; /* prevent clipping of long content */
     .guideline-item h4 {
       color: white;
       margin-bottom: 0.5rem;
-      font-family: 'Montserrat', sans-serif;
+      font-family: Georgia, 'Times New Roman', serif;
     }
 
     .guideline-item p {
@@ -4191,7 +4191,7 @@ overflow:visible; /* prevent clipping of long content */
 /* Moved from services.html */
 /* Services page specific styles */
     .services-intro {
-      background: linear-gradient(135deg, var(--color-neutral-light, #F7FAFC) 0%, var(--color-neutral-medium, #EEF2F6) 100%);
+      background: linear-gradient(135deg, var(--color-neutral-light, #F8F6F1) 0%, var(--color-neutral-medium, #EEF2F6) 100%);
       padding: 2rem;
       border-radius: 16px;
       text-align: center;
@@ -4232,7 +4232,7 @@ overflow:visible; /* prevent clipping of long content */
     }
     
     .service-card {
-      background: var(--color-neutral-light, #F7FAFC);
+      background: var(--color-neutral-light, #F8F6F1);
       border-radius: 12px;
       padding: 1.5rem;
       transition: all 0.3s ease;
@@ -4307,7 +4307,7 @@ overflow:visible; /* prevent clipping of long content */
     }
     
     .emergency-highlight {
-      background: linear-gradient(135deg, var(--color-alert, #E46C5E) 0%, #d63031 100%);
+      background: linear-gradient(135deg, var(--color-alert, #C8864A) 0%, #a06030 100%);
       color: white;
       padding: 1.5rem;
       border-radius: 12px;
@@ -4540,7 +4540,7 @@ overflow:visible; /* prevent clipping of long content */
 /* Moved from teeth-whitening.html */
 /* Service page specific styles matching FAQ design */
     .service-intro {
-      background: linear-gradient(135deg, var(--color-neutral-light, #F7FAFC) 0%, var(--color-neutral-medium, #EEF2F6) 100%);
+      background: linear-gradient(135deg, var(--color-neutral-light, #F8F6F1) 0%, var(--color-neutral-medium, #EEF2F6) 100%);
       padding: 2rem;
       border-radius: 16px;
       text-align: center;
@@ -4569,7 +4569,7 @@ overflow:visible; /* prevent clipping of long content */
     }
 
     .highlight-box {
-      background: var(--color-neutral-light, #F7FAFC);
+      background: var(--color-neutral-light, #F8F6F1);
       border-left: 4px solid var(--color-success, #8FD6C8);
       padding: 1.5rem;
       border-radius: 12px;
@@ -4584,7 +4584,7 @@ overflow:visible; /* prevent clipping of long content */
     }
 
     .treatment-card {
-      background: var(--color-neutral-light, #F7FAFC);
+      background: var(--color-neutral-light, #F8F6F1);
       border: 1px solid var(--color-neutral-medium, #EEF2F6);
       border-radius: 12px;
       padding: 2rem;
@@ -4618,14 +4618,14 @@ overflow:visible; /* prevent clipping of long content */
     .comparison-table table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(14, 54, 90, 0.05); }
     .comparison-table th { background: var(--color-primary, #0E365A); color: white; padding: 1rem; text-align: left; }
     .comparison-table td { padding: 1rem; border-bottom: 1px solid var(--color-neutral-medium, #EEF2F6); }
-    .comparison-table tr:nth-child(even) td { background: var(--color-neutral-light, #F7FAFC); }
+    .comparison-table tr:nth-child(even) td { background: var(--color-neutral-light, #F8F6F1); }
 
     .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
-    .benefit-card { background: var(--color-neutral-light, #F7FAFC); border-radius: 12px; padding: 1.5rem; border-left: 4px solid var(--color-success, #8FD6C8); }
+    .benefit-card { background: var(--color-neutral-light, #F8F6F1); border-radius: 12px; padding: 1.5rem; border-left: 4px solid var(--color-success, #8FD6C8); }
     .benefit-card h3 { color: var(--color-primary, #0E365A); margin-bottom: 0.75rem; }
 
-    .warning-box { background: var(--color-warning, #E9DCCB); border-left: 4px solid var(--color-alert, #E46C5E); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; }
-    .warning-box h3 { color: var(--color-alert, #E46C5E); margin-bottom: 1rem; }
+    .warning-box { background: var(--color-warning, #E9DCCB); border-left: 4px solid var(--color-alert, #C8864A); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; }
+    .warning-box h3 { color: var(--color-alert, #C8864A); margin-bottom: 1rem; }
 
     .cta-section { background: linear-gradient(135deg, var(--color-primary, #0E365A) 0%, var(--color-primary-accent, #0077B6) 100%); color: white; padding: 3rem 2rem; border-radius: 16px; text-align: center; margin: 3rem 0; }
     .cta-section h2 { color: var(--color-text-primary); margin-bottom: 1rem; }
@@ -4644,7 +4644,7 @@ overflow:visible; /* prevent clipping of long content */
 
 
 /* ===== Header Row Fixes ===== */
-.site-header { background: var(--color-neutral-light, #F7FAFC); border-bottom: 1px solid rgba(0,0,0,.06); }
+.site-header { background: var(--color-neutral-light, #F8F6F1); border-bottom: 1px solid rgba(0,0,0,.06); }
 .navbar { display:flex; align-items:center; gap: 1rem; max-width: 1200px; margin-inline:auto; padding: .75rem 1rem; }
 .navbar .logo { display:inline-block; line-height: 0; }
 #site-nav { flex: 1 1 auto; }
