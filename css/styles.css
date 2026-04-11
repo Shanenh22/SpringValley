@@ -6475,32 +6475,12 @@ body.patient-info .info-section {
    Do not add rules after this block.
    ============================================================================= */
 
-/* --- CTA Button color: amber instead of sky-blue --- */
-/* Applied broadly enough to beat all earlier specificity */
-.button-primary,
-.button-secondary,
-.btn,
-.btn-primary,
-.btn-secondary,
-.cta,
-a.button,
-button.button,
-a.btn,
-.hero .button-primary,
-.hero .button-secondary,
-.hero a.button,
-.hero a.btn,
-.quick-contact .button-group a.button-primary,
-.quick-contact .button-group a.button-secondary,
-.quick-contact .button-group a.button-primary[style],
-.quick-contact .button-group a.button-secondary[style],
-.service-card a,
-.card-grid .service-card > a:not([class]) {
-  background: var(--btn-bg, #C8864A) !important;
-  border-color: var(--btn-bg, #C8864A) !important;
-  color: #fff !important;
-}
+/* Button base colors defined in BUTTON SYSTEM (UNIFIED) block above */
 
+/* ============================================================
+   BUTTON HOVER — Sky Blue base → Dallas Navy on hover
+   All button types covered. !important ensures no override.
+   ============================================================ */
 .button-primary:hover,
 .button-primary:focus,
 .button-secondary:hover,
@@ -6511,24 +6491,41 @@ a.btn,
 .btn-primary:focus,
 .btn-secondary:hover,
 .btn-secondary:focus,
+.cta:hover,
+.cta:focus,
+a.button:hover,
+a.button:focus,
+a.btn:hover,
+a.btn:focus,
 .hero .button-primary:hover,
+.hero .button-primary:focus,
 .hero .button-secondary:hover,
+.hero .button-secondary:focus,
 .hero a.button:hover,
 .hero a.btn:hover,
 .service-card a:hover,
 .service-card a:focus,
-.card-grid .service-card > a:not([class]):hover {
+.card-grid .service-card > a:not([class]):hover,
+.card-grid .service-card > a:not([class]):focus,
+.review-btn:hover,
+.review-btn:focus,
+.read-more:hover,
+.read-more:focus {
   background: var(--dallas-navy, #0E365A) !important;
   border-color: var(--dallas-navy, #0E365A) !important;
   color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(14, 54, 90, 0.25);
 }
 
-/* Insurance/CTA section: secondary button inverts to white on hover */
+/* CTA section exception: secondary button → white bg, navy text */
 .cta-section .button-secondary:hover,
 .cta-section .button-secondary:focus {
   background: white !important;
   color: var(--color-primary) !important;
   border-color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
 }
 
 /* --- Heading font: Georgia serif --- */

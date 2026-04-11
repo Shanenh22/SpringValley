@@ -866,8 +866,7 @@ body.patient-info details summary {
 
 
 /* Bottom CTA styling - Patient Info */
-.bottom-cta .button-primary,
-.bottom-cta .button-secondary,
+.bottom-cta .bottom-cta .button-secondary,
 .contact-btn.primary,
 .contact-btn.secondary,
 .contact-btn.tertiary {

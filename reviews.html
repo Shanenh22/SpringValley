@@ -428,7 +428,7 @@
           <h3>Google Reviews</h3>
           <p>Most helpful for new patients researching our practice</p>
         </div>
-        <a class="button-primary review-btn" href="https://www.google.com/search?q=Spring+Valley+Dental+Associates+Dallas#lrd=0x864c212923401a27:0xe46880f7a6da507c,3" rel="noopener" target="_blank">Write Google Review</a>
+        <a class="button-primary review-btn" href="https://www.google.com/maps?cid=16458546639370080380" rel="noopener" target="_blank">Write Google Review</a>
       </div>
       
       <div class="form-option-card review-platform-card">
@@ -510,14 +510,15 @@ document.addEventListener('DOMContentLoaded', function() {
   reviewCards.forEach(card => {
     card.addEventListener('click', function(e) {
       if (e.target.closest('a, button')) {
-        e.stopImmediatePropagation();
+        e.stopPropagation();
       }
     });
   });
   
   platformBtns.forEach(btn => {
     btn.addEventListener('click', function(e) {
-      e.stopImmediatePropagation();
+      // Allow <a> link navigation — only stop event from bubbling
+      e.stopPropagation();
     });
   });
 });
