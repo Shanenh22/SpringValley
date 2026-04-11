@@ -68,6 +68,7 @@ body {
   margin: 0;
   padding: 0;
   padding-top: var(--site-header-height);
+  overflow-x: hidden;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
@@ -343,6 +344,15 @@ img {
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-bottom: 2rem;
+}
+
+
+/* Services overview grid on homepage — mobile-safe */
+.services-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 @media (min-width: 769px) {
