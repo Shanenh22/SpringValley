@@ -11082,3 +11082,52 @@ body.patient-info .info-section {
   display: block;
   border-radius: 0;  /* let the parent handle rounding */
 }
+/* =============================================================================
+   HOMEPAGE LAYOUT IMPROVEMENTS — added April 2026
+   ============================================================================= */
+
+/* 1. Hero vertical breathing room */
+.hero {
+  padding: 4rem 1.5rem;
+}
+@media (min-width: 768px) {
+  .hero {
+    padding: 6rem 2rem;
+  }
+}
+
+/* 2. Team photo cards — remove left border accent, center content */
+[aria-labelledby="team-heading"] .feature-section {
+  border-left: none;
+  text-align: center;
+}
+
+/* 3. Stats banner — always 2-up on small phones */
+@media (max-width: 640px) {
+  .practice-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+  .stat-number {
+    font-size: 2rem;
+  }
+}
+
+/* 4. Content sections — tighter padding on very small screens */
+@media (max-width: 480px) {
+  .content-section {
+    padding: 1.25rem 1rem;
+    margin: 1.5rem 0;
+    border-radius: 12px;
+  }
+}
+
+/* 5. Features grid — single column on very small screens to prevent overflow */
+@media (max-width: 480px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+}
