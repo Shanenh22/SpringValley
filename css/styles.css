@@ -269,19 +269,21 @@ img {
 
 /* CTA Button in Navigation */
 .site-links a.cta {
-  background: var(--color-primary-accent);
+  background: var(--btn-bg, #C8864A);
   color: white;
-  border: 2px solid var(--color-primary-accent);
+  border: 2px solid var(--btn-bg, #C8864A);
   font-weight: 600;
   margin-left: 0.5rem;
   border-radius: 0.5rem;
+  transition: all 0.2s ease;
 }
 
 .site-links a.cta:hover,
 .site-links a.cta:focus {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
+  background: var(--dallas-navy, #0E365A);
+  border-color: var(--dallas-navy, #0E365A);
   color: white;
+  transform: translateY(-2px);
 }
 
 /* =============================================================================
@@ -1145,9 +1147,9 @@ a.btn,
 .hero .button-secondary,
 .hero a.button,
 .hero a.btn {
-  background: var(--sky-blue) !important;
+  background: var(--btn-bg, #C8864A) !important;
   color: white !important;
-  border: 1px solid var(--sky-blue) !important;
+  border: 2px solid var(--btn-bg, #C8864A) !important;
   margin: 0.5rem;
 }
 
@@ -1880,9 +1882,9 @@ textarea:focus {
 /* Quick contact section buttons */
 .quick-contact .button-group a.button-primary,
 .quick-contact .button-group a.button-secondary {
-  background: var(--sky-blue) !important;
+  background: var(--btn-bg, #C8864A) !important;
   color: white !important;
-  border: 2px solid var(--sky-blue) !important;
+  border: 2px solid var(--btn-bg, #C8864A) !important;
   text-decoration: none !important;
 }
 
@@ -1898,9 +1900,9 @@ textarea:focus {
 /* Override any inline styles on buttons */
 .quick-contact .button-group a.button-primary[style],
 .quick-contact .button-group a.button-secondary[style] {
-  background: var(--sky-blue) !important;
+  background: var(--btn-bg, #C8864A) !important;
   color: white !important;
-  border: 2px solid var(--sky-blue) !important;
+  border: 2px solid var(--btn-bg, #C8864A) !important;
 }
 
 /* Global contact button class */
