@@ -12,11 +12,7 @@
 }
 
 /* Blog Grid Layout Override */
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 items per row on desktop */
-  gap: 1.5rem;
-}
+
 
 /* Responsive blog grid */
 @media (max-width: 1024px) {

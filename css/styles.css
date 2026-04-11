@@ -2275,6 +2275,8 @@ footer {
   font-size: clamp(0.98rem, 0.32vw + 0.95rem, 1.04rem);
   line-height: 1.65;
   text-align: left !important;
+  border-radius: 16px 16px 0 0;
+  margin-top: 1rem;
 }
 
 .footer,
@@ -3775,9 +3777,7 @@ body.patient-info .card-grid {
    STICKY BOTTOM CTA BAR (MOBILE ADA COMPLIANCE)
    ============================================================================= */
 
-.sticky-cta-bar {
-  display: none;
-}
+
 
 
 /* =============================================================================
@@ -4362,9 +4362,7 @@ body.patient-info .quick-nav-grid {
    STICKY BOTTOM CTA BAR (MOBILE ADA COMPLIANCE)
    ============================================================================= */
 
-.sticky-cta-bar {
-  display: none;
-}
+
 
 
 /* =============================================================================
@@ -4616,9 +4614,9 @@ body.patient-info .quick-nav-grid {
 /* Blog grid layout */
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .blog-card {
@@ -4996,9 +4994,7 @@ textarea:hover {
    STICKY BOTTOM CTA BAR (MOBILE ADA COMPLIANCE)
    ============================================================================= */
 
-.sticky-cta-bar {
-  display: none;
-}
+
 
 
 /* =============================================================================
@@ -5248,17 +5244,10 @@ body.patient-info .quick-nav-grid {
 
 
 /* Blog grid layout */
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
 
 
-.blog-card .card-content {
-  padding: 1.5rem;
-}
+
+.blog-card 
 
 
 /* =============================================================================
@@ -5699,17 +5688,10 @@ input[type="button"],
    BLOG GRID FIX - Ensure blog cards display properly
    ============================================================================= */
 
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
 
 
-.blog-card .card-content {
-  padding: 1.5rem;
-}
+
+.blog-card 
 
 
 /* =============================================================================
@@ -5964,11 +5946,7 @@ input[type="button"],
 }
 
 /* Blog Grid Layout Override */
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 items per row on desktop */
-  gap: 1.5rem;
-}
+
 
 /* Responsive blog grid */
 @media (max-width: 1024px) {
@@ -6525,11 +6503,16 @@ a.btn,
 
 .button-primary:hover,
 .button-primary:focus,
+.button-secondary:hover,
+.button-secondary:focus,
 .btn:hover,
 .btn:focus,
 .btn-primary:hover,
 .btn-primary:focus,
+.btn-secondary:hover,
+.btn-secondary:focus,
 .hero .button-primary:hover,
+.hero .button-secondary:hover,
 .hero a.button:hover,
 .hero a.btn:hover,
 .service-card a:hover,
@@ -6538,6 +6521,14 @@ a.btn,
   background: var(--dallas-navy, #0E365A) !important;
   border-color: var(--dallas-navy, #0E365A) !important;
   color: #fff !important;
+}
+
+/* Insurance/CTA section: secondary button inverts to white on hover */
+.cta-section .button-secondary:hover,
+.cta-section .button-secondary:focus {
+  background: white !important;
+  color: var(--color-primary) !important;
+  border-color: white !important;
 }
 
 /* --- Heading font: Georgia serif --- */
