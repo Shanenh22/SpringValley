@@ -78,13 +78,6 @@ body {
   text-size-adjust: 100%;
 }
 
-/* Scroll lock for navigation */
-html.nav-locked,
-body.nav-locked {
-  overflow: hidden;
-  height: 100vh;
-}
-
 img {
   max-width: 100%;
   height: auto;
@@ -530,10 +523,6 @@ a.btn,
 .review-btn,
 .load-more-btn,
 .facebook-btn,
-.google-btn,
-.filter-btn {
-  color: white !important;
-}
 
 .btn:hover,
 .btn:active,
@@ -546,10 +535,6 @@ a.btn,
 .review-btn:hover,
 .load-more-btn:hover,
 .facebook-btn:hover,
-.google-btn:hover,
-.filter-btn:hover {
-  color: white !important;
-}
 
 /* Context-specific button overrides */
 .navbar a.btn,
@@ -1164,10 +1149,6 @@ textarea:focus {
 }
 
 .google-reviews-static .stars,
-.google-reviews-static .reviewer-stars {
-  color: #FBBC05;
-  letter-spacing: 1px;
-}
 
 .google-reviews-static .score {
   font-weight: 700;
@@ -1188,10 +1169,6 @@ textarea:focus {
   background: var(--color-neutral-medium);
   padding: 1rem;
   border-radius: 12px;
-}
-
-.google-reviews-static blockquote {
-  margin: 0.75rem 0;
 }
 
 .google-reviews-static .verified {
@@ -1277,15 +1254,14 @@ textarea:focus {
 }
 
 @media (max-width: 480px) {
-  .hero { padding: 1.5rem 1rem; }
+
   .hero h1 { font-size: 1.75rem; }
   .cta-section { padding: 2rem 1rem; }
   .content-section { padding: 1rem; }
   .card { padding: 1rem; }
   .review-card { padding: 1.5rem; }
-  .form-row { grid-template-columns: 1fr; }
-  .button-primary,
-  .button-secondary { width: 100%; max-width: 280px; min-height: 50px; }
+
+
 }
 
 /* Safety net so buttons are side-by-side on desktop even if a future rule interferes */
@@ -1642,39 +1618,6 @@ textarea:focus-visible {
   display: block;
 }
 
-/* FAQ Search */
-.faq-search {
-  margin: 1rem 0 2rem 0;
-  position: relative;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.faq-search input {
-  width: 100%;
-  padding: 1rem 1rem 1rem 3rem;
-  border: 2px solid var(--color-neutral-medium);
-  border-radius: 25px;
-  font-size: 1rem;
-  transition: border-color 0.2s ease;
-  box-sizing: border-box;
-}
-
-.faq-search input:focus {
-  outline: none;
-  border-color: var(--color-primary-accent);
-}
-
-.faq-search::before {
-  content: "🔍";
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.2rem;
-}
-
 /* Emergency Highlight */
 .emergency-highlight {
   background: var(--color-alert);
@@ -1704,14 +1647,6 @@ textarea:focus-visible {
    ============================================================================= */
 
 .footer,
-.site-footer {
-  background: var(--color-primary);
-  color: white;
-  padding: 2rem 1.5rem;
-  font-size: clamp(0.98rem, 0.32vw + 0.95rem, 1.04rem);
-  line-height: 1.65;
-  text-align: left !important;
-}
 
 .footer .footer-container,
 .footer-container {
@@ -2603,11 +2538,6 @@ textarea:focus-visible {
   border-color: var(--color-primary-accent);
 }
 
-.reviewer-name {
-  font-weight: 600;
-  color: var(--color-primary);
-  margin-bottom: 0.25rem;
-}
 
 .review-rating {
   text-align: right;
@@ -3297,13 +3227,6 @@ body.patient-info .card-grid {
   box-shadow: 0 4px 16px rgba(228, 108, 94, 0.1);
 }
 
-.page-emergency .emergency-alert .alert-content {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
 
 .page-emergency .emergency-alert .alert-icon {
   font-size: 2rem;
@@ -3407,11 +3330,7 @@ body.patient-info .card-grid {
 
 /* On larger screens, we can display heading and pill inline */
 @media (min-width: 992px) {
-  .page-emergency .emergencies-section .emergency-card h3,
-  .page-emergency .emergencies-section .emergency-card .severity-level {
-    display: inline-block;
-    vertical-align: baseline;
-  }
+
   
   .page-emergency .emergencies-section .emergency-card h3 {
     margin-right: 1rem;
@@ -3538,9 +3457,7 @@ body.patient-info .card-grid {
 }
 
 @media (max-width: 768px) {
-  :root {
-    --cta-bar-height: 64px;
-  }
+
   
   .sticky-cta-bar {
     position: fixed;
@@ -3557,52 +3474,8 @@ body.patient-info .card-grid {
     z-index: var(--sticky-cta-z-index);
     border-top: 1px solid rgba(14, 54, 90, 0.08);
   }
-  
-  .sticky-cta-bar .cta-link {
-    display: grid;
-    place-items: center;
-    height: var(--cta-bar-height);
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-    text-align: center;
-    border: 2px solid transparent;
-    transition: all 0.2s ease;
-    min-height: 44px;
-    position: relative;
-  }
-  
-  .sticky-cta-bar .call {
-    background: var(--sky-blue);
-    color: white;
-  }
-  
-  .sticky-cta-bar .book {
-    background: var(--dallas-navy);
-    color: white;
-  }
-  
-  .sticky-cta-bar .directions {
-    background: var(--color-neutral-medium);
-    color: var(--color-text-primary);
-  }
-  
-  .sticky-cta-bar .cta-link:hover,
-  .sticky-cta-bar .cta-link:focus {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(14, 54, 90, 0.2);
-  }
-  
-  .sticky-cta-bar .cta-link:focus-visible {
-    outline: 3px solid var(--sky-blue);
-    outline-offset: 2px;
-  }
-  
-  /* Add bottom padding to body to prevent content overlap */
-  body {
-    padding-bottom: calc(var(--cta-bar-height) + 1rem + env(safe-area-inset-bottom));
-  }
+
+
 }
 
 /* =============================================================================
@@ -3610,196 +3483,10 @@ body.patient-info .card-grid {
    ============================================================================= */
 
 @media (max-width: 768px) {
-  /* Menu header with practice info */
-  #site-nav .menu-header {
-    padding: 1rem 0 0.5rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    position: relative;
-  }
-  
-  #site-nav .menu-close {
-    border: 0;
-    background: none;
-    font-size: 1.25rem;
-    line-height: 1;
-    position: absolute;
-    right: 0.5rem;
-    top: 0.5rem;
-    min-height: 44px;
-    min-width: 44px;
-    cursor: pointer;
-    color: var(--color-text-primary);
-  }
-  
-  #site-nav .brand-row {
-    display: flex;
-    gap: 0.75rem;
-    align-items: center;
-  }
-  
-  #site-nav .practice-name {
-    font-weight: 700;
-    color: var(--color-primary);
-    font-size: 1rem;
-  }
-  
-  /* Top CTA buttons (Call/Book/Directions) */
-  #site-nav .menu-ctas {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
-    margin: 0.75rem 0;
-  }
-  
-  #site-nav .menu-cta {
-    display: grid;
-    place-items: center;
-    height: 48px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-    border: 2px solid transparent;
-    transition: all 0.2s ease;
-    min-height: 44px;
-  }
-  
-  #site-nav .menu-cta.call {
-    background: var(--sky-blue);
-    color: white;
-  }
-  
-  #site-nav .menu-cta.book {
-    background: var(--dallas-navy);
-    color: white;
-  }
-  
-  #site-nav .menu-cta.directions {
-    background: var(--color-neutral-medium);
-    color: var(--color-text-primary);
-  }
-  
-  #site-nav .menu-cta:hover,
-  #site-nav .menu-cta:focus {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(14, 54, 90, 0.15);
-  }
-  
-  #site-nav .menu-cta:focus-visible {
-    outline: 3px solid var(--sky-blue);
-    outline-offset: 2px;
-  }
-  
-  /* Menu sections */
-  #site-nav .menu-section {
-    padding: 1rem 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  }
-  
-  #site-nav .section-title {
-    font-size: 0.95rem;
-    color: var(--color-text-secondary);
-    margin: 0.25rem 0 0.5rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  
-  /* "I need..." section */
-  #site-nav .intent-grid {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: block;
-  }
-  
-  #site-nav .intent-grid li {
-    list-style: none;
-    margin: 0.25rem 0;
-  }
-  
-  #site-nav .intent-grid a {
-    display: block;
-    padding: 0.6rem 0.25rem;
-    text-decoration: none;
-    color: var(--color-text-primary);
-    border: none;
-    background: transparent;
-    border-radius: 0;
-    font-weight: 500;
-    transition: color 0.2s ease;
-  }
-  
-  #site-nav .intent-grid a:hover,
-  #site-nav .intent-grid a:focus {
-    color: var(--color-primary);
-  }
-  
-  #site-nav .intent-grid a:focus-visible {
-    outline: 2px solid var(--sky-blue);
-    outline-offset: 2px;
-  }
-  
-  
-  
-  #site-nav .menu-links a {
-    display: block;
-    padding: 0.6rem 0.25rem;
-    text-decoration: none;
-    color: var(--color-text-primary);
-    font-weight: 500;
-    transition: color 0.2s ease;
-  }
-  
-  #site-nav .menu-links a:hover,
-  #site-nav .menu-links a:focus {
-    color: var(--color-primary);
-  }
-  
-  #site-nav .menu-links a:focus-visible {
-    outline: 2px solid var(--sky-blue);
-    outline-offset: 2px;
-  }
-  
-  /* Menu footer */
-  #site-nav .menu-footer {
-    padding: 1rem 0 0.5rem;
-    margin-top: auto;
-  }
-  
-  /* Ensure drawer has proper bottom spacing above sticky CTA */
-  #site-nav {
-    padding-bottom: calc(var(--cta-bar-height, 64px) + 48px);
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  
-  /* Hide duplicate Book buttons in main nav if top CTA exists */
-  #site-nav .hide-dup {
-    display: none !important;
-  }
-  
-  /* But keep the top CTA Book button visible */
-  #site-nav .menu-ctas .menu-cta.book.hide-dup {
-    display: grid !important;
-  }
+
+
 }
 
-/* =============================================================================
-   PATIENT INFO PAGE SPECIFIC STYLES
-   ============================================================================= */
-
-body.patient-info {
-  color: var(--slate-ink);
-  text-align: left;
-}
-
-body.patient-info main,
-body.patient-info .section,
-body.patient-info .content,
-body.patient-info .forms-container {
-  text-align: left;
-}
 
 /* Quick navigation grid */
 body.patient-info .quick-nav-grid {
@@ -3809,303 +3496,14 @@ body.patient-info .quick-nav-grid {
   margin-bottom: 1.25rem;
 }
 
-body.patient-info .quick-nav-item {
-  background: white;
-  border: 1px solid rgba(14, 54, 90, 0.12);
-  border-radius: 12px;
-  padding: 1rem;
-  text-decoration: none;
-  color: var(--slate-ink);
-  box-shadow: 0 2px 6px rgba(14, 54, 90, 0.06);
-  transition: all 0.2s ease;
-}
-
-body.patient-info .quick-nav-item:hover {
-  border-color: var(--sky-blue);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(14, 54, 90, 0.12);
-}
-
-/* Info sections */
-body.patient-info .info-section {
-  background: white;
-  border: 1px solid rgba(14, 54, 90, 0.12);
-  border-radius: 16px;
-  padding: 1.25rem;
-  box-shadow: 0 2px 8px rgba(14, 54, 90, 0.06);
-  margin-bottom: 1rem;
-}
-
-/* Collapsible details */
-body.patient-info details.info-collapse {
-  background: white;
-  border: 1px solid rgba(14, 54, 90, 0.12);
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 0.75rem;
-}
-
-body.patient-info details.info-collapse > summary {
-  cursor: pointer;
-  font-weight: 600;
-  color: var(--dallas-navy);
-  list-style: none;
-  padding: 0.5rem 0;
-}
-
-body.patient-info details.info-collapse > summary::-webkit-details-marker {
-  display: none;
-}
-
-body.patient-info details.info-collapse > summary::after {
-  content: "▾";
-  float: right;
-  transition: transform 0.2s ease;
-}
-
-body.patient-info details.info-collapse[open] > summary::after {
-  transform: rotate(180deg);
-}
-
-/* Forms containers */
-body.patient-info .forms-container,
-body.patient-info .insurance-container {
-  background: var(--cloud);
-  border-radius: 16px;
-  padding: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-/* Patient type cards */
-body.patient-info .patient-type-card,
-body.patient-info .insurance-card {
-  background: white;
-  border: 1px solid rgba(14, 54, 90, 0.12);
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 2px 8px rgba(14, 54, 90, 0.06);
-  margin-bottom: 1rem;
-}
-
-/* Membership plan alignment */
-body.patient-info .membership-plan,
-body.patient-info .membership-plan *,
-body.patient-info .insurance-card,
-body.patient-info .insurance-card * {
-  text-align: left;
-}
-
-/* Form buttons */
-body.patient-info .form-button.button-primary,
-body.patient-info .membership-btn.button-primary {
-  display: inline-block;
-  background: var(--dallas-navy);
-  color: white !important;
-  border: 2px solid var(--dallas-navy);
-  padding: 0.75rem 1.25rem;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.2s ease;
-}
-
-body.patient-info .form-button.button-primary:hover,
-body.patient-info .membership-btn.button-primary:hover {
-  background: var(--sky-blue);
-  border-color: var(--sky-blue);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(14, 54, 90, 0.18);
-}
-
-body.patient-info .form-button.button-secondary {
-  display: inline-block;
-  background: var(--sky-blue);
-  color: white !important;
-  border: 2px solid var(--sky-blue);
-  padding: 0.75rem 1.25rem;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.2s ease;
-}
-
-body.patient-info .form-button.button-secondary:hover {
-  background: var(--dallas-navy);
-  border-color: var(--dallas-navy);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(14, 54, 90, 0.18);
-}
-
-/* Button groups and CTAs */
-body.patient-info .bottom-cta .cta-buttons,
-body.patient-info .form-actions,
-body.patient-info .patient-type-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1rem;
-  align-items: center;
-  justify-content: center;
-}
-
-body.patient-info .bottom-cta {
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-body.patient-info .bottom-cta .button-primary,
-body.patient-info .bottom-cta .button-secondary {
-  color: white !important;
-}
-
-/* Typography adjustments */
-body.patient-info .section {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
-body.patient-info h2,
-body.patient-info h3,
-body.patient-info h4 {
-  margin-top: 0.75rem;
-  margin-bottom: 0.5rem;
-  color: var(--dallas-navy);
-}
-
-body.patient-info .forms-header {
-  margin-bottom: 0.75rem;
-}
-
-/* Patient type selection */
-body.patient-info .patient-type-selection {
-  margin-top: 0.5rem;
-}
-
-body.patient-info .forms-details-content {
-  margin-top: 0.75rem;
-  display: block;
-}
-
-body.patient-info .forms-details-content > * {
-  display: block;
-  margin: 0 0 1rem 0;
-}
-
-body.patient-info .patient-type-grid {
-  display: block !important;
-}
-
-body.patient-info .patient-type-card {
-  width: 100%;
-  margin: 0 0 1rem 0;
-}
-
-/* Security assurance */
-body.patient-info .security-assurance {
-  display: block;
-  padding: 1rem;
-  border: 1px solid rgba(14, 54, 90, 0.08);
-  border-radius: 12px;
-  background: var(--porcelain);
-  margin-top: 1rem;
-}
-
-body.patient-info .info-protected p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: var(--color-text-secondary);
-}
-
-/* Card grid adjustments */
-body.patient-info .card-grid {
-  gap: 1rem;
-}
 
 @media (max-width: 768px) {
   body.patient-info .quick-nav-grid {
     grid-template-columns: 1fr;
   }
-  
-  body.patient-info .bottom-cta .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
+
 }
 
-/* =============================================================================
-   EMERGENCY PAGE COMPREHENSIVE STYLES
-   ============================================================================= */
-
-.page-emergency .emergency-hero {
-  background: linear-gradient(135deg, var(--coral) 0%, #a06030 100%);
-  color: white;
-  position: relative;
-  overflow: hidden;
-}
-
-.page-emergency .emergency-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.page-emergency .emergency-hero > * {
-  position: relative;
-  z-index: 2;
-}
-
-.page-emergency .emergency-hero h1 {
-  color: white;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-weight: 700;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.page-emergency .emergency-hero p {
-  color: white;
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
-  opacity: 0.95;
-}
-
-/* Emergency alert bar */
-.page-emergency .emergency-alert {
-  background: var(--porcelain);
-  border: 2px solid var(--coral);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin: 2rem auto;
-  max-width: 1200px;
-  box-shadow: 0 4px 16px rgba(228, 108, 94, 0.1);
-}
-
-.page-emergency .emergency-alert .alert-content {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.page-emergency .emergency-alert .alert-icon {
-  font-size: 2rem;
-  flex-shrink: 0;
-  color: var(--coral);
-}
-
-.page-emergency .emergency-alert .alert-text {
-  flex: 1;
-  min-width: 300px;
-  color: var(--slate-ink);
-}
-
-.page-emergency .emergency-alert .alert-text strong {
-  color: var(--dallas-navy);
-  font-family: Georgia, 'Times New Roman', serif;
-}
 
 .page-emergency .emergency-alert .alert-button,
 .page-emergency .after-hours-section .hours-card a[href^="tel"],
@@ -4125,28 +3523,6 @@ body.patient-info .card-grid {
   white-space: nowrap;
 }
 
-.page-emergency .emergency-alert .alert-button:hover,
-.page-emergency .after-hours-section .hours-card a[href^="tel"]:hover,
-.page-emergency a[href$=".vcf"]:hover {
-  background: var(--dallas-navy);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(14, 54, 90, 0.3);
-}
-
-/* Emergency cards with priority levels - FIXED TEXT OVERLAP */
-.page-emergency .emergencies-section .emergency-card {
-  background: white;
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 4px 16px rgba(14, 54, 90, 0.08);
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.page-emergency .emergencies-section .emergency-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(14, 54, 90, 0.12);
-}
 
 .page-emergency .emergencies-section .emergency-card h3 {
   color: var(--dallas-navy);
@@ -4172,31 +3548,10 @@ body.patient-info .card-grid {
   line-height: 1.2;
 }
 
-.page-emergency .emergencies-section .emergency-card .severity-level.high {
-  background: var(--coral);
-  color: white;
-  box-shadow: 0 2px 8px rgba(228, 108, 94, 0.3);
-}
-
-.page-emergency .emergencies-section .emergency-card .severity-level.medium {
-  background: var(--warm-sand);
-  color: var(--dallas-navy);
-  border: 1px solid var(--dallas-navy);
-}
-
-.page-emergency .emergencies-section .emergency-card .severity-level.low {
-  background: var(--mint);
-  color: var(--dallas-navy);
-  border: 1px solid var(--dallas-navy);
-}
 
 /* On larger screens, we can display heading and pill inline */
 @media (min-width: 992px) {
-  .page-emergency .emergencies-section .emergency-card h3,
-  .page-emergency .emergencies-section .emergency-card .severity-level {
-    display: inline-block;
-    vertical-align: baseline;
-  }
+
   
   .page-emergency .emergencies-section .emergency-card h3 {
     margin-right: 1rem;
@@ -4283,27 +3638,6 @@ body.patient-info .card-grid {
   transition: all 0.3s ease;
 }
 
-.page-about .about-stats li:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(14, 54, 90, 0.12);
-  border-color: var(--sky-blue);
-}
-
-.page-about .about-stats li .value {
-  display: block;
-  font-weight: 800;
-  font-size: clamp(1.4rem, 3.5vw, 2rem);
-  line-height: 1.05;
-  color: var(--dallas-navy);
-  white-space: nowrap;
-}
-
-.page-about .about-stats li .label {
-  display: block;
-  margin-top: 0.25rem;
-  font-weight: 600;
-  color: var(--slate-ink);
-}
 
 @media (max-width: 480px) {
   .page-about .about-stats {
@@ -4341,14 +3675,6 @@ body.patient-info .card-grid {
   margin: 0 auto;
 }
 
-/* Service category sections */
-.service-category {
-  margin: 4rem 0;
-  padding: 2rem;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(14, 54, 90, 0.08);
-}
 
 .category-header {
   text-align: center;
@@ -4414,11 +3740,6 @@ body.patient-info .card-grid {
   margin-bottom: 1rem;
 }
 
-.service-features {
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0;
-}
 
 .service-features li {
   color: var(--slate-ink);
@@ -4435,18 +3756,6 @@ body.patient-info .card-grid {
   left: 0;
 }
 
-.service-card a {
-  background: var(--sky-blue);
-  color: white !important;
-  text-decoration: none;
-  font-weight: 600;
-  margin-top: auto;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  text-align: center;
-  transition: all 0.3s ease;
-  border: 2px solid var(--sky-blue);
-}
 
 .service-card a:hover,
 .service-card a:focus {
@@ -4473,49 +3782,6 @@ body.patient-info .card-grid {
   font-family: Georgia, 'Times New Roman', serif;
 }
 
-.emergency-highlight a {
-  color: white;
-  text-decoration: underline;
-  font-weight: bold;
-}
-
-.emergency-highlight p {
-  color: white !important;
-  font-weight: 600;
-}
-
-/* Service search functionality */
-.service-search {
-  margin: 1rem 0 2rem 0;
-  position: relative;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.service-search input {
-  width: 100%;
-  padding: 1rem 1rem 1rem 3rem;
-  border: 2px solid var(--cloud);
-  border-radius: 25px;
-  font-size: 1rem;
-  transition: border-color 0.2s ease;
-  box-sizing: border-box;
-}
-
-.service-search input:focus {
-  outline: none;
-  border-color: var(--sky-blue);
-}
-
-.service-search::before {
-  content: "🔍";
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.2rem;
-}
 
 /* Service categories navigation */
 .service-categories-nav {
@@ -4637,20 +3903,6 @@ body.patient-info .card-grid {
   font-weight: 600;
 }
 
-/* Rating breakdown */
-.rating-breakdown {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  padding: 1rem;
-}
-
-.rating-row {
-  display: grid;
-  grid-template-columns: 60px 1fr 40px;
-  align-items: center;
-  gap: 1rem;
-}
 
 .stars-label {
   font-size: 0.9rem;
@@ -4664,12 +3916,6 @@ body.patient-info .card-grid {
   overflow: hidden;
 }
 
-.rating-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #FBBC05 0%, #34A853 100%);
-  border-radius: 4px;
-  transition: width 0.3s ease;
-}
 
 .rating-count {
   font-size: 0.9rem;
@@ -4677,12 +3923,6 @@ body.patient-info .card-grid {
   text-align: right;
 }
 
-/* Platform reviews */
-.platform-reviews {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
 
 .platform-item {
   display: flex;
@@ -4718,13 +3958,6 @@ body.patient-info .card-grid {
   color: var(--cool-gray);
 }
 
-/* Success stories */
-.success-stories {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
 
 .story-card {
   background: white;
@@ -4735,17 +3968,6 @@ body.patient-info .card-grid {
   transition: all 0.3s ease;
 }
 
-.story-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 48px rgba(14, 54, 90, 0.15);
-}
-
-.story-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 2rem;
-}
 
 .patient-info h3 {
   color: var(--dallas-navy);
@@ -4765,9 +3987,6 @@ body.patient-info .card-grid {
   font-size: 0.9rem;
 }
 
-.story-rating {
-  text-align: right;
-}
 
 .story-rating .stars {
   color: var(--color-star) !important;
@@ -4811,22 +4030,6 @@ body.patient-info .card-grid {
   font-weight: 500;
 }
 
-/* Reviews grid */
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
-
-.review-card {
-  background: white;
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 4px 16px rgba(14, 54, 90, 0.08);
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-}
 
 .review-card:hover {
   transform: translateY(-4px);
@@ -4834,12 +4037,6 @@ body.patient-info .card-grid {
   border-color: var(--sky-blue);
 }
 
-.review-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1.5rem;
-}
 
 .reviewer-name {
   font-weight: 600;
@@ -4852,9 +4049,6 @@ body.patient-info .card-grid {
   font-size: 0.9rem;
 }
 
-.review-rating {
-  text-align: right;
-}
 
 .review-rating .stars {
   color: var(--color-star) !important;
@@ -4864,23 +4058,6 @@ body.patient-info .card-grid {
   line-height: 1;
 }
 
-.platform-badge {
-  padding: 0.25rem 0.5rem;
-  border-radius: 12px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.platform-badge.google {
-  background: #4285F4;
-  color: white;
-}
-
-.platform-badge.facebook {
-  background: #1877F2;
-  color: white;
-}
 
 .review-card blockquote {
   color: var(--slate-ink);
@@ -4889,11 +4066,6 @@ body.patient-info .card-grid {
   font-style: italic;
 }
 
-.review-tags {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
 
 .tag {
   background: var(--porcelain);
@@ -4902,22 +4074,6 @@ body.patient-info .card-grid {
   border-radius: 12px;
   font-size: 0.8rem;
   font-weight: 500;
-}
-
-/* Load more section */
-.load-more-section {
-  background: var(--porcelain);
-  padding: 3rem 2rem;
-  border-radius: 16px;
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.load-more-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
 }
 
 .load-more-btn {
@@ -4958,11 +4114,7 @@ body.patient-info .card-grid {
     grid-template-columns: 84px 1fr 44px;
     gap: 0.65rem;
   }
-  
-  .stars-label,
-  .rating-count {
-    font-size: 0.95rem;
-  }
+
   
   .rating-number {
     font-size: 3rem;
@@ -5007,9 +4159,7 @@ body.patient-info .card-grid {
 }
 
 @media (max-width: 768px) {
-  :root {
-    --cta-bar-height: 64px;
-  }
+
   
   .sticky-cta-bar {
     position: fixed;
@@ -5026,52 +4176,8 @@ body.patient-info .card-grid {
     z-index: var(--sticky-cta-z-index);
     border-top: 1px solid rgba(14, 54, 90, 0.08);
   }
-  
-  .sticky-cta-bar .cta-link {
-    display: grid;
-    place-items: center;
-    height: var(--cta-bar-height);
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-    text-align: center;
-    border: 2px solid transparent;
-    transition: all 0.2s ease;
-    min-height: 44px;
-    position: relative;
-  }
-  
-  .sticky-cta-bar .call {
-    background: var(--sky-blue);
-    color: white;
-  }
-  
-  .sticky-cta-bar .book {
-    background: var(--dallas-navy);
-    color: white;
-  }
-  
-  .sticky-cta-bar .directions {
-    background: var(--color-neutral-medium);
-    color: var(--color-text-primary);
-  }
-  
-  .sticky-cta-bar .cta-link:hover,
-  .sticky-cta-bar .cta-link:focus {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(14, 54, 90, 0.2);
-  }
-  
-  .sticky-cta-bar .cta-link:focus-visible {
-    outline: 3px solid var(--sky-blue);
-    outline-offset: 2px;
-  }
-  
-  /* Add bottom padding to body to prevent content overlap */
-  body {
-    padding-bottom: calc(var(--cta-bar-height) + 1rem + env(safe-area-inset-bottom));
-  }
+
+
 }
 
 /* =============================================================================
@@ -5079,196 +4185,10 @@ body.patient-info .card-grid {
    ============================================================================= */
 
 @media (max-width: 768px) {
-  /* Menu header with practice info */
-  #site-nav .menu-header {
-    padding: 1rem 0 0.5rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    position: relative;
-  }
-  
-  #site-nav .menu-close {
-    border: 0;
-    background: none;
-    font-size: 1.25rem;
-    line-height: 1;
-    position: absolute;
-    right: 0.5rem;
-    top: 0.5rem;
-    min-height: 44px;
-    min-width: 44px;
-    cursor: pointer;
-    color: var(--color-text-primary);
-  }
-  
-  #site-nav .brand-row {
-    display: flex;
-    gap: 0.75rem;
-    align-items: center;
-  }
-  
-  #site-nav .practice-name {
-    font-weight: 700;
-    color: var(--color-primary);
-    font-size: 1rem;
-  }
-  
-  /* Top CTA buttons (Call/Book/Directions) */
-  #site-nav .menu-ctas {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
-    margin: 0.75rem 0;
-  }
-  
-  #site-nav .menu-cta {
-    display: grid;
-    place-items: center;
-    height: 48px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-    border: 2px solid transparent;
-    transition: all 0.2s ease;
-    min-height: 44px;
-  }
-  
-  #site-nav .menu-cta.call {
-    background: var(--sky-blue);
-    color: white;
-  }
-  
-  #site-nav .menu-cta.book {
-    background: var(--dallas-navy);
-    color: white;
-  }
-  
-  #site-nav .menu-cta.directions {
-    background: var(--color-neutral-medium);
-    color: var(--color-text-primary);
-  }
-  
-  #site-nav .menu-cta:hover,
-  #site-nav .menu-cta:focus {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(14, 54, 90, 0.15);
-  }
-  
-  #site-nav .menu-cta:focus-visible {
-    outline: 3px solid var(--sky-blue);
-    outline-offset: 2px;
-  }
-  
-  /* Menu sections */
-  #site-nav .menu-section {
-    padding: 1rem 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  }
-  
-  #site-nav .section-title {
-    font-size: 0.95rem;
-    color: var(--color-text-secondary);
-    margin: 0.25rem 0 0.5rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  
-  /* "I need..." section */
-  #site-nav .intent-grid {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: block;
-  }
-  
-  #site-nav .intent-grid li {
-    list-style: none;
-    margin: 0.25rem 0;
-  }
-  
-  #site-nav .intent-grid a {
-    display: block;
-    padding: 0.6rem 0.25rem;
-    text-decoration: none;
-    color: var(--color-text-primary);
-    border: none;
-    background: transparent;
-    border-radius: 0;
-    font-weight: 500;
-    transition: color 0.2s ease;
-  }
-  
-  #site-nav .intent-grid a:hover,
-  #site-nav .intent-grid a:focus {
-    color: var(--color-primary);
-  }
-  
-  #site-nav .intent-grid a:focus-visible {
-    outline: 2px solid var(--sky-blue);
-    outline-offset: 2px;
-  }
-  
-  
-  
-  #site-nav .menu-links a {
-    display: block;
-    padding: 0.6rem 0.25rem;
-    text-decoration: none;
-    color: var(--color-text-primary);
-    font-weight: 500;
-    transition: color 0.2s ease;
-  }
-  
-  #site-nav .menu-links a:hover,
-  #site-nav .menu-links a:focus {
-    color: var(--color-primary);
-  }
-  
-  #site-nav .menu-links a:focus-visible {
-    outline: 2px solid var(--sky-blue);
-    outline-offset: 2px;
-  }
-  
-  /* Menu footer */
-  #site-nav .menu-footer {
-    padding: 1rem 0 0.5rem;
-    margin-top: auto;
-  }
-  
-  /* Ensure drawer has proper bottom spacing above sticky CTA */
-  #site-nav {
-    padding-bottom: calc(var(--cta-bar-height, 64px) + 48px);
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  
-  /* Hide duplicate Book buttons in main nav if top CTA exists */
-  #site-nav .hide-dup {
-    display: none !important;
-  }
-  
-  /* But keep the top CTA Book button visible */
-  #site-nav .menu-ctas .menu-cta.book.hide-dup {
-    display: grid !important;
-  }
+
+
 }
 
-/* =============================================================================
-   PATIENT INFO PAGE SPECIFIC STYLES
-   ============================================================================= */
-
-body.patient-info {
-  color: var(--slate-ink);
-  text-align: left;
-}
-
-body.patient-info main,
-body.patient-info .section,
-body.patient-info .content,
-body.patient-info .forms-container {
-  text-align: left;
-}
 
 /* Quick navigation grid */
 body.patient-info .quick-nav-grid {
@@ -5278,303 +4198,14 @@ body.patient-info .quick-nav-grid {
   margin-bottom: 1.25rem;
 }
 
-body.patient-info .quick-nav-item {
-  background: white;
-  border: 1px solid rgba(14, 54, 90, 0.12);
-  border-radius: 12px;
-  padding: 1rem;
-  text-decoration: none;
-  color: var(--slate-ink);
-  box-shadow: 0 2px 6px rgba(14, 54, 90, 0.06);
-  transition: all 0.2s ease;
-}
-
-body.patient-info .quick-nav-item:hover {
-  border-color: var(--sky-blue);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(14, 54, 90, 0.12);
-}
-
-/* Info sections */
-body.patient-info .info-section {
-  background: white;
-  border: 1px solid rgba(14, 54, 90, 0.12);
-  border-radius: 16px;
-  padding: 1.25rem;
-  box-shadow: 0 2px 8px rgba(14, 54, 90, 0.06);
-  margin-bottom: 1rem;
-}
-
-/* Collapsible details */
-body.patient-info details.info-collapse {
-  background: white;
-  border: 1px solid rgba(14, 54, 90, 0.12);
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 0.75rem;
-}
-
-body.patient-info details.info-collapse > summary {
-  cursor: pointer;
-  font-weight: 600;
-  color: var(--dallas-navy);
-  list-style: none;
-  padding: 0.5rem 0;
-}
-
-body.patient-info details.info-collapse > summary::-webkit-details-marker {
-  display: none;
-}
-
-body.patient-info details.info-collapse > summary::after {
-  content: "▾";
-  float: right;
-  transition: transform 0.2s ease;
-}
-
-body.patient-info details.info-collapse[open] > summary::after {
-  transform: rotate(180deg);
-}
-
-/* Forms containers */
-body.patient-info .forms-container,
-body.patient-info .insurance-container {
-  background: var(--cloud);
-  border-radius: 16px;
-  padding: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-/* Patient type cards */
-body.patient-info .patient-type-card,
-body.patient-info .insurance-card {
-  background: white;
-  border: 1px solid rgba(14, 54, 90, 0.12);
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 2px 8px rgba(14, 54, 90, 0.06);
-  margin-bottom: 1rem;
-}
-
-/* Membership plan alignment */
-body.patient-info .membership-plan,
-body.patient-info .membership-plan *,
-body.patient-info .insurance-card,
-body.patient-info .insurance-card * {
-  text-align: left;
-}
-
-/* Form buttons */
-body.patient-info .form-button.button-primary,
-body.patient-info .membership-btn.button-primary {
-  display: inline-block;
-  background: var(--dallas-navy);
-  color: white !important;
-  border: 2px solid var(--dallas-navy);
-  padding: 0.75rem 1.25rem;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.2s ease;
-}
-
-body.patient-info .form-button.button-primary:hover,
-body.patient-info .membership-btn.button-primary:hover {
-  background: var(--sky-blue);
-  border-color: var(--sky-blue);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(14, 54, 90, 0.18);
-}
-
-body.patient-info .form-button.button-secondary {
-  display: inline-block;
-  background: var(--sky-blue);
-  color: white !important;
-  border: 2px solid var(--sky-blue);
-  padding: 0.75rem 1.25rem;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.2s ease;
-}
-
-body.patient-info .form-button.button-secondary:hover {
-  background: var(--dallas-navy);
-  border-color: var(--dallas-navy);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(14, 54, 90, 0.18);
-}
-
-/* Button groups and CTAs */
-body.patient-info .bottom-cta .cta-buttons,
-body.patient-info .form-actions,
-body.patient-info .patient-type-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1rem;
-  align-items: center;
-  justify-content: center;
-}
-
-body.patient-info .bottom-cta {
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-body.patient-info .bottom-cta .button-primary,
-body.patient-info .bottom-cta .button-secondary {
-  color: white !important;
-}
-
-/* Typography adjustments */
-body.patient-info .section {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
-body.patient-info h2,
-body.patient-info h3,
-body.patient-info h4 {
-  margin-top: 0.75rem;
-  margin-bottom: 0.5rem;
-  color: var(--dallas-navy);
-}
-
-body.patient-info .forms-header {
-  margin-bottom: 0.75rem;
-}
-
-/* Patient type selection */
-body.patient-info .patient-type-selection {
-  margin-top: 0.5rem;
-}
-
-body.patient-info .forms-details-content {
-  margin-top: 0.75rem;
-  display: block;
-}
-
-body.patient-info .forms-details-content > * {
-  display: block;
-  margin: 0 0 1rem 0;
-}
-
-body.patient-info .patient-type-grid {
-  display: block !important;
-}
-
-body.patient-info .patient-type-card {
-  width: 100%;
-  margin: 0 0 1rem 0;
-}
-
-/* Security assurance */
-body.patient-info .security-assurance {
-  display: block;
-  padding: 1rem;
-  border: 1px solid rgba(14, 54, 90, 0.08);
-  border-radius: 12px;
-  background: var(--porcelain);
-  margin-top: 1rem;
-}
-
-body.patient-info .info-protected p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: var(--color-text-secondary);
-}
-
-/* Card grid adjustments */
-body.patient-info .card-grid {
-  gap: 1rem;
-}
 
 @media (max-width: 768px) {
   body.patient-info .quick-nav-grid {
     grid-template-columns: 1fr;
   }
-  
-  body.patient-info .bottom-cta .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
+
 }
 
-/* =============================================================================
-   EMERGENCY PAGE COMPREHENSIVE STYLES
-   ============================================================================= */
-
-.page-emergency .emergency-hero {
-  background: linear-gradient(135deg, var(--coral) 0%, #a06030 100%);
-  color: white;
-  position: relative;
-  overflow: hidden;
-}
-
-.page-emergency .emergency-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.page-emergency .emergency-hero > * {
-  position: relative;
-  z-index: 2;
-}
-
-.page-emergency .emergency-hero h1 {
-  color: white;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-weight: 700;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.page-emergency .emergency-hero p {
-  color: white;
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
-  opacity: 0.95;
-}
-
-/* Emergency alert bar */
-.page-emergency .emergency-alert {
-  background: var(--porcelain);
-  border: 2px solid var(--coral);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin: 2rem auto;
-  max-width: 1200px;
-  box-shadow: 0 4px 16px rgba(228, 108, 94, 0.1);
-}
-
-.page-emergency .emergency-alert .alert-content {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.page-emergency .emergency-alert .alert-icon {
-  font-size: 2rem;
-  flex-shrink: 0;
-  color: var(--coral);
-}
-
-.page-emergency .emergency-alert .alert-text {
-  flex: 1;
-  min-width: 300px;
-  color: var(--slate-ink);
-}
-
-.page-emergency .emergency-alert .alert-text strong {
-  color: var(--dallas-navy);
-  font-family: Georgia, 'Times New Roman', serif;
-}
 
 .page-emergency .emergency-alert .alert-button,
 .page-emergency .after-hours-section .hours-card a[href^="tel"],
@@ -5594,28 +4225,6 @@ body.patient-info .card-grid {
   white-space: nowrap;
 }
 
-.page-emergency .emergency-alert .alert-button:hover,
-.page-emergency .after-hours-section .hours-card a[href^="tel"]:hover,
-.page-emergency a[href$=".vcf"]:hover {
-  background: var(--dallas-navy);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(14, 54, 90, 0.3);
-}
-
-/* Emergency cards with priority levels - FIXED TEXT OVERLAP */
-.page-emergency .emergencies-section .emergency-card {
-  background: white;
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 4px 16px rgba(14, 54, 90, 0.08);
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.page-emergency .emergencies-section .emergency-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(14, 54, 90, 0.12);
-}
 
 .page-emergency .emergencies-section .emergency-card h3 {
   color: var(--dallas-navy);
@@ -5641,31 +4250,10 @@ body.patient-info .card-grid {
   line-height: 1.2;
 }
 
-.page-emergency .emergencies-section .emergency-card .severity-level.high {
-  background: var(--coral);
-  color: white;
-  box-shadow: 0 2px 8px rgba(228, 108, 94, 0.3);
-}
-
-.page-emergency .emergencies-section .emergency-card .severity-level.medium {
-  background: var(--warm-sand);
-  color: var(--dallas-navy);
-  border: 1px solid var(--dallas-navy);
-}
-
-.page-emergency .emergencies-section .emergency-card .severity-level.low {
-  background: var(--mint);
-  color: var(--dallas-navy);
-  border: 1px solid var(--dallas-navy);
-}
 
 /* On larger screens, we can display heading and pill inline */
 @media (min-width: 992px) {
-  .page-emergency .emergencies-section .emergency-card h3,
-  .page-emergency .emergencies-section .emergency-card .severity-level {
-    display: inline-block;
-    vertical-align: baseline;
-  }
+
   
   .page-emergency .emergencies-section .emergency-card h3 {
     margin-right: 1rem;
@@ -5752,27 +4340,6 @@ body.patient-info .card-grid {
   transition: all 0.3s ease;
 }
 
-.page-about .about-stats li:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(14, 54, 90, 0.12);
-  border-color: var(--sky-blue);
-}
-
-.page-about .about-stats li .value {
-  display: block;
-  font-weight: 800;
-  font-size: clamp(1.4rem, 3.5vw, 2rem);
-  line-height: 1.05;
-  color: var(--dallas-navy);
-  white-space: nowrap;
-}
-
-.page-about .about-stats li .label {
-  display: block;
-  margin-top: 0.25rem;
-  font-weight: 600;
-  color: var(--slate-ink);
-}
 
 @media (max-width: 480px) {
   .page-about .about-stats {
@@ -5797,18 +4364,6 @@ body.patient-info .card-grid {
   border-left: 4px solid var(--sky-blue);
 }
 
-.services-intro h2 {
-  color: var(--dallas-navy);
-  margin-bottom: 1rem;
-  font-family: Georgia, 'Times New Roman', serif;
-}
-
-.services-intro p {
-  color: var(--cool-gray);
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
 
 /* Service category sections */
 .service-category {
@@ -5819,25 +4374,6 @@ body.patient-info .card-grid {
   box-shadow: 0 4px 16px rgba(14, 54, 90, 0.08);
 }
 
-.category-header {
-  text-align: center;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid var(--sky-blue);
-}
-
-.category-header h2 {
-  color: var(--dallas-navy);
-  margin-bottom: 0.5rem;
-  font-family: Georgia, 'Times New Roman', serif;
-}
-
-.category-header p {
-  color: var(--cool-gray);
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
 
 /* Service cards within categories */
 .service-card {
@@ -5851,11 +4387,6 @@ body.patient-info .card-grid {
   flex-direction: column;
 }
 
-.service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(14, 54, 90, 0.12);
-  border-color: var(--sky-blue);
-}
 
 .service-card .image-placeholder {
   height: 180px;
@@ -5869,122 +4400,6 @@ body.patient-info .card-grid {
   font-size: 0.9rem;
 }
 
-.service-card h3 {
-  color: var(--dallas-navy);
-  margin-bottom: 0.75rem;
-  font-size: 1.2rem;
-  font-family: Georgia, 'Times New Roman', serif;
-}
-
-.service-card p {
-  color: var(--cool-gray);
-  line-height: 1.6;
-  flex-grow: 1;
-  margin-bottom: 1rem;
-}
-
-.service-features {
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0;
-}
-
-.service-features li {
-  color: var(--slate-ink);
-  padding: 0.25rem 0;
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.service-features li::before {
-  content: "\2713";
-  color: var(--mint);
-  font-weight: bold;
-  position: absolute;
-  left: 0;
-}
-
-.service-card a {
-  background: var(--sky-blue);
-  color: white !important;
-  text-decoration: none;
-  font-weight: 600;
-  margin-top: auto;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  text-align: center;
-  transition: all 0.3s ease;
-  border: 2px solid var(--sky-blue);
-}
-
-.service-card a:hover,
-.service-card a:focus {
-  background: var(--dallas-navy);
-  border-color: var(--dallas-navy);
-  color: white !important;
-  transform: translateY(-1px);
-}
-
-/* Emergency highlight section */
-.emergency-highlight {
-  background: linear-gradient(135deg, var(--coral) 0%, #a06030 100%);
-  color: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  text-align: center;
-  margin: 2rem 0;
-  box-shadow: 0 4px 15px rgba(228, 108, 94, 0.3);
-}
-
-.emergency-highlight h3 {
-  color: white;
-  margin-bottom: 0.5rem;
-  font-family: Georgia, 'Times New Roman', serif;
-}
-
-.emergency-highlight a {
-  color: white;
-  text-decoration: underline;
-  font-weight: bold;
-}
-
-.emergency-highlight p {
-  color: white !important;
-  font-weight: 600;
-}
-
-/* Service search functionality */
-.service-search {
-  margin: 1rem 0 2rem 0;
-  position: relative;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.service-search input {
-  width: 100%;
-  padding: 1rem 1rem 1rem 3rem;
-  border: 2px solid var(--cloud);
-  border-radius: 25px;
-  font-size: 1rem;
-  transition: border-color 0.2s ease;
-  box-sizing: border-box;
-}
-
-.service-search input:focus {
-  outline: none;
-  border-color: var(--sky-blue);
-}
-
-.service-search::before {
-  content: "🔍";
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.2rem;
-}
 
 /* Service categories navigation */
 .service-categories-nav {
@@ -6004,11 +4419,6 @@ body.patient-info .card-grid {
   cursor: pointer;
 }
 
-.service-nav-item:hover {
-  border-color: var(--sky-blue);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.1);
-}
 
 .service-nav-item h4 {
   color: var(--dallas-navy);
@@ -6017,13 +4427,6 @@ body.patient-info .card-grid {
   font-family: Georgia, 'Times New Roman', serif;
 }
 
-/* No results message */
-.no-results {
-  text-align: center;
-  padding: 2rem;
-  color: var(--cool-gray);
-  display: none;
-}
 
 @media (max-width: 768px) {
   .service-category {
@@ -6055,34 +4458,9 @@ body.patient-info .card-grid {
   .service-nav-item h4 {
     font-size: 0.8rem;
   }
-  
-  .service-search input {
-    padding: 0.8rem 0.8rem 0.8rem 2.5rem;
-  }
+
 }
 
-/* =============================================================================
-   REVIEWS PAGE ENHANCED STYLES
-   ============================================================================= */
-
-/* Review summary container */
-.review-summary-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  background: white;
-  padding: 3rem;
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(14, 54, 90, 0.1);
-  margin-bottom: 3rem;
-}
-
-.main-rating {
-  text-align: center;
-  padding: 2rem;
-  background: var(--porcelain);
-  border-radius: 12px;
-}
 
 .rating-number {
   font-size: 4rem;
@@ -6092,27 +4470,6 @@ body.patient-info .card-grid {
   line-height: 1;
 }
 
-.rating-stars {
-  font-size: 2rem;
-  color: var(--color-star);
-  margin: 1rem 0;
-  font-family: Arial, Helvetica, Roboto, "Segoe UI", sans-serif;
-  line-height: 1;
-}
-
-.rating-text {
-  font-size: 1.2rem;
-  color: var(--cool-gray);
-  font-weight: 600;
-}
-
-/* Rating breakdown */
-.rating-breakdown {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  padding: 1rem;
-}
 
 .rating-row {
   display: grid;
@@ -6121,93 +4478,6 @@ body.patient-info .card-grid {
   gap: 1rem;
 }
 
-.stars-label {
-  font-size: 0.9rem;
-  color: var(--cool-gray);
-}
-
-.rating-bar {
-  height: 10px;
-  background: #E9EFF5;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.rating-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #FBBC05 0%, #34A853 100%);
-  border-radius: 4px;
-  transition: width 0.3s ease;
-}
-
-.rating-count {
-  font-size: 0.9rem;
-  color: var(--cool-gray);
-  text-align: right;
-}
-
-/* Platform reviews */
-.platform-reviews {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.platform-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem;
-  background: var(--porcelain);
-  border-radius: 12px;
-  border-left: 4px solid var(--sky-blue);
-}
-
-.platform-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 600;
-  color: var(--slate-ink);
-}
-
-.platform-rating {
-  font-weight: 600;
-  color: var(--dallas-navy);
-}
-
-.platform-rating .stars {
-  color: var(--color-star) !important;
-  font-family: Arial, Helvetica, Roboto, "Segoe UI", sans-serif;
-  line-height: 1;
-}
-
-.platform-count {
-  font-size: 0.9rem;
-  color: var(--cool-gray);
-}
-
-/* Success stories */
-.success-stories {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
-
-.story-card {
-  background: white;
-  border-radius: 16px;
-  padding: 2.5rem;
-  box-shadow: 0 8px 32px rgba(14, 54, 90, 0.1);
-  border-left: 5px solid var(--mint);
-  transition: all 0.3s ease;
-}
-
-.story-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 48px rgba(14, 54, 90, 0.15);
-}
 
 .story-header {
   display: flex;
@@ -6216,41 +4486,6 @@ body.patient-info .card-grid {
   margin-bottom: 2rem;
 }
 
-.patient-info h3 {
-  color: var(--dallas-navy);
-  margin-bottom: 0.5rem;
-  font-family: Georgia, 'Times New Roman', serif;
-}
-
-.patient-name {
-  color: var(--cool-gray);
-  margin-bottom: 0.25rem;
-  font-weight: 500;
-}
-
-.treatment-type {
-  color: var(--sky-blue);
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.story-rating {
-  text-align: right;
-}
-
-.story-rating .stars {
-  color: var(--color-star) !important;
-  font-size: 1.2rem;
-  margin-bottom: 0.25rem;
-  font-family: Arial, Helvetica, Roboto, "Segoe UI", sans-serif;
-  line-height: 1;
-}
-
-.verified {
-  color: var(--mint);
-  font-size: 0.8rem;
-  font-weight: 500;
-}
 
 .story-content blockquote {
   font-size: 1.1rem;
@@ -6270,15 +4505,6 @@ body.patient-info .card-grid {
   border-top: 1px solid var(--cloud);
 }
 
-.treatment-timeline {
-  color: var(--cool-gray);
-  font-weight: 500;
-}
-
-.story-highlight {
-  color: var(--dallas-navy);
-  font-weight: 500;
-}
 
 /* Reviews grid */
 .reviews-grid {
@@ -6288,149 +4514,16 @@ body.patient-info .card-grid {
   margin-bottom: 3rem;
 }
 
-.review-card {
-  background: white;
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 4px 16px rgba(14, 54, 90, 0.08);
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-}
-
-.review-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(14, 54, 90, 0.15);
-  border-color: var(--sky-blue);
-}
-
-.review-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1.5rem;
-}
-
-.reviewer-name {
-  font-weight: 600;
-  color: var(--dallas-navy);
-  margin-bottom: 0.25rem;
-}
-
-.review-date {
-  color: var(--cool-gray);
-  font-size: 0.9rem;
-}
-
-.review-rating {
-  text-align: right;
-}
-
-.review-rating .stars {
-  color: var(--color-star) !important;
-  font-size: 1.1rem;
-  margin-bottom: 0.25rem;
-  font-family: Arial, Helvetica, Roboto, "Segoe UI", sans-serif;
-  line-height: 1;
-}
-
-.platform-badge {
-  padding: 0.25rem 0.5rem;
-  border-radius: 12px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.platform-badge.google {
-  background: #4285F4;
-  color: white;
-}
-
-.platform-badge.facebook {
-  background: #1877F2;
-  color: white;
-}
-
-.review-card blockquote {
-  color: var(--slate-ink);
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  font-style: italic;
-}
-
-.review-tags {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.tag {
-  background: var(--porcelain);
-  color: var(--dallas-navy);
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-/* Load more section */
-.load-more-section {
-  background: var(--porcelain);
-  padding: 3rem 2rem;
-  border-radius: 16px;
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.load-more-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.load-more-btn {
-  background: var(--sky-blue);
-  color: white !important;
-  padding: 1rem 2rem;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  display: inline-block;
-  border: 2px solid var(--sky-blue);
-}
-
-.load-more-btn:hover {
-  background: var(--dallas-navy);
-  border-color: var(--dallas-navy);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(14, 54, 90, 0.3);
-}
-
-.review-count-info {
-  color: var(--cool-gray);
-  font-size: 0.9rem;
-}
 
 /* Mobile responsive reviews */
 @media (max-width: 640px) {
-  .review-summary-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-    padding: 1.25rem;
-  }
+
   
   .rating-row {
     grid-template-columns: 84px 1fr 44px;
     gap: 0.65rem;
   }
-  
-  .stars-label,
-  .rating-count {
-    font-size: 0.95rem;
-  }
+
   
   .rating-number {
     font-size: 3rem;
@@ -6452,10 +4545,7 @@ body.patient-info .card-grid {
 }
 
 @media (max-width: 480px) {
-  .story-card,
-  .review-card {
-    padding: 1.5rem;
-  }
+
   
   .rating-number {
     font-size: 2.5rem;
@@ -6465,42 +4555,6 @@ body.patient-info .card-grid {
     padding-left: 1rem;
     font-size: 1rem;
   }
-}
-
-/* =============================================================================
-   BLOG PAGE STRUCTURE & STYLING
-   ============================================================================= */
-
-.blog-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.blog-hero {
-  background: linear-gradient(135deg, var(--dallas-navy) 0%, var(--sky-blue) 100%);
-  color: white;
-  text-align: center;
-  padding: 4rem 1rem;
-  position: relative;
-  margin-bottom: 3rem;
-}
-
-.blog-hero h1 {
-  color: white !important;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(2rem, 5vw, 2.5rem);
-  margin: 0 0 1rem;
-  line-height: 1.2;
-}
-
-.blog-hero p {
-  color: rgba(255, 255, 255, 0.92) !important;
-  font-size: clamp(1.1rem, 2vw, 1.3rem);
-  margin: 0 0 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* Blog grid layout */
@@ -6598,104 +4652,12 @@ body.patient-info .card-grid {
   color: var(--sky-blue) !important;
 }
 
-/* Blog sidebar */
-.blog-sidebar {
-  background: white;
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 4px 16px rgba(14, 54, 90, 0.08);
-  margin-bottom: 2rem;
-}
-
-.blog-sidebar h4 {
-  color: var(--dallas-navy);
-  margin-bottom: 1rem;
-  font-family: Georgia, 'Times New Roman', serif;
-}
-
 .blog-sidebar .widget {
   margin-bottom: 2rem;
 }
 
 .blog-sidebar .widget:last-child {
   margin-bottom: 0;
-}
-
-/* Blog search */
-.blog-search {
-  position: relative;
-}
-
-.blog-search input {
-  width: 100%;
-  padding: 0.75rem 1rem 0.75rem 2.5rem;
-  border: 2px solid var(--cloud);
-  border-radius: 25px;
-  font-size: 1rem;
-  transition: border-color 0.2s ease;
-}
-
-.blog-search input:focus {
-  outline: none;
-  border-color: var(--sky-blue);
-}
-
-.blog-search::before {
-  content: "🔍";
-  position: absolute;
-  left: 0.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1rem;
-}
-
-/* Blog categories widget */
-.blog-categories {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.blog-categories li {
-  margin-bottom: 0.5rem;
-}
-
-.blog-categories a {
-  color: var(--cool-gray);
-  text-decoration: none;
-  padding: 0.5rem 0;
-  display: block;
-  border-bottom: 1px solid var(--cloud);
-  transition: color 0.2s ease;
-}
-
-.blog-categories a:hover {
-  color: var(--sky-blue);
-}
-
-/* Blog pagination */
-.blog-pagination {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin: 3rem 0;
-}
-
-.blog-pagination a,
-.blog-pagination span {
-  padding: 0.75rem 1rem;
-  border: 2px solid var(--cloud);
-  border-radius: 8px;
-  text-decoration: none;
-  color: var(--cool-gray);
-  transition: all 0.2s ease;
-  min-width: 44px;
-  text-align: center;
-}
-
-.blog-pagination a:hover {
-  border-color: var(--sky-blue);
-  color: var(--sky-blue);
 }
 
 .blog-pagination .current {
@@ -6756,11 +4718,6 @@ body.patient-info .card-grid {
   margin-bottom: 1rem;
 }
 
-.form-group {
-  display: grid;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
 
 .form-group label {
   font-weight: 600;
@@ -6854,15 +4811,6 @@ textarea:hover {
   font-size: 0.9rem;
 }
 
-/* Honeypot field (hidden) */
-.hp-wrap {
-  position: absolute;
-  left: -9999px;
-  top: -9999px;
-  height: 0;
-  width: 0;
-  overflow: hidden;
-}
 
 /* Math challenge */
 .challenge {
@@ -7014,9 +4962,7 @@ textarea:hover {
 }
 
 @media (max-width: 768px) {
-  :root {
-    --cta-bar-height: 64px;
-  }
+
   
   .sticky-cta-bar {
     position: fixed;
@@ -7033,52 +4979,8 @@ textarea:hover {
     z-index: var(--sticky-cta-z-index);
     border-top: 1px solid rgba(14, 54, 90, 0.08);
   }
-  
-  .sticky-cta-bar .cta-link {
-    display: grid;
-    place-items: center;
-    height: var(--cta-bar-height);
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-    text-align: center;
-    border: 2px solid transparent;
-    transition: all 0.2s ease;
-    min-height: 44px;
-    position: relative;
-  }
-  
-  .sticky-cta-bar .call {
-    background: var(--sky-blue);
-    color: white;
-  }
-  
-  .sticky-cta-bar .book {
-    background: var(--dallas-navy);
-    color: white;
-  }
-  
-  .sticky-cta-bar .directions {
-    background: var(--color-neutral-medium);
-    color: var(--color-text-primary);
-  }
-  
-  .sticky-cta-bar .cta-link:hover,
-  .sticky-cta-bar .cta-link:focus {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(14, 54, 90, 0.2);
-  }
-  
-  .sticky-cta-bar .cta-link:focus-visible {
-    outline: 3px solid var(--sky-blue);
-    outline-offset: 2px;
-  }
-  
-  /* Add bottom padding to body to prevent content overlap */
-  body {
-    padding-bottom: calc(var(--cta-bar-height) + 1rem + env(safe-area-inset-bottom));
-  }
+
+
 }
 
 /* =============================================================================
@@ -7086,135 +4988,8 @@ textarea:hover {
    ============================================================================= */
 
 @media (max-width: 768px) {
-  /* Menu header with practice info */
-  #site-nav .menu-header {
-    padding: 1rem 0 0.5rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    position: relative;
-  }
-  
-  #site-nav .menu-close {
-    border: 0;
-    background: none;
-    font-size: 1.25rem;
-    line-height: 1;
-    position: absolute;
-    right: 0.5rem;
-    top: 0.5rem;
-    min-height: 44px;
-    min-width: 44px;
-    cursor: pointer;
-    color: var(--color-text-primary);
-  }
-  
-  #site-nav .brand-row {
-    display: flex;
-    gap: 0.75rem;
-    align-items: center;
-  }
-  
-  #site-nav .practice-name {
-    font-weight: 700;
-    color: var(--color-primary);
-    font-size: 1rem;
-  }
-  
-  /* Top CTA buttons (Call/Book/Directions) */
-  #site-nav .menu-ctas {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
-    margin: 0.75rem 0;
-  }
-  
-  #site-nav .menu-cta {
-    display: grid;
-    place-items: center;
-    height: 48px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-    border: 2px solid transparent;
-    transition: all 0.2s ease;
-    min-height: 44px;
-  }
-  
-  #site-nav .menu-cta.call {
-    background: var(--sky-blue);
-    color: white;
-  }
-  
-  #site-nav .menu-cta.book {
-    background: var(--dallas-navy);
-    color: white;
-  }
-  
-  #site-nav .menu-cta.directions {
-    background: var(--color-neutral-medium);
-    color: var(--color-text-primary);
-  }
-  
-  #site-nav .menu-cta:hover,
-  #site-nav .menu-cta:focus {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(14, 54, 90, 0.15);
-  }
-  
-  #site-nav .menu-cta:focus-visible {
-    outline: 3px solid var(--sky-blue);
-    outline-offset: 2px;
-  }
-  
-  /* Menu sections */
-  #site-nav .menu-section {
-    padding: 1rem 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  }
-  
-  #site-nav .section-title {
-    font-size: 0.95rem;
-    color: var(--color-text-secondary);
-    margin: 0.25rem 0 0.5rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  
-  /* "I need..." section */
-  #site-nav .intent-grid {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: block;
-  }
-  
-  #site-nav .intent-grid li {
-    list-style: none;
-    margin: 0.25rem 0;
-  }
-  
-  #site-nav .intent-grid a {
-    display: block;
-    padding: 0.6rem 0.25rem;
-    text-decoration: none;
-    color: var(--color-text-primary);
-    border: none;
-    background: transparent;
-    border-radius: 0;
-    font-weight: 500;
-    transition: color 0.2s ease;
-  }
-  
-  #site-nav .intent-grid a:hover,
-  #site-nav .intent-grid a:focus {
-    color: var(--color-primary);
-  }
-  
-  #site-nav .intent-grid a:focus-visible {
-    outline: 2px solid var(--sky-blue);
-    outline-offset: 2px;
-  }
+
+
   
   /* "Patients" section */
   #site-nav .menu-links {
@@ -7224,65 +4999,10 @@ textarea:hover {
     display: grid;
     gap: 0.25rem;
   }
-  
-  #site-nav .menu-links a {
-    display: block;
-    padding: 0.6rem 0.25rem;
-    text-decoration: none;
-    color: var(--color-text-primary);
-    font-weight: 500;
-    transition: color 0.2s ease;
-  }
-  
-  #site-nav .menu-links a:hover,
-  #site-nav .menu-links a:focus {
-    color: var(--color-primary);
-  }
-  
-  #site-nav .menu-links a:focus-visible {
-    outline: 2px solid var(--sky-blue);
-    outline-offset: 2px;
-  }
-  
-  /* Menu footer */
-  #site-nav .menu-footer {
-    padding: 1rem 0 0.5rem;
-    margin-top: auto;
-  }
-  
-  /* Ensure drawer has proper bottom spacing above sticky CTA */
-  #site-nav {
-    padding-bottom: calc(var(--cta-bar-height, 64px) + 48px);
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  
-  /* Hide duplicate Book buttons in main nav if top CTA exists */
-  #site-nav .hide-dup {
-    display: none !important;
-  }
-  
-  /* But keep the top CTA Book button visible */
-  #site-nav .menu-ctas .menu-cta.book.hide-dup {
-    display: grid !important;
-  }
+
+
 }
 
-/* =============================================================================
-   PATIENT INFO PAGE SPECIFIC STYLES
-   ============================================================================= */
-
-body.patient-info {
-  color: var(--slate-ink);
-  text-align: left;
-}
-
-body.patient-info main,
-body.patient-info .section,
-body.patient-info .content,
-body.patient-info .forms-container {
-  text-align: left;
-}
 
 /* Quick navigation grid */
 body.patient-info .quick-nav-grid {
@@ -7292,303 +5012,14 @@ body.patient-info .quick-nav-grid {
   margin-bottom: 1.25rem;
 }
 
-body.patient-info .quick-nav-item {
-  background: white;
-  border: 1px solid rgba(14, 54, 90, 0.12);
-  border-radius: 12px;
-  padding: 1rem;
-  text-decoration: none;
-  color: var(--slate-ink);
-  box-shadow: 0 2px 6px rgba(14, 54, 90, 0.06);
-  transition: all 0.2s ease;
-}
-
-body.patient-info .quick-nav-item:hover {
-  border-color: var(--sky-blue);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(14, 54, 90, 0.12);
-}
-
-/* Info sections */
-body.patient-info .info-section {
-  background: white;
-  border: 1px solid rgba(14, 54, 90, 0.12);
-  border-radius: 16px;
-  padding: 1.25rem;
-  box-shadow: 0 2px 8px rgba(14, 54, 90, 0.06);
-  margin-bottom: 1rem;
-}
-
-/* Collapsible details */
-body.patient-info details.info-collapse {
-  background: white;
-  border: 1px solid rgba(14, 54, 90, 0.12);
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 0.75rem;
-}
-
-body.patient-info details.info-collapse > summary {
-  cursor: pointer;
-  font-weight: 600;
-  color: var(--dallas-navy);
-  list-style: none;
-  padding: 0.5rem 0;
-}
-
-body.patient-info details.info-collapse > summary::-webkit-details-marker {
-  display: none;
-}
-
-body.patient-info details.info-collapse > summary::after {
-  content: "▾";
-  float: right;
-  transition: transform 0.2s ease;
-}
-
-body.patient-info details.info-collapse[open] > summary::after {
-  transform: rotate(180deg);
-}
-
-/* Forms containers */
-body.patient-info .forms-container,
-body.patient-info .insurance-container {
-  background: var(--cloud);
-  border-radius: 16px;
-  padding: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-/* Patient type cards */
-body.patient-info .patient-type-card,
-body.patient-info .insurance-card {
-  background: white;
-  border: 1px solid rgba(14, 54, 90, 0.12);
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 2px 8px rgba(14, 54, 90, 0.06);
-  margin-bottom: 1rem;
-}
-
-/* Membership plan alignment */
-body.patient-info .membership-plan,
-body.patient-info .membership-plan *,
-body.patient-info .insurance-card,
-body.patient-info .insurance-card * {
-  text-align: left;
-}
-
-/* Form buttons */
-body.patient-info .form-button.button-primary,
-body.patient-info .membership-btn.button-primary {
-  display: inline-block;
-  background: var(--dallas-navy);
-  color: white !important;
-  border: 2px solid var(--dallas-navy);
-  padding: 0.75rem 1.25rem;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.2s ease;
-}
-
-body.patient-info .form-button.button-primary:hover,
-body.patient-info .membership-btn.button-primary:hover {
-  background: var(--sky-blue);
-  border-color: var(--sky-blue);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(14, 54, 90, 0.18);
-}
-
-body.patient-info .form-button.button-secondary {
-  display: inline-block;
-  background: var(--sky-blue);
-  color: white !important;
-  border: 2px solid var(--sky-blue);
-  padding: 0.75rem 1.25rem;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.2s ease;
-}
-
-body.patient-info .form-button.button-secondary:hover {
-  background: var(--dallas-navy);
-  border-color: var(--dallas-navy);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(14, 54, 90, 0.18);
-}
-
-/* Button groups and CTAs */
-body.patient-info .bottom-cta .cta-buttons,
-body.patient-info .form-actions,
-body.patient-info .patient-type-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1rem;
-  align-items: center;
-  justify-content: center;
-}
-
-body.patient-info .bottom-cta {
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-body.patient-info .bottom-cta .button-primary,
-body.patient-info .bottom-cta .button-secondary {
-  color: white !important;
-}
-
-/* Typography adjustments */
-body.patient-info .section {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
-body.patient-info h2,
-body.patient-info h3,
-body.patient-info h4 {
-  margin-top: 0.75rem;
-  margin-bottom: 0.5rem;
-  color: var(--dallas-navy);
-}
-
-body.patient-info .forms-header {
-  margin-bottom: 0.75rem;
-}
-
-/* Patient type selection */
-body.patient-info .patient-type-selection {
-  margin-top: 0.5rem;
-}
-
-body.patient-info .forms-details-content {
-  margin-top: 0.75rem;
-  display: block;
-}
-
-body.patient-info .forms-details-content > * {
-  display: block;
-  margin: 0 0 1rem 0;
-}
-
-body.patient-info .patient-type-grid {
-  display: block !important;
-}
-
-body.patient-info .patient-type-card {
-  width: 100%;
-  margin: 0 0 1rem 0;
-}
-
-/* Security assurance */
-body.patient-info .security-assurance {
-  display: block;
-  padding: 1rem;
-  border: 1px solid rgba(14, 54, 90, 0.08);
-  border-radius: 12px;
-  background: var(--porcelain);
-  margin-top: 1rem;
-}
-
-body.patient-info .info-protected p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: var(--color-text-secondary);
-}
-
-/* Card grid adjustments */
-body.patient-info .card-grid {
-  gap: 1rem;
-}
 
 @media (max-width: 768px) {
   body.patient-info .quick-nav-grid {
     grid-template-columns: 1fr;
   }
-  
-  body.patient-info .bottom-cta .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
+
 }
 
-/* =============================================================================
-   EMERGENCY PAGE COMPREHENSIVE STYLES
-   ============================================================================= */
-
-.page-emergency .emergency-hero {
-  background: linear-gradient(135deg, var(--coral) 0%, #a06030 100%);
-  color: white;
-  position: relative;
-  overflow: hidden;
-}
-
-.page-emergency .emergency-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.page-emergency .emergency-hero > * {
-  position: relative;
-  z-index: 2;
-}
-
-.page-emergency .emergency-hero h1 {
-  color: white;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-weight: 700;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.page-emergency .emergency-hero p {
-  color: white;
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
-  opacity: 0.95;
-}
-
-/* Emergency alert bar */
-.page-emergency .emergency-alert {
-  background: var(--porcelain);
-  border: 2px solid var(--coral);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin: 2rem auto;
-  max-width: 1200px;
-  box-shadow: 0 4px 16px rgba(228, 108, 94, 0.1);
-}
-
-.page-emergency .emergency-alert .alert-content {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.page-emergency .emergency-alert .alert-icon {
-  font-size: 2rem;
-  flex-shrink: 0;
-  color: var(--coral);
-}
-
-.page-emergency .emergency-alert .alert-text {
-  flex: 1;
-  min-width: 300px;
-  color: var(--slate-ink);
-}
-
-.page-emergency .emergency-alert .alert-text strong {
-  color: var(--dallas-navy);
-  font-family: Georgia, 'Times New Roman', serif;
-}
 
 .page-emergency .emergency-alert .alert-button,
 .page-emergency .after-hours-section .hours-card a[href^="tel"],
@@ -7608,28 +5039,6 @@ body.patient-info .card-grid {
   white-space: nowrap;
 }
 
-.page-emergency .emergency-alert .alert-button:hover,
-.page-emergency .after-hours-section .hours-card a[href^="tel"]:hover,
-.page-emergency a[href$=".vcf"]:hover {
-  background: var(--dallas-navy);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(14, 54, 90, 0.3);
-}
-
-/* Emergency cards with priority levels - FIXED TEXT OVERLAP */
-.page-emergency .emergencies-section .emergency-card {
-  background: white;
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 4px 16px rgba(14, 54, 90, 0.08);
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.page-emergency .emergencies-section .emergency-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(14, 54, 90, 0.12);
-}
 
 .page-emergency .emergencies-section .emergency-card h3 {
   color: var(--dallas-navy);
@@ -7655,31 +5064,10 @@ body.patient-info .card-grid {
   line-height: 1.2;
 }
 
-.page-emergency .emergencies-section .emergency-card .severity-level.high {
-  background: var(--coral);
-  color: white;
-  box-shadow: 0 2px 8px rgba(228, 108, 94, 0.3);
-}
-
-.page-emergency .emergencies-section .emergency-card .severity-level.medium {
-  background: var(--warm-sand);
-  color: var(--dallas-navy);
-  border: 1px solid var(--dallas-navy);
-}
-
-.page-emergency .emergencies-section .emergency-card .severity-level.low {
-  background: var(--mint);
-  color: var(--dallas-navy);
-  border: 1px solid var(--dallas-navy);
-}
 
 /* On larger screens, we can display heading and pill inline */
 @media (min-width: 992px) {
-  .page-emergency .emergencies-section .emergency-card h3,
-  .page-emergency .emergencies-section .emergency-card .severity-level {
-    display: inline-block;
-    vertical-align: baseline;
-  }
+
   
   .page-emergency .emergencies-section .emergency-card h3 {
     margin-right: 1rem;
@@ -7766,27 +5154,6 @@ body.patient-info .card-grid {
   transition: all 0.3s ease;
 }
 
-.page-about .about-stats li:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(14, 54, 90, 0.12);
-  border-color: var(--sky-blue);
-}
-
-.page-about .about-stats li .value {
-  display: block;
-  font-weight: 800;
-  font-size: clamp(1.4rem, 3.5vw, 2rem);
-  line-height: 1.05;
-  color: var(--dallas-navy);
-  white-space: nowrap;
-}
-
-.page-about .about-stats li .label {
-  display: block;
-  margin-top: 0.25rem;
-  font-weight: 600;
-  color: var(--slate-ink);
-}
 
 @media (max-width: 480px) {
   .page-about .about-stats {
@@ -7811,18 +5178,6 @@ body.patient-info .card-grid {
   border-left: 4px solid var(--sky-blue);
 }
 
-.services-intro h2 {
-  color: var(--dallas-navy);
-  margin-bottom: 1rem;
-  font-family: Georgia, 'Times New Roman', serif;
-}
-
-.services-intro p {
-  color: var(--cool-gray);
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
 
 /* Service category sections */
 .service-category {
@@ -7833,25 +5188,6 @@ body.patient-info .card-grid {
   box-shadow: 0 4px 16px rgba(14, 54, 90, 0.08);
 }
 
-.category-header {
-  text-align: center;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid var(--sky-blue);
-}
-
-.category-header h2 {
-  color: var(--dallas-navy);
-  margin-bottom: 0.5rem;
-  font-family: Georgia, 'Times New Roman', serif;
-}
-
-.category-header p {
-  color: var(--cool-gray);
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
 
 /* Service cards within categories */
 .service-card {
@@ -7865,11 +5201,6 @@ body.patient-info .card-grid {
   flex-direction: column;
 }
 
-.service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(14, 54, 90, 0.12);
-  border-color: var(--sky-blue);
-}
 
 .service-card .image-placeholder {
   height: 180px;
@@ -7883,122 +5214,6 @@ body.patient-info .card-grid {
   font-size: 0.9rem;
 }
 
-.service-card h3 {
-  color: var(--dallas-navy);
-  margin-bottom: 0.75rem;
-  font-size: 1.2rem;
-  font-family: Georgia, 'Times New Roman', serif;
-}
-
-.service-card p {
-  color: var(--cool-gray);
-  line-height: 1.6;
-  flex-grow: 1;
-  margin-bottom: 1rem;
-}
-
-.service-features {
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0;
-}
-
-.service-features li {
-  color: var(--slate-ink);
-  padding: 0.25rem 0;
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.service-features li::before {
-  content: "\2713";
-  color: var(--mint);
-  font-weight: bold;
-  position: absolute;
-  left: 0;
-}
-
-.service-card a {
-  background: var(--sky-blue);
-  color: white !important;
-  text-decoration: none;
-  font-weight: 600;
-  margin-top: auto;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  text-align: center;
-  transition: all 0.3s ease;
-  border: 2px solid var(--sky-blue);
-}
-
-.service-card a:hover,
-.service-card a:focus {
-  background: var(--dallas-navy);
-  border-color: var(--dallas-navy);
-  color: white !important;
-  transform: translateY(-1px);
-}
-
-/* Emergency highlight section */
-.emergency-highlight {
-  background: linear-gradient(135deg, var(--coral) 0%, #a06030 100%);
-  color: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  text-align: center;
-  margin: 2rem 0;
-  box-shadow: 0 4px 15px rgba(228, 108, 94, 0.3);
-}
-
-.emergency-highlight h3 {
-  color: white;
-  margin-bottom: 0.5rem;
-  font-family: Georgia, 'Times New Roman', serif;
-}
-
-.emergency-highlight a {
-  color: white;
-  text-decoration: underline;
-  font-weight: bold;
-}
-
-.emergency-highlight p {
-  color: white !important;
-  font-weight: 600;
-}
-
-/* Service search functionality */
-.service-search {
-  margin: 1rem 0 2rem 0;
-  position: relative;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.service-search input {
-  width: 100%;
-  padding: 1rem 1rem 1rem 3rem;
-  border: 2px solid var(--cloud);
-  border-radius: 25px;
-  font-size: 1rem;
-  transition: border-color 0.2s ease;
-  box-sizing: border-box;
-}
-
-.service-search input:focus {
-  outline: none;
-  border-color: var(--sky-blue);
-}
-
-.service-search::before {
-  content: "🔍";
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.2rem;
-}
 
 /* Service categories navigation */
 .service-categories-nav {
@@ -8018,11 +5233,6 @@ body.patient-info .card-grid {
   cursor: pointer;
 }
 
-.service-nav-item:hover {
-  border-color: var(--sky-blue);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.1);
-}
 
 .service-nav-item h4 {
   color: var(--dallas-navy);
@@ -8031,13 +5241,6 @@ body.patient-info .card-grid {
   font-family: Georgia, 'Times New Roman', serif;
 }
 
-/* No results message */
-.no-results {
-  text-align: center;
-  padding: 2rem;
-  color: var(--cool-gray);
-  display: none;
-}
 
 @media (max-width: 768px) {
   .service-category {
@@ -8069,34 +5272,9 @@ body.patient-info .card-grid {
   .service-nav-item h4 {
     font-size: 0.8rem;
   }
-  
-  .service-search input {
-    padding: 0.8rem 0.8rem 0.8rem 2.5rem;
-  }
+
 }
 
-/* =============================================================================
-   REVIEWS PAGE ENHANCED STYLES
-   ============================================================================= */
-
-/* Review summary container */
-.review-summary-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  background: white;
-  padding: 3rem;
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(14, 54, 90, 0.1);
-  margin-bottom: 3rem;
-}
-
-.main-rating {
-  text-align: center;
-  padding: 2rem;
-  background: var(--porcelain);
-  border-radius: 12px;
-}
 
 .rating-number {
   font-size: 4rem;
@@ -8106,27 +5284,6 @@ body.patient-info .card-grid {
   line-height: 1;
 }
 
-.rating-stars {
-  font-size: 2rem;
-  color: var(--color-star);
-  margin: 1rem 0;
-  font-family: Arial, Helvetica, Roboto, "Segoe UI", sans-serif;
-  line-height: 1;
-}
-
-.rating-text {
-  font-size: 1.2rem;
-  color: var(--cool-gray);
-  font-weight: 600;
-}
-
-/* Rating breakdown */
-.rating-breakdown {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  padding: 1rem;
-}
 
 .rating-row {
   display: grid;
@@ -8135,93 +5292,6 @@ body.patient-info .card-grid {
   gap: 1rem;
 }
 
-.stars-label {
-  font-size: 0.9rem;
-  color: var(--cool-gray);
-}
-
-.rating-bar {
-  height: 10px;
-  background: #E9EFF5;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.rating-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #FBBC05 0%, #34A853 100%);
-  border-radius: 4px;
-  transition: width 0.3s ease;
-}
-
-.rating-count {
-  font-size: 0.9rem;
-  color: var(--cool-gray);
-  text-align: right;
-}
-
-/* Platform reviews */
-.platform-reviews {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.platform-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem;
-  background: var(--porcelain);
-  border-radius: 12px;
-  border-left: 4px solid var(--sky-blue);
-}
-
-.platform-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 600;
-  color: var(--slate-ink);
-}
-
-.platform-rating {
-  font-weight: 600;
-  color: var(--dallas-navy);
-}
-
-.platform-rating .stars {
-  color: var(--color-star) !important;
-  font-family: Arial, Helvetica, Roboto, "Segoe UI", sans-serif;
-  line-height: 1;
-}
-
-.platform-count {
-  font-size: 0.9rem;
-  color: var(--cool-gray);
-}
-
-/* Success stories */
-.success-stories {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
-
-.story-card {
-  background: white;
-  border-radius: 16px;
-  padding: 2.5rem;
-  box-shadow: 0 8px 32px rgba(14, 54, 90, 0.1);
-  border-left: 5px solid var(--mint);
-  transition: all 0.3s ease;
-}
-
-.story-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 48px rgba(14, 54, 90, 0.15);
-}
 
 .story-header {
   display: flex;
@@ -8230,41 +5300,6 @@ body.patient-info .card-grid {
   margin-bottom: 2rem;
 }
 
-.patient-info h3 {
-  color: var(--dallas-navy);
-  margin-bottom: 0.5rem;
-  font-family: Georgia, 'Times New Roman', serif;
-}
-
-.patient-name {
-  color: var(--cool-gray);
-  margin-bottom: 0.25rem;
-  font-weight: 500;
-}
-
-.treatment-type {
-  color: var(--sky-blue);
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.story-rating {
-  text-align: right;
-}
-
-.story-rating .stars {
-  color: var(--color-star) !important;
-  font-size: 1.2rem;
-  margin-bottom: 0.25rem;
-  font-family: Arial, Helvetica, Roboto, "Segoe UI", sans-serif;
-  line-height: 1;
-}
-
-.verified {
-  color: var(--mint);
-  font-size: 0.8rem;
-  font-weight: 500;
-}
 
 .story-content blockquote {
   font-size: 1.1rem;
@@ -8284,15 +5319,6 @@ body.patient-info .card-grid {
   border-top: 1px solid var(--cloud);
 }
 
-.treatment-timeline {
-  color: var(--cool-gray);
-  font-weight: 500;
-}
-
-.story-highlight {
-  color: var(--dallas-navy);
-  font-weight: 500;
-}
 
 /* Reviews grid */
 .reviews-grid {
@@ -8302,149 +5328,16 @@ body.patient-info .card-grid {
   margin-bottom: 3rem;
 }
 
-.review-card {
-  background: white;
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 4px 16px rgba(14, 54, 90, 0.08);
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-}
-
-.review-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(14, 54, 90, 0.15);
-  border-color: var(--sky-blue);
-}
-
-.review-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1.5rem;
-}
-
-.reviewer-name {
-  font-weight: 600;
-  color: var(--dallas-navy);
-  margin-bottom: 0.25rem;
-}
-
-.review-date {
-  color: var(--cool-gray);
-  font-size: 0.9rem;
-}
-
-.review-rating {
-  text-align: right;
-}
-
-.review-rating .stars {
-  color: var(--color-star) !important;
-  font-size: 1.1rem;
-  margin-bottom: 0.25rem;
-  font-family: Arial, Helvetica, Roboto, "Segoe UI", sans-serif;
-  line-height: 1;
-}
-
-.platform-badge {
-  padding: 0.25rem 0.5rem;
-  border-radius: 12px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.platform-badge.google {
-  background: #4285F4;
-  color: white;
-}
-
-.platform-badge.facebook {
-  background: #1877F2;
-  color: white;
-}
-
-.review-card blockquote {
-  color: var(--slate-ink);
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  font-style: italic;
-}
-
-.review-tags {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.tag {
-  background: var(--porcelain);
-  color: var(--dallas-navy);
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-/* Load more section */
-.load-more-section {
-  background: var(--porcelain);
-  padding: 3rem 2rem;
-  border-radius: 16px;
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.load-more-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.load-more-btn {
-  background: var(--sky-blue);
-  color: white !important;
-  padding: 1rem 2rem;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  display: inline-block;
-  border: 2px solid var(--sky-blue);
-}
-
-.load-more-btn:hover {
-  background: var(--dallas-navy);
-  border-color: var(--dallas-navy);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(14, 54, 90, 0.3);
-}
-
-.review-count-info {
-  color: var(--cool-gray);
-  font-size: 0.9rem;
-}
 
 /* Mobile responsive reviews */
 @media (max-width: 640px) {
-  .review-summary-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-    padding: 1.25rem;
-  }
+
   
   .rating-row {
     grid-template-columns: 84px 1fr 44px;
     gap: 0.65rem;
   }
-  
-  .stars-label,
-  .rating-count {
-    font-size: 0.95rem;
-  }
+
   
   .rating-number {
     font-size: 3rem;
@@ -8466,10 +5359,7 @@ body.patient-info .card-grid {
 }
 
 @media (max-width: 480px) {
-  .story-card,
-  .review-card {
-    padding: 1.5rem;
-  }
+
   
   .rating-number {
     font-size: 2.5rem;
@@ -8481,42 +5371,6 @@ body.patient-info .card-grid {
   }
 }
 
-/* =============================================================================
-   BLOG PAGE STRUCTURE & STYLING
-   ============================================================================= */
-
-.blog-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.blog-hero {
-  background: linear-gradient(135deg, var(--dallas-navy) 0%, var(--sky-blue) 100%);
-  color: white;
-  text-align: center;
-  padding: 4rem 1rem;
-  position: relative;
-  margin-bottom: 3rem;
-}
-
-.blog-hero h1 {
-  color: white !important;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(2rem, 5vw, 2.5rem);
-  margin: 0 0 1rem;
-  line-height: 1.2;
-}
-
-.blog-hero p {
-  color: rgba(255, 255, 255, 0.92) !important;
-  font-size: clamp(1.1rem, 2vw, 1.3rem);
-  margin: 0 0 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /* Blog grid layout */
 .blog-grid {
   display: grid;
@@ -8525,215 +5379,22 @@ body.patient-info .card-grid {
   margin-bottom: 3rem;
 }
 
-.blog-card {
-  background: white;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(14, 54, 90, 0.08);
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-}
-
-.blog-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(14, 54, 90, 0.15);
-  border-color: var(--sky-blue);
-}
-
-.blog-card .featured-image {
-  height: 200px;
-  background: var(--cloud);
-  overflow: hidden;
-  position: relative;
-}
-
-.blog-card .featured-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
 .blog-card .card-content {
   padding: 1.5rem;
 }
 
-.blog-card .post-meta {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-  color: var(--cool-gray);
-}
-
-.blog-card .post-date {
-  color: var(--sky-blue);
-  font-weight: 600;
-}
-
-.blog-card .post-category {
-  background: var(--porcelain);
-  color: var(--dallas-navy);
-  padding: 0.25rem 0.5rem;
-  border-radius: 12px;
-  font-weight: 500;
-}
-
-.blog-card h3 {
-  color: var(--dallas-navy) !important;
-  margin-bottom: 1rem;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.3rem;
-  line-height: 1.3;
-}
-
-.blog-card .excerpt {
-  color: var(--cool-gray);
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.blog-card .read-more {
-  color: var(--sky-blue);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.2s ease;
-}
-
-.blog-card .read-more:hover {
-  color: var(--dallas-navy);
-}
-
-.blog-card a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.blog-card a:hover h3 {
-  color: var(--sky-blue) !important;
-}
-
-/* Blog sidebar */
-.blog-sidebar {
-  background: white;
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 4px 16px rgba(14, 54, 90, 0.08);
-  margin-bottom: 2rem;
-}
-
-.blog-sidebar h4 {
-  color: var(--dallas-navy);
-  margin-bottom: 1rem;
-  font-family: Georgia, 'Times New Roman', serif;
-}
-
-.blog-sidebar .widget {
-  margin-bottom: 2rem;
-}
-
-.blog-sidebar .widget:last-child {
-  margin-bottom: 0;
-}
-
-/* Blog search */
-.blog-search {
-  position: relative;
-}
-
-.blog-search input {
-  width: 100%;
-  padding: 0.75rem 1rem 0.75rem 2.5rem;
-  border: 2px solid var(--cloud);
-  border-radius: 25px;
-  font-size: 1rem;
-  transition: border-color 0.2s ease;
-}
-
-.blog-search input:focus {
-  outline: none;
-  border-color: var(--sky-blue);
-}
-
-.blog-search::before {
-  content: "🔍";
-  position: absolute;
-  left: 0.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1rem;
-}
-
-/* Blog categories widget */
-.blog-categories {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.blog-categories li {
-  margin-bottom: 0.5rem;
-}
-
-.blog-categories a {
-  color: var(--cool-gray);
-  text-decoration: none;
-  padding: 0.5rem 0;
-  display: block;
-  border-bottom: 1px solid var(--cloud);
-  transition: color 0.2s ease;
-}
-
-.blog-categories a:hover {
-  color: var(--sky-blue);
-}
-
-/* Blog pagination */
-.blog-pagination {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin: 3rem 0;
-}
-
-.blog-pagination a,
-.blog-pagination span {
-  padding: 0.75rem 1rem;
-  border: 2px solid var(--cloud);
-  border-radius: 8px;
-  text-decoration: none;
-  color: var(--cool-gray);
-  transition: all 0.2s ease;
-  min-width: 44px;
-  text-align: center;
-}
-
-.blog-pagination a:hover {
-  border-color: var(--sky-blue);
-  color: var(--sky-blue);
-}
-
-.blog-pagination .current {
-  background: var(--sky-blue);
-  border-color: var(--sky-blue);
-  color: white;
-}
 
 @media (max-width: 768px) {
   .blog-grid {
     grid-template-columns: 1fr;
   }
-  
-  .blog-hero {
-    padding: 3rem 1rem;
-  }
+
   
   .blog-card .card-content {
     padding: 1rem;
   }
-  
-  .blog-sidebar {
-    padding: 1.5rem;
-  }
+
 }
 
 /* =============================================================================
@@ -8749,18 +5410,6 @@ body.patient-info .card-grid {
   margin: 0 auto;
 }
 
-.contact-form h1 {
-  margin: 0 0 0.25rem;
-  text-align: center;
-  color: var(--dallas-navy);
-  font-family: Georgia, 'Times New Roman', serif;
-}
-
-.contact-form .intro {
-  text-align: center;
-  margin: 0 0 1.75rem;
-  color: var(--cool-gray);
-}
 
 /* Form layout */
 .form-row {
@@ -8770,129 +5419,6 @@ body.patient-info .card-grid {
   margin-bottom: 1rem;
 }
 
-.form-group {
-  display: grid;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.form-group label {
-  font-weight: 600;
-  color: var(--slate-ink);
-}
-
-.form-control,
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="number"],
-select,
-textarea {
-  padding: 0.75rem 1rem;
-  border: 2px solid var(--cloud);
-  border-radius: 8px;
-  font-size: 1rem;
-  font-family: inherit;
-  background: white;
-  transition: all 0.2s ease;
-  width: 100%;
-  box-sizing: border-box;
-  min-height: 44px;
-}
-
-.form-control:focus,
-input:focus,
-select:focus,
-textarea:focus {
-  outline: 3px solid rgba(0, 119, 182, 0.35);
-  border-color: var(--sky-blue);
-}
-
-.form-control:hover,
-input:hover,
-select:hover,
-textarea:hover {
-  border-color: var(--sky-blue);
-}
-
-/* Error states */
-.error {
-  color: var(--coral);
-  font-size: 0.9rem;
-  min-height: 1.2em;
-}
-
-.invalid .form-control,
-.invalid input,
-.invalid select,
-.invalid textarea {
-  border-color: var(--coral);
-}
-
-/* Form buttons */
-.form-button {
-  background: var(--sky-blue);
-  color: white !important;
-  padding: 0.75rem 1.5rem;
-  border: 2px solid var(--sky-blue);
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  min-height: 44px;
-}
-
-.form-button:hover,
-.form-button:focus {
-  background: var(--dallas-navy);
-  border-color: var(--dallas-navy);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(14, 54, 90, 0.3);
-}
-
-.button-group {
-  display: flex;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-top: 1.25rem;
-  flex-wrap: wrap;
-}
-
-/* Form disclaimers */
-.disclaimer {
-  margin-top: 1rem;
-  text-align: center;
-  color: var(--cool-gray);
-  font-size: 0.9rem;
-}
-
-/* Honeypot field (hidden) */
-.hp-wrap {
-  position: absolute;
-  left: -9999px;
-  top: -9999px;
-  height: 0;
-  width: 0;
-  overflow: hidden;
-}
-
-/* Math challenge */
-.challenge {
-  background: white;
-  border: 1px dashed #c7d2fe;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  margin: 1rem 0;
-}
-
-/* Captcha container */
-.captcha {
-  margin: 1rem 0;
-  display: flex;
-  justify-content: center;
-}
 
 /* Contact page specific sections */
 .contact-hero {
@@ -8903,18 +5429,6 @@ textarea:hover {
   margin-bottom: 3rem;
 }
 
-.contact-hero h1 {
-  color: white !important;
-  font-family: Georgia, 'Times New Roman', serif;
-  margin-bottom: 1rem;
-}
-
-.contact-hero p {
-  color: rgba(255, 255, 255, 0.92) !important;
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
 
 /* Contact info cards */
 .contact-info-grid {
@@ -8924,83 +5438,6 @@ textarea:hover {
   margin-bottom: 3rem;
 }
 
-.contact-info-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(14, 54, 90, 0.08);
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.contact-info-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(14, 54, 90, 0.15);
-}
-
-.contact-info-card .icon {
-  font-size: 3rem;
-  color: var(--sky-blue);
-  margin-bottom: 1rem;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  width: 100% !important;
-  height: auto !important;
-}
-
-.contact-info-card .icon img {
-  width: 48px;
-  height: 48px;
-  display: block;
-  margin: 0 auto;
-}
-
-.contact-info-card h3 {
-  color: var(--dallas-navy);
-  margin-bottom: 1rem;
-  font-family: Georgia, 'Times New Roman', serif;
-}
-
-.contact-info-card p {
-  color: var(--cool-gray);
-  margin-bottom: 1rem;
-}
-
-.contact-info-card a {
-  color: var(--sky-blue);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.contact-info-card a:hover {
-  color: var(--dallas-navy);
-}
-
-/* Office hours table */
-.hours-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1rem 0;
-}
-
-.hours-table th,
-.hours-table td {
-  padding: 0.75rem;
-  text-align: left;
-  border-bottom: 1px solid var(--cloud);
-}
-
-.hours-table th {
-  background: var(--porcelain);
-  color: var(--dallas-navy);
-  font-weight: 600;
-}
-
-.hours-table .closed {
-  color: var(--coral);
-  font-weight: 600;
-}
 
 @media (max-width: 720px) {
   .form-row {
@@ -9086,12 +5523,6 @@ textarea:hover {
   font-family: Georgia, 'Times New Roman', serif;
 }
 
-.faq-category p {
-  font-size: 0.82rem;
-  margin: 0;
-  opacity: 0.8;
-  display: none;
-}
 
 .faq-category-icon {
   font-size: 1rem;
@@ -9116,15 +5547,6 @@ textarea:hover {
   border-color: var(--sky-blue);
 }
 
-.faq-category.is-active .faq-category-icon,
-.faq-category[aria-current="true"] .faq-category-icon {
-  filter: brightness(200%);
-}
-
-.faq-category.is-active h3,
-.faq-category[aria-current="true"] h3 {
-  color: white;
-}
 
 /* Sticky FAQ categories on mobile */
 @media (max-width: 768px) {
@@ -9162,15 +5584,6 @@ textarea:hover {
   font-family: Georgia, 'Times New Roman', serif;
 }
 
-/* FAQ Accordion Items (Details/Summary) */
-#faq details,
-.faq-accordion details {
-  background: white;
-  border: 1px solid rgba(14, 54, 90, 0.12);
-  border-radius: 12px;
-  padding: 1rem;
-  margin: 0 0 0.75rem 0;
-}
 
 #faq summary,
 .faq-accordion summary {
@@ -9181,22 +5594,6 @@ textarea:hover {
   padding: 0.5rem 0;
 }
 
-#faq summary::-webkit-details-marker,
-.faq-accordion summary::-webkit-details-marker {
-  display: none;
-}
-
-#faq summary::after,
-.faq-accordion summary::after {
-  content: "▾";
-  float: right;
-  transition: transform 0.2s ease;
-}
-
-#faq details[open] summary::after,
-.faq-accordion details[open] summary::after {
-  transform: rotate(180deg);
-}
 
 #faq details > *:not(summary),
 .faq-accordion details > *:not(summary) {
@@ -9204,14 +5601,6 @@ textarea:hover {
   color: var(--slate-ink);
 }
 
-/* Div-based FAQ Items */
-.faq-item {
-  background: white;
-  border: 1px solid rgba(14, 54, 90, 0.12);
-  border-radius: 12px;
-  padding: 0.5rem 1rem;
-  margin: 0 0 0.75rem 0;
-}
 
 .faq-question {
   cursor: pointer;
@@ -9228,15 +5617,6 @@ textarea:hover {
   text-align: left;
 }
 
-.faq-question::after {
-  content: "▾";
-  margin-left: auto;
-  transition: transform 0.2s ease;
-}
-
-.faq-item.open .faq-question::after {
-  transform: rotate(180deg);
-}
 
 .faq-answer {
   display: none;
@@ -9245,43 +5625,6 @@ textarea:hover {
   padding: 0 0 1rem 0;
 }
 
-.faq-item.open .faq-answer,
-.faq-answer.show {
-  display: block;
-}
-
-/* FAQ Search */
-.faq-search {
-  margin: 1rem 0 2rem 0;
-  position: relative;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.faq-search input {
-  width: 100%;
-  padding: 1rem 1rem 1rem 3rem;
-  border: 2px solid var(--cloud);
-  border-radius: 25px;
-  font-size: 1rem;
-  transition: border-color 0.2s ease;
-  box-sizing: border-box;
-}
-
-.faq-search input:focus {
-  outline: none;
-  border-color: var(--sky-blue);
-}
-
-.faq-search::before {
-  content: "🔍";
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.2rem;
-}
 
 /* Emergency Highlight */
 .emergency-highlight {
@@ -9299,13 +5642,6 @@ textarea:hover {
   text-decoration: underline;
 }
 
-/* No Results Message */
-.no-results {
-  text-align: center;
-  padding: 2rem;
-  color: var(--cool-gray);
-  display: none;
-}
 
 .no-results h3 {
   color: var(--dallas-navy);
@@ -9336,31 +5672,6 @@ textarea:hover {
   }
 }
 
-/* =============================================================================
-   FOOTER COMPREHENSIVE IMPROVEMENTS
-   ============================================================================= */
-
-.footer,
-.site-footer {
-  background: var(--dallas-navy);
-  color: white;
-  padding: 2rem 1.5rem;
-  font-size: clamp(0.98rem, 0.32vw + 0.95rem, 1.04rem);
-  line-height: 1.65;
-  text-align: left !important;
-}
-
-.footer .footer-container,
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem;
-  text-align: left !important;
-}
 
 .footer .footer-column,
 .footer-column {
@@ -9369,28 +5680,6 @@ textarea:hover {
   min-width: 200px;
 }
 
-.footer h4,
-.footer-column h4 {
-  font-size: clamp(1rem, 0.35vw + 0.95rem, 1.15rem);
-  margin: 0 0 0.5rem;
-  color: white;
-  font-family: Georgia, 'Times New Roman', serif;
-}
-
-.footer ul,
-.footer .footer-column ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-align: left !important;
-}
-
-.footer p,
-.footer li,
-.footer a {
-  font-size: 1em;
-  text-align: left !important;
-}
 
 .footer a,
 .footer a:visited,
@@ -9399,22 +5688,6 @@ textarea:hover {
   text-decoration: underline;
 }
 
-.footer a:hover,
-.footer a:focus {
-  color: var(--footer-hover-color) !important;
-  text-decoration: underline;
-}
-
-/* Social media icons */
-.footer .social-links,
-.footer-social .social-links {
-  list-style: none;
-  display: flex;
-  gap: 12px;
-  padding: 0;
-  margin: 0.5rem 0 0 0;
-  flex-wrap: wrap;
-}
 
 .footer-social .social-links a {
   display: inline-flex;
@@ -9429,10 +5702,6 @@ textarea:hover {
   color: var(--sky-blue);
 }
 
-.footer-social .social-links svg {
-  width: 20px;
-  height: 20px;
-}
 
 /* Icons-only social links */
 .footer .icons-only {
@@ -9458,14 +5727,6 @@ textarea:hover {
   transform: translateY(-2px);
 }
 
-.footer .icons-only svg {
-  width: 20px !important;
-  height: 20px !important;
-}
-
-.footer .icons-only span {
-  display: none !important;
-}
 
 /* Footer copyright */
 .footer .copy {
@@ -9514,22 +5775,6 @@ textarea:hover {
   font-weight: 600;
 }
 
-.skip-to-content:focus {
-  transform: translateY(0.5rem);
-}
-
-/* Screen reader only content */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
@@ -9558,15 +5803,8 @@ textarea:hover {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  
-  html {
-    scroll-behavior: auto;
-  }
-  
-  #site-nav,
-  .nav-overlay {
-    transition: none;
-  }
+
+
 }
 
 /* Print styles */
@@ -9650,9 +5888,6 @@ a.btn,
 
 /* Prevent emergency animations that could cause accessibility issues */
 .emergency-call,
-.emergency-call-large {
-  animation: none !important;
-}
 
 /* Ensure Book Online button maintains visibility */
 .site-header .navbar {
@@ -9675,13 +5910,6 @@ a.btn,
   white-space: nowrap;
   flex-shrink: 0;
   margin-left: 0.25rem;
-}
-
-/* Final scroll lock body adjustment for mobile CTA */
-html.nav-locked,
-body.nav-locked {
-  overflow: hidden;
-  height: 100vh;
 }
 
 /* Ensure all interactive elements meet minimum touch target size */
@@ -9713,92 +5941,11 @@ input[type="button"],
   margin-bottom: 3rem;
 }
 
-.blog-card {
-  background: white;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(14, 54, 90, 0.08);
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-}
-
-.blog-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(14, 54, 90, 0.15);
-  border-color: var(--sky-blue);
-}
-
-.blog-card .featured-image {
-  height: 200px;
-  background: var(--cloud);
-  overflow: hidden;
-  position: relative;
-}
-
-.blog-card .featured-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
 .blog-card .card-content {
   padding: 1.5rem;
 }
 
-.blog-card .post-meta {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-  color: var(--cool-gray);
-}
-
-.blog-card .post-date {
-  color: var(--sky-blue);
-  font-weight: 600;
-}
-
-.blog-card .post-category {
-  background: var(--porcelain);
-  color: var(--dallas-navy);
-  padding: 0.25rem 0.5rem;
-  border-radius: 12px;
-  font-weight: 500;
-}
-
-.blog-card h3 {
-  color: var(--dallas-navy) !important;
-  margin-bottom: 1rem;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.3rem;
-  line-height: 1.3;
-}
-
-.blog-card .excerpt {
-  color: var(--cool-gray);
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.blog-card .read-more {
-  color: var(--sky-blue);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.2s ease;
-}
-
-.blog-card .read-more:hover {
-  color: var(--dallas-navy);
-}
-
-.blog-card a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.blog-card a:hover h3 {
-  color: var(--sky-blue) !important;
-}
 
 /* =============================================================================
    FAQ SPACING FIXES - Match Patient-Info Style
@@ -9901,10 +6048,6 @@ input[type="button"],
   display: none;
 }
 
-.faq-item.open .faq-answer,
-.faq-answer.show {
-  display: block;
-}
 
 /* Remove spacing between FAQ category sections */
 .faq-container > section {
@@ -10250,64 +6393,12 @@ input[type="button"],
    Spring Valley Dental Associates
    
    This file contains only unique styles not covered in styles.css
-   Removed duplicates and conflicting navigation rules
-   ============================================================================= */
-
-/* =============================================================================
-   BLOG SPECIFIC ENHANCEMENTS
-   ============================================================================= */
-
-/* Blog Categories Container */
-.blog-categories-container {
-  background: var(--porcelain, #F8F6F1);
-  padding: 2rem;
-  border-radius: 1rem;
-  margin-bottom: 2rem;
-  border-left: 4px solid var(--sky-blue, #0077B6);
-}
-
-.blog-categories-container h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: var(--dallas-navy, #0E365A);
-  font-family: Georgia, 'Times New Roman', serif;
-}
-
-.categories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-}
-
-.category-card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  border: 2px solid transparent;
-  cursor: pointer;
-}
-
-.category-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(14, 54, 90, 0.15);
-  border-color: var(--sky-blue, #0077B6);
-}
 
 .category-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   display: block;
   color: var(--sky-blue, #0077B6);
-}
-
-.category-card h3 {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: var(--dallas-navy, #0E365A);
 }
 
 /* Blog Grid Layout Override */
@@ -10574,31 +6665,6 @@ body.patient-info .info-section {
   border-radius: 0 !important;
 }
 
-/* FAQ items stack tightly */
-#faq details,
-.faq-accordion details,
-.faq-item {
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 1px solid #e5e7eb !important;
-  border-bottom: 0 !important;
-  background: white !important;
-  border-radius: 0 !important;
-}
-
-/* Round first and last FAQ items */
-#faq details:first-child,
-.faq-accordion details:first-child,
-.faq-item:first-child {
-  border-radius: 12px 12px 0 0 !important;
-}
-
-#faq details:last-child,
-.faq-accordion details:last-child,
-.faq-item:last-child {
-  border-radius: 0 0 12px 12px !important;
-  border-bottom: 1px solid #e5e7eb !important;
-}
 
 /* FAQ Summary/Question styling */
 #faq summary,
@@ -10631,12 +6697,6 @@ body.patient-info .info-section {
   float: none !important;
 }
 
-/* Rotate + to x when open */
-#faq details[open] summary::after,
-.faq-accordion details[open] summary::after,
-.faq-item.open .faq-question::after {
-  transform: translateY(-50%) rotate(45deg);
-}
 
 /* FAQ Answer/Content styling */
 #faq details > *:not(summary),
@@ -10649,23 +6709,6 @@ body.patient-info .info-section {
   border-top: 1px solid #e5e7eb;
 }
 
-.faq-answer {
-  display: none;
-}
-
-.faq-item.open .faq-answer,
-.faq-answer.show {
-  display: block;
-}
-
-/* Remove spacing between FAQ category sections */
-.faq-container > section {
-  margin: 0 !important;
-}
-
-.faq-container > section + section {
-  margin-top: 2rem !important;
-}
 
 /* FAQ Section headers */
 .faq-container h2 {
@@ -10676,9 +6719,6 @@ body.patient-info .info-section {
   border-bottom: 2px solid var(--sky-blue, #0077B6);
 }
 
-.faq-container h2:first-child {
-  margin-top: 0;
-}
 
 /* =============================================================================
    EMERGENCY PAGE SPECIFIC STYLES
@@ -10733,20 +6773,6 @@ body.patient-info .info-section {
   margin-top: 0.25rem; 
 }
 
-/* Emergency hero compact spacing */
-.page-emergency .emergency-hero h1 { 
-  margin-bottom: .4rem; 
-  line-height: 1.15; 
-}
-
-.page-emergency .emergency-hero p { 
-  margin: .2rem 0 .75rem; 
-  line-height: 1.35; 
-}
-
-.page-emergency .emergency-hero .button-group { 
-  margin: .75rem 0 0; 
-}
 
 /* Keep pills tidy on small screens */
 @media (max-width: 420px) {
@@ -10754,15 +6780,6 @@ body.patient-info .info-section {
     font-size: 0.8125rem; 
     padding: 0.2rem 0.5rem; 
   }
-}
-
-/* =============================================================================
-   REVIEW PAGE SPECIFIC STYLES
-   ============================================================================= */
-
-/* Review page specific adjustments - only unique styles not in main CSS */
-.review-summary-mobile-fix {
-  /* Any mobile-specific review fixes that aren't covered in styles.css */
 }
 
 /* =============================================================================
@@ -10809,139 +6826,21 @@ body.patient-info .info-section {
    ============================================================================= */
 /* Mobile navigation order and display fixes */
 @media (max-width: 768px) {
-  /* Ensure mobile sections are visible */
-  #site-nav .menu-header,
-  #site-nav .menu-ctas,
-  #site-nav .menu-section,
-  #site-nav .menu-footer {
-    display: block !important;
-  }
-  
-  /* Hide desktop links on mobile */
-  #site-nav .desktop-links {
-    display: none !important;
-  }
-  
-  /* Ensure proper spacing between sections */
-  #site-nav .menu-section {
-    border-bottom: 1px solid rgba(14, 54, 90, 0.08);
-    padding: 1rem 0;
-  }
-  
-  #site-nav .menu-section:last-of-type {
-    border-bottom: none;
-  }
-  
-  /* Style the new "Pages" section like other menu sections */
-  #site-nav .menu-section .menu-links {
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    display: block !important;
-  }
-  
-  #site-nav .menu-section .menu-links li {
-    margin: 0.25rem 0 !important;
-    list-style: none !important;
-  }
-  
-  #site-nav .menu-section .menu-links a {
-    display: block !important;
-    padding: 0.75rem 0.5rem !important;
-    text-decoration: none !important;
-    color: var(--color-text-primary) !important;
-    background: transparent !important;
-    border-radius: 6px !important;
-    font-weight: 500 !important;
-    transition: all 0.2s ease !important;
-    border: none !important;
-  }
-  
-  #site-nav .menu-section .menu-links a:hover,
-  #site-nav .menu-section .menu-links a:focus {
-    background: #f3f4f6 !important;
-    color: var(--sky-blue) !important;
-  }
-  
-  /* Intent grid styling consistency */
-  #site-nav .intent-grid {
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    display: block !important;
-  }
-  
-  #site-nav .intent-grid li {
-    margin: 0.25rem 0 !important;
-    list-style: none !important;
-  }
-  
-  #site-nav .intent-grid a {
-    display: block !important;
-    padding: 0.75rem 0.5rem !important;
-    text-decoration: none !important;
-    color: var(--color-text-primary) !important;
-    background: transparent !important;
-    border-radius: 6px !important;
-    font-weight: 500 !important;
-    transition: all 0.2s ease !important;
-    border: none !important;
-  }
-  
-  #site-nav .intent-grid a:hover,
-  #site-nav .intent-grid a:focus {
-    background: #f3f4f6 !important;
-    color: var(--sky-blue) !important;
-  }
-  
-  /* Section titles */
-  #site-nav .section-title {
-    font-size: 0.75rem !important;
-    color: #6b7280 !important;
-    margin: 0 0 0.75rem 0 !important;
-    font-weight: 600 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.5px !important;
-    padding: 0 0.5rem !important;
-  }
+
+
 }
 
 /* Desktop - show only desktop links */
 @media (min-width: 769px) {
-  #site-nav .menu-header,
-  #site-nav .menu-ctas,
-  #site-nav .menu-section,
-  #site-nav .menu-footer {
-    display: none !important;
-  }
-  
-  #site-nav .desktop-links {
-    display: flex !important;
-  }
+
+
 }
 
-/* Accessibility improvements */
-#site-nav .menu-links a:focus,
-#site-nav .intent-grid a:focus {
-  outline: 2px solid var(--sky-blue) !important;
-  outline-offset: 2px !important;
-}
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
-  #site-nav .menu-section {
-    border-bottom: 2px solid var(--color-text-primary) !important;
-  }
-  
-  #site-nav .menu-links a,
-  #site-nav .intent-grid a {
-    border: 1px solid transparent !important;
-  }
-  
-  #site-nav .menu-links a:hover,
-  #site-nav .intent-grid a:hover {
-    border-color: var(--color-text-primary) !important;
-  }
+
+
 }
 /* Prevent FAQ height jumping */
 .faq-item {

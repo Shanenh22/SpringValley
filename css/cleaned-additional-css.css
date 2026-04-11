@@ -3,64 +3,12 @@
    Spring Valley Dental Associates
    
    This file contains only unique styles not covered in styles.css
-   Removed duplicates and conflicting navigation rules
-   ============================================================================= */
-
-/* =============================================================================
-   BLOG SPECIFIC ENHANCEMENTS
-   ============================================================================= */
-
-/* Blog Categories Container */
-.blog-categories-container {
-  background: var(--porcelain, #F8F6F1);
-  padding: 2rem;
-  border-radius: 1rem;
-  margin-bottom: 2rem;
-  border-left: 4px solid var(--sky-blue, #0077B6);
-}
-
-.blog-categories-container h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: var(--dallas-navy, #0E365A);
-  font-family: Georgia, 'Times New Roman', serif;
-}
-
-.categories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-}
-
-.category-card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  border: 2px solid transparent;
-  cursor: pointer;
-}
-
-.category-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(14, 54, 90, 0.15);
-  border-color: var(--sky-blue, #0077B6);
-}
 
 .category-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   display: block;
   color: var(--sky-blue, #0077B6);
-}
-
-.category-card h3 {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: var(--dallas-navy, #0E365A);
 }
 
 /* Blog Grid Layout Override */
@@ -78,13 +26,8 @@
 }
 
 @media (max-width: 600px) {
-  .blog-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .categories-grid {
-    grid-template-columns: 1fr;
-  }
+
+
 }
 
 /* =============================================================================
@@ -138,24 +81,9 @@
   border: 2px solid transparent;
 }
 
-.form-option-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(14, 54, 90, 0.15);
-  border-color: var(--sky-blue, #0077B6);
-}
-
-.form-option-card h3 {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-weight: 600;
-  color: var(--dallas-navy, #0E365A);
-  margin-bottom: 12px;
-  font-size: 1.3rem;
-}
 
 @media (max-width: 768px) {
-  .contact-header {
-    padding: 2rem 1rem;
-  }
+
 
   .contact-header h2 {
     font-size: 1.75rem;
@@ -165,10 +93,6 @@
     padding: 2rem 1rem;
   }
 
-  .form-options-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
 
   .form-option-card {
     padding: 24px 16px;
@@ -176,17 +100,8 @@
 }
 
 @media (max-width: 480px) {
-  .contact-header h2 {
-    font-size: 1.5rem;
-  }
 
-  .form-container {
-    padding: 1.5rem 1rem;
-  }
 
-  .form-option-card {
-    padding: 20px 12px;
-  }
 }
 
 /* =============================================================================
@@ -217,12 +132,6 @@ body.patient-info .section {
   transition: all 0.3s ease;
 }
 
-.form-button.new-patient-btn:hover,
-.form-button.existing-patient-btn:hover {
-  background: var(--dallas-navy, #0E365A);
-  border-color: var(--dallas-navy, #0E365A);
-  color: white !important;
-}
 
 /* Dropdown Styling - Patient Info Plus Signs */
 .info-collapse > summary {
@@ -230,21 +139,6 @@ body.patient-info .section {
   padding-right: 2rem !important;
 }
 
-.info-collapse > summary::after {
-  content: '+' !important;
-  position: absolute !important;
-  right: 0 !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  font-size: 1.2rem !important;
-  font-weight: bold !important;
-  color: var(--sky-blue, #0077B6) !important;
-  transition: transform 0.3s ease !important;
-}
-
-.info-collapse[open] > summary::after {
-  transform: translateY(-50%) rotate(45deg) !important;
-}
 
 /* Stacked dropdown sections - Patient Info */
 body.patient-info .info-collapse {
@@ -256,19 +150,6 @@ body.patient-info .info-collapse {
   border-radius: 0 !important;
 }
 
-body.patient-info .info-collapse:first-child {
-  border-radius: 12px 12px 0 0 !important;
-}
-
-body.patient-info .info-collapse:last-child {
-  border-radius: 0 0 12px 12px !important;
-  border-bottom: 1px solid #e5e7eb !important;
-}
-
-body.patient-info .info-collapse:only-child {
-  border-radius: 12px !important;
-  border-bottom: 1px solid #e5e7eb !important;
-}
 
 body.patient-info details summary {
   margin: 0 !important;
@@ -277,11 +158,6 @@ body.patient-info details summary {
   border-bottom: 1px solid #e5e7eb;
 }
 
-body.patient-info .info-section {
-  padding: 1.5rem !important;
-  margin: 0 !important;
-  background: white !important;
-}
 
 /* Bottom CTA styling - Patient Info */
 .bottom-cta .button-primary,
@@ -304,15 +180,6 @@ body.patient-info .info-section {
   margin: 0.25rem;
 }
 
-.bottom-cta .button-primary:hover,
-.bottom-cta .button-secondary:hover,
-.contact-btn.primary:hover,
-.contact-btn.secondary:hover,
-.contact-btn.tertiary:hover {
-  background: var(--dallas-navy, #0E365A);
-  border-color: var(--dallas-navy, #0E365A);
-  color: white !important;
-}
 
 /* =============================================================================
    FAQ ACCORDION - SINGLE CLEAN VERSION (REMOVED ALL DUPLICATES)
@@ -417,9 +284,6 @@ body.patient-info .info-section {
   border-bottom: 2px solid var(--sky-blue, #0077B6);
 }
 
-.faq-container h2:first-child {
-  margin-top: 0;
-}
 
 /* Remove spacing between FAQ category sections */
 .faq-container > section {
@@ -499,17 +363,6 @@ body.patient-info .info-section {
   border-color: rgba(200, 134, 74, 0.35);
 }
 
-.severity-level.medium {
-  background: rgba(255, 193, 7, 0.16);
-  color: #8a6d00;
-  border-color: rgba(255, 193, 7, 0.35);
-}
-
-.severity-level.low {
-  background: rgba(143, 214, 200, 0.18);
-  color: #0e5b4e;
-  border-color: rgba(143, 214, 200, 0.35);
-}
 
 /* Spacing tweak under emergency headings */
 .emergency-card h3 + .severity-level { 
@@ -522,30 +375,10 @@ body.patient-info .info-section {
   line-height: 1.15; 
 }
 
-.page-emergency .emergency-hero p { 
-  margin: .2rem 0 .75rem; 
-  line-height: 1.35; 
-}
-
-.page-emergency .emergency-hero .button-group { 
-  margin: .75rem 0 0; 
-}
 
 /* Keep pills tidy on small screens */
 @media (max-width: 420px) {
-  .severity-level { 
-    font-size: 0.8125rem; 
-    padding: 0.2rem 0.5rem; 
-  }
-}
 
-/* =============================================================================
-   REVIEW PAGE SPECIFIC STYLES
-   ============================================================================= */
-
-/* Review page specific adjustments - only unique styles not in main CSS */
-.review-summary-mobile-fix {
-  /* Any mobile-specific review fixes that aren't covered in styles.css */
 }
 
 /* =============================================================================
@@ -1064,15 +897,6 @@ body.patient-info .info-section {
   font-size: 0.9rem;
 }
 
-.treatment-timeline {
-  color: var(--cool-gray);
-  font-weight: 500;
-}
-
-.story-highlight {
-  color: var(--dallas-navy);
-  font-weight: 500;
-}
 
 /* Review Platform Cards */
 .review-platform-card {
@@ -1316,15 +1140,6 @@ body.patient-info .info-section {
   gap: 1.5rem;
 }
 
-.platform-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem;
-  background: var(--porcelain);
-  border-radius: 12px;
-  border-left: 4px solid var(--sky-blue);
-}
 
 .platform-logo {
   display: flex;
