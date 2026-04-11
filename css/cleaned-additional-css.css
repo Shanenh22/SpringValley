@@ -870,9 +870,9 @@ body.patient-info details summary {
 .contact-btn.primary,
 .contact-btn.secondary,
 .contact-btn.tertiary {
-  background: var(--sky-blue, #0077B6);
+  background: var(--btn-bg, #C8864A);
   color: white !important;
-  border: 2px solid var(--sky-blue, #0077B6);
+  border: 2px solid var(--btn-bg, #C8864A);
   display: inline-flex;
   align-items: center;
   justify-content: center;
