@@ -21,13 +21,62 @@
 /* Responsive blog grid */
 @media (max-width: 1024px) {
   .blog-grid {
+
     grid-template-columns: repeat(2, 1fr);
-  }
+    }
+
+  .success-stories {
+
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+  .highlights-grid {
+
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    }
+
+  .testimonial-highlights {
+
+    padding: 2.5rem 1.5rem;
+    }
 }
 
 @media (max-width: 600px) {
+  .platform-item {
 
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 2rem 1.5rem;
+    }
 
+  .platform-logo {
+
+    justify-content: center;
+    min-width: auto;
+    }
+
+  .platform-rating {
+
+    justify-content: center;
+    }
+
+  .platform-rating .value {
+
+    font-size: 1.4rem;
+    }
+
+  .platform-rating .stars {
+
+    font-size: 1.2rem;
+    }
+
+  .platform-count {
+
+    text-align: center;
+    min-width: auto;
+    }
 }
 
 /* =============================================================================
@@ -83,25 +132,686 @@
 
 
 @media (max-width: 768px) {
-
-
   .contact-header h2 {
+
     font-size: 1.75rem;
-  }
+    }
 
   .form-container {
-    padding: 2rem 1rem;
-  }
 
+    padding: 2rem 1rem;
+    }
 
   .form-option-card {
+
     padding: 24px 16px;
-  }
+    }
+
+  .faq-question {
+
+    padding: 1rem 2.5rem 1rem 1rem;
+    }
+
+  .faq-question::after {
+
+    right: 1rem;
+    }
+
+  .faq-answer {
+
+    padding: 1rem;
+    }
+
+  /* Ensure navigation elements are properly styled */
+  #site-nav .menu-section h3.section-title {
+
+    color: var(--cool-gray, #5A6D80) !important;
+    font-size: 0.75rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    margin-bottom: 0.5rem !important;
+    padding: 0 0.5rem !important;
+    }
+
+  /* Consistent spacing for all menu sections */
+  #site-nav .menu-section {
+
+    margin-bottom: 0 !important;
+    padding: 1rem 0 !important;
+    }
+
+  /* Remove any bottom margins from the last section */
+  #site-nav .menu-section:last-of-type {
+
+    margin-bottom: 0 !important;
+    padding-bottom: 0.5rem !important;
+    }
+
+  .page-about .story-content {
+
+    display: block !important;
+    grid-template-columns: none !important;
+    gap: 1.5rem !important;
+    }
+
+  .page-about .story-text {
+
+    order: 2;
+    margin-bottom: 1.5rem;
+    }
+
+  .page-about .story-image {
+
+    order: 1;
+    width: 100% !important;
+    height: 250px !important;
+    margin-bottom: 1.5rem;
+    }
+
+  .page-about .story-text p {
+
+    text-align: left !important;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    }
+
+  .page-about .dentist-profiles {
+
+    gap: 2rem !important;
+    }
+
+  .page-about .dentist-card {
+
+    display: block !important;
+    grid-template-columns: none !important;
+    padding: 1.5rem !important;
+    text-align: center;
+    }
+
+  .page-about .dentist-image {
+
+    width: 200px !important;
+    height: 200px !important;
+    margin: 0 auto 1.5rem auto !important;
+    border-radius: 50% !important;
+    }
+
+  .page-about .dentist-info {
+
+    width: 100% !important;
+    }
+
+  .page-about .dentist-info h3 {
+
+    text-align: center !important;
+    margin-bottom: 0.5rem !important;
+    }
+
+  .page-about .dentist-title {
+
+    text-align: center !important;
+    margin-bottom: 1.5rem !important;
+    }
+
+  .page-about .credentials,
+  .page-about .specialties,
+  .page-about .personal-approach,
+  .page-about .memberships {
+
+    text-align: left !important;
+    margin-bottom: 1.5rem !important;
+    }
+
+  .page-about .credentials h4,
+  .page-about .specialties h4,
+  .page-about .personal-approach h4,
+  .page-about .memberships h4 {
+
+    text-align: left !important;
+    }
+
+  .page-about .credentials ul,
+  .page-about .specialties ul,
+  .page-about .memberships ul {
+
+    text-align: left !important;
+    padding-left: 1rem !important;
+    }
+
+  .page-about .personal-approach p {
+
+    text-align: left !important;
+    }
+
+  .page-about .benefits-grid {
+
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    }
+
+  .page-about .benefit-card {
+
+    padding: 1.5rem !important;
+    text-align: center !important;
+    }
+
+  .page-about .features-grid {
+
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    }
+
+  .page-about .feature-section {
+
+    padding: 1.5rem !important;
+    }
+
+  .page-about .practice-stats {
+
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+    padding: 1.5rem !important;
+    }
+
+  .page-about .stat-item {
+
+    text-align: center !important;
+    padding: 1rem !important;
+    }
+
+  .page-about .stat-number {
+
+    font-size: 2rem !important;
+    }
+
+  .page-about .content-section {
+
+    padding: 1.5rem 1rem !important;
+    overflow-x: hidden !important;
+    }
+
+  .page-about .content-section h2 {
+
+    text-align: center !important;
+    margin-bottom: 1.5rem !important;
+    }
+
+  .page-about .content-section p {
+
+    text-align: left !important;
+    line-height: 1.6 !important;
+    }
+
+  .page-about {
+
+    overflow-x: hidden !important;
+    }
+
+  .page-about * {
+
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    }
+
+  .page-about .section {
+
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    }
+
+  .site-nav.is-open ~ .hamburger {
+
+    display: none !important;
+    }
+
+  /* Alternative fix: ensure only one close button is visible */
+  .site-nav.is-open .hamburger {
+
+    display: none !important;
+    }
+
+  /* Make sure the menu-close button is the only visible close option */
+  .site-nav .menu-close {
+
+    display: block !important;
+    border: 0;
+    background: none;
+    font-size: 1.25rem;
+    line-height: 1;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    min-height: 44px;
+    min-width: 44px;
+    cursor: pointer;
+    color: var(--color-text-primary);
+    z-index: 9999;
+    }
+
+  /* Top CTA buttons in mobile nav - match sticky bar exactly */
+  #site-nav .menu-ctas {
+
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.5rem !important;
+    margin: 0.75rem 0 !important;
+    padding: 0 !important;
+    }
+
+  #site-nav .menu-cta {
+
+    display: grid !important;
+    place-items: center !important;
+    height: 48px !important;
+    border-radius: 12px !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    border: 2px solid transparent !important;
+    transition: all 0.2s ease !important;
+    min-height: 44px !important;
+    text-align: center !important;
+    }
+
+  /* Match the exact colors from sticky CTA bar */
+  #site-nav .menu-cta.call {
+
+    background: var(--sky-blue) !important;
+    color: white !important;
+    }
+
+  #site-nav .menu-cta.book {
+
+    background: var(--dallas-navy) !important;
+    color: white !important;
+    }
+
+  #site-nav .menu-cta.directions {
+
+    background: var(--color-neutral-medium) !important;
+    color: var(--color-text-primary) !important;
+    }
+
+  /* Hover effects matching sticky bar */
+  #site-nav .menu-cta:hover,
+  #site-nav .menu-cta:focus {
+
+    transform: translateY(-1px) !important;
+    box-shadow: 0 2px 8px rgba(14, 54, 90, 0.15) !important;
+    }
+
+  #site-nav .menu-cta:focus-visible {
+
+    outline: 3px solid var(--sky-blue) !important;
+    outline-offset: 2px !important;
+    }
+
+  .success-stories {
+
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    }
+
+  .story-card {
+
+    padding: 1rem;
+    }
+
+  .story-header {
+
+    flex-direction: column;
+    align-items: flex-start;
+    }
+
+  .platform-item {
+
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.75rem 1.5rem;
+    min-height: auto;
+    }
+
+  .platform-logo {
+
+    justify-content: center;
+    min-width: auto;
+    width: 100%;
+    }
+
+  .platform-rating {
+
+    justify-content: center;
+    width: 100%;
+    gap: 0.875rem;
+    }
+
+  .platform-rating .value {
+
+    font-size: 1.5rem;
+    min-width: auto;
+    }
+
+  .platform-count {
+
+    text-align: center;
+    min-width: auto;
+    width: 100%;
+    margin-top: 0.25rem;
+    }
+
+  #general-care,
+  #treatments,
+  #comfort,
+  #costs,
+  #post-op {
+
+    scroll-margin-top: 200px; /* Increased for mobile header + FAQ pills */
+    }
+
+  /* Ensure FAQ containers also have proper offset */
+  .faq-container {
+
+    scroll-margin-top: 200px;
+    }
+
+  /* Alternative: Use padding-top method for better mobile compatibility */
+  #general-care::before,
+  #treatments::before,
+  #comfort::before,
+  #costs::before,
+  #post-op::before {
+
+    content: "";
+    display: block;
+    height: 200px;
+    margin-top: -200px;
+    visibility: hidden;
+    pointer-events: none;
+    }
+
+  .faq-categories {
+
+    position: static !important; /* Remove sticky behavior */
+    top: auto !important;
+    z-index: auto !important;
+    }
+
+  body {
+
+    padding-top: var(--site-header-height);
+    }
+
+  .reviews-grid {
+
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    }
+
+  .review-card {
+
+    padding: 1.5rem !important;
+    }
+
+  .review-header {
+
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+    }
+
+  .review-rating {
+
+    align-items: flex-start !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    }
+
+  .rating-row {
+
+    grid-template-columns: 75px 1fr 45px !important;
+    gap: 10px !important;
+    }
+
+  .highlights-grid {
+
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+    }
+
+  .testimonial-highlights {
+
+    padding: 2rem 1rem !important;
+    }
+
+  .highlight-box .feature-list li {
+
+    display: block !important;
+    margin-bottom: 1rem !important;
+    padding-left: 1.5rem !important;
+    position: relative !important;
+    }
+
+  .highlight-box .feature-list li::before {
+
+    content: "✓" !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0.1rem !important;
+    background: var(--mint, #8FD6C8) !important;
+    color: var(--dallas-navy, #0E365A) !important;
+    border-radius: 50% !important;
+    width: 20px !important;
+    height: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: bold !important;
+    font-size: 0.8rem !important;
+    }
+
+  .highlight-box .feature-list li strong {
+
+    display: block !important;
+    margin-bottom: 0.25rem !important;
+    }
+
+  .patient-info h3 {
+
+    font-size: 1.1rem !important;
+    line-height: 1.25 !important;
+    }
+
+  .story-content blockquote {
+
+    font-size: 0.95rem !important;
+    padding-left: 0.75rem !important;
+    }
+
+  .story-rating {
+
+    gap: 0.75rem !important;
+    }
+
+  #site-nav .menu-ctas {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin: 0.75rem 0 0;
+    }
+
+  #site-nav .menu-cta svg {
+
+    flex-shrink: 0;
+    }
+
+  #site-nav .menu-cta.call {
+
+    background: var(--sky-blue, #0ea5e9);
+    color: #fff;
+    }
+
+  #site-nav .menu-cta:hover,
+  #site-nav .menu-cta:focus {
+
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+  /* Improve mobile drawer header spacing */
+  #site-nav .menu-header {
+
+    padding: 1rem 0 0.75rem;
+    }
+
+  /* Ensure close button is large enough for touch */
+  #site-nav .menu-close {
+
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    transition: background 0.15s ease;
+    }
+
+  #site-nav .menu-close:hover,
+  #site-nav .menu-close:focus {
+
+    background: rgba(0,0,0,0.08);
+    }
+
+  /* Better touch targets for all nav links */
+  #site-nav .menu-links a,
+  #site-nav .intent-grid a {
+
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.25rem;
+    }
 }
 
 @media (max-width: 480px) {
+  .page-about .story-image {
 
+    height: 200px !important;
+    }
 
+  .page-about .dentist-image {
+
+    width: 150px !important;
+    height: 150px !important;
+    }
+
+  .page-about .dentist-card {
+
+    padding: 1rem !important;
+    }
+
+  .page-about .content-section {
+
+    padding: 1rem 0.5rem !important;
+    }
+
+  .page-about .practice-stats {
+
+    padding: 1rem !important;
+    }
+
+  .page-about .benefit-card,
+  .page-about .feature-section {
+
+    padding: 1rem !important;
+    }
+
+  .platform-item {
+
+    padding: 1.5rem 1rem;
+    }
+
+  .platform-rating .value {
+
+    font-size: 1.3rem;
+    }
+
+  .platform-logo span {
+
+    font-size: 1.1rem;
+    }
+
+  .platform-rating {
+
+    gap: 1rem;
+    }
+
+  .platform-rating .stars {
+
+    font-size: 1.3rem;
+    }
+
+  .platform-count {
+
+    margin-top: 0.5rem;
+    }
+
+  .testimonial-highlights h2 {
+
+    font-size: 1.5rem;
+    }
+
+  .highlight-card {
+
+    padding: 1rem;
+    }
+
+  .review-card {
+
+    padding: 1rem !important;
+    }
+
+  .story-card {
+
+    padding: 1rem !important;
+    }
+
+  .rating-row {
+
+    grid-template-columns: 70px 1fr 40px !important;
+    gap: 8px !important;
+    }
+
+  .highlights-grid {
+
+    grid-template-columns: 1fr !important;
+    }
+
+  .patient-info h3 {
+
+    font-size: 1rem !important;
+    }
+
+  .story-content blockquote {
+
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    }
+
+  .patient-name,
+  .treatment-type {
+
+    font-size: 0.85rem !important;
+    }
+
+  .treatment-timeline,
+  .story-highlight {
+
+    font-size: 0.85rem !important;
+    }
 }
 
 /* =============================================================================
@@ -295,36 +1005,30 @@ body.patient-info details summary {
 }
 
 /* Mobile responsive adjustments */
-@media (max-width: 768px) {
-  .faq-question {
-    padding: 1rem 2.5rem 1rem 1rem;
-  }
-  
-  .faq-question::after {
-    right: 1rem;
-  }
-  
-  .faq-answer {
-    padding: 1rem;
-  }
-}
+
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   .faq-item {
+
     border: 2px solid var(--slate-ink, #24313A);
-  }
-  
+    }
+
   .faq-question:focus {
+
     outline-width: 3px;
-  }
+    }
 }
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .faq-question::after {
+
     transition: none;
-  }
+    }
+
+  .site-header {
+ transition: none;   }
 }
 
 /* =============================================================================
@@ -385,29 +1089,6 @@ body.patient-info details summary {
    MOBILE NAVIGATION - UPDATED FOR HTML STRUCTURE
    ============================================================================= */
 
-@media (max-width: 768px) {
-  /* Ensure navigation elements are properly styled */
-  #site-nav .menu-section h3.section-title {
-    color: var(--cool-gray, #5A6D80) !important;
-    font-size: 0.75rem !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.5px !important;
-    margin-bottom: 0.5rem !important;
-    padding: 0 0.5rem !important;
-  }
-  
-  /* Consistent spacing for all menu sections */
-  #site-nav .menu-section {
-    margin-bottom: 0 !important;
-    padding: 1rem 0 !important;
-  }
-  
-  /* Remove any bottom margins from the last section */
-  #site-nav .menu-section:last-of-type {
-    margin-bottom: 0 !important;
-    padding-bottom: 0.5rem !important;
-  }
-}
 
 /* =============================================================================
    UTILITY CLASSES
@@ -428,199 +1109,28 @@ body.patient-info details summary {
    ============================================================================= */
 
 /* Fix Our Story section on mobile */
-@media (max-width: 768px) {
-  .page-about .story-content {
-    display: block !important;
-    grid-template-columns: none !important;
-    gap: 1.5rem !important;
-  }
-  
-  .page-about .story-text {
-    order: 2;
-    margin-bottom: 1.5rem;
-  }
-  
-  .page-about .story-image {
-    order: 1;
-    width: 100% !important;
-    height: 250px !important;
-    margin-bottom: 1.5rem;
-  }
-  
-  .page-about .story-text p {
-    text-align: left !important;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-  }
-}
+
 
 /* Fix Dentist Cards on mobile */
-@media (max-width: 768px) {
-  .page-about .dentist-profiles {
-    gap: 2rem !important;
-  }
-  
-  .page-about .dentist-card {
-    display: block !important;
-    grid-template-columns: none !important;
-    padding: 1.5rem !important;
-    text-align: center;
-  }
-  
-  .page-about .dentist-image {
-    width: 200px !important;
-    height: 200px !important;
-    margin: 0 auto 1.5rem auto !important;
-    border-radius: 50% !important;
-  }
-  
-  .page-about .dentist-info {
-    width: 100% !important;
-  }
-  
-  .page-about .dentist-info h3 {
-    text-align: center !important;
-    margin-bottom: 0.5rem !important;
-  }
-  
-  .page-about .dentist-title {
-    text-align: center !important;
-    margin-bottom: 1.5rem !important;
-  }
-  
-  .page-about .credentials,
-  .page-about .specialties,
-  .page-about .personal-approach,
-  .page-about .memberships {
-    text-align: left !important;
-    margin-bottom: 1.5rem !important;
-  }
-  
-  .page-about .credentials h4,
-  .page-about .specialties h4,
-  .page-about .personal-approach h4,
-  .page-about .memberships h4 {
-    text-align: left !important;
-  }
-  
-  .page-about .credentials ul,
-  .page-about .specialties ul,
-  .page-about .memberships ul {
-    text-align: left !important;
-    padding-left: 1rem !important;
-  }
-  
-  .page-about .personal-approach p {
-    text-align: left !important;
-  }
-}
+
 
 /* Fix benefits grid on mobile */
-@media (max-width: 768px) {
-  .page-about .benefits-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1rem !important;
-  }
-  
-  .page-about .benefit-card {
-    padding: 1.5rem !important;
-    text-align: center !important;
-  }
-}
+
 
 /* Fix features grid on mobile */
-@media (max-width: 768px) {
-  .page-about .features-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
-  }
-  
-  .page-about .feature-section {
-    padding: 1.5rem !important;
-  }
-}
+
 
 /* Fix practice stats on mobile */
-@media (max-width: 768px) {
-  .page-about .practice-stats {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 1rem !important;
-    padding: 1.5rem !important;
-  }
-  
-  .page-about .stat-item {
-    text-align: center !important;
-    padding: 1rem !important;
-  }
-  
-  .page-about .stat-number {
-    font-size: 2rem !important;
-  }
-}
+
 
 /* Ensure all text content stays within viewport */
-@media (max-width: 768px) {
-  .page-about .content-section {
-    padding: 1.5rem 1rem !important;
-    overflow-x: hidden !important;
-  }
-  
-  .page-about .content-section h2 {
-    text-align: center !important;
-    margin-bottom: 1.5rem !important;
-  }
-  
-  .page-about .content-section p {
-    text-align: left !important;
-    line-height: 1.6 !important;
-  }
-}
+
 
 /* Fix any remaining overflow issues */
-@media (max-width: 768px) {
-  .page-about {
-    overflow-x: hidden !important;
-  }
-  
-  .page-about * {
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  
-  .page-about .section {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
-}
+
 
 /* Extra small screens */
-@media (max-width: 480px) {
-  .page-about .story-image {
-    height: 200px !important;
-  }
-  
-  .page-about .dentist-image {
-    width: 150px !important;
-    height: 150px !important;
-  }
-  
-  .page-about .dentist-card {
-    padding: 1rem !important;
-  }
-  
-  .page-about .content-section {
-    padding: 1rem 0.5rem !important;
-  }
-  
-  .page-about .practice-stats {
-    padding: 1rem !important;
-  }
-  
-  .page-about .benefit-card,
-  .page-about .feature-section {
-    padding: 1rem !important;
-  }
-}
+
 
 /* =============================================================================
    REVIEW PAGE — Patient Success Stories (mobile fixes)
@@ -674,40 +1184,82 @@ body.patient-info details summary {
 }
 
 /* Tablet */
-@media (max-width: 1024px) {
-  .success-stories {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+
 
 /* Mobile */
 @media (max-width: 640px) {
   .success-stories {
+
     grid-template-columns: 1fr; /* one card per row */
     gap: 1rem;
-  }
+    }
 
   .story-card {
+
     padding: 1rem;
-  }
+    }
 
   .story-header {
+
     flex-direction: column;       /* stack title/rating vertically */
     align-items: flex-start;
-  }
+    }
 
   .patient-info h3 {
+
     font-size: 1.1rem;
-  }
+    }
 
   .patient-name,
   .treatment-type {
+
     font-size: .95rem;
-  }
+    }
 
   .story-content blockquote {
+
     font-size: 1rem;
-  }
+    }
+
+  .highlights-grid {
+
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    }
+
+  .testimonial-highlights {
+
+    padding: 2rem 1rem;
+    }
+
+  .testimonial-highlights h2 {
+
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    }
+
+  .highlight-card {
+
+    padding: 1.25rem;
+    }
+
+  .highlight-icon {
+
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    }
+
+  .highlight-card h3 {
+
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    }
+
+  .highlight-quote {
+
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    }
 }
 
 /* =============================================================================
@@ -715,91 +1267,14 @@ body.patient-info details summary {
    ============================================================================= */
 
 /* Hide the hamburger menu when mobile drawer is open to prevent double X issue */
-@media (max-width: 768px) {
-  .site-nav.is-open ~ .hamburger {
-    display: none !important;
-  }
-  
-  /* Alternative fix: ensure only one close button is visible */
-  .site-nav.is-open .hamburger {
-    display: none !important;
-  }
-  
-  /* Make sure the menu-close button is the only visible close option */
-  .site-nav .menu-close {
-    display: block !important;
-    border: 0;
-    background: none;
-    font-size: 1.25rem;
-    line-height: 1;
-    position: absolute;
-    right: 0.5rem;
-    top: 0.5rem;
-    min-height: 44px;
-    min-width: 44px;
-    cursor: pointer;
-    color: var(--color-text-primary);
-    z-index: 9999;
-  }
-}
+
 
 /* =============================================================================
    TOP CTA STYLING TO MATCH BOTTOM STICKY CTAs
    ============================================================================= */
 
 /* Style top CTAs in mobile navigation to match bottom sticky bar */
-@media (max-width: 768px) {
-  /* Top CTA buttons in mobile nav - match sticky bar exactly */
-  #site-nav .menu-ctas {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 0.5rem !important;
-    margin: 0.75rem 0 !important;
-    padding: 0 !important;
-  }
-  
-  #site-nav .menu-cta {
-    display: grid !important;
-    place-items: center !important;
-    height: 48px !important;
-    border-radius: 12px !important;
-    text-decoration: none !important;
-    font-weight: 700 !important;
-    font-size: 0.9rem !important;
-    border: 2px solid transparent !important;
-    transition: all 0.2s ease !important;
-    min-height: 44px !important;
-    text-align: center !important;
-  }
-  
-  /* Match the exact colors from sticky CTA bar */
-  #site-nav .menu-cta.call {
-    background: var(--sky-blue) !important;
-    color: white !important;
-  }
-  
-  #site-nav .menu-cta.book {
-    background: var(--dallas-navy) !important;
-    color: white !important;
-  }
-  
-  #site-nav .menu-cta.directions {
-    background: var(--color-neutral-medium) !important;
-    color: var(--color-text-primary) !important;
-  }
-  
-  /* Hover effects matching sticky bar */
-  #site-nav .menu-cta:hover,
-  #site-nav .menu-cta:focus {
-    transform: translateY(-1px) !important;
-    box-shadow: 0 2px 8px rgba(14, 54, 90, 0.15) !important;
-  }
-  
-  #site-nav .menu-cta:focus-visible {
-    outline: 3px solid var(--sky-blue) !important;
-    outline-offset: 2px !important;
-  }
-}
+
 
 /* =============================================================================
    DESKTOP TOP CTA STYLING (IF NEEDED)
@@ -810,13 +1285,21 @@ body.patient-info details summary {
   /* Style for any top CTA sections on desktop */
   .top-cta-bar,
   .header-cta-bar {
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     max-width: 600px;
     margin: 0 auto;
     padding: 1rem;
-	}
+	  }
+
+  .site-header .site-links a.cta {
+
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    }
 }
 /* Success Stories Grid Layout */
 .success-stories {
@@ -983,21 +1466,7 @@ body.patient-info details summary {
 }
 
 /* Mobile Responsive */
-@media (max-width: 768px) {
-  .success-stories {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
 
-  .story-card {
-    padding: 1rem;
-  }
-
-  .story-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
 /* =============================================================================
    OPTION 1: ELEGANT COMPACT PATIENT SUCCESS STORIES
    ============================================================================= */
@@ -1098,23 +1567,10 @@ body.patient-info details summary {
 }
 
 /* Tablet */
-@media (max-width: 1024px) {
-  .success-stories {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-  }
-}
+
 
 /* Mobile */
-@media (max-width: 640px) {
-  .story-card {
-    padding: 1.25rem;
-  }
-  
-  .story-content blockquote {
-    padding-left: 0.75rem;
-  }
-}
+
 
 /* =============================================================================
    OPTION 2: COMPLETE REMOVAL (uncomment to use instead)
@@ -1188,139 +1644,36 @@ body.patient-info details summary {
 }
 
 /* Only stack on truly small screens (actual mobile devices) */
-@media (max-width: 600px) {
-  .platform-item {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-    padding: 2rem 1.5rem;
-  }
-  
-  .platform-logo {
-    justify-content: center;
-    min-width: auto;
-  }
-  
-  .platform-rating {
-    justify-content: center;
-  }
-  
-  .platform-rating .value {
-    font-size: 1.4rem;
-  }
-  
-  .platform-rating .stars {
-    font-size: 1.2rem;
-  }
-  
-  .platform-count {
-    text-align: center;
-    min-width: auto;
-  }
-}
+
 
 /* Very small mobile screens */
-@media (max-width: 480px) {
-  .platform-item {
-    padding: 1.5rem 1rem;
-  }
-  
-  .platform-rating .value {
-    font-size: 1.3rem;
-  }
-}
+
 /* Tablet adjustments - switch to stacked layout earlier */
-@media (max-width: 768px) {
-  .platform-item {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-    padding: 1.75rem 1.5rem;
-    min-height: auto;
-  }
-  
-  .platform-logo {
-    justify-content: center;
-    min-width: auto;
-    width: 100%;
-  }
-  
-  .platform-rating {
-    justify-content: center;
-    width: 100%;
-    gap: 0.875rem;
-  }
-  
-  .platform-rating .value {
-    font-size: 1.5rem;
-    min-width: auto;
-  }
-  
-  .platform-count {
-    text-align: center;
-    min-width: auto;
-    width: 100%;
-    margin-top: 0.25rem;
-  }
-}
+
 
 /* Mobile phones */
-@media (max-width: 480px) {
-  .platform-item {
-    padding: 1.5rem 1rem;
-    gap: 1.25rem;
-  }
-  
-  .platform-logo span {
-    font-size: 1.1rem;
-  }
-  
-  .platform-rating {
-    gap: 1rem;
-  }
-  
-  .platform-rating .value {
-    font-size: 1.6rem;
-  }
-  
-  .platform-rating .stars {
-    font-size: 1.3rem;
-  }
-  
-  .platform-count {
-    margin-top: 0.5rem;
-  }
-}
+
 
 /* Very small screens */
 @media (max-width: 380px) {
   .platform-item {
+
     padding: 1.25rem 0.75rem;
-  }
-  
+    }
+
   .platform-rating .value {
+
     font-size: 1.4rem;
-  }
-  
+    }
+
   .platform-rating .stars {
+
     font-size: 1.1rem;
-  }
+    }
 }
 
 /* Extra small screens */
-@media (max-width: 480px) {
-  .platform-item {
-    padding: 1.5rem 1rem;
-  }
-  
-  .platform-rating .value {
-    font-size: 1.5rem;
-  }
-  
-  .platform-rating .stars {
-    font-size: 1.2rem;
-  }
-}
+
 
 /* =============================================================================
    TESTIMONIAL HIGHLIGHTS - COMPACT DESIGN
@@ -1395,63 +1748,13 @@ body.patient-info details summary {
 }
 
 /* Tablet Layout */
-@media (max-width: 1024px) {
-  .highlights-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
-  }
-  
-  .testimonial-highlights {
-    padding: 2.5rem 1.5rem;
-  }
-}
+
 
 /* Mobile Layout */
-@media (max-width: 640px) {
-  .highlights-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .testimonial-highlights {
-    padding: 2rem 1rem;
-  }
-  
-  .testimonial-highlights h2 {
-    font-size: 1.75rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .highlight-card {
-    padding: 1.25rem;
-  }
-  
-  .highlight-icon {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .highlight-card h3 {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .highlight-quote {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-  }
-}
+
 
 /* Extra small screens */
-@media (max-width: 480px) {
-  .testimonial-highlights h2 {
-    font-size: 1.5rem;
-  }
-  
-  .highlight-card {
-    padding: 1rem;
-  }
-}
+
 /* =============================================================================
    FAQ NAVIGATION SCROLL OFFSET FIX
    Add this to your cleaned-additional-css.css file
@@ -1467,42 +1770,7 @@ body.patient-info details summary {
 }
 
 /* Mobile-specific scroll offset fixes */
-@media (max-width: 768px) {
-  #general-care,
-  #treatments,
-  #comfort,
-  #costs,
-  #post-op {
-    scroll-margin-top: 200px; /* Increased for mobile header + FAQ pills */
-  }
-  
-  /* Ensure FAQ containers also have proper offset */
-  .faq-container {
-    scroll-margin-top: 200px;
-  }
-  
-  /* Alternative: Use padding-top method for better mobile compatibility */
-  #general-care::before,
-  #treatments::before,
-  #comfort::before,
-  #costs::before,
-  #post-op::before {
-    content: "";
-    display: block;
-    height: 200px;
-    margin-top: -200px;
-    visibility: hidden;
-    pointer-events: none;
-  }
-}
 
-@media (max-width: 768px) {
-  .faq-categories {
-    position: static !important; /* Remove sticky behavior */
-    top: auto !important;
-    z-index: auto !important;
-  }
-}
 
 /* Hide the top CTA block inside the mobile menu */
 #site-nav .menu-ctas { 
@@ -1543,18 +1811,10 @@ body.patient-info details summary {
 }
 
 /* Respect reduced-motion preference */
-@media (prefers-reduced-motion: reduce) {
-  .site-header { transition: none; }
-}
+
 
 /* Desktop CTA visibility guard */
-@media (min-width: 769px) {
-  .site-header .site-links a.cta {
-    display: inline-flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-}
+
 
 /* Body padding offsets the fixed header; transitions with header */
 body {
@@ -1566,11 +1826,7 @@ body.header-hidden {
 }
 
 /* Mobile: keep 100px padding, fixed header already set above */
-@media (max-width: 768px) {
-  body {
-    padding-top: var(--site-header-height);
-  }
-}
+
 /* =============================================================================
    REVIEWS PAGE COMPLETE FIX - Add to end of cleaned-additional-css.css
    ============================================================================= */
@@ -1819,83 +2075,7 @@ body.header-hidden {
 }
 
 /* Mobile responsive overrides */
-@media (max-width: 768px) {
-  .reviews-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
-  }
-  
-  .success-stories {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
-  }
-  
-  .review-card {
-    padding: 1.5rem !important;
-  }
-  
-  .story-card {
-    padding: 1.5rem !important;
-  }
-  
-  .review-header {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 1rem !important;
-  }
-  
-  .review-rating {
-    align-items: flex-start !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    width: 100% !important;
-  }
-  
-  .platform-item {
-    flex-direction: column !important;
-    text-align: center !important;
-    gap: 1rem !important;
-    padding: 2rem 1.5rem !important;
-  }
-  
-  .platform-logo {
-    justify-content: center !important;
-    min-width: auto !important;
-  }
-  
-  .platform-rating {
-    justify-content: center !important;
-  }
-  
-  .platform-count {
-    text-align: center !important;
-    min-width: auto !important;
-  }
-  
-  .rating-row {
-    grid-template-columns: 75px 1fr 45px !important;
-    gap: 10px !important;
-  }
-}
 
-@media (max-width: 480px) {
-  .review-card {
-    padding: 1rem !important;
-  }
-  
-  .story-card {
-    padding: 1rem !important;
-  }
-  
-  .platform-item {
-    padding: 1.5rem 1rem !important;
-  }
-  
-  .rating-row {
-    grid-template-columns: 70px 1fr 40px !important;
-    gap: 8px !important;
-  }
-}
 
 /* Testimonial highlights grid */
 .testimonial-highlights {
@@ -1929,58 +2109,9 @@ body.header-hidden {
   border-color: var(--sky-blue, #0077B6) !important;
 }
 
-@media (max-width: 768px) {
-  .highlights-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 1rem !important;
-  }
-  
-  .testimonial-highlights {
-    padding: 2rem 1rem !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .highlights-grid {
-    grid-template-columns: 1fr !important;
-  }
-  
-  .highlight-card {
-    padding: 1rem !important;
-  }
-}
 
 /* Simple mobile fix for existing HTML structure */
-@media (max-width: 768px) {
-  .highlight-box .feature-list li {
-    display: block !important;
-    margin-bottom: 1rem !important;
-    padding-left: 1.5rem !important;
-    position: relative !important;
-  }
-  
-  .highlight-box .feature-list li::before {
-    content: "✓" !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 0.1rem !important;
-    background: var(--mint, #8FD6C8) !important;
-    color: var(--dallas-navy, #0E365A) !important;
-    border-radius: 50% !important;
-    width: 20px !important;
-    height: 20px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    font-weight: bold !important;
-    font-size: 0.8rem !important;
-  }
-  
-  .highlight-box .feature-list li strong {
-    display: block !important;
-    margin-bottom: 0.25rem !important;
-  }
-}
+
 /* =============================================================================
    PATIENT SUCCESS STORIES RESPONSIVE FIX - Add to cleaned-additional-css.css
    ============================================================================= */
@@ -1996,17 +2127,19 @@ body.header-hidden {
 /* Desktop: 2 columns for wider screens */
 @media (min-width: 900px) {
   .success-stories {
+
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 2.5rem !important;
-  }
+    }
 }
 
 /* Large desktop: 3 columns only on very wide screens */
 @media (min-width: 1400px) {
   .success-stories {
+
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 2rem !important;
-  }
+    }
 }
 
 /* Story card improvements */
@@ -2133,69 +2266,16 @@ body.header-hidden {
 }
 
 /* Mobile responsive adjustments */
-@media (max-width: 768px) {
-  .success-stories {
-    gap: 1.5rem !important;
-  }
-  
-  .story-card {
-    padding: 1.5rem !important;
-    min-height: 350px !important;
-  }
-  
-  .story-header {
-    gap: 0.75rem !important;
-    margin-bottom: 1rem !important;
-  }
-  
-  .patient-info h3 {
-    font-size: 1.1rem !important;
-    line-height: 1.25 !important;
-  }
-  
-  .story-content blockquote {
-    font-size: 0.95rem !important;
-    padding-left: 0.75rem !important;
-  }
-  
-  .story-rating {
-    gap: 0.75rem !important;
-  }
-}
 
-@media (max-width: 480px) {
-  .story-card {
-    padding: 1rem !important;
-    min-height: 300px !important;
-  }
-  
-  .patient-info h3 {
-    font-size: 1rem !important;
-  }
-  
-  .story-content blockquote {
-    font-size: 0.9rem !important;
-    line-height: 1.5 !important;
-  }
-  
-  .patient-name,
-  .treatment-type {
-    font-size: 0.85rem !important;
-  }
-  
-  .treatment-timeline,
-  .story-highlight {
-    font-size: 0.85rem !important;
-  }
-}
 
 /* Very wide screens - prevent cards from getting too wide */
 @media (min-width: 1600px) {
   .success-stories {
+
     max-width: 1400px !important;
     margin-left: auto !important;
     margin-right: auto !important;
-  }
+    }
 }
 
 /* Text wrapping and readability improvements */
@@ -2225,91 +2305,7 @@ body.header-hidden {
 }
 
 /* Mobile drawer CTA buttons */
-@media (max-width: 768px) {
-  #site-nav .menu-ctas {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
-    margin: 0.75rem 0 0;
-  }
 
-  #site-nav .menu-cta {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.2rem;
-    padding: 0.6rem 0.25rem;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.78rem;
-    min-height: 60px;
-    border: none;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
-
-  #site-nav .menu-cta svg {
-    flex-shrink: 0;
-  }
-
-  #site-nav .menu-cta.call {
-    background: var(--sky-blue, #0ea5e9);
-    color: #fff;
-  }
-
-  #site-nav .menu-cta.book {
-    background: var(--dallas-navy, #0e365a);
-    color: #fff;
-  }
-
-  #site-nav .menu-cta.directions {
-    background: #e8edf2;
-    color: var(--color-text-primary, #1a2530);
-  }
-
-  #site-nav .menu-cta:hover,
-  #site-nav .menu-cta:focus {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  }
-
-  #site-nav .menu-cta:focus-visible {
-    outline: 3px solid var(--sky-blue, #0ea5e9);
-    outline-offset: 2px;
-  }
-
-  /* Improve mobile drawer header spacing */
-  #site-nav .menu-header {
-    padding: 1rem 0 0.75rem;
-  }
-
-  /* Ensure close button is large enough for touch */
-  #site-nav .menu-close {
-    min-height: 44px;
-    min-width: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    border-radius: 8px;
-    transition: background 0.15s ease;
-  }
-
-  #site-nav .menu-close:hover,
-  #site-nav .menu-close:focus {
-    background: rgba(0,0,0,0.08);
-  }
-
-  /* Better touch targets for all nav links */
-  #site-nav .menu-links a,
-  #site-nav .intent-grid a {
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    padding: 0.5rem 0.25rem;
-  }
-}
 
 /* Reviews dynamic container */
 #recent-reviews {
@@ -2329,8 +2325,9 @@ body.header-hidden {
 
 @media (min-width: 640px) {
   #recent-reviews .reviews-grid {
+
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  }
+    }
 }
 
 #recent-reviews .review-card {
