@@ -8,24 +8,24 @@
   /* Design brief colors */
   --dallas-navy: #0E365A;
   --sky-blue: #0077B6;
-  --porcelain: #F7FAFC;
+  --porcelain: #F8F6F1;
   --cloud: #EEF2F6;
   --slate-ink: #24313A;
   --cool-gray: #5A6D80;
   --mint: #8FD6C8;
   --warm-sand: #E9DCCB;
-  --coral: #E46C5E;
+  --coral: #C8864A;
 
   /* Semantic color mapping */
   --color-primary: #0E365A;
   --color-primary-accent: #0077B6;
-  --color-neutral-light: #F7FAFC;
+  --color-neutral-light: #F8F6F1;
   --color-neutral-medium: #EEF2F6;
   --color-text-primary: #24313A;
   --color-text-secondary: #5A6D80;
   --color-success: #8FD6C8;
   --color-warning: #E9DCCB;
-  --color-alert: #E46C5E;
+  --color-alert: #C8864A;
   --color-star: #FBBC05;
   
   /* Navigation & Layout */
@@ -605,7 +605,7 @@ a.btn,
 .hero h1,
 .hero h2,
 .hero h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(2rem, 5vw, 2.5rem);
   margin: 0 0 0.5rem;
   line-height: 1.2;
@@ -813,7 +813,7 @@ main {
   color: var(--color-primary);
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 /* Highlight boxes */
@@ -1038,7 +1038,7 @@ textarea:focus {
   color: white !important;
   text-align: left !important;
   margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .cta-section p {
