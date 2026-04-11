@@ -170,8 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 <main id="main">
-
-  <!-- 1. Hero -->
+  <!-- Enhanced Hero Section -->
   <section class="hero" style="background-image:url('images/hero-background.png?v=20260319')">
     <h1>Your Trusted Dallas Dentist for Family, Cosmetic & Emergency Care</h1>
     <p>Compassionate, affordable dental care for every smile in Dallas. Our experienced team is ready to help you feel your best.</p>
@@ -181,29 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </section>
 
-  <!-- 2. Stats Banner — moved up from bottom to reinforce hero credibility immediately -->
-  <section class="content-section" aria-label="Practice recognition and statistics">
-    <div class="practice-stats">
-      <div class="stat-item">
-        <div class="stat-number">5.0</div>
-        <div class="stat-label">★★★★★ Google Rating</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">200+</div>
-        <div class="stat-label">Patient Reviews</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">25+</div>
-        <div class="stat-label">Years Serving Dallas</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">100%</div>
-        <div class="stat-label">Digital Technology</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. Services Overview -->
+  <!-- Enhanced Services Overview -->
   <section aria-labelledby="services-overview-heading" class="content-section">
     <h2 id="services-overview-heading">For us, going above and beyond is business as usual</h2>
     <p>Smile with confidence. Explore routine and cosmetic options and relieve pain fast with personalized care.</p>
@@ -238,7 +215,34 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </section>
 
-  <!-- 4. Why Choose Us -->
+  <!-- Enhanced Team Section -->
+  <section aria-labelledby="team-heading" class="content-section">
+  <h2 id="team-heading">Meet our Dentists</h2>
+  <div class="features-grid">
+
+    <div class="feature-section">
+      <div class="team-photo-wrap">
+        <img src="images/shokooh.webp" alt="Dr. Shokooh Aletaha" loading="lazy" />
+      </div>
+      <h3>Dr. Shokooh Aletaha</h3>
+      <p>Dr. Aletaha believes in clear explanations and conservative, long-lasting dentistry—so you feel confident at every step.</p>
+    </div>
+
+    <div class="feature-section">
+      <div class="team-photo-wrap">
+        <img src="images/nicole.webp" alt="Dr. Nicole Houshmand" loading="lazy" />
+      </div>
+      <h3>Dr. Nicole Houshmand</h3>
+      <p>Dr. Houshmand focuses on comfort and precision, pairing modern tools with a warm, friendly approach to care.</p>
+    </div>
+
+  </div>
+  <div class="button-group">
+    <a class="button-secondary" href="about.html">Learn more about our team</a>
+  </div>
+</section>
+
+  <!-- Enhanced Why Choose Us Section -->
   <section aria-labelledby="why-heading" class="content-section">
     <h2 id="why-heading">Why Dallas Patients Choose Us</h2>
     <div class="benefits-grid">
@@ -260,10 +264,14 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </section>
 
-  <!-- 5. Reviews — moved up to follow Why Choose Us while trust is top of mind -->
+  
+
+  <!-- Enhanced Reviews Section -->
   <section aria-labelledby="reviews-heading" class="content-section">
     <h2 id="reviews-heading">Patients say it best</h2>
     
+    
+      
       <div class="platform-reviews">
         <div class="platform-item">
           <div class="platform-logo">
@@ -281,6 +289,7 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
         </div>
       </div>
+    </div>
 
     <div id="recent-reviews" data-endpoint="data/reviews.json" aria-label="Patient reviews" aria-live="polite">
       <!-- Reviews loaded dynamically by reviews.js -->
@@ -293,34 +302,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </section>
 
-  <!-- 6. Meet our Dentists — moved down; patients engage with who after why -->
-  <section aria-labelledby="team-heading" class="content-section">
-    <h2 id="team-heading">Meet our Dentists</h2>
-    <div class="features-grid">
-
-      <div class="feature-section">
-        <div class="team-photo-wrap">
-          <img src="images/shokooh.webp" alt="Dr. Shokooh Aletaha" loading="lazy" />
-        </div>
-        <h3>Dr. Shokooh Aletaha</h3>
-        <p>Dr. Aletaha believes in clear explanations and conservative, long-lasting dentistry—so you feel confident at every step.</p>
-      </div>
-
-      <div class="feature-section">
-        <div class="team-photo-wrap">
-          <img src="images/nicole.webp" alt="Dr. Nicole Houshmand" loading="lazy" />
-        </div>
-        <h3>Dr. Nicole Houshmand</h3>
-        <p>Dr. Houshmand focuses on comfort and precision, pairing modern tools with a warm, friendly approach to care.</p>
-      </div>
-
-    </div>
-    <div class="button-group">
-      <a class="button-secondary" href="about.html">Learn more about our team</a>
-    </div>
-  </section>
-
-  <!-- 7. Location -->
+  <!-- Enhanced Location Section -->
   <section aria-labelledby="location-heading" class="content-section">
     <h2 id="location-heading">Visit our North Dallas office</h2>
     
@@ -345,7 +327,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </section>
 
-  <!-- 8. Blog Preview -->
+  <!-- Enhanced Blog Preview Section -->
   <section aria-labelledby="blog-heading" class="content-section">
     <h2 id="blog-heading">Latest Dental Health Tips</h2>
     <p>Stay informed with expert advice from our Dallas dental team.</p>
@@ -402,7 +384,29 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </section>
 
-  <!-- 9. Insurance & Financing CTA — commitment-stage, stays at bottom -->
+  <!-- Recognition Stats Banner -->
+  <section class="content-section" aria-label="Practice recognition and statistics">
+    <div class="practice-stats">
+      <div class="stat-item">
+        <div class="stat-number">5.0</div>
+        <div class="stat-label">★★★★★ Google Rating</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">200+</div>
+        <div class="stat-label">Patient Reviews</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">25+</div>
+        <div class="stat-label">Years Serving Dallas</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Digital Technology</div>
+      </div>
+    </div>
+  </section>
+	
+ <!-- Enhanced CTA Section for Insurance -->
   <section aria-labelledby="finance-heading" class="cta-section">
     <div class="cta-content">
       <h2 id="finance-heading">Insurance & flexible financing</h2>
@@ -454,6 +458,5 @@ document.addEventListener('DOMContentLoaded', function() {
 <script defer src="analytics.js?v=20260319"></script>
 <script defer src="js/cta-config.js?v=20260319"></script>
 <script defer src="js/menu-enhancements.js?v=20260319"></script>
-<script defer src="js/footer.js?v=20260319"></script>
-</body>
+<script defer src="js/footer.js?v=20260319"></script>	</body>
 </html>
