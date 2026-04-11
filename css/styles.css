@@ -1010,11 +1010,11 @@ a.btn {
   color: white !important;
 }
 
-/* Primary buttons - Sky Blue background */
+/* Primary buttons - Coral/Amber */
 .button-primary,
 .btn-primary {
-  background: var(--sky-blue);
-  border-color: var(--sky-blue);
+  background: var(--btn-bg, #C8864A);
+  border-color: var(--btn-bg, #C8864A);
   color: white !important;
 }
 
@@ -1028,11 +1028,11 @@ a.btn {
   transform: translateY(-1px);
 }
 
-/* Secondary buttons - Sky Blue background */
+/* Secondary buttons - Coral/Amber */
 .button-secondary,
 .btn-secondary {
-  background: var(--sky-blue);
-  border-color: var(--sky-blue);
+  background: var(--btn-bg, #C8864A);
+  border-color: var(--btn-bg, #C8864A);
   color: white !important;
 }
 
@@ -1276,7 +1276,7 @@ main {
 }
 
 .service-card a {
-  background: var(--sky-blue);
+  background: var(--btn-bg, #C8864A);
   color: white !important;
   text-decoration: none;
   font-weight: 600;
@@ -1285,7 +1285,7 @@ main {
   border-radius: 8px;
   text-align: center;
   transition: all 0.3s ease;
-  border: 2px solid var(--sky-blue);
+  border: 2px solid var(--btn-bg, #C8864A);
 }
 
 .service-card a:hover,
@@ -1300,9 +1300,9 @@ main {
   display: inline-block;
   padding: 0.65rem 1rem;
   border-radius: 10px;
-  background: var(--sky-blue) !important;
+  background: var(--btn-bg, #C8864A) !important;
   color: white !important;
-  border: 2px solid var(--sky-blue) !important;
+  border: 2px solid var(--btn-bg, #C8864A) !important;
   font-weight: 600;
   text-decoration: none !important;
 }
