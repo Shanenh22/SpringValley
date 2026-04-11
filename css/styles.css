@@ -11086,15 +11086,6 @@ body.patient-info .info-section {
    HOMEPAGE LAYOUT IMPROVEMENTS — added April 2026
    ============================================================================= */
 
-/* 1. Hero vertical breathing room */
-.hero {
-  padding: 4rem 1.5rem;
-}
-@media (min-width: 768px) {
-  .hero {
-    padding: 6rem 2rem;
-  }
-}
 
 /* 2. Team photo cards — remove left border accent, center content */
 [aria-labelledby="team-heading"] .feature-section {
