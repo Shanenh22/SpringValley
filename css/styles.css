@@ -1203,7 +1203,7 @@ main {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 1.5rem;
   overflow: hidden;
 }
@@ -1378,7 +1378,7 @@ main {
 /* Mini cards and quote grids */
 .mini-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
   gap: 1rem;
 }
 
@@ -1390,7 +1390,7 @@ main {
 
 .quote-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap: 1rem;
 }
 
@@ -1488,7 +1488,7 @@ textarea:focus {
 
 .form-row {
   display: grid;
-  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  grid-template-columns: repeat(2, minmax(min(220px, 100%), 1fr));
   gap: 1rem;
 }
 
@@ -1715,7 +1715,7 @@ textarea:focus {
 
 .google-reviews-static .reviews-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap: 1rem;
 }
 
@@ -2492,7 +2492,7 @@ footer {
 
 .pricing-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 2rem;
   margin: 2rem 0;
 }
@@ -2639,7 +2639,7 @@ footer {
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 2rem;
   margin: 3rem 0;
 }
@@ -2714,7 +2714,7 @@ footer {
 
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -2764,7 +2764,7 @@ footer {
 .page-about .about-stats {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
   align-items: stretch;
   margin: 0;
   padding: 0;
@@ -3154,7 +3154,7 @@ footer {
 /* Reviews Grid */
 .reviews-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
   gap: 2rem;
   margin-bottom: 3rem;
 }
@@ -3344,7 +3344,7 @@ body.patient-info .forms-container {
 /* Quick navigation grid */
 body.patient-info .quick-nav-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
   gap: 1rem;
   margin-bottom: 1.25rem;
 }
@@ -3744,7 +3744,7 @@ body.patient-info .card-grid {
 .page-about .about-stats {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
   align-items: stretch;
   margin: 0;
   padding: 0;
@@ -3797,7 +3797,7 @@ body.patient-info .card-grid {
 /* Quick navigation grid */
 body.patient-info .quick-nav-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
   gap: 1rem;
   margin-bottom: 1.25rem;
 }
@@ -3886,7 +3886,7 @@ body.patient-info .quick-nav-grid {
 .page-about .about-stats {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
   align-items: stretch;
   margin: 0;
   padding: 0;
@@ -4039,7 +4039,7 @@ body.patient-info .quick-nav-grid {
 /* Service categories navigation */
 .service-categories-nav {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
   gap: 1rem;
   margin: 2rem 0;
 }
@@ -4382,7 +4382,7 @@ body.patient-info .quick-nav-grid {
 /* Quick navigation grid */
 body.patient-info .quick-nav-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
   gap: 1rem;
   margin-bottom: 1.25rem;
 }
@@ -4471,7 +4471,7 @@ body.patient-info .quick-nav-grid {
 .page-about .about-stats {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
   align-items: stretch;
   margin: 0;
   padding: 0;
@@ -4540,7 +4540,7 @@ body.patient-info .quick-nav-grid {
 /* Service categories navigation */
 .service-categories-nav {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
   gap: 1rem;
   margin: 2rem 0;
 }
@@ -4611,7 +4611,7 @@ body.patient-info .quick-nav-grid {
 /* Reviews grid */
 .reviews-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
   gap: 2rem;
   margin-bottom: 3rem;
 }
@@ -4753,7 +4753,7 @@ body.patient-info .quick-nav-grid {
 /* Form layout */
 .form-row {
   display: grid;
-  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  grid-template-columns: repeat(2, minmax(min(220px, 100%), 1fr));
   gap: 1rem;
   margin-bottom: 1rem;
 }
@@ -4893,7 +4893,7 @@ textarea:hover {
 /* Contact info cards */
 .contact-info-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 2rem;
   margin-bottom: 3rem;
 }
@@ -5008,7 +5008,7 @@ textarea:hover {
 /* Quick navigation grid */
 body.patient-info .quick-nav-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
   gap: 1rem;
   margin-bottom: 1.25rem;
 }
@@ -5097,7 +5097,7 @@ body.patient-info .quick-nav-grid {
 .page-about .about-stats {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
   align-items: stretch;
   margin: 0;
   padding: 0;
@@ -5166,7 +5166,7 @@ body.patient-info .quick-nav-grid {
 /* Service categories navigation */
 .service-categories-nav {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
   gap: 1rem;
   margin: 2rem 0;
 }
@@ -5237,7 +5237,7 @@ body.patient-info .quick-nav-grid {
 /* Reviews grid */
 .reviews-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
   gap: 2rem;
   margin-bottom: 3rem;
 }
@@ -5270,7 +5270,7 @@ body.patient-info .quick-nav-grid {
 /* Form layout */
 .form-row {
   display: grid;
-  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  grid-template-columns: repeat(2, minmax(min(220px, 100%), 1fr));
   gap: 1rem;
   margin-bottom: 1rem;
 }
@@ -5289,7 +5289,7 @@ body.patient-info .quick-nav-grid {
 /* Contact info cards */
 .contact-info-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 2rem;
   margin-bottom: 3rem;
 }
@@ -5997,7 +5997,7 @@ input[type="button"],
 /* Form Options Grid */
 .form-options-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 24px;
   margin-bottom: 48px;
 }

@@ -111,7 +111,7 @@
 /* Form Options Grid */
 .form-options-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 24px;
   margin-bottom: 48px;
 }
@@ -1434,7 +1434,7 @@ body.patient-info details summary {
 
 .review-guidelines-box .mini-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
   gap: 1rem;
 }
 
@@ -1829,7 +1829,7 @@ body.header-hidden {
 /* Force override any existing review grid styles */
 .reviews-grid {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr)) !important;
   gap: 2rem !important;
   margin-bottom: 3rem !important;
 }
@@ -1988,7 +1988,7 @@ body.header-hidden {
 /* Success Stories Grid - ensure proper layout */
 .success-stories {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr)) !important;
   gap: 2rem !important;
   margin-bottom: 3rem !important;
 }
@@ -2082,7 +2082,7 @@ body.header-hidden {
 
 .highlights-grid {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)) !important;
   gap: 1.5rem !important;
   max-width: 1200px !important;
   margin: 0 auto !important;
@@ -2321,7 +2321,7 @@ body.header-hidden {
 @media (min-width: 640px) {
   #recent-reviews .reviews-grid {
 
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
     }
 }
 
