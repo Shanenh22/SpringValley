@@ -14,8 +14,8 @@
   --cool-gray: #5A6D80;
   --mint: #8FD6C8;
   --warm-sand: #E9DCCB;
-  --coral: #C8864A;
-  --btn-bg: #C8864A;   /* CTA button fill — amber */
+  --coral: #E87F24;
+  --btn-bg: #E87F24;   /* CTA button fill — amber */
 
   /* Semantic color mapping */
   --color-primary: #0E365A;
@@ -26,7 +26,7 @@
   --color-text-secondary: #5A6D80;
   --color-success: #8FD6C8;
   --color-warning: #E9DCCB;
-  --color-alert: #C8864A;
+  --color-alert: #E87F24;
   --color-star: #FBBC05;
   
   /* Navigation & Layout */
