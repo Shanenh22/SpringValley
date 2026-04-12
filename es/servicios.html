@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Servicios Dentales en Dallas — Hablamos Español | Spring Valley Dental</title>
-<meta name="description" content="Servicios dentales completos en Dallas, TX: emergencias, implantes, limpiezas, blanqueamiento, Invisalign, coronas y más. Personal bilingüe. Llame al (972) 852-2222."/>
+<meta name="description" content="Servicios dentales en Dallas, TX: emergencias, limpiezas, coronas y puentes, Invisalign, implantes, sedación y más. Personal bilingüe. (972) 852-2222."/>
 <meta name="robots" content="index, follow"/>
 <link href="https://springvalleydentistry.com/es/servicios.html" rel="canonical"/>
 <link rel="alternate" hreflang="en" href="https://springvalleydentistry.com/"/>
@@ -18,7 +18,7 @@
 <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Servicios Dentales en Dallas — Hablamos Español | Spring Valley Dental"/>
-<meta property="og:description" content="Servicios dentales completos en Dallas, TX: emergencias, implantes, limpiezas, blanqueamiento, Invisalign, coronas y más. Personal bilingüe. Llame al (972) 852-2222."/>
+<meta property="og:description" content="Servicios dentales en Dallas, TX: emergencias, limpiezas, coronas y puentes, Invisalign, implantes, sedación y más. Personal bilingüe. (972) 852-2222."/>
 <meta property="og:url" content="https://springvalleydentistry.com/es/servicios.html"/>
 <meta property="og:image" content="https://springvalleydentistry.com/images/building_front_with_logo.jpg"/>
 <meta name="twitter:card" content="summary_large_image"/>
@@ -28,15 +28,17 @@
 <link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" onload="this.rel='stylesheet'" rel="preload"/>
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/></noscript>
 <style>
-.es-lang-bar{background:var(--dallas-navy);color:rgba(255,255,255,.75);font-size:.82rem;padding:.4rem 1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
-.es-lang-bar a{color:var(--mint);text-decoration:none;}
-.es-lang-bar a:hover{text-decoration:underline;}
-.lang-toggle{display:inline-flex;gap:.5rem;align-items:center;font-size:.78rem;}
-.lang-toggle .active{color:var(--mint);font-weight:700;}
-.lang-toggle .sep{color:rgba(255,255,255,.25);}
-.habla-strip{background:var(--dallas-navy);padding:1.25rem 2rem;display:flex;align-items:center;justify-content:center;gap:1.25rem;flex-wrap:wrap;text-align:center;}
-.habla-strip .hs-text{color:var(--mint);font-size:1.15rem;font-weight:700;}
-.habla-strip .hs-sub{color:rgba(255,255,255,.78);font-size:.9rem;margin-top:.2rem;}
+/* ── Spanish section styles ──────────────────────────────────── */
+.es-back-bar{background:var(--dallas-navy);text-align:center;padding:.5rem 1rem;}
+.es-back-bar a{color:var(--mint);font-size:.82rem;font-weight:600;text-decoration:none;letter-spacing:.02em;}
+.es-back-bar a:hover{text-decoration:underline;}
+details.es-faq{border:1px solid rgba(14,54,90,.12);border-radius:10px;margin-bottom:.75rem;overflow:hidden;background:#fff;}
+details.es-faq summary{padding:1rem 1.25rem;font-weight:600;font-size:.97rem;color:var(--slate-ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;user-select:none;}
+details.es-faq summary::-webkit-details-marker{display:none;}
+details.es-faq summary::after{content:'+';font-size:1.4rem;font-weight:300;color:var(--sky-blue);flex-shrink:0;transition:transform .2s;}
+details.es-faq[open] summary::after{content:'−';}
+details.es-faq .faq-body{padding:0 1.25rem 1.1rem;font-size:.93rem;color:var(--cool-gray);line-height:1.75;}
+details.es-faq .faq-body a{color:var(--sky-blue);}
 .es-service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:1.5rem;}
 .es-card{background:#fff;border:1px solid rgba(14,54,90,.1);border-radius:14px;overflow:hidden;transition:box-shadow .2s,transform .2s;}
 .es-card:hover{box-shadow:0 8px 28px rgba(14,54,90,.12);transform:translateY(-2px);}
@@ -46,32 +48,11 @@
 .es-card-body p{font-size:.92rem;color:var(--cool-gray);line-height:1.65;margin-bottom:.75rem;}
 .es-card-body a{font-size:.9rem;font-weight:700;color:var(--sky-blue);text-decoration:none;}
 .es-card-body a:hover{text-decoration:underline;}
-.es-doctor-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:1.5rem;}
-.es-doc-card{text-align:center;}
-.es-doc-card .team-photo-wrap{margin-bottom:1rem;}
-.es-doc-card h3{font-size:1.1rem;font-weight:700;color:var(--slate-ink);margin-bottom:.2rem;}
-.es-doc-card .dr-role{font-size:.83rem;color:var(--sky-blue);font-weight:600;margin-bottom:.6rem;}
-.es-doc-card p{font-size:.92rem;color:var(--cool-gray);line-height:1.65;}
-.es-finance-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin-top:1.5rem;}
-.es-fin-card{background:#fff;border:1px solid rgba(14,54,90,.1);border-radius:14px;padding:1.5rem 1.25rem;}
-.es-fin-card .big-price{font-size:2.2rem;font-weight:700;color:var(--sky-blue);line-height:1;}
-.es-fin-card .big-price span{font-size:1rem;color:var(--cool-gray);font-weight:400;}
-.es-fin-card h3{font-size:1rem;font-weight:700;color:var(--slate-ink);margin:.5rem 0 .35rem;}
-.es-fin-card p{font-size:.88rem;color:var(--cool-gray);line-height:1.6;margin-bottom:.75rem;}
-.es-fin-card ul{list-style:none;padding:0;margin:0;}
-.es-fin-card li{font-size:.87rem;color:var(--cool-gray);padding:.28rem 0 .28rem 1.1rem;position:relative;}
-.es-fin-card li::before{content:'✓';position:absolute;left:0;color:#2a9d6e;font-weight:700;}
 .es-hours-tbl{width:100%;border-collapse:collapse;font-size:.92rem;}
 .es-hours-tbl tr{border-bottom:1px solid rgba(14,54,90,.08);}
 .es-hours-tbl td{padding:.55rem .2rem;color:var(--cool-gray);}
 .es-hours-tbl td:last-child{text-align:right;color:var(--slate-ink);font-weight:600;}
-.es-map{width:100%;height:280px;border-radius:12px;border:none;display:block;margin-top:1.25rem;}
-details.es-faq{border:1px solid rgba(14,54,90,.1);border-radius:10px;margin-bottom:.75rem;overflow:hidden;}
-details.es-faq summary{padding:1rem 1.25rem;font-weight:600;font-size:.97rem;color:var(--slate-ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;}
-details.es-faq summary::-webkit-details-marker{display:none;}
-details.es-faq summary::after{content:'+';font-size:1.3rem;color:var(--sky-blue);flex-shrink:0;}
-details.es-faq[open] summary::after{content:'−';}
-details.es-faq .faq-body{padding:0 1.25rem 1rem;font-size:.93rem;color:var(--cool-gray);line-height:1.7;}
+.es-map{width:100%;height:300px;border-radius:12px;border:none;display:block;margin-top:1.25rem;}
 .es-check-list{list-style:none;padding:0;margin:.75rem 0;}
 .es-check-list li{font-size:.93rem;color:var(--cool-gray);padding:.3rem 0 .3rem 1.3rem;position:relative;line-height:1.5;}
 .es-check-list li::before{content:'✓';position:absolute;left:0;color:#2a9d6e;font-weight:700;}
@@ -80,56 +61,40 @@ details.es-faq .faq-body{padding:0 1.25rem 1rem;font-size:.93rem;color:var(--coo
 .es-step-num{min-width:36px;height:36px;border-radius:50%;background:var(--sky-blue);color:#fff;font-weight:700;font-size:.95rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .es-step-body h3{font-size:1rem;font-weight:700;color:var(--slate-ink);margin:0 0 .25rem;}
 .es-step-body p{font-size:.9rem;color:var(--cool-gray);line-height:1.6;margin:0;}
-.es-ins-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.75rem;margin:1rem 0;}
+.es-ins-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:.75rem;margin:1rem 0;}
 .es-ins-badge{background:var(--cloud);border-radius:8px;padding:.6rem 1rem;font-size:.87rem;font-weight:600;color:var(--slate-ink);text-align:center;}
-.es-form label{display:block;font-size:.9rem;font-weight:600;color:var(--slate-ink);margin-bottom:.3rem;}
-.es-form input,.es-form select,.es-form textarea{width:100%;padding:.65rem .85rem;border:1.5px solid rgba(14,54,90,.18);border-radius:8px;font-size:.95rem;color:var(--slate-ink);background:#fff;transition:border-color .2s;box-sizing:border-box;font-family:inherit;}
-.es-form input:focus,.es-form select:focus,.es-form textarea:focus{outline:none;border-color:var(--sky-blue);box-shadow:0 0 0 3px rgba(0,119,182,.12);}
-.es-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.es-form .form-field{margin-bottom:1rem;}
-.es-form textarea{resize:vertical;min-height:110px;}
-.es-form .form-note{font-size:.82rem;color:var(--cool-gray);margin-top:.4rem;}
-.es-submit{background:var(--btn-bg,#C8864A);color:#fff;border:none;padding:.75rem 2rem;border-radius:.55rem;font-size:1rem;font-weight:700;cursor:pointer;transition:opacity .2s;width:100%;margin-top:.5rem;}
-.es-submit:hover{opacity:.88;}
-.es-success{display:none;background:#eafaf1;border:1px solid #2a9d6e;border-radius:10px;padding:1.25rem;color:#166534;font-weight:600;text-align:center;margin-top:1rem;}
+.es-fin-card{background:#fff;border:1px solid rgba(14,54,90,.1);border-radius:14px;padding:1.5rem 1.25rem;}
+.es-fin-card ul{list-style:none;padding:0;margin:.5rem 0;}
+.es-fin-card li{font-size:.87rem;color:var(--cool-gray);padding:.28rem 0 .28rem 1.1rem;position:relative;}
+.es-fin-card li::before{content:'✓';position:absolute;left:0;color:#2a9d6e;font-weight:700;}
+.es-icon-row{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;}
+.es-icon-row h2{margin:0;}
 .financing-logo-row{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;margin:1rem 0;}
-.financing-logo-row img{height:40px;object-fit:contain;}
-.es-icon-card{background:#fff;border:1px solid rgba(14,54,90,.1);border-radius:14px;padding:1.5rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:.75rem;}
-.es-icon-card h3{font-size:1rem;font-weight:700;color:var(--slate-ink);margin:0;}
-.es-icon-card p{font-size:.88rem;color:var(--cool-gray);line-height:1.6;margin:0;}
+.financing-logo-row img{height:38px;object-fit:contain;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;}
 @media(max-width:680px){
-  .es-form .form-row{grid-template-columns:1fr;}
-  .habla-strip{padding:1rem;gap:.75rem;}
-  .es-service-grid,.es-doctor-grid,.es-finance-grid{grid-template-columns:1fr;}
-  .es-ins-grid{grid-template-columns:repeat(2,1fr);}
-  .two-col-grid{grid-template-columns:1fr !important;}
-  .two-col-grid .flip-mobile{order:-1;}
+  .two-col{grid-template-columns:1fr!important;}
+  .two-col .img-col{order:-1;}
+  .es-service-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
 <body>
-<div class="es-lang-bar">
-  <span>Spring Valley Dental Associates &bull; Dallas, TX</span>
-  <div class="lang-toggle">
-    <a href="../" aria-label="Ver sitio en inglés">EN</a>
-    <span class="sep">|</span>
-    <span class="active" aria-current="page">ES</span>
-  </div>
-</div>
 <a class="skip-to-content" href="#main">Saltar al contenido</a>
-
 <header class="site-header" role="banner" id="site-header">
   <div class="top-bar">
     <span>Spring Valley Dental Associates &bull; 14228 Midway Rd, Suite 100, Dallas, TX 75244</span>
-    <a href="tel:+19728522222">Llamar: (972) 852-2222</a>
+    <div style="display:flex;align-items:center;gap:1.5rem;">
+      <a href="tel:+19728522222">Llamar: (972) 852-2222</a>
+      <a href="../" style="font-size:.8rem;font-weight:600;color:var(--mint);text-decoration:none;border:1px solid var(--mint);padding:.2rem .6rem;border-radius:4px;" aria-label="Ver sitio en inglés">&larr; Sitio en Inglés</a>
+    </div>
   </div>
   <div class="navbar">
-    <!-- LOGO: relative path so it works on GitHub Pages /SpringValley/ subpath -->
     <a class="logo" href="index.html" aria-label="Spring Valley Dental Associates — Inicio">
       <picture>
         <source media="(max-width:768px)" srcset="../images/spring-valley-logo-mobile.svg" type="image/svg+xml"/>
         <source media="(min-width:769px)" srcset="../images/spring-valley-logo-desktop.svg" type="image/svg+xml"/>
-        <img src="../images/spring-valley-logo-desktop.svg" alt="Spring Valley Dental Associates" loading="eager" fetchpriority="high"/>
+        <img src="../images/spring-valley-logo-desktop.svg" alt="Spring Valley Dental Associates" loading="eager" fetchpriority="high" style="height:var(--logo-height,56px);width:auto;"/>
       </picture>
     </a>
     <nav id="site-nav" class="site-nav" aria-label="Navegación principal" hidden>
@@ -147,16 +112,13 @@ details.es-faq .faq-body{padding:0 1.25rem 1rem;font-size:.93rem;color:var(--coo
         <div class="brand-row"><h2 class="practice-name">Spring Valley Dental</h2></div>
         <div class="menu-ctas" role="group" aria-label="Acciones rápidas">
           <a class="menu-cta call" href="tel:+19728522222" aria-label="Llamar">
-            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-            Llamar
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>Llamar
           </a>
           <a class="menu-cta book" href="contacto.html" aria-label="Hacer cita">
-            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
-            Cita
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>Cita
           </a>
-          <a class="menu-cta directions" href="https://www.google.com/maps/place/14228+Midway+Rd+%23100,+Dallas,+TX+75244" target="_blank" rel="noopener" aria-label="Cómo llegar">
-            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M21.71 11.29l-9-9a1 1 0 0 0-1.42 0l-9 9a1 1 0 0 0 0 1.42l9 9a1 1 0 0 0 1.42 0l9-9a1 1 0 0 0 0-1.42zM14 14.5V12h-4v3H8v-4a1 1 0 0 1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>
-            Mapa
+          <a class="menu-cta directions" href="https://www.google.com/maps/place/14228+Midway+Rd+%23100,+Dallas,+TX+75244" target="_blank" rel="noopener" aria-label="Mapa">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M21.71 11.29l-9-9a1 1 0 0 0-1.42 0l-9 9a1 1 0 0 0 0 1.42l9 9a1 1 0 0 0 1.42 0l9-9a1 1 0 0 0 0-1.42zM14 14.5V12h-4v3H8v-4a1 1 0 0 1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>Mapa
           </a>
         </div>
       </div>
@@ -169,6 +131,10 @@ details.es-faq .faq-body{padding:0 1.25rem 1rem;font-size:.93rem;color:var(--coo
 <li><a href="contacto.html">Contacto</a></li>
 </ul>
       </div>
+      <div class="menu-section">
+        <h3 class="section-title">Sitio en inglés</h3>
+        <ul class="menu-links"><li><a href="../">&larr; Ver sitio completo en inglés</a></li></ul>
+      </div>
       <div class="menu-footer">
         <div class="practice-info">
           <p><strong>Spring Valley Dental Associates</strong></p>
@@ -179,7 +145,7 @@ details.es-faq .faq-body{padding:0 1.25rem 1rem;font-size:.93rem;color:var(--coo
     </nav>
     <div class="nav-overlay" id="nav-overlay"></div>
     <button class="hamburger" id="nav-toggle" type="button"
-            aria-controls="site-nav" aria-expanded="false" aria-label="Abrir menú de navegación">
+            aria-controls="site-nav" aria-expanded="false" aria-label="Abrir menú">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -195,55 +161,34 @@ details.es-faq .faq-body{padding:0 1.25rem 1rem;font-size:.93rem;color:var(--coo
   </div>
 </section>
 
+<!-- EMERGENCY -->
 <section class="content-section" id="emergencias" aria-labelledby="s-emerg">
-  <div class="two-col-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
+  <div class="two-col">
     <div>
-      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;"><img src="../images/icons/emergency.svg" alt="" aria-hidden="true" loading="lazy" width="36" height="36" style="width:36px;height:36px;"/><h2 id="s-emerg" style="margin:0;">Emergencias Dentales</h2></div>
+      <div class="es-icon-row"><img src="../images/icons/emergency.svg" alt="" aria-hidden="true" loading="lazy" width="36" height="36" style="width:36px;height:36px;max-width:36px;"/><h2 id="s-emerg">Emergencias Dentales</h2></div>
       <p style="color:var(--cool-gray);margin-bottom:1rem;">¿Dolor de muelas insoportable? ¿Diente roto o caído? No espere. Atendemos emergencias el mismo día, incluidos los lunes hasta las 7 PM.</p>
       <ul class="es-check-list">
-        <li>Dolor de muela severo</li>
-        <li>Diente roto o fracturado</li>
-        <li>Diente caído (avulsión)</li>
-        <li>Absceso o infección dental</li>
-        <li>Corona o empaste perdido</li>
-        <li>Sangrado o inflamación severa de encías</li>
+        <li>Dolor de muela severo</li><li>Diente roto o fracturado</li>
+        <li>Diente caído (avulsión)</li><li>Absceso o infección dental</li>
+        <li>Corona o empaste perdido</li><li>Sangrado o inflamación severa</li>
       </ul>
       <div class="button-group" style="margin-top:1.25rem;">
         <a class="button-primary" href="tel:+19728522222">Llamar ahora: (972) 852-2222</a>
       </div>
     </div>
-    <div><img src="../images/emergency-dentistry.webp" alt="Atención de emergencias dentales en Dallas" loading="lazy" style="width:100%;border-radius:14px;object-fit:cover;max-height:320px;"/></div>
+    <div><img src="../images/emergency-dentistry.webp" alt="Emergencias dentales en Dallas" loading="lazy" style="width:100%;border-radius:14px;object-fit:cover;max-height:320px;"/></div>
   </div>
 </section>
 
-<section class="content-section" id="implantes" aria-labelledby="s-impl" style="background:var(--porcelain);">
-  <div class="two-col-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
-    <div><img src="../images/dental-implants.webp" alt="Implantes dentales en Dallas, TX" loading="lazy" style="width:100%;border-radius:14px;object-fit:cover;max-height:320px;"/></div>
+<!-- LIMPIEZAS -->
+<section class="content-section" id="limpiezas" aria-labelledby="s-limp" style="background:var(--porcelain);">
+  <div class="two-col">
+    <div><img src="../images/teeth-cleaning.webp" alt="Limpieza dental profesional" loading="lazy" style="width:100%;border-radius:14px;object-fit:cover;max-height:320px;"/></div>
     <div>
-      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;"><img src="../images/icons/implant.svg" alt="" aria-hidden="true" loading="lazy" width="36" height="36" style="width:36px;height:36px;"/><h2 id="s-impl" style="margin:0;">Implantes Dentales</h2></div>
-      <p style="color:var(--cool-gray);margin-bottom:1rem;">La solución más permanente para reemplazar dientes perdidos. Los implantes se ven, se sienten y funcionan exactamente como dientes naturales &mdash; para toda la vida.</p>
-      <ul class="es-check-list">
-        <li>Titanio biocompatible integrado al hueso</li>
-        <li>No requiere adherirse a dientes vecinos</li>
-        <li>Duran toda la vida con el cuidado adecuado</li>
-        <li>Previenen la pérdida de hueso en la mandíbula</li>
-        <li>Explicamos todos los costos antes de comenzar</li>
-      </ul>
-      <div class="button-group" style="margin-top:1.25rem;">
-        <a class="button-primary" href="contacto.html">Solicitar Consulta</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="content-section" id="limpiezas" aria-labelledby="s-limp">
-  <div class="two-col-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
-    <div>
-      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;"><img src="../images/icons/tooth.svg" alt="" aria-hidden="true" loading="lazy" width="36" height="36" style="width:36px;height:36px;"/><h2 id="s-limp" style="margin:0;">Limpiezas y Prevención</h2></div>
+      <div class="es-icon-row"><img src="../images/icons/tooth.svg" alt="" aria-hidden="true" loading="lazy" width="36" height="36" style="width:36px;height:36px;max-width:36px;"/><h2 id="s-limp">Limpiezas y Prevención</h2></div>
       <p style="color:var(--cool-gray);margin-bottom:1rem;">La base de una buena salud bucal. Recomendamos limpiezas cada 6 meses. Y si hace tiempo que no viene, no hay problema &mdash; empezamos sin juzgar.</p>
       <ul class="es-check-list">
-        <li>Limpieza profesional profunda</li>
-        <li>Examen completo con radiografías</li>
+        <li>Limpieza profesional profunda</li><li>Examen completo con radiografías</li>
         <li>Detección temprana de caries y enfermedad de encías</li>
         <li>Selladores y flúor disponibles</li>
         <li>Instrucciones personalizadas de higiene bucal</li>
@@ -252,34 +197,36 @@ details.es-faq .faq-body{padding:0 1.25rem 1rem;font-size:.93rem;color:var(--coo
         <a class="button-primary" href="contacto.html">Agendar Limpieza</a>
       </div>
     </div>
-    <div><img src="../images/teeth-cleaning.webp" alt="Limpieza dental profesional en Dallas" loading="lazy" style="width:100%;border-radius:14px;object-fit:cover;max-height:320px;"/></div>
   </div>
 </section>
 
-<section class="content-section" id="blanqueamiento" aria-labelledby="s-blanc" style="background:var(--cloud);">
-  <div class="two-col-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
-    <div><img src="../images/teeth_whitening.webp" alt="Blanqueamiento dental profesional en Dallas" loading="lazy" style="width:100%;border-radius:14px;object-fit:cover;max-height:320px;"/></div>
+<!-- CROWNS & BRIDGES (replaces whitening) -->
+<section class="content-section" id="coronas" aria-labelledby="s-coronas">
+  <div class="two-col">
     <div>
-      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;"><img src="../images/icons/smile.svg" alt="" aria-hidden="true" loading="lazy" width="36" height="36" style="width:36px;height:36px;"/><h2 id="s-blanc" style="margin:0;">Blanqueamiento Dental</h2></div>
-      <p style="color:var(--cool-gray);margin-bottom:1rem;">Tratamientos profesionales que iluminan su sonrisa de forma segura. Los resultados son muy superiores a los productos de farmacia, y sin la sensibilidad.</p>
+      <div class="es-icon-row"><img src="../images/icons/crown.svg" alt="" aria-hidden="true" loading="lazy" width="36" height="36" style="width:36px;height:36px;max-width:36px;"/><h2 id="s-coronas">Coronas y Puentes</h2></div>
+      <p style="color:var(--cool-gray);margin-bottom:1rem;">Restauramos dientes dañados o reemplazamos dientes perdidos con coronas y puentes de porcelana de alta calidad que lucen, se sienten y funcionan como dientes naturales.</p>
       <ul class="es-check-list">
-        <li>Blanqueamiento en consultorio (resultados inmediatos)</li>
-        <li>Bandejas personalizadas para usar en casa</li>
-        <li>Gel profesional de alta concentración</li>
-        <li>Seguro para dientes y encías</li>
-        <li>Resultados duraderos con el cuidado apropiado</li>
+        <li>Coronas de porcelana que combinan con su sonrisa</li>
+        <li>Puentes para reemplazar uno o más dientes perdidos</li>
+        <li>Protegen dientes debilitados o con caries extensa</li>
+        <li>Restauran la función completa para comer y hablar</li>
+        <li>Le mostramos el plan completo antes de empezar</li>
       </ul>
       <div class="button-group" style="margin-top:1.25rem;">
-        <a class="button-primary" href="contacto.html">Hacer su Cita</a>
+        <a class="button-primary" href="contacto.html">Solicitar Consulta</a>
       </div>
     </div>
+    <div><img src="../images/restorative.webp" alt="Coronas y puentes dentales en Dallas" loading="lazy" style="width:100%;border-radius:14px;object-fit:cover;max-height:320px;"/></div>
   </div>
 </section>
 
-<section class="content-section" id="invisalign" aria-labelledby="s-inv">
-  <div class="two-col-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
+<!-- INVISALIGN -->
+<section class="content-section" id="invisalign" aria-labelledby="s-inv" style="background:var(--cloud);">
+  <div class="two-col">
+    <div><img src="../images/invisalign.webp" alt="Invisalign en Dallas, TX" loading="lazy" style="width:100%;border-radius:14px;object-fit:cover;max-height:320px;"/></div>
     <div>
-      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;"><img src="../images/icons/aligner.svg" alt="" aria-hidden="true" loading="lazy" width="36" height="36" style="width:36px;height:36px;"/><h2 id="s-inv" style="margin:0;">Invisalign &mdash; Alineadores Transparentes</h2></div>
+      <div class="es-icon-row"><img src="../images/icons/aligner.svg" alt="" aria-hidden="true" loading="lazy" width="36" height="36" style="width:36px;height:36px;max-width:36px;"/><h2 id="s-inv">Invisalign &mdash; Alineadores Transparentes</h2></div>
       <p style="color:var(--cool-gray);margin-bottom:1rem;">Enderece sus dientes de forma discreta y cómoda &mdash; sin brackets metálicos. Los alineadores son removibles para comer, limpiar y para ocasiones especiales.</p>
       <ul class="es-check-list">
         <li>Casi invisibles &mdash; nadie lo notará</li>
@@ -292,55 +239,76 @@ details.es-faq .faq-body{padding:0 1.25rem 1rem;font-size:.93rem;color:var(--coo
         <a class="button-primary" href="contacto.html">Consulta Gratuita Invisalign</a>
       </div>
     </div>
-    <div><img src="../images/invisalign.webp" alt="Invisalign en Dallas, TX" loading="lazy" style="width:100%;border-radius:14px;object-fit:cover;max-height:320px;"/></div>
   </div>
 </section>
 
+<!-- IMPLANTS -->
+<section class="content-section" id="implantes" aria-labelledby="s-impl">
+  <div class="two-col">
+    <div>
+      <div class="es-icon-row"><img src="../images/icons/implant.svg" alt="" aria-hidden="true" loading="lazy" width="36" height="36" style="width:36px;height:36px;max-width:36px;"/><h2 id="s-impl">Implantes Dentales</h2></div>
+      <p style="color:var(--cool-gray);margin-bottom:1rem;">La solución más permanente para reemplazar dientes perdidos. Los implantes se ven, se sienten y funcionan exactamente como dientes naturales &mdash; para toda la vida.</p>
+      <ul class="es-check-list">
+        <li>Titanio biocompatible integrado al hueso</li>
+        <li>No requiere adherirse a dientes vecinos</li>
+        <li>Duran toda la vida con el cuidado adecuado</li>
+        <li>Previenen la pérdida de hueso en la mandíbula</li>
+        <li>Explicamos todos los costos antes de comenzar</li>
+      </ul>
+      <div class="button-group" style="margin-top:1.25rem;">
+        <a class="button-primary" href="contacto.html">Solicitar Consulta</a>
+      </div>
+    </div>
+    <div><img src="../images/dental-implants.webp" alt="Implantes dentales en Dallas, TX" loading="lazy" style="width:100%;border-radius:14px;object-fit:cover;max-height:320px;"/></div>
+  </div>
+</section>
+
+<!-- MORE SERVICES -->
 <section class="content-section" aria-labelledby="s-mas" style="background:var(--porcelain);">
   <h2 id="s-mas">Más servicios disponibles</h2>
   <div class="es-service-grid">
     <div class="es-card"><div class="es-card-body">
-      <div style="margin-bottom:.6rem;"><img src="../images/icons/crown.svg" alt="" aria-hidden="true" loading="lazy" width="36" height="36" style="width:36px;height:36px;"/></div>
-      <h3>Coronas y Puentes</h3>
-      <p>Restauramos dientes dañados o reemplazamos dientes perdidos con coronas y puentes de porcelana que combinan perfectamente con sus dientes naturales.</p>
+      <div style="margin-bottom:.6rem;"><img src="../images/icons/smile.svg" alt="" aria-hidden="true" loading="lazy" width="36" height="36" style="width:36px;height:36px;max-width:36px;"/></div>
+      <h3>Blanqueamiento Dental</h3>
+      <p>Tratamientos profesionales que iluminan su sonrisa de forma segura &mdash; resultados muy superiores a los productos de farmacia.</p>
       <a href="contacto.html">Consultar &rarr;</a>
     </div></div>
     <div class="es-card"><div class="es-card-body">
-      <div style="margin-bottom:.6rem;"><img src="../images/icons/users.svg" alt="" aria-hidden="true" loading="lazy" width="36" height="36" style="width:36px;height:36px;"/></div>
-      <h3>Dentaduras y Parciales</h3>
-      <p>Opciones personalizadas para reemplazar varios dientes o toda la dentadura. Diseñadas para comodidad, función y una apariencia natural.</p>
-      <a href="contacto.html">Consultar &rarr;</a>
-    </div></div>
-    <div class="es-card"><div class="es-card-body">
-      <div style="margin-bottom:.6rem;"><img src="../images/icons/gum.svg" alt="" aria-hidden="true" loading="lazy" width="36" height="36" style="width:36px;height:36px;"/></div>
-      <h3>Tratamiento de Encías</h3>
-      <p>Tratamiento de la enfermedad periodontal, raspado y alisado radicular, y mantenimiento preventivo para mantener sus encías saludables.</p>
-      <a href="contacto.html">Consultar &rarr;</a>
-    </div></div>
-    <div class="es-card"><div class="es-card-body">
-      <div style="margin-bottom:.6rem;"><img src="../images/icons/tooth-sparkle.svg" alt="" aria-hidden="true" loading="lazy" width="36" height="36" style="width:36px;height:36px;"/></div>
+      <div style="margin-bottom:.6rem;"><img src="../images/icons/tooth-sparkle.svg" alt="" aria-hidden="true" loading="lazy" width="36" height="36" style="width:36px;height:36px;max-width:36px;"/></div>
       <h3>Empastes y Rellenos</h3>
-      <p>Empastes del color del diente (composite) que restauran la función y la apariencia natural. Sin mercurio y estéticamente invisibles.</p>
+      <p>Empastes del color del diente (composite) que restauran la función y apariencia natural. Sin mercurio, estéticamente invisibles.</p>
       <a href="contacto.html">Consultar &rarr;</a>
     </div></div>
     <div class="es-card"><div class="es-card-body">
-      <div style="margin-bottom:.6rem;"><img src="../images/icons/xray.svg" alt="" aria-hidden="true" loading="lazy" width="36" height="36" style="width:36px;height:36px;"/></div>
+      <div style="margin-bottom:.6rem;"><img src="../images/icons/gum.svg" alt="" aria-hidden="true" loading="lazy" width="36" height="36" style="width:36px;height:36px;max-width:36px;"/></div>
+      <h3>Tratamiento de Encías</h3>
+      <p>Tratamiento de la enfermedad periodontal, raspado y alisado radicular para mantener sus encías saludables.</p>
+      <a href="contacto.html">Consultar &rarr;</a>
+    </div></div>
+    <div class="es-card"><div class="es-card-body">
+      <div style="margin-bottom:.6rem;"><img src="../images/icons/xray.svg" alt="" aria-hidden="true" loading="lazy" width="36" height="36" style="width:36px;height:36px;max-width:36px;"/></div>
       <h3>Extracciones y Muelas del Juicio</h3>
-      <p>Extracciones simples y quirúrgicas realizadas con anestesia local para su máximo confort. La Dra. Houshmand está certificada en sedación consciente.</p>
+      <p>Extracciones simples y quirúrgicas con anestesia local para su máximo confort. Sedación consciente disponible.</p>
       <a href="contacto.html">Consultar &rarr;</a>
     </div></div>
     <div class="es-card"><div class="es-card-body">
-      <div style="margin-bottom:.6rem;"><img src="../images/icons/sedation.svg" alt="" aria-hidden="true" loading="lazy" width="36" height="36" style="width:36px;height:36px;"/></div>
+      <div style="margin-bottom:.6rem;"><img src="../images/icons/sedation.svg" alt="" aria-hidden="true" loading="lazy" width="36" height="36" style="width:36px;height:36px;max-width:36px;"/></div>
       <h3>Odontología con Sedación</h3>
-      <p>Para pacientes con ansiedad dental. La sedación consciente le permite relajarse completamente durante el tratamiento, sin recordar casi nada del procedimiento.</p>
+      <p>Para pacientes con ansiedad dental. La sedación consciente le permite relajarse completamente. La Dra. Houshmand está certificada.</p>
+      <a href="contacto.html">Consultar &rarr;</a>
+    </div></div>
+    <div class="es-card"><div class="es-card-body">
+      <div style="margin-bottom:.6rem;"><img src="../images/icons/users.svg" alt="" aria-hidden="true" loading="lazy" width="36" height="36" style="width:36px;height:36px;max-width:36px;"/></div>
+      <h3>Dentaduras y Parciales</h3>
+      <p>Opciones personalizadas para reemplazar varios dientes o toda la dentadura. Diseñadas para comodidad y apariencia natural.</p>
       <a href="contacto.html">Consultar &rarr;</a>
     </div></div>
   </div>
 </section>
 
-<section class="cta-section" aria-labelledby="es-cta-h">
+<section class="cta-section" aria-labelledby="es-cta">
   <div class="cta-content">
-    <h2 id="es-cta-h">¿No encontró lo que busca?</h2>
+    <h2 id="es-cta">¿No encontró lo que busca?</h2>
     <p>Llámenos o contáctenos &mdash; nuestro equipo bilingüe le orientará sobre el tratamiento correcto para usted.</p>
     <div class="cta-features">
       <span class="feature-item"><span class="check-mark">&#10003;</span> Personal bilingüe</span>
@@ -357,8 +325,8 @@ details.es-faq .faq-body{padding:0 1.25rem 1rem;font-size:.93rem;color:var(--coo
 </main>
 <footer class="footer" role="contentinfo">
   <div class="footer-container">
-    <section class="footer-column" aria-labelledby="f-contacto">
-      <h4 id="f-contacto">Contáctenos</h4>
+    <section class="footer-column" aria-labelledby="f-contact">
+      <h4 id="f-contact">Contáctenos</h4>
       <address class="footer-address" style="font-style:normal;">
         Spring Valley Dental Associates<br>
         14228 Midway Rd, Suite 100<br>
@@ -376,7 +344,7 @@ details.es-faq .faq-body{padding:0 1.25rem 1rem;font-size:.93rem;color:var(--coo
         <li><a href="financiamiento.html">Financiamiento y Seguros</a></li>
         <li><a href="informacion-paciente.html">Información para Pacientes</a></li>
         <li><a href="contacto.html">Contacto / Hacer Cita</a></li>
-        <li><a href="../">Ver sitio en inglés</a></li>
+        <li style="margin-top:.5rem;padding-top:.5rem;border-top:1px solid rgba(255,255,255,.15);"><a href="../">&larr; Ver sitio en inglés</a></li>
       </ul>
     </nav>
     <section class="footer-column" aria-labelledby="f-hours">
@@ -390,21 +358,21 @@ details.es-faq .faq-body{padding:0 1.25rem 1rem;font-size:.93rem;color:var(--coo
         <li>Sábado/Domingo: Cerrado</li>
       </ul>
       <div class="social-links icons-only" aria-label="Redes sociales" style="margin-top:1rem;">
-        <a href="https://www.instagram.com/springvalleydental_dallas?igsh=NTM0aXVkMzA3czd2" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+        <a href="https://www.instagram.com/springvalleydental_dallas?igsh=NTM0aXVkMzA3czd2" target="_blank" rel="noopener" aria-label="Instagram">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zM18 5.75a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 18 5.75z"/></svg>
         </a>
-        <a href="https://www.facebook.com/share/16xP4Vjixk/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+        <a href="https://www.facebook.com/share/16xP4Vjixk/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 22v-8h2.7l.4-3h-3.1V8.7c0-.9.3-1.5 1.7-1.5h1.5V4.5c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.5v3h2.5v8z"/></svg>
         </a>
       </div>
     </section>
   </div>
-  <p class="copy">&copy; <span id="es-year"></span> Spring Valley Dental Associates. Todos los derechos reservados.</p>
+  <p class="copy">&copy; <span id="es-yr"></span> Spring Valley Dental Associates. Todos los derechos reservados.</p>
 </footer>
-<script>document.getElementById('es-year').textContent=new Date().getFullYear();</script>
-<nav class="sticky-cta-bar" role="navigation" aria-label="Acciones rápidas para pacientes">
-  <a class="cta-link call" href="tel:+19728522222" aria-label="Llamar a la oficina">Llamar</a>
-  <a class="cta-link book" href="contacto.html" aria-label="Hacer una cita">Cita</a>
+<script>document.getElementById('es-yr').textContent=new Date().getFullYear();</script>
+<nav class="sticky-cta-bar" role="navigation" aria-label="Acciones rápidas">
+  <a class="cta-link call" href="tel:+19728522222" aria-label="Llamar">Llamar</a>
+  <a class="cta-link book" href="contacto.html" aria-label="Hacer cita">Cita</a>
   <a class="cta-link directions" href="https://www.google.com/maps/place/14228+Midway+Rd+%23100,+Dallas,+TX+75244" target="_blank" rel="noopener" aria-label="Cómo llegar">Llegar</a>
 </nav>
 <div id="nav-status" class="sr-only" aria-live="polite" aria-atomic="true"></div>
@@ -414,11 +382,5 @@ details.es-faq .faq-body{padding:0 1.25rem 1rem;font-size:.93rem;color:var(--coo
 <script defer src="../analytics.js?v=20260412"></script>
 <script defer src="../js/cta-config.js?v=20260412"></script>
 <script defer src="../js/menu-enhancements.js?v=20260412"></script>
-<style>
-@media(max-width:680px){
-  .two-col-grid{grid-template-columns:1fr!important;}
-  .two-col-grid .flip-mobile{order:-1;}
-}
-</style>
 </body>
 </html>

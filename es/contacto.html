@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Contacto y Citas en Español | Spring Valley Dental Associates Dallas</title>
-<meta name="description" content="Haga su cita en línea o llámenos al (972) 852-2222. Personal bilingüe. Spring Valley Dental Associates — dentista en Dallas que habla español. Respondemos en 1 hora hábil."/>
+<meta name="description" content="Haga su cita en línea o llámenos al (972) 852-2222. Formularios de registro de nuevos pacientes y pacientes existentes en línea. Respondemos en 1 hora hábil."/>
 <meta name="robots" content="index, follow"/>
 <link href="https://springvalleydentistry.com/es/contacto.html" rel="canonical"/>
 <link rel="alternate" hreflang="en" href="https://springvalleydentistry.com/"/>
@@ -18,7 +18,7 @@
 <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Contacto y Citas en Español | Spring Valley Dental Associates Dallas"/>
-<meta property="og:description" content="Haga su cita en línea o llámenos al (972) 852-2222. Personal bilingüe. Spring Valley Dental Associates — dentista en Dallas que habla español. Respondemos en 1 hora hábil."/>
+<meta property="og:description" content="Haga su cita en línea o llámenos al (972) 852-2222. Formularios de registro de nuevos pacientes y pacientes existentes en línea. Respondemos en 1 hora hábil."/>
 <meta property="og:url" content="https://springvalleydentistry.com/es/contacto.html"/>
 <meta property="og:image" content="https://springvalleydentistry.com/images/building_front_with_logo.jpg"/>
 <meta name="twitter:card" content="summary_large_image"/>
@@ -28,15 +28,17 @@
 <link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" onload="this.rel='stylesheet'" rel="preload"/>
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/></noscript>
 <style>
-.es-lang-bar{background:var(--dallas-navy);color:rgba(255,255,255,.75);font-size:.82rem;padding:.4rem 1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
-.es-lang-bar a{color:var(--mint);text-decoration:none;}
-.es-lang-bar a:hover{text-decoration:underline;}
-.lang-toggle{display:inline-flex;gap:.5rem;align-items:center;font-size:.78rem;}
-.lang-toggle .active{color:var(--mint);font-weight:700;}
-.lang-toggle .sep{color:rgba(255,255,255,.25);}
-.habla-strip{background:var(--dallas-navy);padding:1.25rem 2rem;display:flex;align-items:center;justify-content:center;gap:1.25rem;flex-wrap:wrap;text-align:center;}
-.habla-strip .hs-text{color:var(--mint);font-size:1.15rem;font-weight:700;}
-.habla-strip .hs-sub{color:rgba(255,255,255,.78);font-size:.9rem;margin-top:.2rem;}
+/* ── Spanish section styles ──────────────────────────────────── */
+.es-back-bar{background:var(--dallas-navy);text-align:center;padding:.5rem 1rem;}
+.es-back-bar a{color:var(--mint);font-size:.82rem;font-weight:600;text-decoration:none;letter-spacing:.02em;}
+.es-back-bar a:hover{text-decoration:underline;}
+details.es-faq{border:1px solid rgba(14,54,90,.12);border-radius:10px;margin-bottom:.75rem;overflow:hidden;background:#fff;}
+details.es-faq summary{padding:1rem 1.25rem;font-weight:600;font-size:.97rem;color:var(--slate-ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;user-select:none;}
+details.es-faq summary::-webkit-details-marker{display:none;}
+details.es-faq summary::after{content:'+';font-size:1.4rem;font-weight:300;color:var(--sky-blue);flex-shrink:0;transition:transform .2s;}
+details.es-faq[open] summary::after{content:'−';}
+details.es-faq .faq-body{padding:0 1.25rem 1.1rem;font-size:.93rem;color:var(--cool-gray);line-height:1.75;}
+details.es-faq .faq-body a{color:var(--sky-blue);}
 .es-service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:1.5rem;}
 .es-card{background:#fff;border:1px solid rgba(14,54,90,.1);border-radius:14px;overflow:hidden;transition:box-shadow .2s,transform .2s;}
 .es-card:hover{box-shadow:0 8px 28px rgba(14,54,90,.12);transform:translateY(-2px);}
@@ -46,32 +48,11 @@
 .es-card-body p{font-size:.92rem;color:var(--cool-gray);line-height:1.65;margin-bottom:.75rem;}
 .es-card-body a{font-size:.9rem;font-weight:700;color:var(--sky-blue);text-decoration:none;}
 .es-card-body a:hover{text-decoration:underline;}
-.es-doctor-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:1.5rem;}
-.es-doc-card{text-align:center;}
-.es-doc-card .team-photo-wrap{margin-bottom:1rem;}
-.es-doc-card h3{font-size:1.1rem;font-weight:700;color:var(--slate-ink);margin-bottom:.2rem;}
-.es-doc-card .dr-role{font-size:.83rem;color:var(--sky-blue);font-weight:600;margin-bottom:.6rem;}
-.es-doc-card p{font-size:.92rem;color:var(--cool-gray);line-height:1.65;}
-.es-finance-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin-top:1.5rem;}
-.es-fin-card{background:#fff;border:1px solid rgba(14,54,90,.1);border-radius:14px;padding:1.5rem 1.25rem;}
-.es-fin-card .big-price{font-size:2.2rem;font-weight:700;color:var(--sky-blue);line-height:1;}
-.es-fin-card .big-price span{font-size:1rem;color:var(--cool-gray);font-weight:400;}
-.es-fin-card h3{font-size:1rem;font-weight:700;color:var(--slate-ink);margin:.5rem 0 .35rem;}
-.es-fin-card p{font-size:.88rem;color:var(--cool-gray);line-height:1.6;margin-bottom:.75rem;}
-.es-fin-card ul{list-style:none;padding:0;margin:0;}
-.es-fin-card li{font-size:.87rem;color:var(--cool-gray);padding:.28rem 0 .28rem 1.1rem;position:relative;}
-.es-fin-card li::before{content:'✓';position:absolute;left:0;color:#2a9d6e;font-weight:700;}
 .es-hours-tbl{width:100%;border-collapse:collapse;font-size:.92rem;}
 .es-hours-tbl tr{border-bottom:1px solid rgba(14,54,90,.08);}
 .es-hours-tbl td{padding:.55rem .2rem;color:var(--cool-gray);}
 .es-hours-tbl td:last-child{text-align:right;color:var(--slate-ink);font-weight:600;}
-.es-map{width:100%;height:280px;border-radius:12px;border:none;display:block;margin-top:1.25rem;}
-details.es-faq{border:1px solid rgba(14,54,90,.1);border-radius:10px;margin-bottom:.75rem;overflow:hidden;}
-details.es-faq summary{padding:1rem 1.25rem;font-weight:600;font-size:.97rem;color:var(--slate-ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;}
-details.es-faq summary::-webkit-details-marker{display:none;}
-details.es-faq summary::after{content:'+';font-size:1.3rem;color:var(--sky-blue);flex-shrink:0;}
-details.es-faq[open] summary::after{content:'−';}
-details.es-faq .faq-body{padding:0 1.25rem 1rem;font-size:.93rem;color:var(--cool-gray);line-height:1.7;}
+.es-map{width:100%;height:300px;border-radius:12px;border:none;display:block;margin-top:1.25rem;}
 .es-check-list{list-style:none;padding:0;margin:.75rem 0;}
 .es-check-list li{font-size:.93rem;color:var(--cool-gray);padding:.3rem 0 .3rem 1.3rem;position:relative;line-height:1.5;}
 .es-check-list li::before{content:'✓';position:absolute;left:0;color:#2a9d6e;font-weight:700;}
@@ -80,56 +61,40 @@ details.es-faq .faq-body{padding:0 1.25rem 1rem;font-size:.93rem;color:var(--coo
 .es-step-num{min-width:36px;height:36px;border-radius:50%;background:var(--sky-blue);color:#fff;font-weight:700;font-size:.95rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .es-step-body h3{font-size:1rem;font-weight:700;color:var(--slate-ink);margin:0 0 .25rem;}
 .es-step-body p{font-size:.9rem;color:var(--cool-gray);line-height:1.6;margin:0;}
-.es-ins-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.75rem;margin:1rem 0;}
+.es-ins-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:.75rem;margin:1rem 0;}
 .es-ins-badge{background:var(--cloud);border-radius:8px;padding:.6rem 1rem;font-size:.87rem;font-weight:600;color:var(--slate-ink);text-align:center;}
-.es-form label{display:block;font-size:.9rem;font-weight:600;color:var(--slate-ink);margin-bottom:.3rem;}
-.es-form input,.es-form select,.es-form textarea{width:100%;padding:.65rem .85rem;border:1.5px solid rgba(14,54,90,.18);border-radius:8px;font-size:.95rem;color:var(--slate-ink);background:#fff;transition:border-color .2s;box-sizing:border-box;font-family:inherit;}
-.es-form input:focus,.es-form select:focus,.es-form textarea:focus{outline:none;border-color:var(--sky-blue);box-shadow:0 0 0 3px rgba(0,119,182,.12);}
-.es-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.es-form .form-field{margin-bottom:1rem;}
-.es-form textarea{resize:vertical;min-height:110px;}
-.es-form .form-note{font-size:.82rem;color:var(--cool-gray);margin-top:.4rem;}
-.es-submit{background:var(--btn-bg,#C8864A);color:#fff;border:none;padding:.75rem 2rem;border-radius:.55rem;font-size:1rem;font-weight:700;cursor:pointer;transition:opacity .2s;width:100%;margin-top:.5rem;}
-.es-submit:hover{opacity:.88;}
-.es-success{display:none;background:#eafaf1;border:1px solid #2a9d6e;border-radius:10px;padding:1.25rem;color:#166534;font-weight:600;text-align:center;margin-top:1rem;}
+.es-fin-card{background:#fff;border:1px solid rgba(14,54,90,.1);border-radius:14px;padding:1.5rem 1.25rem;}
+.es-fin-card ul{list-style:none;padding:0;margin:.5rem 0;}
+.es-fin-card li{font-size:.87rem;color:var(--cool-gray);padding:.28rem 0 .28rem 1.1rem;position:relative;}
+.es-fin-card li::before{content:'✓';position:absolute;left:0;color:#2a9d6e;font-weight:700;}
+.es-icon-row{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;}
+.es-icon-row h2{margin:0;}
 .financing-logo-row{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;margin:1rem 0;}
-.financing-logo-row img{height:40px;object-fit:contain;}
-.es-icon-card{background:#fff;border:1px solid rgba(14,54,90,.1);border-radius:14px;padding:1.5rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:.75rem;}
-.es-icon-card h3{font-size:1rem;font-weight:700;color:var(--slate-ink);margin:0;}
-.es-icon-card p{font-size:.88rem;color:var(--cool-gray);line-height:1.6;margin:0;}
+.financing-logo-row img{height:38px;object-fit:contain;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;}
 @media(max-width:680px){
-  .es-form .form-row{grid-template-columns:1fr;}
-  .habla-strip{padding:1rem;gap:.75rem;}
-  .es-service-grid,.es-doctor-grid,.es-finance-grid{grid-template-columns:1fr;}
-  .es-ins-grid{grid-template-columns:repeat(2,1fr);}
-  .two-col-grid{grid-template-columns:1fr !important;}
-  .two-col-grid .flip-mobile{order:-1;}
+  .two-col{grid-template-columns:1fr!important;}
+  .two-col .img-col{order:-1;}
+  .es-service-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
 <body>
-<div class="es-lang-bar">
-  <span>Spring Valley Dental Associates &bull; Dallas, TX</span>
-  <div class="lang-toggle">
-    <a href="../" aria-label="Ver sitio en inglés">EN</a>
-    <span class="sep">|</span>
-    <span class="active" aria-current="page">ES</span>
-  </div>
-</div>
 <a class="skip-to-content" href="#main">Saltar al contenido</a>
-
 <header class="site-header" role="banner" id="site-header">
   <div class="top-bar">
     <span>Spring Valley Dental Associates &bull; 14228 Midway Rd, Suite 100, Dallas, TX 75244</span>
-    <a href="tel:+19728522222">Llamar: (972) 852-2222</a>
+    <div style="display:flex;align-items:center;gap:1.5rem;">
+      <a href="tel:+19728522222">Llamar: (972) 852-2222</a>
+      <a href="../" style="font-size:.8rem;font-weight:600;color:var(--mint);text-decoration:none;border:1px solid var(--mint);padding:.2rem .6rem;border-radius:4px;" aria-label="Ver sitio en inglés">&larr; Sitio en Inglés</a>
+    </div>
   </div>
   <div class="navbar">
-    <!-- LOGO: relative path so it works on GitHub Pages /SpringValley/ subpath -->
     <a class="logo" href="index.html" aria-label="Spring Valley Dental Associates — Inicio">
       <picture>
         <source media="(max-width:768px)" srcset="../images/spring-valley-logo-mobile.svg" type="image/svg+xml"/>
         <source media="(min-width:769px)" srcset="../images/spring-valley-logo-desktop.svg" type="image/svg+xml"/>
-        <img src="../images/spring-valley-logo-desktop.svg" alt="Spring Valley Dental Associates" loading="eager" fetchpriority="high"/>
+        <img src="../images/spring-valley-logo-desktop.svg" alt="Spring Valley Dental Associates" loading="eager" fetchpriority="high" style="height:var(--logo-height,56px);width:auto;"/>
       </picture>
     </a>
     <nav id="site-nav" class="site-nav" aria-label="Navegación principal" hidden>
@@ -147,16 +112,13 @@ details.es-faq .faq-body{padding:0 1.25rem 1rem;font-size:.93rem;color:var(--coo
         <div class="brand-row"><h2 class="practice-name">Spring Valley Dental</h2></div>
         <div class="menu-ctas" role="group" aria-label="Acciones rápidas">
           <a class="menu-cta call" href="tel:+19728522222" aria-label="Llamar">
-            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-            Llamar
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>Llamar
           </a>
           <a class="menu-cta book" href="contacto.html" aria-label="Hacer cita">
-            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
-            Cita
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>Cita
           </a>
-          <a class="menu-cta directions" href="https://www.google.com/maps/place/14228+Midway+Rd+%23100,+Dallas,+TX+75244" target="_blank" rel="noopener" aria-label="Cómo llegar">
-            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M21.71 11.29l-9-9a1 1 0 0 0-1.42 0l-9 9a1 1 0 0 0 0 1.42l9 9a1 1 0 0 0 1.42 0l9-9a1 1 0 0 0 0-1.42zM14 14.5V12h-4v3H8v-4a1 1 0 0 1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>
-            Mapa
+          <a class="menu-cta directions" href="https://www.google.com/maps/place/14228+Midway+Rd+%23100,+Dallas,+TX+75244" target="_blank" rel="noopener" aria-label="Mapa">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M21.71 11.29l-9-9a1 1 0 0 0-1.42 0l-9 9a1 1 0 0 0 0 1.42l9 9a1 1 0 0 0 1.42 0l9-9a1 1 0 0 0 0-1.42zM14 14.5V12h-4v3H8v-4a1 1 0 0 1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>Mapa
           </a>
         </div>
       </div>
@@ -169,6 +131,10 @@ details.es-faq .faq-body{padding:0 1.25rem 1rem;font-size:.93rem;color:var(--coo
 <li><a href="contacto.html" aria-current="page">Contacto</a></li>
 </ul>
       </div>
+      <div class="menu-section">
+        <h3 class="section-title">Sitio en inglés</h3>
+        <ul class="menu-links"><li><a href="../">&larr; Ver sitio completo en inglés</a></li></ul>
+      </div>
       <div class="menu-footer">
         <div class="practice-info">
           <p><strong>Spring Valley Dental Associates</strong></p>
@@ -179,7 +145,7 @@ details.es-faq .faq-body{padding:0 1.25rem 1rem;font-size:.93rem;color:var(--coo
     </nav>
     <div class="nav-overlay" id="nav-overlay"></div>
     <button class="hamburger" id="nav-toggle" type="button"
-            aria-controls="site-nav" aria-expanded="false" aria-label="Abrir menú de navegación">
+            aria-controls="site-nav" aria-expanded="false" aria-label="Abrir menú">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -188,211 +154,148 @@ details.es-faq .faq-body{padding:0 1.25rem 1rem;font-size:.93rem;color:var(--coo
 
 <section class="hero" style="background-image:url('../images/hero-background.webp')">
   <h1>Contáctenos &mdash; le atendemos en español</h1>
-  <p>Haga su cita en línea &nbsp;&middot;&nbsp; Llame al (972) 852-2222 &nbsp;&middot;&nbsp; Respondemos en 1 hora hábil</p>
+  <p>Listo para su próxima visita dental? Contáctenos para hacer una cita, hacer una pregunta o conocer más sobre nuestros servicios.</p>
   <div class="button-group">
-    <a class="button-primary" href="#formulario">Formulario de Cita</a>
-    <a class="button-secondary" href="tel:+19728522222">Llamar ahora</a>
+    <a class="button-primary" href="servicios.html">Ver Servicios</a>
+    <a class="button-secondary" href="financiamiento.html">Membresía</a>
   </div>
 </section>
 
-<section class="content-section" aria-label="Formas de contacto">
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem;">
-    <a href="tel:+19728522222" style="display:block;background:var(--sky-blue);color:#fff;border-radius:14px;padding:1.5rem;text-align:center;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='.88'" onmouseout="this.style.opacity='1'">
-      <div style="margin-bottom:.6rem;"><img src="../images/icons/phone.svg" alt="" aria-hidden="true" loading="lazy" width="40" height="40" style="width:40px;height:40px;"/></div>
-      <div style="font-weight:700;font-size:1.05rem;margin-bottom:.25rem;">Llamar</div>
-      <div style="font-size:.95rem;opacity:.9;">(972) 852-2222</div>
-      <div style="font-size:.8rem;margin-top:.35rem;opacity:.85;">Respuesta inmediata</div>
-    </a>
-    <a href="mailto:info@springvalleydentistry.com" style="display:block;background:var(--dallas-navy);color:#fff;border-radius:14px;padding:1.5rem;text-align:center;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='.88'" onmouseout="this.style.opacity='1'">
-      <div style="margin-bottom:.6rem;"><img src="../images/icons/email.svg" alt="" aria-hidden="true" loading="lazy" width="40" height="40" style="width:40px;height:40px;"/></div>
-      <div style="font-weight:700;font-size:1.05rem;margin-bottom:.25rem;">Correo Electrónico</div>
-      <div style="font-size:.82rem;opacity:.9;word-break:break-all;">info@springvalleydentistry.com</div>
-      <div style="font-size:.8rem;margin-top:.35rem;opacity:.85;">Respuesta en 1 hora hábil</div>
-    </a>
-    <a href="https://www.google.com/maps/search/?api=1&query=14228+Midway+Rd+Suite+100,+Dallas,+TX+75244" target="_blank" rel="noopener" style="display:block;background:var(--mint);color:var(--dallas-navy);border-radius:14px;padding:1.5rem;text-align:center;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='.88'" onmouseout="this.style.opacity='1'">
-      <div style="margin-bottom:.6rem;"><img src="../images/icons/location.svg" alt="" aria-hidden="true" loading="lazy" width="40" height="40" style="width:40px;height:40px;"/></div>
-      <div style="font-weight:700;font-size:1.05rem;margin-bottom:.25rem;">Cómo Llegar</div>
-      <div style="font-size:.85rem;">14228 Midway Rd, Suite 100<br>Dallas, TX 75244</div>
-      <div style="font-size:.8rem;margin-top:.35rem;opacity:.8;">Ver en Google Maps</div>
-    </a>
+<!-- ONLINE FORMS — matches English contact page exactly -->
+<section aria-labelledby="contact-heading" class="section">
+  <div class="contact-container">
+    <div class="contact-header">
+      <h2 id="contact-heading">Haga su Cita en Línea</h2>
+      <p>Complete nuestros formularios seguros de paciente en línea antes de su visita para ahorrar tiempo en la oficina.</p>
+    </div>
+    <div class="form-container">
+      <div class="form-options-grid">
+        <!-- New Patient -->
+        <div class="form-option-card priority-new-patient">
+          <div class="form-icon" aria-hidden="true"><img src="../images/icons/clipboard.svg" alt="" aria-hidden="true" loading="lazy" width="48" height="48" style="width:48px;height:48px;max-width:48px;"/></div>
+          <h3>Registro de Nuevo Paciente</h3>
+          <p>¿Primera vez visitándonos? Complete nuestros formularios de registro que incluyen historial médico e información de seguro. Disponibles en español.</p>
+          <div class="form-details">
+            <span class="time-estimate"><img src="../images/icons/clock.svg" alt="" aria-hidden="true" loading="lazy" width="16" height="16" style="width:16px;height:16px;max-width:16px;"/> 8&ndash;10 minutos</span>
+            <span class="form-count">3 formularios</span>
+          </div>
+          <a class="button-primary"
+             data-form-type="new-patient"
+             href="https://patientviewer.com/WebFormsGWT/GWT/WebForms/WebForms.html?DOID=20379&RKID=5353&WSDID=180392&NFID=180395&NFID=180398&NFID=180401&NFID=180404&NFID=180407"
+             target="_blank"
+             rel="noopener">
+            Comenzar Formularios de Nuevo Paciente
+          </a>
+        </div>
+        <!-- Existing Patient -->
+        <div class="form-option-card priority-existing">
+          <div class="form-icon" aria-hidden="true"><img src="../images/icons/user.svg" alt="" aria-hidden="true" loading="lazy" width="48" height="48" style="width:48px;height:48px;max-width:48px;"/></div>
+          <h3>Paciente Existente</h3>
+          <p>Actualice su información, solicite una cita o complete formularios para una visita próxima.</p>
+          <div class="form-details">
+            <span class="time-estimate"><img src="../images/icons/clock.svg" alt="" aria-hidden="true" loading="lazy" width="16" height="16" style="width:16px;height:16px;max-width:16px;"/> 3&ndash;5 minutos</span>
+            <span class="form-count">1&ndash;2 formularios</span>
+          </div>
+          <a class="button-primary"
+             data-form-type="existing-patient"
+             href="https://patientviewer.com/WebFormsGWT/GWT/WebForms/WebForms.html?DOID=20379&RKID=5353&WSDID=180389&NFID=180392"
+             target="_blank"
+             rel="noopener">
+            Actualizar Información Existente
+          </a>
+        </div>
+      </div>
+
+      <!-- What happens next -->
+      <div style="background:rgba(143,214,200,.15);border:1px solid var(--mint);border-radius:10px;padding:1rem 1.25rem;margin-bottom:1.5rem;display:flex;gap:.75rem;align-items:flex-start;">
+        <span style="font-size:1.2rem;flex-shrink:0;color:var(--sky-blue);">&#10003;</span>
+        <p style="margin:0;font-size:.95rem;color:var(--slate-ink);line-height:1.6;"><strong>¿Qué pasa después de enviar?</strong> Nuestro equipo le contactará dentro de 1 hora hábil para confirmar su cita. Si necesita atención el mismo día, llámenos directamente al <a href="tel:+19728522222" style="color:var(--sky-blue);font-weight:600;">(972) 852-2222</a>.</p>
+      </div>
+
+      <!-- Security notice -->
+      <div class="security-notice">
+        <div class="security-icon" aria-hidden="true"><img src="../images/icons/lock.svg" alt="" aria-hidden="true" loading="lazy" width="32" height="32" style="width:32px;height:32px;max-width:32px;"/></div>
+        <div class="security-text">
+          <strong>Su información está segura</strong>
+          <p>Todos los formularios están cifrados y cumplen con HIPAA. Su información de salud personal está protegida con los más altos estándares de seguridad.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="content-section" id="formulario" aria-labelledby="c-form" style="background:var(--porcelain);">
-  <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;"><img src="../images/icons/calendar.svg" alt="" aria-hidden="true" loading="lazy" width="36" height="36" style="width:36px;height:36px;"/><h2 id="c-form" style="margin:0;">Solicitar una Cita</h2></div>
-  <p style="color:var(--cool-gray);margin-bottom:1.5rem;">Complete el formulario y nuestro equipo le contactará dentro de 1 hora hábil para confirmar su cita. Para emergencias dentales, llame directamente al <a href="tel:+19728522222">(972) 852-2222</a>.</p>
-
-  <form class="es-form" id="es-contact-form" novalidate>
-    <div class="form-row">
-      <div class="form-field">
-        <label for="nombre">Nombre completo <span style="color:var(--coral);">*</span></label>
-        <input type="text" id="nombre" name="nombre" autocomplete="name" required placeholder="Su nombre y apellido"/>
-      </div>
-      <div class="form-field">
-        <label for="telefono">Teléfono <span style="color:var(--coral);">*</span></label>
-        <input type="tel" id="telefono" name="telefono" autocomplete="tel" required placeholder="(972) 000-0000"/>
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-field">
-        <label for="email">Correo electrónico</label>
-        <input type="email" id="email" name="email" autocomplete="email" placeholder="su@correo.com"/>
-        <div class="form-note">Opcional &mdash; para enviarle la confirmación por escrito</div>
-      </div>
-      <div class="form-field">
-        <label for="servicio">Servicio de interés <span style="color:var(--coral);">*</span></label>
-        <select id="servicio" name="servicio" required>
-          <option value="" disabled selected>Seleccione un servicio</option>
-          <option>Limpieza y examen de rutina</option>
-          <option>Emergencia dental</option>
-          <option>Implantes dentales</option>
-          <option>Blanqueamiento dental</option>
-          <option>Invisalign / alineadores transparentes</option>
-          <option>Coronas y puentes</option>
-          <option>Extracciones dentales</option>
-          <option>Odontología con sedación</option>
-          <option>Información sobre financiamiento o seguros</option>
-          <option>Primera visita &mdash; aún no lo sé</option>
-          <option>Otro</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-field">
-        <label for="horario">Horario preferido</label>
-        <select id="horario" name="horario">
-          <option value="" disabled selected>Sin preferencia</option>
-          <option>Mañana (antes de las 12 PM)</option>
-          <option>Tarde (12 PM &ndash; 3 PM)</option>
-          <option>Fin del día (3 PM &ndash; 7 PM)</option>
-          <option>Lunes (hasta las 7 PM)</option>
-        </select>
-      </div>
-      <div class="form-field">
-        <label for="paciente">Tipo de paciente</label>
-        <select id="paciente" name="paciente">
-          <option value="" disabled selected>Seleccione</option>
-          <option>Nuevo paciente</option>
-          <option>Paciente existente</option>
-          <option>Emergencia dental</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-field">
-      <label for="mensaje">Mensaje o preguntas adicionales</label>
-      <textarea id="mensaje" name="mensaje" placeholder="Cuéntenos brevemente sobre su situación o cualquier pregunta que tenga..."></textarea>
-    </div>
-    <div class="form-field" style="display:flex;align-items:flex-start;gap:.6rem;">
-      <input type="checkbox" id="hipaa" name="hipaa" required style="width:auto;margin-top:.2rem;flex-shrink:0;"/>
-      <label for="hipaa" style="font-weight:400;font-size:.88rem;color:var(--cool-gray);cursor:pointer;">Entiendo que al enviar este formulario, Spring Valley Dental Associates puede contactarme para confirmar mi cita. Mi información se mantendrá confidencial de acuerdo con las normas de privacidad HIPAA.</label>
-    </div>
-    <button type="submit" class="es-submit">Enviar solicitud de cita</button>
-    <div class="es-success" id="es-form-success" role="alert">
-      &#10003; ¡Gracias! Recibimos su solicitud. Nuestro equipo le contactará dentro de 1 hora hábil para confirmar su cita. Si necesita atención inmediata, llame al <a href="tel:+19728522222">(972) 852-2222</a>.
-    </div>
-    <div id="es-form-error" role="alert" style="display:none;background:#fef2f2;border:1px solid #fca5a5;border-radius:10px;padding:1rem;color:#991b1b;font-size:.9rem;margin-top:1rem;"></div>
-  </form>
-
-  <script>
-  (function(){
-    var form=document.getElementById('es-contact-form');
-    if(!form) return;
-    form.addEventListener('submit',function(e){
-      e.preventDefault();
-      var btn=form.querySelector('.es-submit');
-      var success=document.getElementById('es-form-success');
-      var errBox=document.getElementById('es-form-error');
-      errBox.style.display='none';
-      var nombre=form.querySelector('#nombre').value.trim();
-      var telefono=form.querySelector('#telefono').value.trim();
-      var servicio=form.querySelector('#servicio').value;
-      var hipaa=form.querySelector('#hipaa').checked;
-      if(!nombre||!telefono||!servicio||!hipaa){
-        errBox.textContent='Por favor complete todos los campos requeridos (*) y acepte la política de privacidad.';
-        errBox.style.display='block';
-        errBox.scrollIntoView({behavior:'smooth',block:'center'});
-        return;
-      }
-      btn.disabled=true; btn.textContent='Enviando...';
-      var CFG=window.SITE_CONFIG||{};
-      var API=CFG.CONTACT_API_URL||'';
-      var data={};
-      new FormData(form).forEach(function(v,k){data[k]=v;});
-      data.to='info@springvalleydentistry.com';
-      data.language='es';
-      data.source='spanish-landing';
-      if(API&&API.indexOf('YOUR_API_ID')===-1){
-        fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
-          .then(function(r){return r.json();})
-          .then(function(){
-            form.reset();
-            success.style.display='block';
-            success.scrollIntoView({behavior:'smooth',block:'center'});
-            if(window.gtag) gtag('event','generate_lead',{event_category:'conversion',event_label:'es_contact_form',value:1});
-            if(window.plausible) plausible('Form Submit',{props:{form:'es-contacto'}});
-          })
-          .catch(function(){
-            btn.disabled=false; btn.textContent='Enviar solicitud de cita';
-            errBox.textContent='Hubo un error al enviar. Por favor llámenos directamente al (972) 852-2222.';
-            errBox.style.display='block';
-          });
-      } else {
-        setTimeout(function(){
-          form.reset();
-          success.style.display='block';
-          success.scrollIntoView({behavior:'smooth',block:'center'});
-        },600);
-      }
-    });
-  })();
-  </script>
-</section>
-
-<section class="content-section" aria-labelledby="c-info">
-  <h2 id="c-info">Información de la oficina</h2>
+<!-- Contact info cards — same layout as English -->
+<section class="section">
   <div class="contact-info-grid">
     <div class="contact-info-card">
-      <div class="icon location-icon"><img src="../images/icons/location.svg" alt="" aria-hidden="true" loading="lazy" width="40" height="40" style="width:40px;height:40px;"/></div>
-      <h3>Dirección</h3>
+      <div class="icon" aria-hidden="true"><img src="../images/icons/location.svg" alt="" aria-hidden="true" loading="lazy" width="40" height="40" style="width:40px;height:40px;max-width:40px;"/></div>
+      <h3>Visítenos</h3>
       <p>14228 Midway Rd, Suite 100<br>Dallas, TX 75244</p>
-      <p style="font-size:.85rem;color:var(--cool-gray);">Cerca de Addison, Farmers Branch<br>y el North Dallas Tollway.<br>Estacionamiento gratuito.</p>
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=14228+Midway+Rd+Suite+100,+Dallas,+TX+75244" target="_blank" rel="noopener">Cómo llegar en Google Maps</a>
+      <a class="button-primary" href="https://www.google.com/maps/search/?api=1&amp;query=14228+Midway+Rd+Suite+100,+Dallas,+TX+75244" target="_blank" rel="noopener">Cómo llegar</a>
     </div>
     <div class="contact-info-card">
-      <div class="icon location-icon"><img src="../images/icons/clock.svg" alt="" aria-hidden="true" loading="lazy" width="40" height="40" style="width:40px;height:40px;"/></div>
-      <h3>Horario de Atención</h3>
-      <table class="es-hours-tbl" aria-label="Horario de atención">
-  <tr><td>Lunes</td><td>10:00 AM &ndash; 7:00 PM</td></tr>
-  <tr><td>Martes</td><td>8:30 AM &ndash; 4:00 PM</td></tr>
-  <tr><td>Miércoles</td><td>8:00 AM &ndash; 1:00 PM</td></tr>
-  <tr><td>Jueves</td><td>8:00 AM &ndash; 3:00 PM</td></tr>
-  <tr><td>Viernes</td><td>8:00 AM &ndash; 3:00 PM</td></tr>
-  <tr><td>Sábado/Domingo</td><td>Cerrado</td></tr>
-</table>
-      <p style="font-size:.85rem;color:var(--coral);margin-top:.75rem;font-weight:600;">Emergencias: llame al (972) 852-2222</p>
+      <div class="icon" aria-hidden="true"><img src="../images/icons/phone.svg" alt="" aria-hidden="true" loading="lazy" width="40" height="40" style="width:40px;height:40px;max-width:40px;"/></div>
+      <h3>Llámenos</h3>
+      <p>Hable directamente con nuestro amable personal en español</p>
+      <a class="button-primary" href="tel:+19728522222">(972) 852-2222</a>
+    </div>
+    <div class="contact-info-card">
+      <div class="icon" aria-hidden="true"><img src="../images/icons/email.svg" alt="" aria-hidden="true" loading="lazy" width="40" height="40" style="width:40px;height:40px;max-width:40px;"/></div>
+      <h3>Envíenos un Correo</h3>
+      <p>Para preguntas generales e información</p>
+      <a class="button-primary" href="mailto:info@springvalleydentistry.com">Enviarnos Correo</a>
     </div>
   </div>
-  <iframe class="es-map"
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3346.7234567890123!2d-96.8395!3d32.9443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c26d39eab13f3%3A0x3e1243026b4b017b!2s14228%20Midway%20Rd%20%23100%2C%20Dallas%2C%20TX%2075244!5e0!3m2!1ses!2sus!4v1234567890123"
-  loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
-  title="Ubicación de Spring Valley Dental Associates en Dallas, TX"></iframe>
 </section>
 
-<section class="content-section" aria-labelledby="c-next" style="background:var(--cloud);">
-  <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;"><img src="../images/icons/checkmark.svg" alt="" aria-hidden="true" loading="lazy" width="36" height="36" style="width:36px;height:36px;"/><h2 id="c-next" style="margin:0;">¿Qué pasa después de contactarnos?</h2></div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.25rem;margin-top:1.25rem;">
-    <div class="es-icon-card"><img src="../images/icons/email.svg" alt="" aria-hidden="true" loading="lazy" width="44" height="44" style="width:44px;height:44px;"/><h3>Recibimos su solicitud</h3><p>Inmediatamente después de enviar el formulario, nuestro equipo lo recibe.</p></div>
-    <div class="es-icon-card"><img src="../images/icons/phone.svg" alt="" aria-hidden="true" loading="lazy" width="44" height="44" style="width:44px;height:44px;"/><h3>Le llamamos en español</h3><p>Dentro de 1 hora hábil para confirmar su cita y responder sus preguntas.</p></div>
-    <div class="es-icon-card"><img src="../images/icons/checkmark.svg" alt="" aria-hidden="true" loading="lazy" width="44" height="44" style="width:44px;height:44px;"/><h3>Cita confirmada</h3><p>Le enviamos un recordatorio por mensaje de texto o correo electrónico.</p></div>
-    <div class="es-icon-card"><img src="../images/icons/heart.svg" alt="" aria-hidden="true" loading="lazy" width="44" height="44" style="width:44px;height:44px;"/><h3>¡Le vemos pronto!</h3><p>Su equipo bilingüe le espera para brindarle la atención que merece.</p></div>
+<!-- Hours and Map -->
+<section class="section">
+  <h2>Visítenos en Dallas</h2>
+  <div class="contact-info-card" style="max-width:600px;margin:0 auto 2rem;">
+    <h3>Horario de Atención</h3>
+    <table class="hours-table">
+      <thead><tr><th>Día</th><th>Horario</th></tr></thead>
+      <tbody>
+        <tr><td>Lunes</td><td>10:00 AM &ndash; 7:00 PM</td></tr>
+        <tr><td>Martes</td><td>8:30 AM &ndash; 4:00 PM</td></tr>
+        <tr><td>Miércoles</td><td>8:00 AM &ndash; 1:00 PM</td></tr>
+        <tr><td>Jueves</td><td>8:00 AM &ndash; 3:00 PM</td></tr>
+        <tr><td>Viernes</td><td>8:00 AM &ndash; 3:00 PM</td></tr>
+        <tr><td>Sábado</td><td>Con cita previa</td></tr>
+        <tr><td>Domingo</td><td class="closed">Cerrado</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="map-container" style="margin-top:1.5rem;border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(14,54,90,.1);">
+    <iframe title="Ubicación de Spring Valley Dental Associates" width="100%" height="400" style="border:0;"
+      loading="lazy" allowfullscreen
+      src="https://maps.google.com/maps?q=14228%20Midway%20Rd%20Suite%20100,%20Dallas,%20TX%2075244&z=14&output=embed">
+    </iframe>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="section cta-section">
+  <div class="cta-content">
+    <h2>¿Listo para programar su visita?</h2>
+    <p>Nuestro equipo dental en Dallas está listo para brindarle atención personalizada y responder cualquier pregunta sobre su salud bucal &mdash; en español.</p>
+    <div class="button-group">
+      <a class="button-primary" href="https://patientviewer.com/WebFormsGWT/GWT/WebForms/WebForms.html?DOID=20379&RKID=5353&WSDID=180392&NFID=180395&NFID=180398&NFID=180401&NFID=180404&NFID=180407" target="_blank" rel="noopener">Completar Formularios en Línea</a>
+      <a class="button-secondary" href="tel:+19728522222">Llamar (972) 852-2222</a>
+    </div>
+    <div class="cta-features">
+      <div class="feature-item"><span class="check-mark" aria-hidden="true">&#10003;</span> Citas el mismo día disponibles</div>
+      <div class="feature-item"><span class="check-mark" aria-hidden="true">&#10003;</span> Formularios seguros compatibles con HIPAA</div>
+      <div class="feature-item"><span class="check-mark" aria-hidden="true">&#10003;</span> Personal bilingüe en Dallas</div>
+    </div>
   </div>
 </section>
 
 </main>
 <footer class="footer" role="contentinfo">
   <div class="footer-container">
-    <section class="footer-column" aria-labelledby="f-contacto">
-      <h4 id="f-contacto">Contáctenos</h4>
+    <section class="footer-column" aria-labelledby="f-contact">
+      <h4 id="f-contact">Contáctenos</h4>
       <address class="footer-address" style="font-style:normal;">
         Spring Valley Dental Associates<br>
         14228 Midway Rd, Suite 100<br>
@@ -410,7 +313,7 @@ details.es-faq .faq-body{padding:0 1.25rem 1rem;font-size:.93rem;color:var(--coo
         <li><a href="financiamiento.html">Financiamiento y Seguros</a></li>
         <li><a href="informacion-paciente.html">Información para Pacientes</a></li>
         <li><a href="contacto.html">Contacto / Hacer Cita</a></li>
-        <li><a href="../">Ver sitio en inglés</a></li>
+        <li style="margin-top:.5rem;padding-top:.5rem;border-top:1px solid rgba(255,255,255,.15);"><a href="../">&larr; Ver sitio en inglés</a></li>
       </ul>
     </nav>
     <section class="footer-column" aria-labelledby="f-hours">
@@ -424,21 +327,21 @@ details.es-faq .faq-body{padding:0 1.25rem 1rem;font-size:.93rem;color:var(--coo
         <li>Sábado/Domingo: Cerrado</li>
       </ul>
       <div class="social-links icons-only" aria-label="Redes sociales" style="margin-top:1rem;">
-        <a href="https://www.instagram.com/springvalleydental_dallas?igsh=NTM0aXVkMzA3czd2" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+        <a href="https://www.instagram.com/springvalleydental_dallas?igsh=NTM0aXVkMzA3czd2" target="_blank" rel="noopener" aria-label="Instagram">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zM18 5.75a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 18 5.75z"/></svg>
         </a>
-        <a href="https://www.facebook.com/share/16xP4Vjixk/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+        <a href="https://www.facebook.com/share/16xP4Vjixk/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 22v-8h2.7l.4-3h-3.1V8.7c0-.9.3-1.5 1.7-1.5h1.5V4.5c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.5v3h2.5v8z"/></svg>
         </a>
       </div>
     </section>
   </div>
-  <p class="copy">&copy; <span id="es-year"></span> Spring Valley Dental Associates. Todos los derechos reservados.</p>
+  <p class="copy">&copy; <span id="es-yr"></span> Spring Valley Dental Associates. Todos los derechos reservados.</p>
 </footer>
-<script>document.getElementById('es-year').textContent=new Date().getFullYear();</script>
-<nav class="sticky-cta-bar" role="navigation" aria-label="Acciones rápidas para pacientes">
-  <a class="cta-link call" href="tel:+19728522222" aria-label="Llamar a la oficina">Llamar</a>
-  <a class="cta-link book" href="contacto.html" aria-label="Hacer una cita">Cita</a>
+<script>document.getElementById('es-yr').textContent=new Date().getFullYear();</script>
+<nav class="sticky-cta-bar" role="navigation" aria-label="Acciones rápidas">
+  <a class="cta-link call" href="tel:+19728522222" aria-label="Llamar">Llamar</a>
+  <a class="cta-link book" href="contacto.html" aria-label="Hacer cita">Cita</a>
   <a class="cta-link directions" href="https://www.google.com/maps/place/14228+Midway+Rd+%23100,+Dallas,+TX+75244" target="_blank" rel="noopener" aria-label="Cómo llegar">Llegar</a>
 </nav>
 <div id="nav-status" class="sr-only" aria-live="polite" aria-atomic="true"></div>
